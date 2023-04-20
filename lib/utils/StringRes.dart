@@ -68,4 +68,13 @@ class StringRes {
   static const browseListingsDetail =
       "Not ready to list? Use Yitaku to browse properties and use its other features.";
   static const selectASellerType = "Select a seller type";
+
+
+  /// ------------------ home Screen -------------
+
+  static const home = "Home";
+  static const featuredProperties = "Featured properties";
+  static const beThe1stToAcquireOurTopProperties = "Be the 1st to acquire our top properties";
+
+  static const allProperties = "All Properties";
 }
