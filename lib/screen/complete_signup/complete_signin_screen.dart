@@ -61,7 +61,8 @@ class CompleteSignupScreen extends StatelessWidget {
                             Text(
                               StringRes.name,
                               style:
-                                  overpassRegular(fontSize: 14, color: ColorRes.black),
+                              regular(
+                                  fontSize: 14, color: ColorRes.color344056),
                             ),
                             SizedBox(
                               height: Get.height * 0.008,
@@ -151,7 +152,8 @@ class CompleteSignupScreen extends StatelessWidget {
                             Text(
                               StringRes.surname,
                               style:
-                                  overpassRegular(fontSize: 14, color: ColorRes.black),
+                              regular(
+                                  fontSize: 14, color: ColorRes.color344056),
                             ),
                             SizedBox(
                               height: Get.height * 0.008,
@@ -243,7 +245,8 @@ class CompleteSignupScreen extends StatelessWidget {
                             Text(
                               StringRes.where,
                               style:
-                                  overpassRegular(fontSize: 14, color: ColorRes.black),
+                              regular(
+                                  fontSize: 14, color: ColorRes.color344056),
                             ),
                             SizedBox(
                               height: Get.height * 0.023,

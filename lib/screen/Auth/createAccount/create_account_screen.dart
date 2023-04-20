@@ -62,11 +62,14 @@ class CreateaccountScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: Get.height * 0.023,
+                          height: Get.height * 0.03,
                         ),
                         Text(
                           StringRes.email,
-                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
+                          style: regular(
+                              fontSize: 14,
+                              color: ColorRes.color344056,
+                              fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
                           height: Get.height * 0.008,
@@ -76,6 +79,8 @@ class CreateaccountScreen extends StatelessWidget {
                           builder: (controller) => TextFormField(
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
+                            style: overpassRegular(
+                                color: ColorRes.fontGrey, fontSize: 16),
                             validator: (value) {
                               if (value.toString().isEmail == false) {
                                 // controller.activeField = true;
@@ -142,20 +147,20 @@ class CreateaccountScreen extends StatelessWidget {
                               ),
                               border: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: ColorRes.appColor, width: 0.6),
+                                    color: ColorRes.sky),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: ColorRes.appColor, width: 0.6),
+                                    color: ColorRes.sky),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                     color: ColorRes.textfieldBorder,
-                                    width: 0.6),
+                                    ),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
@@ -182,15 +187,19 @@ class CreateaccountScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
                         SizedBox(
-                          height: Get.height * 0.016,
+                          height: Get.height * 0.025,
                         ),
                         Text(
                           StringRes.password,
-                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
+                          style: regular(
+                              fontSize: 14,
+                              color: ColorRes.color344056,
+                              fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
-                          height: Get.height * 0.016,
+                          height: Get.height * 0.008,
                         ),
                         TextFormField(
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -234,28 +243,28 @@ class CreateaccountScreen extends StatelessWidget {
                                 fontSize: 16, color: ColorRes.hinttext),
                             border: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: ColorRes.appColor, width: 0.6),
+                                  color: ColorRes.sky,),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             enabled: true,
                             disabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Colors.grey,
-                                width: 0.6,
+                                color: ColorRes.textfieldBorder,
+
                               ),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: ColorRes.appColor, width: 0.6),
+                                  color: ColorRes.sky),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: ColorRes.textfieldBorder, width: 0.6),
+                                  color: ColorRes.textfieldBorder),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
@@ -308,13 +317,14 @@ class CreateaccountScreen extends StatelessWidget {
                                         width: 1, color: ColorRes.appColor)),
                               ),
                             ),
+
                             Flexible(
                               child: Text(
                                 StringRes.iHave,
                                 textAlign: TextAlign.start,
                                 // overflow: TextOverflow.visible,
                                 style: semiBold(
-                                  color: ColorRes.black,
+                                  color: ColorRes.color344056,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -376,7 +386,7 @@ class CreateaccountScreen extends StatelessWidget {
                           child: Text(
                             StringRes.read,
                             style: semiBold(
-                              color: ColorRes.black,
+                              color: ColorRes.color344056,
                               fontSize: 16,
                               textdeco: TextDecoration.underline,
                               fontWeight: FontWeight.w400,

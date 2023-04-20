@@ -29,7 +29,8 @@ class BlueLoginScreen extends StatelessWidget {
                 builder: (controller) {
                   return Padding(
                     padding: EdgeInsets.only(
-                      left: 16, right: 16,
+                      left: 16,
+                      right: 16,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +66,10 @@ class BlueLoginScreen extends StatelessWidget {
                         ),
                         Text(
                           StringRes.email,
-                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
+                          style: regular(
+                              fontSize: 14,
+                              color: ColorRes.color344056,
+                              fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
                           height: Get.height * 0.008,
@@ -75,6 +79,8 @@ class BlueLoginScreen extends StatelessWidget {
                           builder: (controller) => TextFormField(
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
+                            style: overpassRegular(
+                                color: ColorRes.fontGrey, fontSize: 16),
                             validator: (value) {
                               if (value.toString().isEmail == false) {
                                 // controller.activeField = true;
@@ -133,28 +139,27 @@ class BlueLoginScreen extends StatelessWidget {
                                   : SizedBox(),
                               disabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Colors.grey,
-                                  width: 0.6,
+                                  color: ColorRes.textfieldBorder,
+
                                 ),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               border: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: ColorRes.appColor, width: 0.6),
+                                    color: ColorRes.sky),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: ColorRes.appColor, width: 0.6),
+                                    color: ColorRes.sky),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: ColorRes.textfieldBorder,
-                                    width: 0.6),
+                                    color: ColorRes.textfieldBorder,),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
@@ -181,12 +186,16 @@ class BlueLoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
                         SizedBox(
                           height: Get.height * 0.023,
                         ),
                         Text(
                           StringRes.password,
-                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
+                          style: regular(
+                              fontSize: 14,
+                              color: ColorRes.color344056,
+                              fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
                           height: Get.height * 0.008,
@@ -232,28 +241,27 @@ class BlueLoginScreen extends StatelessWidget {
                                 fontSize: 16, color: ColorRes.hinttext),
                             border: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: ColorRes.appColor, width: 0.6),
+                                  color: ColorRes.sky),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             enabled: true,
                             disabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Colors.grey,
-                                width: 0.6,
+                                color: ColorRes.textfieldBorder,
                               ),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: ColorRes.appColor, width: 0.6),
+                                  color: ColorRes.sky),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: ColorRes.textfieldBorder, width: 0.6),
+                                  color: ColorRes.textfieldBorder),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
@@ -329,13 +337,23 @@ class BlueLoginScreen extends StatelessWidget {
                           },
                           child: Align(
                             alignment: Alignment.center,
-                            child: Text(
-                              StringRes.forgot,
-                              style: overpassRegular(
-                                color: ColorRes.black,
-                                fontSize: 17,
-                                textdeco: TextDecoration.underline,
-                              ),
+                            child: Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: [
+                                Text(
+                                  StringRes.forgot,
+                                  style: overpassRegular(
+                                    color: ColorRes.fontGrey,
+                                    fontSize: 17,
+                                    //textdeco: TextDecoration.underline,
+                                  ),
+                                ),
+                                Container(
+                                  height: 1.5,
+                                  width: Get.width * 0.34,
+                                  color: ColorRes.fontGrey,
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -349,14 +367,24 @@ class BlueLoginScreen extends StatelessWidget {
                           },
                           child: Align(
                             alignment: Alignment.center,
-                            child: Text(
-                              StringRes.doNot,
-                              // style: TextStyle(decoration: TextDecoration.underline),
-                              style: overpassRegular(
-                                color: ColorRes.black,
-                                fontSize: 17,
-                                textdeco: TextDecoration.underline,
-                              ),
+                            child: Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: [
+                                Text(
+                                  StringRes.doNot,
+                                  // style: TextStyle(decoration: TextDecoration.underline),
+                                  style: overpassRegular(
+                                    color: ColorRes.black,
+                                    fontSize: 17,
+                                    //textdeco: TextDecoration.underline,
+                                  ),
+                                ),
+                                Container(
+                                  height: 1.5,
+                                  width: Get.width * 0.65,
+                                  color: ColorRes.fontGrey,
+                                ),
+                              ],
                             ),
                           ),
                         ),
