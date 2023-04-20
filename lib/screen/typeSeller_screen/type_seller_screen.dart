@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/logo.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/dashbord/dashboard_screen.dart';
 import 'package:yitaku/screen/typeSeller_screen/type_seller_controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -64,7 +65,8 @@ class TypeSellerScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 border: Border.all(
-                                    color: ColorRes.textfieldBorder)),
+                                  width: 1.3,
+                                    color: typeSellerController.isDrop == true? ColorRes.appColor : ColorRes.textfieldBorder)),
                             child: Row(
                               children: [
                                 Text(
@@ -190,90 +192,102 @@ class TypeSellerScreen extends StatelessWidget {
 
                         SizedBox(height: Get.height * 0.05),
 
-                        ///last
-                        Container(
-                          width: Get.width,
-                          padding: const EdgeInsets.only(
-                              left: 20, right: 20, top: 25, bottom: 25),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: ColorRes.appColor)),
-                          child: Row(
-                            children: [
-                              Image.asset(AssetRes.plusRound, height: 40),
-                              const SizedBox(width: 20),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                        (typeSellerController.sellerTypeString !=
+                            StringRes.selectASellerType) ?
+
+                        /// 2 container
+                      Column(
+                        children: [
+                          InkWell(
+                            onTap: (){
+                              Get.to(()=>DashboardScreen());
+                            },
+                            child: Container(
+                              width: Get.width,
+                              padding: const EdgeInsets.only(
+                                  left: 20, right: 20, top: 25, bottom: 25),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: ColorRes.appColor)),
+                              child: Row(
                                 children: [
-                                  Text(
-                                    StringRes.listPropertyNow,
-                                    style: regular(
-                                      color: ColorRes.color192E81,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                  Image.asset(AssetRes.plusRound, height: 40),
+                                  const SizedBox(width: 20),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        StringRes.listPropertyNow,
+                                        style: regular(
+                                          color: ColorRes.color192E81,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 5),
+                                      SizedBox(
+                                          width: Get.width * 0.35,
+                                          child: Text(
+                                            StringRes.listPropertyNowDetail,
+                                            style: overpassRegular(
+                                                color: ColorRes.appColor,
+                                                fontSize: 14),
+                                          ))
+                                    ],
                                   ),
-                                  const SizedBox(height: 5),
-                                  SizedBox(
-                                      width: Get.width * 0.35,
-                                      child: Text(
-                                        StringRes.listPropertyNowDetail,
-                                        style: overpassRegular(
-                                            color: ColorRes.appColor,
-                                            fontSize: 14),
-                                      ))
+                                  const Spacer(),
+                                  Image.asset(
+                                    AssetRes.arrow,
+                                    height: 20,
+                                  ),
                                 ],
                               ),
-                              const Spacer(),
-                              Image.asset(
-                                AssetRes.arrow,
-                                height: 20,
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 20),
-                        Container(
-                          width: Get.width,
-                          padding: const EdgeInsets.only(
-                              left: 20, right: 20, top: 25, bottom: 25),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(color: ColorRes.appColor)),
-                          child: Row(
-                            children: [
-                              Image.asset(AssetRes.search, height: 40),
-                              const SizedBox(width: 20),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    StringRes.browseListings,
-                                    style: regular(
-                                      color: ColorRes.color192E81,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
+                          const SizedBox(height: 20),
+                          Container(
+                            width: Get.width,
+                            padding: const EdgeInsets.only(
+                                left: 20, right: 20, top: 25, bottom: 25),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: ColorRes.appColor)),
+                            child: Row(
+                              children: [
+                                Image.asset(AssetRes.search, height: 40),
+                                const SizedBox(width: 20),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      StringRes.browseListings,
+                                      style: regular(
+                                        color: ColorRes.color192E81,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(height: 5),
-                                  SizedBox(
-                                      width: Get.width * 0.45,
-                                      child: Text(
-                                        StringRes.browseListingsDetail,
-                                        style: overpassRegular(
-                                            color: ColorRes.appColor,
-                                            fontSize: 14),
-                                      ))
-                                ],
-                              ),
-                              const Spacer(),
-                              Image.asset(
-                                AssetRes.arrow,
-                                height: 20,
-                              ),
-                            ],
+                                    const SizedBox(height: 5),
+                                    SizedBox(
+                                        width: Get.width * 0.45,
+                                        child: Text(
+                                          StringRes.browseListingsDetail,
+                                          style: overpassRegular(
+                                              color: ColorRes.appColor,
+                                              fontSize: 14),
+                                        ))
+                                  ],
+                                ),
+                                const Spacer(),
+                                Image.asset(
+                                  AssetRes.arrow,
+                                  height: 20,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
+                        ],
+                      ) : SizedBox(),
                       ],
                     ),
                   );

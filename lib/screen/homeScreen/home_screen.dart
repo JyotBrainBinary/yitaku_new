@@ -5,6 +5,7 @@ import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               SizedBox(height: Get.height * 0.03),
+               SizedBox(height: Get.height * 0.03),
 
               ///---------------appbar----------------
               Padding(
@@ -331,10 +333,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+
             ],
           ),
         ),
       ),
+
     );
   }
 }
