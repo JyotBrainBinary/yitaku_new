@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Yitaku',
-      home: IntroScreen()//SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }
