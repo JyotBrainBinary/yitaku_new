@@ -1,19 +1,21 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:yitaku/common/widget/logo.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/dashbord/dashboard_screen.dart';
 import 'package:yitaku/screen/intro_screen/intro_controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class IntroScreen extends StatelessWidget {
-  const IntroScreen({Key? key}) : super(key: key);
+   IntroScreen({Key? key}) : super(key: key);
+
+  final IntroController introController = Get.put(IntroController());
 
   @override
   Widget build(BuildContext context) {
-    IntroController introController = Get.put(IntroController());
+
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -24,6 +26,8 @@ class IntroScreen extends StatelessWidget {
             builder: (controller) {
               return Column(
                 children: [
+
+                  /// top
                   SizedBox(
                     // height: Get.height * 0.037,
                     height: Get.height * 0.06,
@@ -84,60 +88,206 @@ class IntroScreen extends StatelessWidget {
                   //     itemCount: introController.title.length,
                   //   ),
                   // ),
+
+
+                  ///pageview
+
                   Expanded(
-                    child: CarouselSlider.builder(
-                      carouselController: introController.carouselController,
-                      itemBuilder: (context, index, realIndex) => Column(
-                        children: [
-                          Text(
-                            introController.title[index],
-                            style: overpassRegular(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 24,
-                                color: ColorRes.black),
-                          ),
-                          SizedBox(
-                            height: Get.height * 0.035,
-                          ),
-                          Image.asset(
-                            introController.introImage[index],
-                            height: Get.height * 0.3030,
-                            width: Get.width * 0.7146,
-                          ),
-                          SizedBox(
-                            height: Get.height * 0.017,
-                          ),
-                          Text(
-                            introController.description[index],
-                            textAlign: TextAlign.center,
-                            style: overpassRegular(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                                color: ColorRes.black),
-                          ),
-                          SizedBox(
-                            height: Get.height * 0.031,
-                          ),
-                        ],
-                      ),
-                      itemCount: introController.title.length,
-
-                      options: CarouselOptions(
-
-                        onPageChanged: (index, reason) {
-                          
-
-                         
+                    child: SizedBox(
+                      height: Get.height * 0.5,
+                      child: PageView.builder(
+                        controller : controller.pageController,
+                        itemCount: controller.title.length,
+                        onPageChanged: (val){
+                          controller.pageIndex = val;
+                          controller.update(["intro"]);
                         },
-                        height: double.infinity,
-                        initialPage: 0,
-                        aspectRatio: 16 / 9,
-                        viewportFraction: 1,
+                        itemBuilder: (context, index) {
+
+                          return Column(
+                            children: [
+                              Text(
+                                introController.title[index],
+                                style: overpassRegular(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 24,
+                                    color: ColorRes.black),
+                              ),
+                              SizedBox(
+                                height: Get.height * 0.035,
+                              ),
+                              Image.asset(
+                                introController.introImage[index],
+                                height: Get.height * 0.3030,
+                                width: Get.width * 0.7146,
+                              ),
+                              SizedBox(
+                                height: Get.height * 0.017,
+                              ),
+                              Text(
+                                introController.description[index],
+                                textAlign: TextAlign.center,
+                                style: overpassRegular(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: ColorRes.black),
+                              ),
+                              SizedBox(
+                                height: Get.height * 0.031,
+                              ),
+                            ],
+                          );
+                        }
+
                       ),
                     ),
                   ),
 
-                  Row(
+
+                  /// slider
+
+                  (introController.pageIndex == 0)
+                      ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: Get.height * 0.0072,
+                        // width: Get.width * 0.186,
+                        width: Get.width * 0.2,
+
+                        color: ColorRes.appColor,
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                        height: Get.height * 0.0072,
+                        width: Get.width * 0.2,
+                        // width: Get.width * 0.186,
+                        color:
+                        ColorRes.colorD9D9D9,
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                          height: Get.height * 0.0072,
+                          width: Get.width * 0.2,
+                          // width: Get.width * 0.186,
+                          color:
+                          ColorRes.colorD9D9D9
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                          height: Get.height * 0.0072,
+                          // width: Get.width * 0.186,
+                          width: Get.width * 0.2,
+                          color:
+                          ColorRes.colorD9D9D9
+
+                      ),
+                    ],
+                  )
+                      : (introController.pageIndex == 1)
+                      ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: Get.height * 0.0072,
+                        // width: Get.width * 0.186,
+                        width: Get.width * 0.2,
+
+                        color: ColorRes.appColor,
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                        height: Get.height * 0.0072,
+                        width: Get.width * 0.2,
+                        // width: Get.width * 0.186,
+                        color:
+                        ColorRes.appColor,
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                          height: Get.height * 0.0072,
+                          width: Get.width * 0.2,
+                          // width: Get.width * 0.186,
+                          color:
+                          ColorRes.colorD9D9D9
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                          height: Get.height * 0.0072,
+                          // width: Get.width * 0.186,
+                          width: Get.width * 0.2,
+                          color:
+                          ColorRes.colorD9D9D9
+
+                      ),
+                    ],
+                  )
+                      : (introController.pageIndex == 2)
+                      ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: Get.height * 0.0072,
+                        // width: Get.width * 0.186,
+                        width: Get.width * 0.2,
+
+                        color: ColorRes.appColor,
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                        height: Get.height * 0.0072,
+                        width: Get.width * 0.2,
+                        // width: Get.width * 0.186,
+                        color:
+                        ColorRes.appColor,
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                          height: Get.height * 0.0072,
+                          width: Get.width * 0.2,
+                          // width: Get.width * 0.186,
+                          color:
+                          ColorRes.appColor
+
+                      ),
+                      SizedBox(
+                        width: Get.width * 0.024,
+                      ),
+                      Container(
+                          height: Get.height * 0.0072,
+                          // width: Get.width * 0.186,
+                          width: Get.width * 0.2,
+                          color:
+                          ColorRes.colorD9D9D9
+
+                      ),
+                    ],
+                  )
+                      : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
@@ -184,20 +334,40 @@ class IntroScreen extends StatelessWidget {
                     ],
                   ),
 
+
+
+
                   SizedBox(
                     // height: Get.height * 0.028,
                     height: Get.height * 0.03,
                   ),
+
+                  /// back and next
                   Row(
                     children: [
                       SizedBox(
                         width: Get.width * 0.034,
                       ),
-                      GestureDetector(
+                      (controller.pageIndex == 0)
+                          ? GestureDetector(
                         onTap: () {
-                          introController.carouselController.previousPage(
-                            duration: Duration(milliseconds: 100),
-                          );
+                         Get.back();
+                        },
+                        child: Text(
+                          "Back",
+                          style: overpassRegular(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
+                            textdeco: TextDecoration.underline,
+                          ),
+                        ),
+                      )
+                          : GestureDetector(
+                        onTap: () {
+                          controller.pageIndex--;
+                          controller.pageController.animateToPage(controller.pageIndex, duration: Duration(microseconds: 400), curve: Curves.easeInOut);
+                          controller.update(["intro"]);
                         },
                         child: Text(
                           "Back",
@@ -210,11 +380,28 @@ class IntroScreen extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      GestureDetector(
+                      (controller.pageIndex == 3)
+                          ? GestureDetector(
+                        onTap: () {
+                             Get.to(()=>DashboardScreen());
+                        },
+                        child: Container(
+                          height: Get.height * 0.063,
+                          width: Get.width * 0.186,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: ColorRes.appColor),
+                          child: Text("Finish",
+                              style: overpassRegular(
+                                  fontSize: 16, fontWeight: FontWeight.w600)),
+                        ),
+                      )
+                          : GestureDetector(
                       onTap: () {
-                        introController.carouselController.nextPage(
-                          duration: Duration(milliseconds: 100),
-                        );
+                        controller.pageIndex++;
+                        controller.pageController.animateToPage(controller.pageIndex, duration: Duration(microseconds: 400), curve: Curves.easeInOut);
+                        controller.update(["intro"]);
                       },
                         child: Container(
                           height: Get.height * 0.063,
@@ -228,14 +415,18 @@ class IntroScreen extends StatelessWidget {
                                   fontSize: 16, fontWeight: FontWeight.w600)),
                         ),
                       ),
+
                       SizedBox(
                         width: Get.width * 0.034,
                       ),
                     ],
                   ),
+
                   SizedBox(
                     height: Get.height * 0.049,
                   ),
+
+                  /// skip
                   Row(
                     children: [
                       Spacer(),

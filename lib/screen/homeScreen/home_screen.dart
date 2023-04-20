@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yitaku/common/bottomBar.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -30,9 +29,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      AssetRes.backArrow,
-                      height: 20,
+                    InkWell(
+                      onTap: (){
+                        Get.back();
+                      },
+                      child: Image.asset(
+                        AssetRes.backArrow,
+                        height: 20,
+                      ),
                     ),
                     Text(
                       StringRes.home,

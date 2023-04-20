@@ -1,11 +1,19 @@
 import 'package:carousel_slider/carousel_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 
 class IntroController extends GetxController {
 
-CarouselController carouselController =CarouselController();
+PageController pageController = PageController();
+
+int pageIndex = 0;
+
+onChagePage(int index){
+  pageIndex = index;
+  update(["intro"]);
+}
 
 
   List<String> title = [

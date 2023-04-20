@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/complete_signup/complete_signup_controller.dart';
+import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/screen/passwordReset/passwordResetPage.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -378,7 +379,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                 if (completeSignupController
                                     .formKey.currentState!
                                     .validate()) {
-                                  Get.to(PasswordResetPage());
+                                  Get.to(GoalScreen());
                                   controller.update(["complete"]);
                                 }
                               },
