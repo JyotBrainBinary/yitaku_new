@@ -10,9 +10,9 @@ class AssetRes {
   static const intro3 = "${images}Yuppies - Emails 7.png";
   static const intro4 = "${images}Yuppies - Emails 8 (1).png";
 
-  static const homeScreenImg1 = "${images}homeScreenImg1.png";
-  static const homeScreenImg2 = "${images}homeScreenImg2.png";
-  static const homeScreenImg3 = "${images}homeScreenImg3.png";
+  static const homeScreenImg1 = "${images}images_home.jpg";
+  static const homeScreenImg2 = "${images}images_estate.jpg";
+  static const homeScreenImg3 = "${images}images_kitchen.jpg";
 
 
   ///_____________________ icons _________________________
@@ -27,4 +27,5 @@ class AssetRes {
   static const iconError = "${icons}Icon2.png";
   static const menu = "${icons}menu.png";
   static const backArrow = "${icons}backArrow.png";
+  static const heart = "${icons}Icon.png";
 }
