@@ -27,4 +27,9 @@ class AssetRes {
   static const iconError = "${icons}Icon2.png";
   static const menu = "${icons}menu.png";
   static const backArrow = "${icons}backArrow.png";
+  static const home = "${icons}home.png";
+  static const searchBottom = "${icons}searchBottom.png";
+  static const favorites = "${icons}favorites.png";
+  static const profile = "${icons}profile.png";
+
 }

@@ -75,6 +75,15 @@ class StringRes {
   static const home = "Home";
   static const featuredProperties = "Featured properties";
   static const beThe1stToAcquireOurTopProperties = "Be the 1st to acquire our top properties";
-
   static const allProperties = "All Properties";
+
+  /// ------------------- favorites screen ------------------
+
+static const favorites = "Favorites";
+
+/// ------------------- profile screen ------------------
+  ///
+static const profile = "Profile";
+
+
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/common/bottomBar.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -20,9 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-
             children: [
-
                SizedBox(height: Get.height * 0.03),
 
               ///---------------appbar----------------
@@ -132,7 +131,6 @@ class _HomeScreenState extends State<HomeScreen> {
              ),
 
               ///---------------All Properties-----------
-
               Container(
                 height: 16,
                width: Get.width,
@@ -183,11 +181,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-
+              SizedBox(height: Get.height * 0.03),
             ],
           ),
         ),
       ),
+
     );
   }
 }
