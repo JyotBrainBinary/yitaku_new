@@ -4,9 +4,9 @@ import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 
 class IntroController extends GetxController {
-  int initialIndex= 0;
+
 CarouselController carouselController =CarouselController();
-  bool isChanged =false;
+
 
   List<String> title = [
     StringRes.setUp,
@@ -26,4 +26,5 @@ CarouselController carouselController =CarouselController();
     AssetRes.intro3,
     AssetRes.intro4,
   ];
+
 }

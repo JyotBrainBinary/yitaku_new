@@ -53,7 +53,7 @@ class BlueLoginScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Text(
                             "Login",
-                            style: regular(
+                            style: overpassRegular(
                               color: ColorRes.black,
                               fontSize: 36,
                               fontWeight: FontWeight.w600,
@@ -65,7 +65,7 @@ class BlueLoginScreen extends StatelessWidget {
                         ),
                         Text(
                           StringRes.email,
-                          style: regular(fontSize: 14, color: ColorRes.black),
+                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
                         ),
                         SizedBox(
                           height: Get.height * 0.008,
@@ -123,7 +123,7 @@ class BlueLoginScreen extends StatelessWidget {
                               hintText: StringRes.mailHInt,
 
                               // suffixIcon: Image.asset(AssetRes.iconError,height: 13,width: 13,fit: BoxFit.fill),
-                              hintStyle: regular(
+                              hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
                               suffixIcon: controller.activeField == false
                                   ? Icon(
@@ -186,7 +186,7 @@ class BlueLoginScreen extends StatelessWidget {
                         ),
                         Text(
                           StringRes.password,
-                          style: regular(fontSize: 14, color: ColorRes.black),
+                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
                         ),
                         SizedBox(
                           height: Get.height * 0.008,
@@ -314,7 +314,7 @@ class BlueLoginScreen extends StatelessWidget {
                                     : ColorRes.disableColor,
                               ),
                               child: Text("Login",
-                                  style: regular(
+                                  style: overpassRegular(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 16)),
                             ),
@@ -331,7 +331,7 @@ class BlueLoginScreen extends StatelessWidget {
                             alignment: Alignment.center,
                             child: Text(
                               StringRes.forgot,
-                              style: regular(
+                              style: overpassRegular(
                                 color: ColorRes.black,
                                 fontSize: 17,
                                 textdeco: TextDecoration.underline,
@@ -352,7 +352,7 @@ class BlueLoginScreen extends StatelessWidget {
                             child: Text(
                               StringRes.doNot,
                               // style: TextStyle(decoration: TextDecoration.underline),
-                              style: regular(
+                              style: overpassRegular(
                                 color: ColorRes.black,
                                 fontSize: 17,
                                 textdeco: TextDecoration.underline,
