@@ -46,12 +46,15 @@ class CreateaccountScreen extends StatelessWidget {
                         ),
                         SizedBox(
                           height: Get.height * 0.086,
+
+
+
                         ),
                         Align(
                           alignment: Alignment.center,
                           child: Text(
                             "Create account",
-                            style: regular(
+                            style: overpassRegular(
                               color: ColorRes.black,
                               fontSize: 36,
                               fontWeight: FontWeight.w600,
@@ -63,7 +66,7 @@ class CreateaccountScreen extends StatelessWidget {
                         ),
                         Text(
                           StringRes.email,
-                          style: regular(fontSize: 14, color: ColorRes.black),
+                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
                         ),
                         SizedBox(
                           height: Get.height * 0.008,
@@ -121,7 +124,7 @@ class CreateaccountScreen extends StatelessWidget {
                               hintText: StringRes.mailHInt,
 
                               // suffixIcon: Image.asset(AssetRes.iconError,height: 13,width: 13,fit: BoxFit.fill),
-                              hintStyle: regular(
+                              hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
                               suffixIcon: controller.isActiveEmailField == false
                                   ? Icon(
@@ -184,7 +187,7 @@ class CreateaccountScreen extends StatelessWidget {
                         ),
                         Text(
                           StringRes.password,
-                          style: regular(fontSize: 14, color: ColorRes.black),
+                          style: overpassRegular(fontSize: 14, color: ColorRes.black),
                         ),
                         SizedBox(
                           height: Get.height * 0.016,
@@ -359,7 +362,7 @@ class CreateaccountScreen extends StatelessWidget {
                                     : ColorRes.disableColor,
                               ),
                               child: Text("Sign up",
-                                  style: regular(
+                                  style: overpassRegular(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 16)),
                             ),
