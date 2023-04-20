@@ -28,7 +28,6 @@ class CompleteSignupScreen extends StatelessWidget {
                     builder: (controller) {
                       return Padding(
                         padding: EdgeInsets.only(
-                          // left: Get.width * 0.056, right: Get.width * 0.056
                           left: 16, right: 16,
                         ),
                         child: Column(
@@ -41,7 +40,7 @@ class CompleteSignupScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               child: Image.asset(
                                 AssetRes.yikatuLogo,
-                                height: Get.height * 0.06,
+                                height: Get.height * 0.05,
                                 width: Get.width * 0.9,
                               ),
                             ),
@@ -53,7 +52,7 @@ class CompleteSignupScreen extends StatelessWidget {
                               child: Text(
                                 StringRes.oneLast,
                                 style: semiBold(
-                                    color: ColorRes.black, fontSize: 30),
+                                    color: ColorRes.black, fontSize: 24, fontWeight: FontWeight.w500),
                               ),
                             ),
                             SizedBox(
@@ -374,6 +373,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                     .toList(),
                               ),
                             ),
+
                             GestureDetector(
                               onTap: () {
                                 if (completeSignupController

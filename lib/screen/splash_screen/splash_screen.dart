@@ -14,7 +14,7 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Color(0xff3879E8),
       body: Center(
         child: Image.asset(
-          AssetRes.yikatuLogo,
+          AssetRes.whiteLogo,
           color: ColorRes.white,
           height: Get.height * 0.7,
           width: Get.width * 0.69,

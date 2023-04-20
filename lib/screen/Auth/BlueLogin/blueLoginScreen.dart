@@ -29,7 +29,6 @@ class BlueLoginScreen extends StatelessWidget {
                 builder: (controller) {
                   return Padding(
                     padding: EdgeInsets.only(
-                      // left: Get.width * 0.056, right: Get.width * 0.056
                       left: 16, right: 16,
                     ),
                     child: Column(
@@ -42,10 +41,11 @@ class BlueLoginScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Image.asset(
                             AssetRes.yikatuLogo,
-                            height: Get.height * 0.06,
+                            height: Get.height * 0.08,
                             width: Get.width * 0.9,
                           ),
                         ),
+
                         SizedBox(
                           height: Get.height * 0.086,
                         ),

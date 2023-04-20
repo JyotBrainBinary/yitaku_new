@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                         Text(
                           StringRes.email,
                           style: regular(
-                              fontSize: 14, color: ColorRes.color767676),
+                              fontSize: 14, color: ColorRes.color344056),
                         ),
                         SizedBox(
                           height: Get.height * 0.015,

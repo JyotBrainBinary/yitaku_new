@@ -40,7 +40,7 @@ class CreateaccountScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           child: Image.asset(
                             AssetRes.yikatuLogo,
-                            height: Get.height * 0.06,
+                            height: Get.height * 0.08,
                             width: Get.width * 0.9,
                           ),
                         ),
