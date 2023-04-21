@@ -9,6 +9,7 @@ class ColorRes {
   static const hinttext = Color(0xff64748B);
   static const textfieldBorder = Color(0xffD0D5DD);
   static const error = Color(0xffFDA29B);
+  static const errorIcon = Color(0xffF04438);
   static const skyLight = Color(0xffDBEAFB);
   static const sky = Color(0xff3879E8);
   static const yellowLight = Color(0xffFEF0C7);

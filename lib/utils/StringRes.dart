@@ -17,6 +17,10 @@ class StringRes {
   static const doNot = "Don't have an account? Click here!";
   static const already = "ALREADY HAVE AN ACCOUNT?";
   static const passwordReset = "Password Reset";
+  static const emailError1 = "Please enter text";
+  static const emailError2 = "Please enter valid email";
+  static const passError = "Please enter text";
+  static const passError2 = "Minimum 4 character required";
   static const read = "Read T&Cs";
   static const reset =
       "Enter your email address and we'll send you instruction on how to reset your password.";

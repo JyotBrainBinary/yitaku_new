@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_field.dart';
@@ -33,7 +34,6 @@ class BlueLoginScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         /// ----- top --------
 
                         SizedBox(
@@ -66,9 +66,7 @@ class BlueLoginScreen extends StatelessWidget {
                           height: Get.height * 0.023,
                         ),
 
-
                         /// ----- text field --------
-
 
                         Text(
                           StringRes.email,
@@ -81,120 +79,206 @@ class BlueLoginScreen extends StatelessWidget {
                           height: Get.height * 0.008,
                         ),
 
-                        GetBuilder<BlueLoginController>(
-                          id: "email",
-                          builder: (controller) => TextFormField(
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
+                        // GetBuilder<BlueLoginController>(
+                        //   id: "email",
+                        //   builder: (controller) => TextFormField(
+                        //     autovalidateMode:
+                        //         AutovalidateMode.onUserInteraction,
+                        //     style: overpassRegular(
+                        //         color: ColorRes.fontGrey, fontSize: 16),
+                        //     validator: (value) {
+                        //       if (value.toString().isEmail == false) {
+                        //         // controller.activeField = true;
+                        //
+                        //         return "Please enter valid email";
+                        //       }
+                        //       // controller.activeField = false;
+                        //       // controller.update(["email"]);
+                        //
+                        //       return null;
+                        //     },
+                        //     // onFieldSubmitted: (value) {
+                        //     //   debugPrint("submitted");
+                        //     //   if (controller.formKey.currentState!
+                        //     //       .validate()) {
+                        //     //
+                        //     //     controller.activeField=true;
+                        //     //     controller.update(["email"]);
+                        //     //   }
+                        //     //   else{
+                        //     //     controller.activeField=false;
+                        //     //     controller.update(["email"]);
+                        //     //   }
+                        //     //
+                        //     //
+                        //     // },
+                        //     onChanged: (value) {
+                        //       if (value.toString().isEmail == false) {
+                        //         // controller.activeField = true;
+                        //         controller.activeField = false;
+                        //       } else {
+                        //         controller.activeField = true;
+                        //       }
+                        //       // blueLoginController.isActive= true;
+                        //       /*   if (controller.formKey.currentState!.validate()) {
+                        //       controller.activeField=false;
+                        //     }
+                        //     else{
+                        //       controller.activeField=true;
+                        //     }*/
+                        //       controller.update(["email"]);
+                        //       controller.update(["bluelogintextfield"]);
+                        //     },
+                        //     controller: controller.emailController,
+                        //     decoration: InputDecoration(
+                        //       hintText: StringRes.mailHInt,
+                        //
+                        //       // suffixIcon: Image.asset(AssetRes.iconError,height: 13,width: 13,fit: BoxFit.fill),
+                        //       hintStyle: overpassRegular(
+                        //           fontSize: 16, color: ColorRes.hinttext),
+                        //       suffixIcon: controller.activeField == false
+                        //           ? Icon(
+                        //               Icons.error_outline_outlined,
+                        //               color: Colors.red,
+                        //             )
+                        //           : SizedBox(),
+                        //       disabledBorder: OutlineInputBorder(
+                        //         borderSide: BorderSide(
+                        //           color: ColorRes.textfieldBorder,
+                        //         ),
+                        //         borderRadius:
+                        //             BorderRadius.all(Radius.elliptical(10, 10)),
+                        //       ),
+                        //       border: OutlineInputBorder(
+                        //         borderSide: BorderSide(color: ColorRes.sky),
+                        //         borderRadius:
+                        //             BorderRadius.all(Radius.elliptical(10, 10)),
+                        //       ),
+                        //       focusedBorder: OutlineInputBorder(
+                        //         borderSide: BorderSide(color: ColorRes.sky),
+                        //         borderRadius:
+                        //             BorderRadius.all(Radius.elliptical(10, 10)),
+                        //       ),
+                        //       enabledBorder: OutlineInputBorder(
+                        //         borderSide: BorderSide(
+                        //           color: ColorRes.textfieldBorder,
+                        //         ),
+                        //         borderRadius:
+                        //             BorderRadius.all(Radius.elliptical(10, 10)),
+                        //       ),
+                        //       errorBorder:
+                        //           controller.emailController.text.isEmail ==
+                        //                   false
+                        //               ? OutlineInputBorder(
+                        //                   borderSide: BorderSide(
+                        //                     color: ColorRes.error,
+                        //                     width: 0.6,
+                        //                   ),
+                        //                   borderRadius: BorderRadius.all(
+                        //                       Radius.elliptical(10, 10)),
+                        //                 )
+                        //               : OutlineInputBorder(
+                        //                   borderSide: BorderSide(
+                        //                       color: ColorRes.appColor,
+                        //                       width: 0.6),
+                        //                   borderRadius: BorderRadius.all(
+                        //                       Radius.elliptical(10, 10)),
+                        //                 ),
+                        //       contentPadding:
+                        //           EdgeInsets.only(left: 10, bottom: 9),
+                        //     ),
+                        //   ),
+                        // ),
+
+                        Container(
+                          height: 44,
+                          width: Get.width,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                                color: blueLoginController.blueBorder == true
+                                    ? ColorRes.sky
+                                    : blueLoginController.redBorder == true
+                                        ? ColorRes.error
+                                        : ColorRes.textfieldBorder),
+                          ),
+                          child: TextFormField(
+                            onTap: () {
+                              if (blueLoginController.redBorder == false) {
+                                blueLoginController.blueBorder = true;
+                                controller.update(["bluelogintextfield"]);
+                              }
+                            },
+                            controller: blueLoginController.emailController,
                             style: overpassRegular(
-                                color: ColorRes.fontGrey, fontSize: 16),
-                            validator: (value) {
-                              if (value.toString().isEmail == false) {
-                                // controller.activeField = true;
-
-                                return "Please enter valid email";
-                              }
-                              // controller.activeField = false;
-                              // controller.update(["email"]);
-
-                              return null;
-                            },
-                            // onFieldSubmitted: (value) {
-                            //   debugPrint("submitted");
-                            //   if (controller.formKey.currentState!
-                            //       .validate()) {
-                            //
-                            //     controller.activeField=true;
-                            //     controller.update(["email"]);
-                            //   }
-                            //   else{
-                            //     controller.activeField=false;
-                            //     controller.update(["email"]);
-                            //   }
-                            //
-                            //
-                            // },
-                            onChanged: (value) {
-                              if (value.toString().isEmail == false) {
-                                // controller.activeField = true;
-                                controller.activeField = false;
-                              } else {
-                                controller.activeField = true;
-                              }
-                              // blueLoginController.isActive= true;
-                              /*   if (controller.formKey.currentState!.validate()) {
-                              controller.activeField=false;
-                            }
-                            else{
-                              controller.activeField=true;
-                            }*/
-                              controller.update(["email"]);
-                              controller.update(["bluelogintextfield"]);
-                            },
-                            controller: controller.emailController,
+                                fontSize: 16, color: ColorRes.fontGrey),
                             decoration: InputDecoration(
+                              // contentPadding: EdgeInsets.zero,
+                              border: InputBorder.none,
+                              contentPadding:
+                                  const EdgeInsets.only(left: 10, top: 10),
                               hintText: StringRes.mailHInt,
-
-                              // suffixIcon: Image.asset(AssetRes.iconError,height: 13,width: 13,fit: BoxFit.fill),
                               hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
-                              suffixIcon: controller.activeField == false
+                              suffixIcon: blueLoginController.redBorder == true
                                   ? Icon(
-                                      Icons.error_outline_outlined,
-                                      color: Colors.red,
+                                      Icons.error_outline,
+                                      color: ColorRes.errorIcon,
                                     )
-                                  : SizedBox(),
-                              disabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: ColorRes.textfieldBorder,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
-                              ),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: ColorRes.sky),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: ColorRes.sky),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: ColorRes.textfieldBorder,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
-                              ),
-                              errorBorder:
-                                  controller.emailController.text.isEmail ==
-                                          false
-                                      ? OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: ColorRes.error,
-                                            width: 0.6,
-                                          ),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.elliptical(10, 10)),
-                                        )
-                                      : OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: ColorRes.appColor,
-                                              width: 0.6),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.elliptical(10, 10)),
-                                        ),
-                              contentPadding:
-                                  EdgeInsets.only(left: 10, bottom: 9),
+                                  : const SizedBox(),
                             ),
+                            onChanged: (value) {
+                              controller.update(["bluelogintextfield"]);
+                            },
                           ),
                         ),
-
-
-
-
+                        SizedBox(
+                          height: Get.height * 0.01,
+                        ),
+                        blueLoginController.redBorder == true
+                            ? Text(
+                                blueLoginController.emailError,
+                                style: regular(color: Colors.red),
+                              )
+                            : const SizedBox(),
+                        // ElevatedButton(
+                        //   onPressed: () {
+                        //     if (blueLoginController.emailController.text
+                        //             .trim() ==
+                        //         "") {
+                        //       blueLoginController.emailError =
+                        //           StringRes.emailError1;
+                        //
+                        //       blueLoginController.blueBorder = false;
+                        //       blueLoginController.redBorder = true;
+                        //       controller.update(['bluelogintextfield']);
+                        //     }
+                        //     // else if(EmailValidator.validate(blueLoginController.emailController.text)){
+                        //     //   blueLoginController.emailError = '';
+                        //     //   blueLoginController.blueBorder= false;
+                        //     //   blueLoginController.redBorder = true;
+                        //     //   controller.update(['bluelogintextfield']);
+                        //     // }
+                        //     else if (RegExp(
+                        //             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                        //         .hasMatch(
+                        //             blueLoginController.emailController.text)) {
+                        //
+                        //       blueLoginController.blueBorder = true;
+                        //       blueLoginController.redBorder = false;
+                        //       controller.update(['bluelogintextfield']);
+                        //     } else {
+                        //       blueLoginController.emailError =
+                        //           StringRes.emailError2;
+                        //
+                        //       blueLoginController.blueBorder = false;
+                        //       blueLoginController.redBorder = true;
+                        //       controller.update(['bluelogintextfield']);
+                        //     }
+                        //   },
+                        //   child: const Text(".."),
+                        // ),
                         SizedBox(
                           height: Get.height * 0.023,
                         ),
@@ -208,93 +292,230 @@ class BlueLoginScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.008,
                         ),
-                        TextFormField(
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          validator: (value) {
-                            if (value!.length < 8) {
-                              return "Minimum 8 character required";
-                            }
-                          },
-                          // onChanged: (value) {
-                          //   // blueLoginController.isActive= true;
-                          //
-                          //   controller.update(["bluelogintextfield"]);
-                          //   if (value.toString().isEmail == true) {
-                          //     controller.update(["bluelogintextfield"]);
-                          //   }
-                          // },
-
-                          onChanged: (value) {
-                            if (value.length < 8) {
-                              blueLoginController.activePassField = false;
-                            } else {
-                              blueLoginController.activePassField = true;
-                            }
-
-                            controller.update(["bluelogintextfield"]);
-                          },
-                          onFieldSubmitted: (value) {
-                            debugPrint("submitted");
-                            if (blueLoginController.formKey.currentState!
-                                .validate()) {
-                              controller.update(["bluelogintextfield"]);
-                            }
-                          },
-                          obscureText: true,
-                          obscuringCharacter: "*",
-                          controller: blueLoginController.passwordController,
-                          decoration: InputDecoration(
-                            hintText: StringRes.enterPassword,
-                            hintStyle: TextStyle(
-                                fontSize: 16, color: ColorRes.hinttext),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(color: ColorRes.sky),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            enabled: true,
-                            disabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: ColorRes.textfieldBorder,
-                              ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: ColorRes.sky),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: ColorRes.textfieldBorder),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: ColorRes.error,
-                                width: 0.6,
-                              ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            contentPadding:
-                                EdgeInsets.only(left: 10, bottom: 9),
-                            suffixIcon:
-                                blueLoginController.activePassField == false
-                                    ? Icon(
-                                        Icons.error_outline_outlined,
-                                        color: Colors.red,
-                                      )
-                                    : SizedBox(),
-                          ),
-                        ),
+                        // TextFormField(
+                        //   autovalidateMode: AutovalidateMode.onUserInteraction,
+                        //   validator: (value) {
+                        //     if (value!.length < 8) {
+                        //       return "Minimum 8 character required";
+                        //     }
+                        //   },
+                        //   // onChanged: (value) {
+                        //   //   // blueLoginController.isActive= true;
+                        //   //
+                        //   //   controller.update(["bluelogintextfield"]);
+                        //   //   if (value.toString().isEmail == true) {
+                        //   //     controller.update(["bluelogintextfield"]);
+                        //   //   }
+                        //   // },
+                        //
+                        //   onChanged: (value) {
+                        //     if (value.length < 8) {
+                        //       blueLoginController.activePassField = false;
+                        //     } else {
+                        //       blueLoginController.activePassField = true;
+                        //     }
+                        //
+                        //     controller.update(["bluelogintextfield"]);
+                        //   },
+                        //   onFieldSubmitted: (value) {
+                        //     debugPrint("submitted");
+                        //     if (blueLoginController.formKey.currentState!
+                        //         .validate()) {
+                        //       controller.update(["bluelogintextfield"]);
+                        //     }
+                        //   },
+                        //   obscureText: true,
+                        //   obscuringCharacter: "*",
+                        //   controller: blueLoginController.passwordController,
+                        //   decoration: InputDecoration(
+                        //     hintText: StringRes.enterPassword,
+                        //     hintStyle: const TextStyle(
+                        //         fontSize: 16, color: ColorRes.hinttext),
+                        //     border: const OutlineInputBorder(
+                        //       borderSide: BorderSide(color: ColorRes.sky),
+                        //       borderRadius:
+                        //           BorderRadius.all(Radius.elliptical(10, 10)),
+                        //     ),
+                        //     enabled: true,
+                        //     disabledBorder: const OutlineInputBorder(
+                        //       borderSide: BorderSide(
+                        //         color: ColorRes.textfieldBorder,
+                        //       ),
+                        //       borderRadius:
+                        //           BorderRadius.all(Radius.elliptical(10, 10)),
+                        //     ),
+                        //     focusedBorder: const OutlineInputBorder(
+                        //       borderSide: BorderSide(color: ColorRes.sky),
+                        //       borderRadius:
+                        //           BorderRadius.all(Radius.elliptical(10, 10)),
+                        //     ),
+                        //     enabledBorder: const OutlineInputBorder(
+                        //       borderSide:
+                        //           BorderSide(color: ColorRes.textfieldBorder),
+                        //       borderRadius:
+                        //           BorderRadius.all(Radius.elliptical(10, 10)),
+                        //     ),
+                        //     errorBorder: const OutlineInputBorder(
+                        //       borderSide: BorderSide(
+                        //         color: ColorRes.error,
+                        //         width: 0.6,
+                        //       ),
+                        //       borderRadius:
+                        //           BorderRadius.all(Radius.elliptical(10, 10)),
+                        //     ),
+                        //     contentPadding:
+                        //         const EdgeInsets.only(left: 10, bottom: 9),
+                        //     suffixIcon:
+                        //         blueLoginController.activePassField == false
+                        //             ? const Icon(
+                        //                 Icons.error_outline_outlined,
+                        //                 color: Colors.red,
+                        //               )
+                        //             : const SizedBox(),
+                        //   ),
+                        // ),
                         //               controller.isPassError == true
                         //                   ? Text("Please enter some text")
                         //                   : SizedBox(),
+
+                        Container(
+                          height: 44,
+                          width: Get.width,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                                color: blueLoginController.blueBorderPass ==
+                                        true
+                                    ? ColorRes.sky
+                                    : blueLoginController.redBorderPass == true
+                                        ? ColorRes.error
+                                        : ColorRes.textfieldBorder),
+                          ),
+                          child: TextFormField(
+                            onTap: () {
+                              if (blueLoginController.redBorderPass == false) {
+                                blueLoginController.blueBorderPass = true;
+                                if (blueLoginController.emailController.text
+                                        .trim() ==
+                                    "") {
+                                  blueLoginController.emailError =
+                                      StringRes.emailError1;
+
+                                  blueLoginController.blueBorder = false;
+                                  blueLoginController.redBorder = true;
+                                  controller.update(['bluelogintextfield']);
+                                } else if (RegExp(
+                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                    .hasMatch(blueLoginController
+                                        .emailController.text)) {
+                                  blueLoginController.blueBorder = true;
+                                  blueLoginController.redBorder = false;
+                                  controller.update(['bluelogintextfield']);
+                                } else {
+                                  blueLoginController.emailError =
+                                      StringRes.emailError2;
+
+                                  blueLoginController.blueBorder = false;
+                                  blueLoginController.redBorder = true;
+                                  controller.update(['bluelogintextfield']);
+                                }
+
+                                controller.update(["bluelogintextfield"]);
+                              }
+                            },
+                            controller: blueLoginController.passwordController,
+                            style: overpassRegular(
+                                fontSize: 16, color: ColorRes.fontGrey),
+                            decoration: InputDecoration(
+                              // contentPadding: EdgeInsets.zero,
+                              border: InputBorder.none,
+                              contentPadding:
+                                  const EdgeInsets.only(left: 10, top: 10),
+                              hintText: "*****",
+                              hintStyle: overpassRegular(
+                                  fontSize: 16, color: ColorRes.hinttext),
+                              suffixIcon:
+                                  blueLoginController.redBorderPass == true
+                                      ? Icon(
+                                          Icons.error_outline,
+                                          color: ColorRes.errorIcon,
+                                        )
+                                      : const SizedBox(),
+                            ),
+                            onChanged: (value) {
+                              controller.update(["bluelogintextfield"]);
+                            },
+                          ),
+                        ),
+
                         SizedBox(
                           height: Get.height * 0.046,
+                        ),
+                        blueLoginController.redBorderPass == true
+                            ? Text(
+                                blueLoginController.passError,
+                                style: regular(color: Colors.red),
+                              )
+                            : const SizedBox(),
+
+                        SizedBox(
+                          height: Get.height * 0.046,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            if (blueLoginController.passwordController.text
+                                    .trim() ==
+                                "") {
+                              blueLoginController.passError =
+                                  StringRes.passError;
+
+                              blueLoginController.blueBorderPass = false;
+                              blueLoginController.redBorderPass = true;
+                              controller.update(['bluelogintextfield']);
+                            }
+                            else if (blueLoginController.passwordController.text.length < 4
+
+                                ) {
+                              blueLoginController.passError =
+                                  StringRes.passError2;
+
+                              blueLoginController.blueBorderPass = false;
+                              blueLoginController.redBorderPass = true;
+                              controller.update(['bluelogintextfield']);
+                            }
+                            else if (blueLoginController.emailController.text
+                                .trim() ==
+                                "") {
+                              blueLoginController.emailError =
+                                  StringRes.emailError1;
+
+                              blueLoginController.blueBorder = false;
+                              blueLoginController.redBorder = true;
+                              controller.update(['bluelogintextfield']);
+                            } else if (RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                .hasMatch(blueLoginController
+                                .emailController.text)) {
+                              blueLoginController.blueBorder = true;
+                              blueLoginController.redBorder = false;
+                              controller.update(['bluelogintextfield']);
+                            } else {
+                              blueLoginController.emailError =
+                                  StringRes.emailError2;
+
+                              blueLoginController.blueBorder = false;
+                              blueLoginController.redBorder = true;
+                              controller.update(['bluelogintextfield']);
+                            }
+
+                            /*else {
+                              blueLoginController.blueBorderPass = true;
+                              blueLoginController.redBorderPass = false;
+                              controller.update(['bluelogintextfield']);
+                            }*/
+                          },
+                          child: const Text(".."),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -302,10 +523,30 @@ class BlueLoginScreen extends StatelessWidget {
                                     .emailController.text.isNotEmpty &&
                                 blueLoginController
                                     .passwordController.text.isNotEmpty) {
-                              if (blueLoginController.formKey.currentState!
-                                  .validate()) {
-                                Get.to(GoalScreen());
-                                controller.update(["bluelogintextfield"]);
+                              if (blueLoginController.passwordController.text
+                                  .trim() ==
+                                  "") {
+                                blueLoginController.passError =
+                                    StringRes.passError;
+
+                                blueLoginController.blueBorderPass = false;
+                                blueLoginController.redBorderPass = true;
+                                controller.update(['bluelogintextfield']);
+                              }
+                              else if (blueLoginController.passwordController.text.length < 4
+
+                              ) {
+                                blueLoginController.passError =
+                                    StringRes.passError2;
+
+                                blueLoginController.blueBorderPass = false;
+                                blueLoginController.redBorderPass = true;
+                                controller.update(['bluelogintextfield']);
+                              }
+                              else {
+                                blueLoginController.blueBorderPass = true;
+                                blueLoginController.redBorderPass = false;
+                                controller.update(['bluelogintextfield']);
                               }
                             } else
                               return null;
@@ -339,7 +580,7 @@ class BlueLoginScreen extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Get.to(PasswordResetPage());
+                            Get.to(const PasswordResetPage());
                           },
                           child: Align(
                             alignment: Alignment.center,
@@ -369,7 +610,7 @@ class BlueLoginScreen extends StatelessWidget {
 
                         GestureDetector(
                           onTap: () {
-                            Get.to(CreateaccountScreen());
+                            Get.to(const CreateaccountScreen());
                           },
                           child: Align(
                             alignment: Alignment.center,

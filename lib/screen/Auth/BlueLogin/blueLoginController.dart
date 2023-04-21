@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BlueLoginController extends GetxController{
-  bool boxColor = false;
+  // bool boxColor = false;
   bool isPassError=false;
-  bool isEmailError=false;
+  // bool isEmailError=false;
+bool blueBorder =false;
+bool redBorder =false;
+bool redBorderPass =false;
+bool  blueBorderPass =false;
 
 
   bool isActive =false;
 
-
+String emailError ="";
+String passError ="";
   bool activeField =true;
 
   bool activePassField =true;
