@@ -10,10 +10,10 @@ PageController pageController = PageController();
 
 int pageIndex = 0;
 
-onChagePage(int index){
-  pageIndex = index;
-  update(["intro"]);
-}
+// onChagePage(int index){
+//   pageIndex = index;
+//   update(["intro"]);
+// }
 
 
   List<String> title = [

@@ -49,13 +49,13 @@ class GoalScreen extends StatelessWidget {
                 },
                 child: Container(
                   width: Get.width,
-                  padding: const EdgeInsets.only(
-                      left: 10, right: 20, top: 25, bottom: 25),
+padding: EdgeInsets.only(top: 29,bottom: 25),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: ColorRes.appColor)),
+                      border: Border.all(color: ColorRes.stroke)),
                   child: Row(
                     children: [
+                       SizedBox(width: Get.width * 0.05),
                       Image.asset(AssetRes.searchHome, height: 50),
                       const SizedBox(width: 20),
                       Column(
@@ -75,7 +75,7 @@ class GoalScreen extends StatelessWidget {
                             child: Text(
                               StringRes.searchDetail,
                               style: overpassRegular(
-                                  color: ColorRes.appColor, fontSize: 14),
+                                  color: ColorRes.stroke, fontSize: 16),
                             ),
                           ),
                         ],
@@ -85,6 +85,9 @@ class GoalScreen extends StatelessWidget {
                         AssetRes.arrow,
                         height: 20,
                       ),
+                      SizedBox(width: Get.width * 0.04),
+
+
                     ],
                   ),
                 ),
@@ -97,13 +100,15 @@ class GoalScreen extends StatelessWidget {
                 },
                 child: Container(
                   width: Get.width,
-                  padding: const EdgeInsets.only(
-                      left: 20, right: 20, top: 25, bottom: 25),
+                  padding: EdgeInsets.only(top: 29,bottom: 25),
+
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: ColorRes.appColor)),
+                      border: Border.all(color: ColorRes.stroke)),
                   child: Row(
                     children: [
+                      SizedBox(width: Get.width * 0.05),
+
                       Image.asset(AssetRes.sellOrRent, height: 35),
                       const SizedBox(width: 20),
                       Column(
@@ -121,17 +126,19 @@ class GoalScreen extends StatelessWidget {
                           SizedBox(
                               width: Get.width * 0.35,
                               child: Text(
-                                StringRes.sellOrRentDetail,
+                                StringRes.sellOrRentDetail,textAlign: TextAlign.start,
+
                                 style: overpassRegular(
-                                    color: ColorRes.appColor, fontSize: 14),
+                                    color: ColorRes.stroke, fontSize: 16  ,  ),
                               ))
                         ],
                       ),
-                      const Spacer(),
+                    Spacer(),
                       Image.asset(
                         AssetRes.arrow,
                         height: 20,
                       ),
+                      SizedBox(width: Get.width * 0.04),
                     ],
                   ),
                 ),

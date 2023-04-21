@@ -18,9 +18,10 @@ class IntroScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
+
         body: Padding(
           padding:
-              EdgeInsets.only(right: Get.width * 0.03, left: Get.width * 0.03),
+              EdgeInsets.only(right: Get.width * 0.05, left: Get.width * 0.05),
           child: GetBuilder<IntroController>(
             id: "intro",
             builder: (controller) {
@@ -400,7 +401,8 @@ class IntroScreen extends StatelessWidget {
                           : GestureDetector(
                       onTap: () {
                         controller.pageIndex++;
-                        controller.pageController.animateToPage(controller.pageIndex, duration: Duration(microseconds: 400), curve: Curves.easeInOut);
+                        // controller.pageController.animateToPage(controller.pageIndex, duration: Duration(microseconds: 400), curve: Curves.easeInOut);
+                        controller.pageController.animateToPage(controller.pageIndex , duration: Duration(microseconds: 400), curve: Curves.easeInOut);
                         controller.update(["intro"]);
                       },
                         child: Container(
@@ -432,7 +434,17 @@ class IntroScreen extends StatelessWidget {
                       Spacer(),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: Text(
+                        child:
+                           controller.pageIndex ==3?
+                        Text(
+              "",
+              style: overpassRegular(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: Colors.black,
+              textdeco: TextDecoration.underline,
+              ),
+              )    :Text(
                           StringRes.skip,
                           style: overpassRegular(
                             fontSize: 12,

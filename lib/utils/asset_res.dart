@@ -8,7 +8,7 @@ class AssetRes {
   static const whiteLogo = "${images}whiteLogo.png";
 
   static const intro1 = "${images}Yuppies - Emails 5.png";
-  static const intro2 = "${images}Yuppies - Emails 6.png";
+  static const intro2 = "${images}Yuppies - Emails 6 (1).png";
   static const intro3 = "${images}Yuppies - Emails 7.png";
   static const intro4 = "${images}Yuppies - Emails 8 (1).png";
 

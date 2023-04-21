@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yitaku/screen/Auth/BlueLogin/blueLoginScreen.dart';
-import 'package:yitaku/screen/loginpage_new/login_new.dart';
+import 'package:yitaku/screen/intro_screen/intro_screen.dart';
 import 'package:yitaku/screen/splash_screen/splash_screen.dart';
+
+import 'screen/goal_screen/goal_screen.dart';
 
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Yitaku',
-      home: LoginPageNew(),
+      home: SplashScreen(),
     );
   }
 }

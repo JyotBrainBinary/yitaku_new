@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: overpassRegular(
                           fontWeight: FontWeight.w500,
                           color: ColorRes.fontGrey,
-                          fontSize: 18),
+                          fontSize: 20),
                     ),
                     Text(
                       StringRes.beThe1stToAcquireOurTopProperties,
@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       "Maisonette   Naxxar",
                       style: overpassRegular(
                           color: ColorRes.fontGrey,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w600,fontSize: 16),
                     ),
                     Text(
                       "2 bedrooms, this house is perfect for a little family ",
@@ -198,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       "Auto-layout explained",
                       style: overpassRegular(
                           color: ColorRes.fontGrey,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w600,fontSize: 16),
                     ),
                     Text(
                       "Auto layout is a constraint-based layout system to create an adaptive UI.",
@@ -213,14 +213,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           "199 000 €",
                           style: overpassRegular(
                               color: ColorRes.fontGrey,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w600,fontSize: 14),
                         ),
                         SizedBox(width: 15),
                         Text(
                           "2 Bedrooms",
                           style: overpassRegular(
                               color: ColorRes.fontGrey,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w600,fontSize: 14),
                         ),
                       ],
                     ),
@@ -247,7 +247,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: overpassRegular(
                           fontWeight: FontWeight.w500,
                           color: ColorRes.fontGrey,
-                          fontSize: 18),
+                          fontSize: 20),
                     ),
                     Text(
                       StringRes.beThe1stToAcquireOurTopProperties,
