@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/common/widget/text_field.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/Auth/BlueLogin/blueLoginController.dart';
 import 'package:yitaku/screen/Auth/Sign%20Up/signUpScreen.dart';
@@ -28,13 +29,13 @@ class BlueLoginScreen extends StatelessWidget {
                 id: "bluelogintextfield",
                 builder: (controller) {
                   return Padding(
-                    padding: EdgeInsets.only(
-                      left: 16,
-                      right: 16,
-                    ),
+                    padding: const EdgeInsets.only(left: 16, right: 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+
+                        /// ----- top --------
+
                         SizedBox(
                           height: Get.height * 0.062,
                         ),
@@ -53,7 +54,7 @@ class BlueLoginScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.center,
                           child: Text(
-                            "Login",
+                            StringRes.login,
                             style: overpassRegular(
                               color: ColorRes.black,
                               fontSize: 36,
@@ -64,6 +65,11 @@ class BlueLoginScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.023,
                         ),
+
+
+                        /// ----- text field --------
+
+
                         Text(
                           StringRes.email,
                           style: regular(
@@ -74,6 +80,7 @@ class BlueLoginScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.008,
                         ),
+
                         GetBuilder<BlueLoginController>(
                           id: "email",
                           builder: (controller) => TextFormField(
@@ -140,26 +147,24 @@ class BlueLoginScreen extends StatelessWidget {
                               disabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: ColorRes.textfieldBorder,
-
                                 ),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: ColorRes.sky),
+                                borderSide: BorderSide(color: ColorRes.sky),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: ColorRes.sky),
+                                borderSide: BorderSide(color: ColorRes.sky),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                    color: ColorRes.textfieldBorder,),
+                                  color: ColorRes.textfieldBorder,
+                                ),
                                 borderRadius:
                                     BorderRadius.all(Radius.elliptical(10, 10)),
                               ),
@@ -186,6 +191,9 @@ class BlueLoginScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
+
+
 
                         SizedBox(
                           height: Get.height * 0.023,
@@ -240,8 +248,7 @@ class BlueLoginScreen extends StatelessWidget {
                             hintStyle: TextStyle(
                                 fontSize: 16, color: ColorRes.hinttext),
                             border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: ColorRes.sky),
+                              borderSide: BorderSide(color: ColorRes.sky),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
@@ -254,14 +261,13 @@ class BlueLoginScreen extends StatelessWidget {
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: ColorRes.sky),
+                              borderSide: BorderSide(color: ColorRes.sky),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: ColorRes.textfieldBorder),
+                              borderSide:
+                                  BorderSide(color: ColorRes.textfieldBorder),
                               borderRadius:
                                   BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
@@ -350,7 +356,7 @@ class BlueLoginScreen extends StatelessWidget {
                                 ),
                                 Container(
                                   height: 1.5,
-                                  width: Get.width * 0.34,
+                                  width: 130,
                                   color: ColorRes.fontGrey,
                                 ),
                               ],
@@ -381,7 +387,7 @@ class BlueLoginScreen extends StatelessWidget {
                                 ),
                                 Container(
                                   height: 1.5,
-                                  width: Get.width * 0.65,
+                                  width: 260,
                                   color: ColorRes.fontGrey,
                                 ),
                               ],

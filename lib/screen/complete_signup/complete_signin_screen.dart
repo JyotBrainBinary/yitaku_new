@@ -51,8 +51,8 @@ class CompleteSignupScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               child: Text(
                                 StringRes.oneLast,
-                                style: semiBold(
-                                    color: ColorRes.black, fontSize: 24, fontWeight: FontWeight.w500),
+                                style: overpassRegular(
+                                    color: ColorRes.fontGrey, fontSize: 24, fontWeight: FontWeight.w500),
                               ),
                             ),
                             SizedBox(
@@ -75,6 +75,8 @@ class CompleteSignupScreen extends StatelessWidget {
                                   return "Please enter your name!";
                                 }
                               },
+                              style: overpassRegular(
+                                  color: ColorRes.fontGrey, fontSize: 16),
                               onChanged: (value) {
                                 if (value.isEmpty) {
                                   completeSignupController.isNameActive = false;
@@ -100,29 +102,28 @@ class CompleteSignupScreen extends StatelessWidget {
                                     fontSize: 16, color: ColorRes.hinttext),
                                 border: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: ColorRes.appColor, width: 0.6),
+                                      color: ColorRes.sky),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
                                 enabled: true,
                                 disabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.grey,
-                                    width: 0.6,
+                                    color: ColorRes.textfieldBorder,
                                   ),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: ColorRes.appColor, width: 0.6),
+                                      color: ColorRes.sky),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: ColorRes.textfieldBorder,
-                                      width: 0.6),
+                                  ),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
@@ -166,6 +167,8 @@ class CompleteSignupScreen extends StatelessWidget {
                                   return "Please enter last name!";
                                 }
                               },
+                              style: overpassRegular(
+                                  color: ColorRes.fontGrey, fontSize: 16),
                               onChanged: (value) {
                                 if (value.isEmpty) {
                                   completeSignupController.isSurnameActive =
@@ -189,33 +192,31 @@ class CompleteSignupScreen extends StatelessWidget {
                                   completeSignupController.surnameController,
                               decoration: InputDecoration(
                                 hintText: StringRes.yourLast,
-                                hintStyle: TextStyle(
+                                hintStyle: const TextStyle(
                                     fontSize: 16, color: ColorRes.hinttext),
-                                border: OutlineInputBorder(
+                                border: const OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: ColorRes.appColor, width: 0.6),
+                                      color: ColorRes.sky,),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
                                 enabled: true,
                                 disabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    color: Colors.grey,
-                                    width: 0.6,
+                                    color: ColorRes.textfieldBorder,
                                   ),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: ColorRes.appColor, width: 0.6),
+                                      color: ColorRes.sky, ),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: ColorRes.textfieldBorder,
-                                      width: 0.6),
+                                      color: ColorRes.textfieldBorder,),
                                   borderRadius: BorderRadius.all(
                                       Radius.elliptical(10, 10)),
                                 ),
@@ -249,7 +250,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                   fontSize: 14, color: ColorRes.color344056),
                             ),
                             SizedBox(
-                              height: Get.height * 0.023,
+                              height: Get.height * 0.012,
                             ),
                             // SizedBox(
                             //   height: Get.height * 0.117,
@@ -318,42 +319,43 @@ class CompleteSignupScreen extends StatelessWidget {
                               child: DropdownButtonFormField(
                                 icon: Padding(
                                   padding: const EdgeInsets.only(right: 19.5),
-                                  child: Image.asset("assets/icons/Icon.png"),
+                                  child: Icon(Icons.keyboard_arrow_down_rounded, color: ColorRes.fontGrey,),
                                 ),
                                 onChanged: (String? value) {
                                   completeSignupController.dropdownValue =
                                       value!;
                                   controller.update(["complete"]);
                                 },
-                                decoration: const InputDecoration(
+                                style: overpassRegular(
+                                    color: ColorRes.fontGrey, fontSize: 16),
+                                decoration:  InputDecoration(
                                   hintText: "Select team member",
-                                  hintStyle: TextStyle(
+                                  hintStyle: overpassRegular(
                                       fontSize: 16, color: ColorRes.hinttext),
                                   border: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: ColorRes.appColor, width: 0.6),
+                                        color: ColorRes.sky),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(10, 10)),
                                   ),
                                   enabled: true,
                                   disabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Colors.grey,
-                                      width: 0.6,
+                                      color: ColorRes.textfieldBorder,
                                     ),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(10, 10)),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: ColorRes.appColor, width: 0.6),
+                                        color: ColorRes.sky),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(10, 10)),
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                         color: ColorRes.textfieldBorder,
-                                        width: 0.6),
+                                        ),
                                     borderRadius: BorderRadius.all(
                                         Radius.elliptical(10, 10)),
                                   ),
@@ -376,7 +378,9 @@ class CompleteSignupScreen extends StatelessWidget {
                                     .toList(),
                               ),
                             ),
-
+                            SizedBox(
+                              height: Get.height * 0.03,
+                            ),
                             GestureDetector(
                               onTap: () {
                                 if (completeSignupController

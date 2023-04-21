@@ -5,23 +5,21 @@ import 'package:yitaku/utils/colorRes.dart';
 
 Widget textFild(TextEditingController controller, String hintText, bool boxColor, String text ){
   return Container(
-    height: Get.height * 0.05,
+    height: 44,
     width: Get.width,
     alignment: Alignment.center,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(5),
-      border: Border.all(color: boxColor==true ? ColorRes.appColor : Colors.grey.withOpacity(0.4)),
+      border: Border.all(color: boxColor==true ? ColorRes.sky : ColorRes.textfieldBorder),
     ),
     child: TextField(
-
-
       controller: controller,
+      style: overpassRegular(fontSize: 16, color: ColorRes.fontGrey),
       decoration: InputDecoration(
-
         border: InputBorder.none,
-        contentPadding: EdgeInsets.only(left: 10, bottom: 9),
+        contentPadding: const EdgeInsets.only(left: 10, bottom: 9),
         hintText: hintText,
-        hintStyle: regular(fontSize: 17, color: Colors.grey),
+        hintStyle: overpassRegular(fontSize: 16, color: ColorRes.hinttext),
       ),
     ),
   );

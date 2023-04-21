@@ -35,4 +35,6 @@ class AssetRes {
   static const profile = "${icons}profile.png";
 
   static const heart = "${icons}Icon.png";
+  static const downArrow = "${icons}downArrow.png";
+
 }

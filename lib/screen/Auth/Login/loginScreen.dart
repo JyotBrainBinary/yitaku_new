@@ -4,7 +4,6 @@ import 'package:yitaku/screen/Auth/Login/loginController.dart';
 import 'package:yitaku/screen/Auth/Sign%20Up/signUpScreen.dart';
 import 'package:yitaku/screen/passwordReset/passwordResetPage.dart';
 import 'package:yitaku/utils/colorRes.dart';
-
 import '../../../common/widget/text_style.dart';
 import '../../../utils/StringRes.dart';
 
@@ -61,7 +60,7 @@ class LoginScreen extends StatelessWidget {
 
                           },
                           controller: loginController.emailController,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: StringRes.enterEmail,
 
                             enabled: true,
