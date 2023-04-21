@@ -18,7 +18,7 @@ class BlueLoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlueLoginController blueLoginController = Get.put(BlueLoginController());
+    LoginNewController blueLoginController = Get.put(LoginNewController());
 
     return SafeArea(
       child: Scaffold(
@@ -26,7 +26,7 @@ class BlueLoginScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Form(
             key: blueLoginController.formKey,
-            child: GetBuilder<BlueLoginController>(
+            child: GetBuilder<LoginNewController>(
                 id: "bluelogintextfield",
                 builder: (controller) {
                   return Padding(
@@ -422,6 +422,35 @@ class BlueLoginScreen extends StatelessWidget {
                                 }
 
                                 controller.update(["bluelogintextfield"]);
+                              } else if (blueLoginController.redBorderPass ==
+                                  true) {
+                                blueLoginController.blueBorderPass = false;
+                                if (blueLoginController.emailController.text
+                                        .trim() ==
+                                    "") {
+                                  blueLoginController.emailError =
+                                      StringRes.emailError1;
+
+                                  blueLoginController.blueBorder = false;
+                                  blueLoginController.redBorder = true;
+                                  controller.update(['bluelogintextfield']);
+                                } else if (RegExp(
+                                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                    .hasMatch(blueLoginController
+                                        .emailController.text)) {
+                                  blueLoginController.blueBorder = true;
+                                  blueLoginController.redBorder = false;
+                                  controller.update(['bluelogintextfield']);
+                                } else {
+                                  blueLoginController.emailError =
+                                      StringRes.emailError2;
+
+                                  blueLoginController.blueBorder = false;
+                                  blueLoginController.redBorder = true;
+                                  controller.update(['bluelogintextfield']);
+                                }
+
+                                controller.update(["bluelogintextfield"]);
                               }
                             },
                             controller: blueLoginController.passwordController,
@@ -462,69 +491,51 @@ class BlueLoginScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.046,
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            if (blueLoginController.passwordController.text
-                                    .trim() ==
-                                "") {
-                              blueLoginController.passError =
-                                  StringRes.passError;
-
-                              blueLoginController.blueBorderPass = false;
-                              blueLoginController.redBorderPass = true;
-                              controller.update(['bluelogintextfield']);
-                            }
-                            else if (blueLoginController.passwordController.text.length < 4
-
-                                ) {
-                              blueLoginController.passError =
-                                  StringRes.passError2;
-
-                              blueLoginController.blueBorderPass = false;
-                              blueLoginController.redBorderPass = true;
-                              controller.update(['bluelogintextfield']);
-                            }
-                            else if (blueLoginController.emailController.text
-                                .trim() ==
-                                "") {
-                              blueLoginController.emailError =
-                                  StringRes.emailError1;
-
-                              blueLoginController.blueBorder = false;
-                              blueLoginController.redBorder = true;
-                              controller.update(['bluelogintextfield']);
-                            } else if (RegExp(
-                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                .hasMatch(blueLoginController
-                                .emailController.text)) {
-                              blueLoginController.blueBorder = true;
-                              blueLoginController.redBorder = false;
-                              controller.update(['bluelogintextfield']);
-                            } else {
-                              blueLoginController.emailError =
-                                  StringRes.emailError2;
-
-                              blueLoginController.blueBorder = false;
-                              blueLoginController.redBorder = true;
-                              controller.update(['bluelogintextfield']);
-                            }
-
-                            /*else {
-                              blueLoginController.blueBorderPass = true;
-                              blueLoginController.redBorderPass = false;
-                              controller.update(['bluelogintextfield']);
-                            }*/
-                          },
-                          child: const Text(".."),
-                        ),
-                        GestureDetector(
+                      blueLoginController.emailController.text.isNotEmpty && blueLoginController.passwordController.text.isNotEmpty?  GestureDetector(
                           onTap: () {
-                            if (blueLoginController
-                                    .emailController.text.isNotEmpty &&
-                                blueLoginController
-                                    .passwordController.text.isNotEmpty) {
+                             if(blueLoginController.redBorder ==false && blueLoginController.redBorderPass ==false){
+
+
+                               Get.to(GoalScreen());
+                             }
+                             else{
+
+
+
+                             }
+                            if (blueLoginController.navigateEmail == false &&
+                                blueLoginController.navigatePass == false) {
+                              if (blueLoginController.emailController.text
+                                      .trim() ==
+                                  "") {
+                                blueLoginController.emailError =
+                                    StringRes.emailError1;
+
+                                blueLoginController.blueBorder = false;
+                                blueLoginController.redBorder = true;
+                                controller.update(['bluelogintextfield']);
+                              } else if (RegExp(
+                                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                  .hasMatch(blueLoginController
+                                      .emailController.text)) {
+                                blueLoginController.blueBorder = true;
+                                blueLoginController.redBorder = false;
+                                blueLoginController.navigateEmail = true;
+
+                                controller.update(['bluelogintextfield']);
+                              } else {
+                                blueLoginController.emailError =
+                                    StringRes.emailError2;
+
+                                blueLoginController.blueBorder = false;
+                                blueLoginController.redBorder = true;
+                                controller.update(['bluelogintextfield']);
+                              }
+
+                              controller.update(["bluelogintextfield"]);
+
                               if (blueLoginController.passwordController.text
-                                  .trim() ==
+                                      .trim() ==
                                   "") {
                                 blueLoginController.passError =
                                     StringRes.passError;
@@ -532,10 +543,9 @@ class BlueLoginScreen extends StatelessWidget {
                                 blueLoginController.blueBorderPass = false;
                                 blueLoginController.redBorderPass = true;
                                 controller.update(['bluelogintextfield']);
-                              }
-                              else if (blueLoginController.passwordController.text.length < 4
-
-                              ) {
+                              } else if (blueLoginController
+                                      .passwordController.text.length <
+                                  4  ) {
                                 blueLoginController.passError =
                                     StringRes.passError2;
 
@@ -546,12 +556,19 @@ class BlueLoginScreen extends StatelessWidget {
                               else {
                                 blueLoginController.blueBorderPass = true;
                                 blueLoginController.redBorderPass = false;
+                                blueLoginController.navigatePass = true;
                                 controller.update(['bluelogintextfield']);
                               }
-                            } else
+
+                              controller.update(["bluelogintextfield"]);
+                            }
+                            else if (blueLoginController.navigatePass ==true && blueLoginController.navigateEmail==true) {
+                              Get.to(GoalScreen());
+                              controller.update(["bluelogintextfield"]);
+                            }
+                            else
                               return null;
 
-                            controller.update(["bluelogintextfield"]);
                           },
                           child: Align(
                             alignment: Alignment.center,
@@ -574,7 +591,23 @@ class BlueLoginScreen extends StatelessWidget {
                                       fontSize: 16)),
                             ),
                           ),
+                        ):Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          height: Get.height * 0.063,
+                          width: Get.width * 0.32,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: ColorRes.disableColor,
+                          ),
+                          child: Text("Login",
+                              style: overpassRegular(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16)),
                         ),
+                      ),
+
                         SizedBox(
                           height: Get.height * 0.046,
                         ),
