@@ -20,6 +20,8 @@ class AssetRes {
   ///_____________________ icons _________________________
 
   static const searchHome = "${icons}searchHome.png";
+  static const downList = "${icons}downList.png";
+  static const jalebi = "${icons}image 5 (1).png";
   static const sellOrRent = "${icons}sellOrRent.png";
   static const arrow = "${icons}arrow.png";
   static const plusRound = "${icons}plusRound.png";

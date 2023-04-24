@@ -20,7 +20,7 @@ class StringRes {
   static const emailError1 = "Please enter text";
   static const emailError2 = "Please enter valid email";
   static const passError = "Please enter text";
-  static const passError2 = "Minimum 4 character required";
+  static const passError2 = "Minimum 8 character required";
   static const read = "Read T&Cs";
   static const reset =
       "Enter your email address and we'll send you instruction on how to reset your password.";
@@ -72,6 +72,7 @@ class StringRes {
   static const browseListingsDetail =
       "Not ready to list? Use Yitaku to browse properties and use its other features.";
   static const selectASellerType = "Select a seller type";
+  static const selectTeamMember = "Select team member";
 
 
   /// ------------------ home Screen -------------

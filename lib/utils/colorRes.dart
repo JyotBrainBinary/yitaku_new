@@ -16,6 +16,7 @@ class ColorRes {
   static const sky = Color(0xff3879E8);
   static const yellowLight = Color(0xffFEF0C7);
   static const yellow = Color(0xffDC6803);
+  static const blue = Color(0xff2744A0);
 
   ///---------------------- code ------------------
 

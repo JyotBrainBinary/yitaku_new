@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:yitaku/common/widget/logo.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/dashbord/dashboard_screen.dart';
+import 'package:yitaku/screen/homeScreen/home_screen.dart';
 import 'package:yitaku/screen/intro_screen/intro_controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -444,15 +445,20 @@ class IntroScreen extends StatelessWidget {
               color: Colors.black,
               textdeco: TextDecoration.underline,
               ),
-              )    :Text(
-                          StringRes.skip,
-                          style: overpassRegular(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black,
-                            textdeco: TextDecoration.underline,
+              )    :GestureDetector(
+                             onTap: () {
+                               Get.to(DashboardScreen());
+                             },
+                child: Text(
+                            StringRes.skip,
+                            style: overpassRegular(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                              textdeco: TextDecoration.underline,
+                            ),
                           ),
-                        ),
+              ),
                       ),
                       SizedBox(
                         width: Get.width * 0.034,

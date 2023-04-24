@@ -74,120 +74,55 @@ class CreateaccountScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.008,
                         ),
-                        GetBuilder<CreateAccountController>(
-                          id: "createEmail",
-                          builder: (controller) => TextFormField(
-                            autovalidateMode:
-                                AutovalidateMode.onUserInteraction,
-                            style: overpassRegular(
-                                color: ColorRes.fontGrey, fontSize: 16),
-                            validator: (value) {
-                              if (value.toString().isEmail == false) {
-                                // controller.activeField = true;
-
-                                return "Please enter valid email";
-                              }
-                              // controller.activeField = false;
-                              // controller.update(["email"]);
-
-                              return null;
-                            },
-                            // onFieldSubmitted: (value) {
-                            //   debugPrint("submitted");
-                            //   if (controller.formKey.currentState!
-                            //       .validate()) {
-                            //
-                            //     controller.activeField=true;
-                            //     controller.update(["email"]);
-                            //   }
-                            //   else{
-                            //     controller.activeField=false;
-                            //     controller.update(["email"]);
-                            //   }
-                            //
-                            //
-                            // },
-                            onChanged: (value) {
-                              if (value.toString().isEmail == false) {
-                                // controller.activeField = true;
-                                controller.isActiveEmailField = false;
-                              } else {
-                                controller.isActiveEmailField = true;
-                              }
-                              // blueLoginController.isActive= true;
-                              /*   if (controller.formKey.currentState!.validate()) {
-                              controller.activeField=false;
-                            }
-                            else{
-                              controller.activeField=true;
-                            }*/
-                              controller.update(["createEmail"]);
+                        Container(
+                          height: 44,
+                          width: Get.width,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                                color: createAccountController.emailTextActive == true
+                                    ? Colors.blue
+                                    : controller.emailError == ''
+                                    ? ColorRes.textfieldBorder
+                                    : ColorRes.errorIcon),
+                          ),
+                          child: TextFormField(
+                            onTap: () {
+                              createAccountController.emailTextActive = true;
                               controller.update(["createaccount"]);
                             },
-                            controller: controller.emailController,
+                            controller: createAccountController.emailController,
+                            style: overpassRegular(
+                                fontSize: 16, color: ColorRes.fontGrey),
                             decoration: InputDecoration(
+                              // contentPadding: EdgeInsets.zero,
+                              border: InputBorder.none,
+                              contentPadding:
+                              const EdgeInsets.only(left: 10, top: 10),
                               hintText: StringRes.mailHInt,
-
-                              // suffixIcon: Image.asset(AssetRes.iconError,height: 13,width: 13,fit: BoxFit.fill),
                               hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
-                              suffixIcon: controller.isActiveEmailField == false
-                                  ? Icon(
-                                      Icons.error_outline_outlined,
-                                      color: Colors.redAccent
-                                    )
-                                  : SizedBox(),
-                              disabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.grey,
-                                  width: 0.6,
-                                ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
+                              suffixIcon: controller.emailError == ''
+                                  ? SizedBox()
+                                  : Icon(
+                                Icons.error_outline,
+                                color: ColorRes.errorIcon,
                               ),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: ColorRes.sky),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: ColorRes.sky),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: ColorRes.textfieldBorder,
-                                    ),
-                                borderRadius:
-                                    BorderRadius.all(Radius.elliptical(10, 10)),
-                              ),
-                              errorBorder:
-                                  controller.emailController.text.isEmail ==
-                                          false
-                                      ? OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: ColorRes.error,
-                                            width: 0.6,
-                                          ),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.elliptical(10, 10)),
-                                        )
-                                      : OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: ColorRes.appColor,
-                                              width: 0.6),
-                                          borderRadius: BorderRadius.all(
-                                              Radius.elliptical(10, 10)),
-                                        ),
-                              contentPadding:
-                                  EdgeInsets.only(left: 10, bottom: 9),
                             ),
+                            onChanged: (value) {
+                              controller.update(["createaccount"]);
+                            },
                           ),
                         ),
 
+                        (controller.emailError == '')
+                            ? const SizedBox()
+                            : Text(
+                          createAccountController.emailError,
+                          style:
+                          regular(fontSize: 13, color: ColorRes.error),
+                        ),
                         SizedBox(
                           height: Get.height * 0.025,
                         ),
@@ -201,96 +136,58 @@ class CreateaccountScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.008,
                         ),
-                        TextFormField(
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          validator: (value) {
-                            if (value!.length < 8) {
-                              return "Minimum 8 character required";
-                            }
-                          },
-                          // onChanged: (value) {
-                          //   // blueLoginController.isActive= true;
-                          //
-                          //   controller.update(["bluelogintextfield"]);
-                          //   if (value.toString().isEmail == true) {
-                          //     controller.update(["bluelogintextfield"]);
-                          //   }
-                          // },
+                        Container(
+                          height: 44,
+                          width: Get.width,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                                color: controller.passTextActive == true
+                                    ? Colors.blue
+                                    : controller.passwordError == ''
+                                    ? ColorRes.textfieldBorder
+                                    : ColorRes.errorIcon),
+                          ),
+                          child: TextFormField(
+                            onTap: () {
+                              controller.passTextActive = true;
 
-                          onChanged: (value) {
-                            if (value.length < 8) {
-                              createAccountController.isActivePassField = false;
-                            } else {
-                              createAccountController.isActivePassField = true;
-                            }
-
-                            controller.update(["createaccount"]);
-                          },
-                          onFieldSubmitted: (value) {
-                            debugPrint("submitted");
-                            if (createAccountController.formKey.currentState!
-                                .validate()) {
+                              controller.emailValidation();
                               controller.update(["createaccount"]);
-                            }
-                          },
-                          obscureText: true,
-                          obscuringCharacter: "*",
-                          controller:
-                              createAccountController.passwordController,
-                          decoration: InputDecoration(
-                            hintText: StringRes.enterPassword,
-                            hintStyle: TextStyle(
-                                fontSize: 16, color: ColorRes.hinttext),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: ColorRes.sky,),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            enabled: true,
-                            disabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: ColorRes.textfieldBorder,
-
+                            },
+                            obscuringCharacter: "*",
+                            obscureText: true,
+                            controller: createAccountController.passwordController,
+                            style: overpassRegular(
+                                fontSize: 16, color: ColorRes.fontGrey),
+                            decoration: InputDecoration(
+                              // contentPadding: EdgeInsets.zero,
+                              border: InputBorder.none,
+                              contentPadding:
+                              const EdgeInsets.only(left: 10, top: 10),
+                              hintText: "*****",
+                              hintStyle: overpassRegular(
+                                  fontSize: 16, color: ColorRes.hinttext),
+                              suffixIcon: controller.passwordError == ''
+                                  ? SizedBox()
+                                  : Icon(
+                                Icons.error_outline,
+                                color: ColorRes.errorIcon,
                               ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: ColorRes.sky),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: ColorRes.textfieldBorder),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            errorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: ColorRes.error,
-                                width: 0.6,
-                              ),
-                              borderRadius:
-                                  BorderRadius.all(Radius.elliptical(10, 10)),
-                            ),
-                            contentPadding:
-                                EdgeInsets.only(left: 10, bottom: 9),
-                            suffixIcon:
-                                createAccountController.isActivePassField ==
-                                        false
-                                    ? Icon(
-                                        Icons.error_outline_outlined,
-                                        color: Colors.redAccent,
-                                      )
-                                    : SizedBox(),
+                            onChanged: (value) {
+                              controller.update(["createaccount"]);
+                            },
                           ),
                         ),
-                        controller.isPassError == true
-                            ? Text("Please enter some text")
-                            : SizedBox(),
+                        (controller.passwordError == '')
+                            ? const SizedBox()
+                            : Text(
+                          createAccountController.passwordError,
+                          style:
+                          regular(fontSize: 13, color: ColorRes.error),
+                        ),
                         SizedBox(
                           height: Get.height * 0.040,
                         ),
@@ -335,19 +232,12 @@ class CreateaccountScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.046,
                         ),
-                        GestureDetector(
+                        createAccountController.emailController.text.isNotEmpty &&
+                            createAccountController
+                                .passwordController.text.isNotEmpty && createAccountController.isChecked ==true
+                            ? GestureDetector(
                           onTap: () {
-                            if(createAccountController.emailController.text.isNotEmpty && createAccountController.isChecked == true && createAccountController.passwordController.text.isNotEmpty)
-                           {
-                             if (createAccountController.formKey.currentState!
-                                 .validate()
-                             ) {
-                               Get.to(CompleteSignupScreen());
-                               controller.update(["createaccount"]);
-                             }
-                           }
-                            else
-                              return null;
+                            controller.onTapLogin();
                             controller.update(["createaccount"]);
                           },
                           child: Align(
@@ -358,24 +248,29 @@ class CreateaccountScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
-                                color: createAccountController
-                                                .emailController.text
-                                                .trim() !=
-                                            "" &&
-                                        createAccountController
-                                                .passwordController.text
-                                                .trim() !=
-                                            "" &&
-                                        createAccountController.isChecked ==
-                                            true
-                                    ? ColorRes.appColor
-                                    : ColorRes.disableColor,
+                                color: ColorRes.appColor,
                               ),
                               child: Text("Sign up",
                                   style: overpassRegular(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 16)),
                             ),
+                          ),
+                        )
+                            : Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            height: Get.height * 0.063,
+                            width: Get.width * 0.32,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: ColorRes.disableColor,
+                            ),
+                            child: Text("Sign up",
+                                style: overpassRegular(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16)),
                           ),
                         ),
                         SizedBox(

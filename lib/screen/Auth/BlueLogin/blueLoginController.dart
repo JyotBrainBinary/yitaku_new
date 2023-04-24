@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
-class LoginNewController extends GetxController {
+class BlueLoginController extends GetxController {
   // bool boxColor = false;
   bool isPassError = false;
 

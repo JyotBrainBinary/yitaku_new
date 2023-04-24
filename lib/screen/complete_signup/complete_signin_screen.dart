@@ -28,7 +28,8 @@ class CompleteSignupScreen extends StatelessWidget {
                     builder: (controller) {
                       return Padding(
                         padding: EdgeInsets.only(
-                          left: 16, right: 16,
+                          left: 16,
+                          right: 16,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +53,9 @@ class CompleteSignupScreen extends StatelessWidget {
                               child: Text(
                                 StringRes.oneLast,
                                 style: overpassRegular(
-                                    color: ColorRes.fontGrey, fontSize: 24, fontWeight: FontWeight.w500),
+                                    color: ColorRes.fontGrey,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w500),
                               ),
                             ),
                             SizedBox(
@@ -60,193 +63,133 @@ class CompleteSignupScreen extends StatelessWidget {
                             ),
                             Text(
                               StringRes.name,
-                              style:
-                              regular(
+                              style: regular(
                                   fontSize: 14, color: ColorRes.color344056),
                             ),
                             SizedBox(
                               height: Get.height * 0.008,
                             ),
-                            TextFormField(
-                              autovalidateMode:
-                                  AutovalidateMode.onUserInteraction,
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "Please enter your name!";
-                                }
-                              },
-                              style: overpassRegular(
-                                  color: ColorRes.fontGrey, fontSize: 16),
-                              onChanged: (value) {
-                                if (value.isEmpty) {
-                                  completeSignupController.isNameActive = false;
-                                } else {
-                                  completeSignupController.isNameActive = true;
-                                }
-
-                                controller.update(["complete"]);
-                              },
-                              onFieldSubmitted: (value) {
-                                debugPrint("submitted");
-                                if (completeSignupController
-                                    .formKey.currentState!
-                                    .validate()) {
+                            Container(
+                              height: 44,
+                              width: Get.width,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                    color: controller.nameTextActive == true
+                                        ? Colors.blue
+                                        : controller.nameError == ''
+                                            ? ColorRes.textfieldBorder
+                                            : ColorRes.errorIcon),
+                              ),
+                              child: TextFormField(
+                                onTap: () {
+                                  controller.nameTextActive = true;
                                   controller.update(["complete"]);
-                                }
-                              },
-                              controller:
-                                  completeSignupController.nameController,
-                              decoration: InputDecoration(
-                                hintText: StringRes.yourNme,
-                                hintStyle: TextStyle(
-                                    fontSize: 16, color: ColorRes.hinttext),
-                                border: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ColorRes.sky),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
+                                },
+                                controller:
+                                    completeSignupController.nameController,
+                                style: overpassRegular(
+                                    fontSize: 16, color: ColorRes.fontGrey),
+                                decoration: InputDecoration(
+                                  // contentPadding: EdgeInsets.zero,
+                                  border: InputBorder.none,
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 10, top: 10),
+                                  hintText: StringRes.yourNme,
+                                  hintStyle: overpassRegular(
+                                      fontSize: 16, color: ColorRes.hinttext),
+                                  suffixIcon: controller.nameError == ''
+                                      ? SizedBox()
+                                      : Icon(
+                                          Icons.error_outline,
+                                          color: ColorRes.errorIcon,
+                                        ),
                                 ),
-                                enabled: true,
-                                disabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: ColorRes.textfieldBorder,
-                                  ),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ColorRes.sky),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ColorRes.textfieldBorder,
-                                  ),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.redAccent,
-                                    width: 0.6,
-                                  ),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 9),
-                                suffixIcon:
-                                    completeSignupController.isNameActive ==
-                                            false
-                                        ? Icon(
-                                            Icons.error_outline_outlined,
-                                            color: Colors.red,
-                                          )
-                                        : SizedBox(),
+                                onChanged: (value) {
+                                  controller.update(["complete"]);
+                                },
                               ),
                             ),
+
+                            (controller.nameError == '')
+                                ? const SizedBox()
+                                : Text(
+                                    controller.nameError,
+                                    style: regular(
+                                        fontSize: 13, color: ColorRes.error),
+                                  ),
+
                             SizedBox(
                               height: Get.height * 0.027,
                             ),
                             Text(
                               StringRes.surname,
-                              style:
-                              regular(
+                              style: regular(
                                   fontSize: 14, color: ColorRes.color344056),
                             ),
                             SizedBox(
                               height: Get.height * 0.008,
                             ),
-                            TextFormField(
-                              autovalidateMode:
-                                  AutovalidateMode.onUserInteraction,
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "Please enter last name!";
-                                }
-                              },
-                              style: overpassRegular(
-                                  color: ColorRes.fontGrey, fontSize: 16),
-                              onChanged: (value) {
-                                if (value.isEmpty) {
-                                  completeSignupController.isSurnameActive =
-                                      false;
-                                } else {
-                                  completeSignupController.isSurnameActive =
-                                      true;
-                                }
 
-                                controller.update(["complete"]);
-                              },
-                              onFieldSubmitted: (value) {
-                                debugPrint("submitted");
-                                if (completeSignupController
-                                    .formKey.currentState!
-                                    .validate()) {
+                            Container(
+                              height: 44,
+                              width: Get.width,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                    color: controller.surnameTextActive == true
+                                        ? Colors.blue
+                                        : controller.surnameError == ''
+                                            ? ColorRes.textfieldBorder
+                                            : ColorRes.errorIcon),
+                              ),
+                              child: TextFormField(
+                                onTap: () {
+                                  controller.surnameTextActive = true;
+
+                                  controller.nameValidation();
                                   controller.update(["complete"]);
-                                }
-                              },
-                              controller:
-                                  completeSignupController.surnameController,
-                              decoration: InputDecoration(
-                                hintText: StringRes.yourLast,
-                                hintStyle: const TextStyle(
-                                    fontSize: 16, color: ColorRes.hinttext),
-                                border: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ColorRes.sky,),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
+                                },
+                                controller:
+                                    completeSignupController.surnameController,
+                                style: overpassRegular(
+                                    fontSize: 16, color: ColorRes.fontGrey),
+                                decoration: InputDecoration(
+                                  // contentPadding: EdgeInsets.zero,
+                                  border: InputBorder.none,
+                                  contentPadding:
+                                      const EdgeInsets.only(left: 10, top: 10),
+                                  hintText: StringRes.yourLast,
+                                  hintStyle: overpassRegular(
+                                      fontSize: 16, color: ColorRes.hinttext),
+                                  suffixIcon: controller.surnameError == ''
+                                      ? SizedBox()
+                                      : Icon(
+                                          Icons.error_outline,
+                                          color: ColorRes.errorIcon,
+                                        ),
                                 ),
-                                enabled: true,
-                                disabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: ColorRes.textfieldBorder,
-                                  ),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ColorRes.sky, ),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: ColorRes.textfieldBorder,),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.redAccent,
-                                    width: 0.6,
-                                  ),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(10, 10)),
-                                ),
-                                contentPadding:
-                                    EdgeInsets.only(left: 10, bottom: 9),
-                                suffixIcon:
-                                    completeSignupController.isSurnameActive ==
-                                            false
-                                        ? Icon(
-                                            Icons.error_outline_outlined,
-                                            color: Colors.red,
-                                          )
-                                        : SizedBox(),
+                                onChanged: (value) {
+                                  controller.update(["complete"]);
+                                },
                               ),
                             ),
+
+                            (controller.surnameError == '')
+                                ? const SizedBox()
+                                : Text(
+                                    controller.surnameError,
+                                    style: regular(
+                                        fontSize: 13, color: ColorRes.error),
+                                  ),
                             SizedBox(
                               height: Get.height * 0.027,
                             ),
                             Text(
                               StringRes.where,
-                              style:
-                              regular(
+                              style: regular(
                                   fontSize: 14, color: ColorRes.color344056),
                             ),
                             SizedBox(
@@ -257,50 +200,53 @@ class CompleteSignupScreen extends StatelessWidget {
                             //   child: DropdownButtonFormField(
                             //     icon: Padding(
                             //       padding: const EdgeInsets.only(right: 19.5),
-                            //       child: Image.asset("assets/icons/Icon.png"),
+                            //       child: Icon(Icons.keyboard_arrow_down_rounded, color: ColorRes.fontGrey,),
                             //     ),
                             //     onChanged: (String? value) {
-                            //       completeSignupController.dropdownValue = value!;
+                            //       completeSignupController.dropdownValue =
+                            //           value!;
                             //       controller.update(["complete"]);
                             //     },
-                            //     decoration: const InputDecoration(
-                            //       filled: true,
-                            //       hintStyle: TextStyle(color: ColorRes.hinttext),
-                            //       hintText: "Name",
-                            //       fillColor: Color(0xffFFFFFF),
-                            //       disabledBorder: OutlineInputBorder(
-                            //         borderSide: BorderSide(
-                            //           color: Colors.grey,
-                            //           width: 0.6,
-                            //         ),
-                            //         borderRadius:
-                            //             BorderRadius.all(Radius.elliptical(10, 10)),
-                            //       ),
+                            //     style: overpassRegular(
+                            //         color: ColorRes.fontGrey, fontSize: 16),
+                            //     decoration:  InputDecoration(
+                            //       hintText: "Select team member",
+                            //       hintStyle: overpassRegular(
+                            //           fontSize: 16, color: ColorRes.hinttext),
                             //       border: OutlineInputBorder(
                             //         borderSide: BorderSide(
-                            //             color: ColorRes.appColor, width: 0.6),
-                            //         borderRadius:
-                            //             BorderRadius.all(Radius.elliptical(10, 10)),
+                            //             color: ColorRes.sky),
+                            //         borderRadius: BorderRadius.all(
+                            //             Radius.elliptical(10, 10)),
+                            //       ),
+                            //       enabled: true,
+                            //       disabledBorder: OutlineInputBorder(
+                            //         borderSide: BorderSide(
+                            //           color: ColorRes.textfieldBorder,
+                            //         ),
+                            //         borderRadius: BorderRadius.all(
+                            //             Radius.elliptical(10, 10)),
                             //       ),
                             //       focusedBorder: OutlineInputBorder(
                             //         borderSide: BorderSide(
-                            //             color: ColorRes.appColor, width: 0.6),
-                            //         borderRadius:
-                            //             BorderRadius.all(Radius.elliptical(10, 10)),
+                            //             color: ColorRes.sky),
+                            //         borderRadius: BorderRadius.all(
+                            //             Radius.elliptical(10, 10)),
                             //       ),
                             //       enabledBorder: OutlineInputBorder(
-                            //         borderSide:
-                            //             BorderSide(color: Colors.grey, width: 0.6),
-                            //         borderRadius:
-                            //             BorderRadius.all(Radius.elliptical(10, 10)),
+                            //         borderSide: BorderSide(
+                            //             color: ColorRes.textfieldBorder,
+                            //             ),
+                            //         borderRadius: BorderRadius.all(
+                            //             Radius.elliptical(10, 10)),
                             //       ),
                             //       errorBorder: OutlineInputBorder(
                             //         borderSide: BorderSide(
                             //           color: Colors.redAccent,
                             //           width: 0.6,
                             //         ),
-                            //         borderRadius:
-                            //             BorderRadius.all(Radius.elliptical(10, 10)),
+                            //         borderRadius: BorderRadius.all(
+                            //             Radius.elliptical(10, 10)),
                             //       ),
                             //       contentPadding:
                             //           EdgeInsets.only(left: 10, bottom: 9),
@@ -308,117 +254,208 @@ class CompleteSignupScreen extends StatelessWidget {
                             //     items: completeSignupController.list
                             //         .map((cityTitle) => DropdownMenuItem(
                             //             value: cityTitle,
-                            //             child:
-                            //                 Wrap(children: [Text("$cityTitle")])))
+                            //             child: Wrap(
+                            //                 children: [Text("$cityTitle")])))
                             //         .toList(),
                             //   ),
                             // ),
 
-                            SizedBox(
-                              height: Get.height * 0.117,
-                              child: DropdownButtonFormField(
-                                icon: Padding(
-                                  padding: const EdgeInsets.only(right: 19.5),
-                                  child: Icon(Icons.keyboard_arrow_down_rounded, color: ColorRes.fontGrey,),
+                            //// drop down final
+                            GestureDetector(
+                              onTap: () {
+                                if (completeSignupController.isDrop == false) {
+                                  completeSignupController.isDrop = true;
+                                } else {
+                                  completeSignupController.isDrop = false;
+                                }
+                                completeSignupController.update(["complete"]);
+                              },
+                              child: Container(
+                                height: 44,
+                                width: Get.width,
+                                padding:
+                                    const EdgeInsets.only(left: 15, right: 15),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                      width: 1.3,
+                                      color: completeSignupController.isDrop ==
+                                              true
+                                          ? ColorRes.appColor
+                                          : ColorRes.textfieldBorder),
                                 ),
-                                onChanged: (String? value) {
-                                  completeSignupController.dropdownValue =
-                                      value!;
-                                  controller.update(["complete"]);
-                                },
-                                style: overpassRegular(
-                                    color: ColorRes.fontGrey, fontSize: 16),
-                                decoration:  InputDecoration(
-                                  hintText: "Select team member",
-                                  hintStyle: overpassRegular(
-                                      fontSize: 16, color: ColorRes.hinttext),
-                                  border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ColorRes.sky),
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(10, 10)),
-                                  ),
-                                  enabled: true,
-                                  disabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: ColorRes.textfieldBorder,
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      completeSignupController.sellerTypeString,
+                                      style: (completeSignupController
+                                                  .sellerTypeString ==
+                                              StringRes.selectTeamMember)
+                                          ? overpassRegular(
+                                              color: ColorRes.hinttext,
+                                              fontSize: 16)
+                                          : regular(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              color: ColorRes.fontGrey),
                                     ),
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(10, 10)),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ColorRes.sky),
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(10, 10)),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: ColorRes.textfieldBorder,
-                                        ),
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(10, 10)),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.redAccent,
-                                      width: 0.6,
-                                    ),
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(10, 10)),
-                                  ),
-                                  contentPadding:
-                                      EdgeInsets.only(left: 10, bottom: 9),
+                                    const Spacer(),
+                                    (completeSignupController.isDrop)
+                                        ? const Icon(
+                                            Icons.keyboard_arrow_up_rounded,
+                                            color: ColorRes.fontGrey,
+                                          )
+                                        : const Icon(
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: ColorRes.fontGrey,
+                                          )
+                                  ],
                                 ),
-                                items: completeSignupController.list
-                                    .map((cityTitle) => DropdownMenuItem(
-                                        value: cityTitle,
-                                        child: Wrap(
-                                            children: [Text("$cityTitle")])))
-                                    .toList(),
                               ),
                             ),
+                            SizedBox(height: 5),
+                            (completeSignupController.isDrop)
+                                ? Container(
+                                    width: Get.width,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: ColorRes.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: ColorRes.textfieldBorder
+                                              .withOpacity(0.5),
+                                          blurRadius: 10,
+                                          spreadRadius: 0.5,
+                                          offset: const Offset(0, 6),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      children: List.generate(
+                                        completeSignupController.list.length,
+                                        (index) => Column(
+                                          children: [
+                                            InkWell(
+                                              onTap: () {
+                                                completeSignupController
+                                                        .sellerTypeString =
+                                                    completeSignupController
+                                                        .list[index];
+                                                completeSignupController
+                                                    .isDrop = false;
+                                                completeSignupController
+                                                    .update(["complete"]);
+                                              },
+                                              child: Container(
+                                                height: 44,
+                                                decoration: BoxDecoration(
+                                                  color: (completeSignupController
+                                                              .sellerTypeString ==
+                                                          completeSignupController
+                                                              .list[index])
+                                                      ? ColorRes.colorF2F4F7
+                                                      : Colors.transparent,
+                                                  borderRadius: (index == 0)
+                                                      ? const BorderRadius.only(
+                                                          topRight: Radius
+                                                              .circular(10),
+                                                          topLeft: Radius
+                                                              .circular(10))
+                                                      : (index == 3)
+                                                          ? const BorderRadius
+                                                                  .only(
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          10),
+                                                              bottomLeft: Radius
+                                                                  .circular(10))
+                                                          : BorderRadius
+                                                              .circular(0),
+                                                ),
+                                                padding: const EdgeInsets.only(
+                                                    left: 15, right: 15),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      completeSignupController
+                                                          .list[index],
+                                                      style: regular(
+                                                          fontSize: 16,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: ColorRes
+                                                              .fontGrey),
+                                                    ),
+                                                    Spacer(),
+                                                    (completeSignupController
+                                                                .sellerTypeString ==
+                                                            completeSignupController
+                                                                .list[index])
+                                                        ? Image.asset(
+                                                            AssetRes.check,
+                                                            height: 10)
+                                                        : const SizedBox(),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : const SizedBox(),
                             SizedBox(
                               height: Get.height * 0.03,
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                if (completeSignupController
-                                    .formKey.currentState!
-                                    .validate()) {
-                                  Get.to(GoalScreen());
-                                  controller.update(["complete"]);
-                                }
-                              },
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  height: Get.height * 0.063,
-                                  width: Get.width * 0.456,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: completeSignupController
-                                                    .nameController.text
-                                                    .trim() !=
-                                                "" &&
-                                            completeSignupController
-                                                    .surnameController.text
-                                                    .trim() !=
-                                                "" &&
-                                            completeSignupController
-                                                    .dropdownValue !=
-                                                ""
-                                        ? ColorRes.appColor
-                                        : ColorRes.disableColor,
+                            completeSignupController
+                                        .nameController.text.isNotEmpty &&
+                                    completeSignupController
+                                        .surnameController.text.isNotEmpty &&
+                                    completeSignupController.sellerTypeString !=
+                                        StringRes.selectTeamMember
+                                ? GestureDetector(
+                                    onTap: () {
+                                      controller.onTapLogin();
+                                      controller.update(["complete"]);
+                                    },
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: Container(
+                                        height: Get.height * 0.063,
+                                        width: Get.width * 0.4,
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          color: ColorRes.appColor,
+                                        ),
+                                        child: Text("Complete sign up",
+                                            style: overpassRegular(
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 16)),
+                                      ),
+                                    ),
+                                  )
+                                : Align(
+                                    alignment: Alignment.center,
+                                    child: Container(
+                                      height: Get.height * 0.063,
+                                      width: Get.width * 0.4,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        color: ColorRes.disableColor,
+                                      ),
+                                      child: Text("Complete sign up",
+                                          style: overpassRegular(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 16)),
+                                    ),
                                   ),
-                                  child: Text(StringRes.complete,
-                                      style: overpassRegular(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600)),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       );
