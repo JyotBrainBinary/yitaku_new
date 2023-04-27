@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:yitaku/common/widget/logo.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/dashbord/dashboard_screen.dart';
-import 'package:yitaku/screen/homeScreen/home_screen.dart';
 import 'package:yitaku/screen/intro_screen/intro_controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/colorRes.dart';
