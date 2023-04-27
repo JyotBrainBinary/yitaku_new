@@ -65,10 +65,9 @@ class TypeSellerScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                  width: 1.3,
                                   color: typeSellerController.sellerTypeString !=
                                       StringRes.selectASellerType
-                                      ? ColorRes.appColor
+                                      ? ColorRes.stroke
                                       : ColorRes.textfieldBorder),
                             ),
                             child: Row(
@@ -201,6 +200,7 @@ class TypeSellerScreen extends StatelessWidget {
                             ?
 
                             /// 2 container
+
                             Column(
                                 children: [
                                   InkWell(
@@ -218,7 +218,7 @@ class TypeSellerScreen extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           border: Border.all(
-                                              color: ColorRes.appColor)),
+                                              color: ColorRes.stroke)),
                                       child: Row(
                                         children: [
                                           Image.asset(AssetRes.plusRound,
@@ -244,7 +244,7 @@ class TypeSellerScreen extends StatelessWidget {
                                                         .listPropertyNowDetail,
                                                     style: overpassRegular(
                                                         color:
-                                                            ColorRes.appColor,
+                                                        ColorRes.color365CC0,
                                                         fontSize: 14),
                                                   ))
                                             ],
@@ -269,7 +269,7 @@ class TypeSellerScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(
-                                            color: ColorRes.appColor)),
+                                            color: ColorRes.stroke)),
                                     child: Row(
                                       children: [
                                         Image.asset(AssetRes.search,
@@ -294,7 +294,7 @@ class TypeSellerScreen extends StatelessWidget {
                                                   StringRes
                                                       .browseListingsDetail,
                                                   style: overpassRegular(
-                                                      color: ColorRes.appColor,
+                                                      color: ColorRes.color365CC0,
                                                       fontSize: 14),
                                                 ))
                                           ],

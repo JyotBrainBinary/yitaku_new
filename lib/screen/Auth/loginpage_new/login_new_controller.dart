@@ -48,6 +48,9 @@ emailTextActive =false;
   }
 
   onTapLogin() {
+
+
+
     if (validation()) {
       Get.to(() => GoalScreen());
     }

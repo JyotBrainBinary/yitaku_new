@@ -49,13 +49,13 @@ class GoalScreen extends StatelessWidget {
                 },
                 child: Container(
                   width: Get.width,
-padding: EdgeInsets.only(top: 29,bottom: 25),
+                  padding: EdgeInsets.only(top: 29, bottom: 25),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: ColorRes.stroke)),
                   child: Row(
                     children: [
-                       SizedBox(width: Get.width * 0.05),
+                      SizedBox(width: Get.width * 0.05),
                       Image.asset(AssetRes.searchHome, height: 50),
                       const SizedBox(width: 20),
                       Column(
@@ -75,7 +75,7 @@ padding: EdgeInsets.only(top: 29,bottom: 25),
                             child: Text(
                               StringRes.searchDetail,
                               style: overpassRegular(
-                                  color: ColorRes.stroke, fontSize: 16),
+                                  color: ColorRes.color365CC0, fontSize: 16),
                             ),
                           ),
                         ],
@@ -86,29 +86,25 @@ padding: EdgeInsets.only(top: 29,bottom: 25),
                         height: 20,
                       ),
                       SizedBox(width: Get.width * 0.04),
-
-
                     ],
                   ),
                 ),
               ),
               const SizedBox(height: 20),
               InkWell(
-                onTap: (){
+                onTap: () {
                   // go to intro screen
                   Get.to(IntroScreen());
                 },
                 child: Container(
                   width: Get.width,
-                  padding: EdgeInsets.only(top: 29,bottom: 25),
-
+                  padding: EdgeInsets.only(top: 29, bottom: 25),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: ColorRes.stroke)),
                   child: Row(
                     children: [
                       SizedBox(width: Get.width * 0.05),
-
                       Image.asset(AssetRes.sellOrRent, height: 35),
                       const SizedBox(width: 20),
                       Column(
@@ -126,14 +122,16 @@ padding: EdgeInsets.only(top: 29,bottom: 25),
                           SizedBox(
                               width: Get.width * 0.35,
                               child: Text(
-                                StringRes.sellOrRentDetail,textAlign: TextAlign.start,
-
+                                StringRes.sellOrRentDetail,
+                                textAlign: TextAlign.start,
                                 style: overpassRegular(
-                                    color: ColorRes.stroke, fontSize: 16  ,  ),
+                                  color: ColorRes.color365CC0,
+                                  fontSize: 16,
+                                ),
                               ))
                         ],
                       ),
-                    Spacer(),
+                      Spacer(),
                       Image.asset(
                         AssetRes.arrow,
                         height: 20,

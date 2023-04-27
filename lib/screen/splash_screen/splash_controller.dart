@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:yitaku/screen/Auth/BlueLogin/blueLoginScreen.dart';
-import 'package:yitaku/screen/loginpage_new/login_new.dart';
+import 'package:yitaku/screen/Auth/loginpage_new/login_new.dart';
+
 
 class SplashController extends GetxController {
   @override

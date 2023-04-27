@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yitaku/screen/complete_signup/complete_signin_screen.dart';
+import 'package:yitaku/screen/Auth/complete_signup/complete_signin_screen.dart';
+
 import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 

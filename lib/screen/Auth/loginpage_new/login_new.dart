@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/Auth/createAccount/create_account_screen.dart';
-import 'package:yitaku/screen/loginpage_new/login_new_controller.dart';
+import 'package:yitaku/screen/Auth/loginpage_new/login_new_controller.dart';
+
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/colorRes.dart';
 import '../../../utils/asset_res.dart';
@@ -64,7 +65,7 @@ class LoginPageNew extends StatelessWidget {
 
                       /// ---- login button ----
 
-                      loginButton(controller),
+                      loginButton(controller, context),
 
                       SizedBox(
                         height: Get.height * 0.046
@@ -171,6 +172,7 @@ class LoginPageNew extends StatelessWidget {
               // contentPadding: EdgeInsets.zero,
               border: InputBorder.none,
               contentPadding: const EdgeInsets.only(left: 10, top: 10),
+
               hintText: StringRes.mailHInt,
               hintStyle:
                   overpassRegular(fontSize: 16, color: ColorRes.hinttext),
@@ -270,7 +272,7 @@ class LoginPageNew extends StatelessWidget {
     );
   }
 
-  Widget loginButton (controller){
+  Widget loginButton (controller, context){
     return Column(
       children: [
         loginNewController.emailController.text.isNotEmpty &&
@@ -278,6 +280,7 @@ class LoginPageNew extends StatelessWidget {
                 .passwordController.text.isNotEmpty
             ? GestureDetector(
           onTap: () {
+            FocusScope.of(context).unfocus();
             controller.onTapLogin();
             controller.update(["newlogin"]);
           },

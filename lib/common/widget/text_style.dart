@@ -16,7 +16,7 @@ TextStyle overpassRegular({Color? color,
     fontSize: fontSize ?? 14,
     fontFamily: FontRes.overpassRegular,
     letterSpacing: letterSpacing ?? 0,
-    decoration: textdeco,
+    decoration: textdeco ?? TextDecoration.none,
     height: height,
 
   );

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
-import 'package:yitaku/screen/complete_signup/complete_signup_controller.dart';
-import 'package:yitaku/screen/goal_screen/goal_screen.dart';
-import 'package:yitaku/screen/passwordReset/passwordResetPage.dart';
+import 'package:yitaku/screen/Auth/complete_signup/complete_signup_controller.dart';
+
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -13,9 +12,8 @@ class CompleteSignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    CompleteSignupController completeSignupController = Get.put(
-      CompleteSignupController(),
-    );
+    CompleteSignupController completeSignupController =
+        Get.put(CompleteSignupController());
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffFFFFFF),
@@ -77,7 +75,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8),
                                 border: Border.all(
                                     color: controller.nameTextActive == true
-                                        ? Colors.blue
+                                        ? ColorRes.stroke
                                         : controller.nameError == ''
                                             ? ColorRes.textfieldBorder
                                             : ColorRes.errorIcon),
@@ -140,7 +138,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(8),
                                 border: Border.all(
                                     color: controller.surnameTextActive == true
-                                        ? Colors.blue
+                                        ? ColorRes.stroke
                                         : controller.surnameError == ''
                                             ? ColorRes.textfieldBorder
                                             : ColorRes.errorIcon),
@@ -278,10 +276,9 @@ class CompleteSignupScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   border: Border.all(
-                                      width: 1.3,
                                       color: completeSignupController
-                                          .sellerTypeString !=
-                                          StringRes.selectTeamMember
+                                                  .sellerTypeString !=
+                                              StringRes.selectTeamMember
                                           ? ColorRes.stroke
                                           : ColorRes.textfieldBorder),
                                 ),
@@ -314,7 +311,9 @@ class CompleteSignupScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
+
                             SizedBox(height: 5),
+
                             (completeSignupController.isDrop)
                                 ? Container(
                                     width: Get.width,
@@ -420,6 +419,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                         StringRes.selectTeamMember
                                 ? GestureDetector(
                                     onTap: () {
+                                      FocusScope.of(context).unfocus();
                                       controller.onTapCompleteSignUp();
                                       controller.update(["complete"]);
                                     },

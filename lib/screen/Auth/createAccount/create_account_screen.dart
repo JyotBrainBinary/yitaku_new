@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/screen/Auth/createAccount/create_account_controller.dart';
-import 'package:yitaku/screen/complete_signup/complete_signin_screen.dart';
-import 'package:yitaku/screen/passwordReset/passwordResetPage.dart';
+
 import 'package:yitaku/utils/asset_res.dart';
 
 import '../../../common/widget/text_style.dart';
@@ -82,7 +81,7 @@ class CreateaccountScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
                                 color: createAccountController.emailTextActive == true
-                                    ? Colors.blue
+                                    ? ColorRes.stroke
                                     : controller.emailError == ''
                                     ? ColorRes.textfieldBorder
                                     : ColorRes.errorIcon),
@@ -144,7 +143,7 @@ class CreateaccountScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
                                 color: controller.passTextActive == true
-                                    ? Colors.blue
+                                    ? ColorRes.stroke
                                     : controller.passwordError == ''
                                     ? ColorRes.textfieldBorder
                                     : ColorRes.errorIcon),
@@ -235,9 +234,10 @@ class CreateaccountScreen extends StatelessWidget {
                         ),
                         createAccountController.emailController.text.isNotEmpty &&
                             createAccountController
-                                .passwordController.text.isNotEmpty && createAccountController.isChecked ==true
+                                .passwordController.text.isNotEmpty && createAccountController.isChecked == true
                             ? GestureDetector(
                           onTap: () {
+                            FocusScope.of(context).unfocus();
                             controller.onTapSignUp();
                             controller.update(["createaccount"]);
                           },
