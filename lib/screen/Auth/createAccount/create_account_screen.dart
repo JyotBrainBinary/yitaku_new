@@ -204,6 +204,7 @@ class CreateaccountScreen extends StatelessWidget {
                                   createAccountController.isChecked = value!;
                                   controller.update(['createaccount']);
                                 },
+
                                 checkColor: ColorRes.appColor,
                                 activeColor: Colors.white,
                                 shape: RoundedRectangleBorder(
@@ -237,20 +238,21 @@ class CreateaccountScreen extends StatelessWidget {
                                 .passwordController.text.isNotEmpty && createAccountController.isChecked ==true
                             ? GestureDetector(
                           onTap: () {
-                            controller.onTapLogin();
+                            controller.onTapSignUp();
                             controller.update(["createaccount"]);
                           },
                           child: Align(
                             alignment: Alignment.center,
                             child: Container(
-                              height: Get.height * 0.063,
+                              height: 44,
+                              //height: Get.height * 0.063,
                               width: Get.width * 0.32,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
                                 color: ColorRes.appColor,
                               ),
-                              child: Text("Sign up",
+                              child: Text(StringRes.signUp,
                                   style: overpassRegular(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 16)),
@@ -260,14 +262,15 @@ class CreateaccountScreen extends StatelessWidget {
                             : Align(
                           alignment: Alignment.center,
                           child: Container(
-                            height: Get.height * 0.063,
+                            height: 44,
+                            //height: Get.height * 0.063,
                             width: Get.width * 0.32,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               color: ColorRes.disableColor,
                             ),
-                            child: Text("Sign up",
+                            child: Text(StringRes.signUp,
                                 style: overpassRegular(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16)),

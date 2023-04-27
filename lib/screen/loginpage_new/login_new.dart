@@ -33,9 +33,9 @@ class LoginPageNew extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      /// ----- top --------
-                      ///
 
+
+                      /// ----- top --------
                       SizedBox(
                         height: Get.height * 0.062,
                       ),
@@ -221,7 +221,8 @@ class LoginPageNew extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.center,
                                 child: Container(
-                                  height: Get.height * 0.063,
+                                  height: 44,
+                                  //height: Get.height * 0.063,
                                   width: Get.width * 0.32,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
@@ -238,14 +239,15 @@ class LoginPageNew extends StatelessWidget {
                           : Align(
                               alignment: Alignment.center,
                               child: Container(
-                                height: Get.height * 0.063,
+                                height: 44,
+                                //height: Get.height * 0.063,
                                 width: Get.width * 0.32,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(8),
                                   color: ColorRes.disableColor,
                                 ),
-                                child: Text("Login",
+                                child: Text(StringRes.login,
                                     style: overpassRegular(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 16)),
@@ -265,14 +267,14 @@ class LoginPageNew extends StatelessWidget {
                               style: overpassRegular(
                                 color: ColorRes.fontGrey,
                                 fontSize: 17,
-                                //textdeco: TextDecoration.underline,
+                                textdeco: TextDecoration.underline,
                               ),
                             ),
-                            Container(
+                            /*Container(
                               height: 1.5,
                               width: 130,
                               color: ColorRes.fontGrey,
-                            ),
+                            ),*/
                           ],
                         ),
                       ),
@@ -291,18 +293,18 @@ class LoginPageNew extends StatelessWidget {
                             children: [
                               Text(
                                 StringRes.doNot,
-                                // style: TextStyle(decoration: TextDecoration.underline),
+                                //style: TextStyle(decoration: TextDecoration.underline),
                                 style: overpassRegular(
                                   color: ColorRes.black,
                                   fontSize: 17,
-                                  //textdeco: TextDecoration.underline,
+                                  textdeco: TextDecoration.underline,
                                 ),
                               ),
-                              Container(
+                              /*Container(
                                 height: 1.5,
                                 width: 260,
                                 color: ColorRes.fontGrey,
-                              ),
+                              ),*/
                             ],
                           ),
                         ),

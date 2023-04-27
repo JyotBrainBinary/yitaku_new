@@ -1,6 +1,6 @@
 class StringRes {
   ///-------------------------------------- authentication --------------------------------------------
-  static const signUp = "SIGN UP";
+  static const signUp = "Sign up";
   static const mailHInt = "olivia@google.com";
   static const login = "Login";
   static const exploreWithoutSignUp = "Explore without signup";

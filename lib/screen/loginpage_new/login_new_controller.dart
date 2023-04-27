@@ -49,7 +49,7 @@ emailTextActive =false;
 
   onTapLogin() {
     if (validation()) {
-      Get.offAll(() => GoalScreen());
+      Get.to(() => GoalScreen());
     }
     update(['newlogin']);
   }

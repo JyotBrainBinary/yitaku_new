@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.center,
                           child: Text(
-                            "Login",
+                            StringRes.login,
                             style: semiBold(
                                 color: ColorRes.color767676, fontSize: 30),
                           ),

@@ -6,6 +6,7 @@ class ColorRes {
   static const appColor = Color(0xff2652BD);
   static const stroke = Color(0xff3879E8);
 
+
   static const disableColor = Color(0xffB8D4F8);
   static const fontGrey = Color(0xff101828);
   static const hinttext = Color(0xff64748B);

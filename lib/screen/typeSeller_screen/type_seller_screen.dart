@@ -66,7 +66,8 @@ class TypeSellerScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
                                   width: 1.3,
-                                  color: typeSellerController.isDrop == true
+                                  color: typeSellerController.sellerTypeString !=
+                                      StringRes.selectASellerType
                                       ? ColorRes.appColor
                                       : ColorRes.textfieldBorder),
                             ),

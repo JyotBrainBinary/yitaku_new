@@ -81,7 +81,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                         onTap: () {
                           if(homeControllerTwo.isOpenList ==false){
                             homeControllerTwo.isOpenList = true;
-controller.update(["homeTwo"]);
+                              controller.update(["homeTwo"]);
                           }
                           else{
                             homeControllerTwo.isOpenList = false;
@@ -90,13 +90,14 @@ controller.update(["homeTwo"]);
                         },
                         child: Image.asset(
                           AssetRes.downList,
-                          height: 24,
+                          height: 15,
                         ),
                       ),
                     ],
                   ),
                 ),
-                homeControllerTwo.isOpenList ==true ?  Row(
+                homeControllerTwo.isOpenList ==true ?
+                Row(
                   children: [
                     Expanded(
                       child: Container(
@@ -229,14 +230,14 @@ controller.update(["homeTwo"]);
                                     "530 €",
                                     style: overpassRegular(
                                         color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w500),
+                                        fontWeight: FontWeight.w600),
                                   ),
                                   SizedBox(width: 15),
                                   Text(
                                     "2 Bedrooms",
                                     style: overpassRegular(
                                         color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w500),
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ],
                               ),
@@ -405,7 +406,7 @@ controller.update(["homeTwo"]);
                                 "Maisonette   Naxxar",
                                 style: overpassRegular(
                                     color: ColorRes.fontGrey,
-                                    fontWeight: FontWeight.w500),
+                                    fontWeight: FontWeight.w600),
                               ),
                               Text(
                                 "2 bedrooms, this house is perfect for a little family ",
@@ -420,14 +421,14 @@ controller.update(["homeTwo"]);
                                     "530 €",
                                     style: overpassRegular(
                                         color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w500),
+                                        fontWeight: FontWeight.w600),
                                   ),
                                   SizedBox(width: 15),
                                   Text(
                                     "2 Bedrooms",
                                     style: overpassRegular(
                                         color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w500),
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ],
                               ),

@@ -279,9 +279,10 @@ class CompleteSignupScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10),
                                   border: Border.all(
                                       width: 1.3,
-                                      color: completeSignupController.isDrop ==
-                                              true
-                                          ? ColorRes.appColor
+                                      color: completeSignupController
+                                          .sellerTypeString !=
+                                          StringRes.selectTeamMember
+                                          ? ColorRes.stroke
                                           : ColorRes.textfieldBorder),
                                 ),
                                 child: Row(
@@ -419,13 +420,14 @@ class CompleteSignupScreen extends StatelessWidget {
                                         StringRes.selectTeamMember
                                 ? GestureDetector(
                                     onTap: () {
-                                      controller.onTapLogin();
+                                      controller.onTapCompleteSignUp();
                                       controller.update(["complete"]);
                                     },
                                     child: Align(
                                       alignment: Alignment.center,
                                       child: Container(
-                                        height: Get.height * 0.063,
+                                        height: 44,
+                                        //height: Get.height * 0.063,
                                         width: Get.width * 0.4,
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
@@ -443,7 +445,8 @@ class CompleteSignupScreen extends StatelessWidget {
                                 : Align(
                                     alignment: Alignment.center,
                                     child: Container(
-                                      height: Get.height * 0.063,
+                                      height: 44,
+                                      //height: Get.height * 0.063,
                                       width: Get.width * 0.4,
                                       alignment: Alignment.center,
                                       decoration: BoxDecoration(
