@@ -79,6 +79,12 @@ class StringRes {
 
   static const home = "Home";
   static const owner = "Owner";
+  static const forSale = "For sale";
+  static const toLet = "To let";
+
+
+  static const featured = "Featured";
+
   static const estate = "Estate Agent";
   static const loanCalculator = "Loan calculator";
 

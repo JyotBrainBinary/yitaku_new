@@ -80,6 +80,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   ),
                 ),
 
+                ///---------Filter (3)----------
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Row(
@@ -95,13 +96,13 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       Spacer(),
                       GestureDetector(
                         onTap: () {
-                          if (homeControllerTwo.isOpenList == false) {
+                          /*if (homeControllerTwo.isOpenList == false) {
                             homeControllerTwo.isOpenList = true;
                             controller.update(["homeTwo"]);
                           } else {
                             homeControllerTwo.isOpenList = false;
                             controller.update(["homeTwo"]);
-                          }
+                          }*/
                         },
                         child: Image.asset(
                           AssetRes.downList,
@@ -113,75 +114,83 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   ),
                 ),
 
-                (homeControllerTwo.isOpenList == true)
-                    ? Container(
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              blurRadius: 15.0,
-                              offset: Offset(0, 8),
-                            )
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: InkWell(
-                                onTap: (){
-                                  homeControllerTwo.isForSale = true;
-                                  controller.update(["homeTwo"]);
-                                },
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  height: 44,
-                                  color: (homeControllerTwo.isForSale == true)? ColorRes.color3879E8 : ColorRes.white,
-                                  child: Text(
-                                    "For sale",
-                                    style: overpassRegular(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16,
-                                        color:  (homeControllerTwo.isForSale == false)?ColorRes.colorEAECF0: ColorRes.white),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: 44,
-                              width: 1,
-                              color: ColorRes.white,
-                            ),
-                            Expanded(
-                              child: InkWell(
-                                onTap: (){
-                                  homeControllerTwo.isForSale = false;
-                                  controller.update(["homeTwo"]);
-                                },
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  height: 44,
-                                  color: (homeControllerTwo.isForSale == false)? ColorRes.color3879E8 : ColorRes.white,
-                                  child: Text(
-                                    "To rent",
-                                    style: overpassRegular(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16,
-                                        color: (homeControllerTwo.isForSale == true)?ColorRes.colorEAECF0: ColorRes.white),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+
+                ///------ tab bar --------
+                Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        blurRadius: 15.0,
+                        offset: Offset(0, 8),
                       )
-                    : SizedBox(),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: (){
+                            if(homeControllerTwo.isForSale == false){
+                              homeControllerTwo.isForSale = true;
+                            } else{
+                              homeControllerTwo.isForSale = false;
+                            }
+                            controller.update(["homeTwo"]);
+                          },
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 44,
+                            color: (homeControllerTwo.isForSale == true)? ColorRes.color3879E8 : ColorRes.white,
+                            child: Text(
+                              "For sale",
+                              style: overpassRegular(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                  color:  (homeControllerTwo.isForSale == false)?ColorRes.colorEAECF0: ColorRes.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 44,
+                        width: 1,
+                        color: ColorRes.white,
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: (){
+                           if(homeControllerTwo.isRent == true){
+                             homeControllerTwo.isRent = false;
+                           }else{
+                             homeControllerTwo.isRent = true;
+                           }
+                            controller.update(["homeTwo"]);
+                          },
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 44,
+                            color: (homeControllerTwo.isRent == true)? ColorRes.color3879E8 : ColorRes.white,
+                            child: Text(
+                              "To rent",
+                              style: overpassRegular(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                  color: (homeControllerTwo.isRent == false)?ColorRes.colorEAECF0: ColorRes.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
 
 
 
 
                 ///---------------featured properties-----------
                Expanded(
-                  child: ( homeControllerTwo.isForSale == true)
+                  child: ( homeControllerTwo.isForSale == true )
                       ? SingleChildScrollView(
                     child: Column(
                       children: [
@@ -191,20 +200,6 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                StringRes.featuredProperties,
-                                style: overpassRegular(
-                                    fontWeight: FontWeight.w500,
-                                    color: ColorRes.fontGrey,
-                                    fontSize: 20),
-                              ),
-                              Text(
-                                StringRes.beThe1stToAcquireOurTopProperties,
-                                style: overpassRegular(
-                                    fontWeight: FontWeight.w500,
-                                    color: ColorRes.hinttext,
-                                    fontSize: 18),
-                              ),
                               SizedBox(height: Get.height * 0.03),
                               Stack(
                                 children: [
@@ -213,37 +208,69 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     width: Get.width,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
+                                        image: const DecorationImage(
                                             image: AssetImage(
                                               AssetRes.homeScreenImg1,
                                             ),
-                                            fit: BoxFit.cover)),
+                                            fit: BoxFit.cover,
+                                        )
+                                    ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 8, right: 10, left: 8),
+                                    padding: EdgeInsets.only(top: 8, right: 10, left: 8),
                                     child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Container(
-                                          height: Get.height * 0.031,
-                                          width: Get.width * 0.144,
-                                          decoration: BoxDecoration(
-                                            color: ColorRes.skyLight,
-                                            borderRadius:
-                                                BorderRadius.circular(16),
-                                          ),
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            StringRes.owner,
-                                            style: semiBold(
-                                              color: ColorRes.sky,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ),
+                                       Column(
+                                         crossAxisAlignment: CrossAxisAlignment.start,
+                                         children: [
+                                           Container(
+                                             height: 22,
+                                             width: 61,
+                                             decoration: BoxDecoration(
+                                               color: ColorRes.skyLight,
+                                               borderRadius:
+                                               BorderRadius.circular(16),
+                                             ),
+                                             alignment: Alignment.center,
+                                             child: Text(
+                                               StringRes.forSale,
+                                               style: semiBold(
+                                                 color: ColorRes.sky,
+                                                 fontSize: 12,
+                                                 fontWeight: FontWeight.w600,
+                                               ),
+                                             ),
+                                           ),
+                                           SizedBox(height: 5),
+                                           Container(
+                                             height: 22,
+                                             width: 87,
+                                             decoration: BoxDecoration(
+                                               color: ColorRes.yellowLight,
+                                               borderRadius:
+                                               BorderRadius.circular(16),
+                                             ),
+                                             alignment: Alignment.center,
+                                             child: Row(
+                                               mainAxisAlignment: MainAxisAlignment.center,
+                                               children: [
+                                                 Icon(Icons.star, color: ColorRes.colorB54708, size: 18),
+                                                 SizedBox(width: 3),
+                                                 Text(
+                                                   StringRes.featured,
+                                                   style: semiBold(
+                                                     color: ColorRes.colorB54708,
+                                                     fontSize: 12,
+                                                     fontWeight: FontWeight.w600,
+                                                   ),
+                                                 ),
+                                               ],
+                                             ),
+                                           ),
+                                         ],
+                                       ),
                                         Spacer(),
                                         Image.asset(
                                           AssetRes.heart,
@@ -255,12 +282,32 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                 ],
                               ),
                               SizedBox(height: Get.height * 0.03),
-                              Text(
-                                "Maisonette . Naxxar",
-                                style: overpassRegular(
-                                    color: ColorRes.fontGrey,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Maisonette",
+                                    style: overpassRegular(
+                                        color: ColorRes.fontGrey,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Container(
+                                    height: 5,
+                                    width: 5,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: ColorRes.fontGrey
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    "Naxxar",
+                                    style: overpassRegular(
+                                        color: ColorRes.fontGrey,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ],
                               ),
                               SizedBox(height: Get.height * 0.008),
                               Text(
@@ -279,7 +326,16 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                         color: ColorRes.fontGrey,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  SizedBox(width: 15),
+                                  SizedBox(width: 8),
+                                  Container(
+                                    height: 5,
+                                    width: 5,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: ColorRes.fontGrey
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
                                   Text(
                                     "2 Bedrooms",
                                     style: overpassRegular(
@@ -288,7 +344,12 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: Get.height * 0.05),
+                              SizedBox(height: Get.height * 0.02),
+                              Container(
+                                height: 2,
+                                color: ColorRes.colorF2F4F7,
+                              ),
+                              SizedBox(height: Get.height * 0.02),
                               Stack(
                                 children: [
                                   Container(
@@ -296,34 +357,34 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     width: Get.width,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                              AssetRes.homeScreenImg3,
-                                            ),
-                                            fit: BoxFit.cover)),
+                                        image: const DecorationImage(
+                                          image: AssetImage(
+                                            AssetRes.homeScreenImg1,
+                                          ),
+                                          fit: BoxFit.cover,
+                                        )
+                                    ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 8, right: 10, left: 8),
+                                    padding: EdgeInsets.only(top: 8, right: 10, left: 8),
                                     child: Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Container(
-                                          height: Get.height * 0.031,
-                                          width: Get.width * 0.24,
+                                          height: 22,
+                                          width: 48,
                                           decoration: BoxDecoration(
-                                            color: ColorRes.yellowLight,
-                                            borderRadius:
-                                                BorderRadius.circular(16),
+                                            color: ColorRes.skyLight,
+                                            borderRadius: BorderRadius.circular(16),
                                           ),
                                           alignment: Alignment.center,
                                           child: Text(
-                                            StringRes.estate,
+                                            StringRes.toLet,
                                             style: semiBold(
-                                              color: ColorRes.yellow,
+                                              color: ColorRes.sky,
                                               fontSize: 12,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.w600,
                                             ),
                                           ),
                                         ),
@@ -338,16 +399,36 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                 ],
                               ),
                               SizedBox(height: Get.height * 0.03),
-                              Text(
-                                "Auto-layout explained",
-                                style: overpassRegular(
-                                    color: ColorRes.fontGrey,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Maisonette",
+                                    style: overpassRegular(
+                                        color: ColorRes.fontGrey,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Container(
+                                    height: 5,
+                                    width: 5,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: ColorRes.fontGrey
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    "Naxxar",
+                                    style: overpassRegular(
+                                        color: ColorRes.fontGrey,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ],
                               ),
                               SizedBox(height: Get.height * 0.008),
                               Text(
-                                "Auto layout is a constraint-based layout system to create an adaptive UI.",
+                                "2 bedrooms, this house is perfect for a little family ",
                                 style: overpassRegular(
                                     color: ColorRes.hinttext,
                                     fontSize: 14,
@@ -357,21 +438,33 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                               Row(
                                 children: [
                                   Text(
-                                    "199 000 €",
+                                    "530 €",
                                     style: overpassRegular(
                                         color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 14),
+                                        fontWeight: FontWeight.w600),
                                   ),
-                                  SizedBox(width: 15),
+                                  SizedBox(width: 8),
+                                  Container(
+                                    height: 5,
+                                    width: 5,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: ColorRes.fontGrey
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
                                   Text(
                                     "2 Bedrooms",
                                     style: overpassRegular(
                                         color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 14),
+                                        fontWeight: FontWeight.w600),
                                   ),
                                 ],
+                              ),
+                              SizedBox(height: Get.height * 0.02),
+                              Container(
+                                height: 2,
+                                color: ColorRes.colorF2F4F7,
                               ),
                               SizedBox(height: Get.height * 0.035),
                             ],
@@ -380,7 +473,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
 
                         ///---------------All Properties-----------
 
-                        Container(
+                        /*Container(
                           height: 16,
                           width: Get.width,
                           color: ColorRes.colorF2F4F7,
@@ -491,7 +584,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                               SizedBox(height: Get.height * 0.05),
                             ],
                           ),
-                        ),
+                        ),*/
                       ],
                     ),
                   )

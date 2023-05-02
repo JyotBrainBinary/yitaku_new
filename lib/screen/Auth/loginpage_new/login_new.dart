@@ -18,17 +18,19 @@ class LoginPageNew extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: GetBuilder<LoginNewController>(
-              id: "newlogin",
-              builder: (controller) {
-                return Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16),
+        body: GetBuilder<LoginNewController>(
+            id: "newlogin",
+            builder: (controller) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 16, right: 16),
+                child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+
                       /// ----- top --------
-                      SizedBox(height: Get.height * 0.062),
+                      SizedBox(height: Get.height * 0.09),
                       Align(
                         alignment: Alignment.center,
                         child: Image.asset(
@@ -67,44 +69,9 @@ class LoginPageNew extends StatelessWidget {
 
                       loginButton(controller, context),
 
-                      SizedBox(
-                        height: Get.height * 0.046
-                      ),
+                      SizedBox(height: Get.height * 0.046),
 
-                      /// --- forgot pass ---------
-                      Align(
-                        alignment: Alignment.center,
-                        child: Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: [
-                            Container(
-                              decoration: const BoxDecoration(
-                                  border: Border(
-                                      bottom: BorderSide(color: ColorRes.color2F3941)
-                                  )
-                              ),
-                              child: Text(
-                                StringRes.forgot,
-                                style: overpassRegular(
-                                  color: ColorRes.fontGrey,
-                                  fontSize: 17,
-                                  //textdeco: TextDecoration.underline,
-                                ),
-                              ),
-                            ),
-                            /*Container(
-                              height: 1.5,
-                              width: 130,
-                              color: ColorRes.fontGrey,
-                            ),*/
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: Get.height * 0.04
-                      ),
-
-                       /// ------- don't have account----------
+                      /// ------- don't have account----------
                       GestureDetector(
                         onTap: () {
                           Get.to(const CreateaccountScreen());
@@ -131,19 +98,50 @@ class LoginPageNew extends StatelessWidget {
                                 ),
                               ),
                               /*Container(
-                                height: 1.5,
-                                width: 260,
-                                color: ColorRes.fontGrey,
-                              ),*/
+                              height: 1.5,
+                              width: 260,
+                              color: ColorRes.fontGrey,
+                            ),*/
                             ],
                           ),
                         ),
                       ),
+                      //SizedBox(height: Get.height * 0.04),
+                      /// --- forgot pass ---------
+                      Align(
+                        alignment: Alignment.center,
+                        child: Stack(
+                          alignment: Alignment.bottomCenter,
+                          children: [
+                            Container(
+                              decoration: const BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(color: ColorRes.color2F3941)
+                                  )
+                              ),
+                              child: Text(
+                                StringRes.forgot,
+                                style: overpassRegular(
+                                  color: ColorRes.fontGrey,
+                                  fontSize: 17,
+                                  //textdeco: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                            /*Container(
+                            height: 1.5,
+                            width: 130,
+                            color: ColorRes.fontGrey,
+                          ),*/
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: Get.height * 0.09),
                     ],
                   ),
-                );
-              }),
-        ),
+                ),
+              );
+            }),
       ),
     );
   }

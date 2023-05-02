@@ -4,5 +4,6 @@ class HomeControllerTwo extends GetxController{
 bool isOpenList = false;
 
 bool isForSale = true;
+bool isRent = false;
 
 }

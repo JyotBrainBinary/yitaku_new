@@ -45,7 +45,7 @@ class GoalScreen extends StatelessWidget {
               ///last
               InkWell(
                 onTap: () {
-                  Get.to(() => TypeSellerScreen());
+                  Get.to(() => IntroScreen());
                 },
                 child: Container(
                   width: Get.width,
@@ -71,7 +71,7 @@ class GoalScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 5),
                           SizedBox(
-                            width: Get.width * 0.45,
+                            width: Get.width * 0.5,
                             child: Text(
                               StringRes.searchDetail,
                               style: overpassRegular(
@@ -94,11 +94,11 @@ class GoalScreen extends StatelessWidget {
               InkWell(
                 onTap: () {
                   // go to intro screen
-                  Get.to(IntroScreen());
+                  Get.to(TypeSellerScreen());
                 },
                 child: Container(
                   width: Get.width,
-                  padding: EdgeInsets.only(top: 29, bottom: 25),
+                  padding: EdgeInsets.only(top: 29, bottom: 25,left: 8),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: ColorRes.stroke)),
