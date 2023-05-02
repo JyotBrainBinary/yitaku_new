@@ -163,3 +163,133 @@ Widget bottomNavigationBar(BuildContext context) {
     ),
   );
 }
+
+
+Widget bottomNavigationBar2(BuildContext context) {
+
+  return Container(
+    width: Get.width,
+    height: 60,
+    decoration: const BoxDecoration(
+      color: Colors.white,
+      border: Border(
+        top: BorderSide(
+          color: ColorRes.colorEAECF0,
+        ),
+      ),
+    ),
+    child: Padding(
+        padding: const EdgeInsets.only(left: 30, right: 30),
+        child: GetBuilder<DashboardController>(
+            id: "bottom_bar",
+            builder: (dashboardController){
+              return Column(
+                children: [
+                  SizedBox(height: Get.height * 0.015),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          dashboardController.currentTab2 = 0;
+                          dashboardController.update(["bottom_bar"]);
+                        },
+                        child: (dashboardController.currentTab2 == 0)
+                            ? Column(
+                          children: [
+                            Image.asset(AssetRes.searchBottom,
+                                height: 20, color: ColorRes.color3879E8),
+                            const SizedBox(height: 5),
+                            Text(
+                              StringRes.search,
+                              style: overpassRegular(
+                                fontSize: 12,
+                                color: ColorRes.color3879E8,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        )
+                            : Column(
+
+                          children: [
+                            Image.asset(AssetRes.searchBottom, height: 20, color: ColorRes.hinttext,),
+                            const SizedBox(height: 5),
+                            Text(StringRes.search, style: overpassRegular(
+                                fontSize: 12, color: ColorRes.hinttext),),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          dashboardController.currentTab2 = 1;
+                          dashboardController.update(["bottom_bar"]);
+                        },
+                        child: (dashboardController.currentTab2 == 1)
+                            ? Column(
+                          children: [
+                            Image.asset(AssetRes.loanCalculator,
+                                height: 20, color: ColorRes.color3879E8),
+                            const SizedBox(height: 5),
+                            Text(
+                              StringRes.loanCalculator,
+                              style: overpassRegular(
+                                fontSize: 12,
+                                color: ColorRes.color3879E8,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        )
+                            : Column(
+                          children: [
+                            Image.asset(AssetRes.loanCalculator, height: 20),
+                            const SizedBox(height: 5),
+                            Text(
+                              StringRes.loanCalculator,
+                              style: overpassRegular(
+                                  fontSize: 12, color: ColorRes.hinttext),
+                            ),
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          dashboardController.currentTab2 = 2;
+                          dashboardController.update(["bottom_bar"]);
+                        },
+                        child: (dashboardController.currentTab2 == 2)
+                            ? Column(
+                          children: [
+                            Image.asset(AssetRes.insurance,
+                                height: 20, color: ColorRes.color3879E8),
+                            const SizedBox(height: 5),
+                            Text(
+                              StringRes.insurance,
+                              style: overpassRegular(
+                                fontSize: 12,
+                                color: ColorRes.color3879E8,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        )
+                            : Column(
+                          children: [
+                            Image.asset(AssetRes.insurance, height: 20),
+                            const SizedBox(height: 5),
+                            Text(StringRes.insurance, style: overpassRegular(
+                                fontSize: 12, color: ColorRes.hinttext),),
+                          ],
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ],
+              );
+            })
+    ),
+  );
+}

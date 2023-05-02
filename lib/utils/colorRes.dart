@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ColorRes {
   static const black = Color(0xFF000000);
   static const white = Color(0xFFFFFFFF);
-  static const appColor = Color(0xff2652BD);
+  static const appColor = Color(0XFF365CC0);
   static const stroke = Color(0xff3879E8);
 
 
@@ -30,5 +30,7 @@ class ColorRes {
   static const colorD9D9D9 = Color(0XFFD9D9D9);
   static const color344056 = Color(0XFF344056);
   static const color365CC0 = Color(0XFF365CC0);
+  static const color2F3941 = Color(0XFF2F3941);
+
 
 }

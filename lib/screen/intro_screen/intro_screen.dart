@@ -45,47 +45,7 @@ class IntroScreen extends StatelessWidget {
                   SizedBox(
                     height: Get.height * 0.055,
                   ),
-                  // Expanded(
-                  //   child: PageView.builder(
-                  //     onPageChanged: (value) {
-                  //
-                  //     },
-                  //     itemBuilder: (context, index) => Column(
-                  //       children: [
-                  //         Text(
-                  //           introController.title[index],
-                  //           style: overpassRegular(
-                  //               fontWeight: FontWeight.w500,
-                  //               fontSize: 24,
-                  //               color: ColorRes.black),
-                  //         ),
-                  //         SizedBox(
-                  //           height: Get.height * 0.041,
-                  //         ),
-                  //         Image.asset(
-                  //           introController.introImage[index],
-                  //           height: Get.height * 0.3030,
-                  //           width: Get.width * 0.7146,
-                  //         ),
-                  //         SizedBox(
-                  //           height: Get.height * 0.017,
-                  //         ),
-                  //         Text(
-                  //           introController.description[index],
-                  //           textAlign: TextAlign.center,
-                  //           style: overpassRegular(
-                  //               fontWeight: FontWeight.w400,
-                  //               fontSize: 14,
-                  //               color: ColorRes.black),
-                  //         ),
-                  //         SizedBox(
-                  //           height: Get.height * 0.031,
-                  //         ),
-                  //       ],
-                  //     ),
-                  //     itemCount: introController.title.length,
-                  //   ),
-                  // ),
+
 
                   ///pageview
 
@@ -100,38 +60,40 @@ class IntroScreen extends StatelessWidget {
                             controller.update(["intro"]);
                           },
                           itemBuilder: (context, index) {
-                            return Column(
-                              children: [
-                                Text(
-                                  introController.title[index],
-                                  style: overpassRegular(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 24,
-                                      color: ColorRes.black),
-                                ),
-                                SizedBox(
-                                  height: Get.height * 0.035,
-                                ),
-                                Image.asset(
-                                  introController.introImage[index],
-                                  height: Get.height * 0.3030,
-                                  width: Get.width * 0.7146,
-                                ),
-                                SizedBox(
-                                  height: Get.height * 0.017,
-                                ),
-                                Text(
-                                  introController.description[index],
-                                  textAlign: TextAlign.center,
-                                  style: overpassRegular(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      color: ColorRes.black),
-                                ),
-                                SizedBox(
-                                  height: Get.height * 0.031,
-                                ),
-                              ],
+                            return SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  Text(
+                                    introController.title[index],
+                                    style: overpassRegular(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 24,
+                                        color: ColorRes.black),
+                                  ),
+                                  SizedBox(
+                                    height: Get.height * 0.035,
+                                  ),
+                                  Image.asset(
+                                    introController.introImage[index],
+                                    height: Get.height * 0.3030,
+                                    width: Get.width * 0.7146,
+                                  ),
+                                  SizedBox(
+                                    height: Get.height * 0.017,
+                                  ),
+                                  Text(
+                                    introController.description[index],
+                                    textAlign: TextAlign.center,
+                                    style: overpassRegular(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14,
+                                        color: ColorRes.black),
+                                  ),
+                                  SizedBox(
+                                    height: Get.height * 0.041,
+                                  ),
+                                ],
+                              ),
                             );
                           }),
                     ),
@@ -307,13 +269,20 @@ class IntroScreen extends StatelessWidget {
                               onTap: () {
                                 Get.back();
                               },
-                              child: Text(
-                                "Back",
-                                style: overpassRegular(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.black,
-                                  textdeco: TextDecoration.underline,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(color: ColorRes.color2F3941)
+                                  )
+                                ),
+                                child: Text(
+                                  "Back",
+                                  style: overpassRegular(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: ColorRes.color2F3941,
+                                    //textdeco: TextDecoration.underline,
+                                  ),
                                 ),
                               ),
                             )
@@ -326,13 +295,20 @@ class IntroScreen extends StatelessWidget {
                                     curve: Curves.easeInOut);
                                 controller.update(["intro"]);
                               },
-                              child: Text(
-                                "Back",
-                                style: overpassRegular(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.black,
-                                  textdeco: TextDecoration.underline,
+                              child: Container(
+                                decoration: const BoxDecoration(
+                                    border: Border(
+                                        bottom: BorderSide(color: ColorRes.color2F3941)
+                                    )
+                                ),
+                                child: Text(
+                                  "Back",
+                                  style: overpassRegular(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black,
+                                    //textdeco: TextDecoration.underline,
+                                  ),
                                 ),
                               ),
                             ),
@@ -395,26 +371,25 @@ class IntroScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomRight,
                         child: controller.pageIndex == 3
-                            ? Text(
-                                "",
-                                style: overpassRegular(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.black,
-                                  textdeco: TextDecoration.underline,
-                                ),
-                              )
+                            ? SizedBox()
                             : GestureDetector(
                                 onTap: () {
                                   Get.to(DashboardScreen());
                                 },
-                                child: Text(
-                                  StringRes.skip,
-                                  style: overpassRegular(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black,
-                                    textdeco: TextDecoration.underline,
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          bottom: BorderSide(color: ColorRes.color2F3941)
+                                      )
+                                  ),
+                                  child: Text(
+                                    StringRes.skip,
+                                    style: overpassRegular(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: ColorRes.color2F3941,
+                                      //textdeco: TextDecoration.underline,
+                                    ),
                                   ),
                                 ),
                               ),

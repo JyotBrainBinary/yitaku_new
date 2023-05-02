@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/home_controller_two.dart';
@@ -14,6 +15,21 @@ class HomeScreenTwo extends StatefulWidget {
 }
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    /// ----- status bar color -----
+    /*SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          statusBarColor: ColorRes.color3879E8,
+          statusBarIconBrightness: Brightness.dark
+      ),
+    );*/
+  }
+
   @override
   Widget build(BuildContext context) {
     final HomeControllerTwo homeControllerTwo = Get.put(HomeControllerTwo());
@@ -22,13 +38,13 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
         body: GetBuilder<HomeControllerTwo>(
           id: "homeTwo",
           builder: (controller) {
-            return  Column(
+            return Column(
               children: [
                 // SizedBox(height: Get.height * 0.10),
 
                 ///---------------appbar----------------
                 Container(
-                  color: Colors.blue,
+                  color: ColorRes.color3879E8,
                   width: Get.width,
                   height: Get.height * 0.10,
                   child: Padding(
@@ -63,7 +79,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     ),
                   ),
                 ),
-////  after appbar
+
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Row(
@@ -79,64 +95,94 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       Spacer(),
                       GestureDetector(
                         onTap: () {
-                          if(homeControllerTwo.isOpenList ==false){
+                          if (homeControllerTwo.isOpenList == false) {
                             homeControllerTwo.isOpenList = true;
-                              controller.update(["homeTwo"]);
-                          }
-                          else{
+                            controller.update(["homeTwo"]);
+                          } else {
                             homeControllerTwo.isOpenList = false;
                             controller.update(["homeTwo"]);
                           }
                         },
                         child: Image.asset(
                           AssetRes.downList,
-                          height: 15,
+                          height: 12,
+                          color: ColorRes.blue,
                         ),
                       ),
                     ],
                   ),
                 ),
-                homeControllerTwo.isOpenList ==true ?
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 44,
-                        color: Colors.blue,
-                        child: Text(
-                          "For sale",
-                          style: overpassRegular(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              color: Colors.white),
 
+                (homeControllerTwo.isOpenList == true)
+                    ? Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              blurRadius: 15.0,
+                              offset: Offset(0, 8),
+                            )
+                          ],
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 2,
-                    ),
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 44,
-                        color: Colors.blue,
-                        child: Text(
-                          "To rent",
-                          style: overpassRegular(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              color: Colors.white),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: (){
+                                  homeControllerTwo.isForSale = true;
+                                  controller.update(["homeTwo"]);
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 44,
+                                  color: (homeControllerTwo.isForSale == true)? ColorRes.color3879E8 : ColorRes.white,
+                                  child: Text(
+                                    "For sale",
+                                    style: overpassRegular(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16,
+                                        color:  (homeControllerTwo.isForSale == false)?ColorRes.colorEAECF0: ColorRes.white),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 44,
+                              width: 1,
+                              color: ColorRes.white,
+                            ),
+                            Expanded(
+                              child: InkWell(
+                                onTap: (){
+                                  homeControllerTwo.isForSale = false;
+                                  controller.update(["homeTwo"]);
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 44,
+                                  color: (homeControllerTwo.isForSale == false)? ColorRes.color3879E8 : ColorRes.white,
+                                  child: Text(
+                                    "To rent",
+                                    style: overpassRegular(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16,
+                                        color: (homeControllerTwo.isForSale == true)?ColorRes.colorEAECF0: ColorRes.white),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ),
-                  ],
-                ):SizedBox(),
+                      )
+                    : SizedBox(),
+
+
+
 
                 ///---------------featured properties-----------
-                Expanded(
-                  child: SingleChildScrollView(
+               Expanded(
+                  child: ( homeControllerTwo.isForSale == true)
+                      ? SingleChildScrollView(
                     child: Column(
                       children: [
                         SizedBox(height: Get.height * 0.02),
@@ -160,9 +206,6 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     fontSize: 18),
                               ),
                               SizedBox(height: Get.height * 0.03),
-
-                              /// todo1: top right corner  put like icon and
-                              /// todo2: top left corner  put category
                               Stack(
                                 children: [
                                   Container(
@@ -177,16 +220,19 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                             fit: BoxFit.cover)),
                                   ),
                                   Padding(
-                                    padding:
-                                    EdgeInsets.only(top: 8, right: 8, left: 8),
+                                    padding: EdgeInsets.only(
+                                        top: 8, right: 10, left: 8),
                                     child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           height: Get.height * 0.031,
                                           width: Get.width * 0.144,
                                           decoration: BoxDecoration(
                                             color: ColorRes.skyLight,
-                                            borderRadius: BorderRadius.circular(16),
+                                            borderRadius:
+                                                BorderRadius.circular(16),
                                           ),
                                           alignment: Alignment.center,
                                           child: Text(
@@ -201,29 +247,30 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                         Spacer(),
                                         Image.asset(
                                           AssetRes.heart,
-                                          height: 15,
-                                          width: 17,
+                                          height: 18,
                                         ),
                                       ],
                                     ),
                                   ),
                                 ],
                               ),
-                              SizedBox(height: Get.height * 0.02),
+                              SizedBox(height: Get.height * 0.03),
                               Text(
-                                "Maisonette   Naxxar",
+                                "Maisonette . Naxxar",
                                 style: overpassRegular(
                                     color: ColorRes.fontGrey,
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16),
                               ),
+                              SizedBox(height: Get.height * 0.008),
                               Text(
                                 "2 bedrooms, this house is perfect for a little family ",
                                 style: overpassRegular(
                                     color: ColorRes.hinttext,
-                                    fontSize: 12,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w300),
                               ),
+                              SizedBox(height: Get.height * 0.008),
                               Row(
                                 children: [
                                   Text(
@@ -241,7 +288,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: Get.height * 0.035),
+                              SizedBox(height: Get.height * 0.05),
                               Stack(
                                 children: [
                                   Container(
@@ -256,16 +303,19 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                             fit: BoxFit.cover)),
                                   ),
                                   Padding(
-                                    padding:
-                                    EdgeInsets.only(top: 8, right: 8, left: 8),
+                                    padding: EdgeInsets.only(
+                                        top: 8, right: 10, left: 8),
                                     child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           height: Get.height * 0.031,
                                           width: Get.width * 0.24,
                                           decoration: BoxDecoration(
                                             color: ColorRes.yellowLight,
-                                            borderRadius: BorderRadius.circular(16),
+                                            borderRadius:
+                                                BorderRadius.circular(16),
                                           ),
                                           alignment: Alignment.center,
                                           child: Text(
@@ -280,15 +330,14 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                         Spacer(),
                                         Image.asset(
                                           AssetRes.heart,
-                                          height: 15,
-                                          width: 17,
+                                          height: 18,
                                         ),
                                       ],
                                     ),
                                   ),
                                 ],
                               ),
-                              SizedBox(height: Get.height * 0.02),
+                              SizedBox(height: Get.height * 0.03),
                               Text(
                                 "Auto-layout explained",
                                 style: overpassRegular(
@@ -296,13 +345,15 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     fontWeight: FontWeight.w600,
                                     fontSize: 16),
                               ),
+                              SizedBox(height: Get.height * 0.008),
                               Text(
                                 "Auto layout is a constraint-based layout system to create an adaptive UI.",
                                 style: overpassRegular(
                                     color: ColorRes.hinttext,
-                                    fontSize: 12,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w300),
                               ),
+                              SizedBox(height: Get.height * 0.008),
                               Row(
                                 children: [
                                   Text(
@@ -369,16 +420,19 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                             fit: BoxFit.cover)),
                                   ),
                                   Padding(
-                                    padding:
-                                    EdgeInsets.only(top: 8, right: 8, left: 8),
+                                    padding: EdgeInsets.only(
+                                        top: 8, right: 10, left: 8),
                                     child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           height: Get.height * 0.031,
                                           width: Get.width * 0.24,
                                           decoration: BoxDecoration(
                                             color: ColorRes.yellowLight,
-                                            borderRadius: BorderRadius.circular(16),
+                                            borderRadius:
+                                                BorderRadius.circular(16),
                                           ),
                                           alignment: Alignment.center,
                                           child: Text(
@@ -393,28 +447,30 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                         Spacer(),
                                         Image.asset(
                                           AssetRes.heart,
-                                          height: 15,
-                                          width: 17,
+                                          height: 18,
                                         ),
                                       ],
                                     ),
                                   ),
                                 ],
                               ),
-                              SizedBox(height: Get.height * 0.02),
+                              SizedBox(height: Get.height * 0.03),
                               Text(
-                                "Maisonette   Naxxar",
+                                "Maisonette . Naxxar",
                                 style: overpassRegular(
                                     color: ColorRes.fontGrey,
-                                    fontWeight: FontWeight.w600),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16),
                               ),
+                              SizedBox(height: Get.height * 0.008),
                               Text(
                                 "2 bedrooms, this house is perfect for a little family ",
                                 style: overpassRegular(
                                     color: ColorRes.hinttext,
-                                    fontSize: 12,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w300),
                               ),
+                              SizedBox(height: Get.height * 0.008),
                               Row(
                                 children: [
                                   Text(
@@ -432,17 +488,18 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                   ),
                                 ],
                               ),
+                              SizedBox(height: Get.height * 0.05),
                             ],
                           ),
                         ),
                       ],
                     ),
-                  ),
+                  )
+                      : SizedBox(),
                 ),
               ],
             );
           },
-
         ),
       ),
     );

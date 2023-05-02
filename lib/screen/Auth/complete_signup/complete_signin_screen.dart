@@ -62,7 +62,9 @@ class CompleteSignupScreen extends StatelessWidget {
                             Text(
                               StringRes.name,
                               style: regular(
-                                  fontSize: 14, color: ColorRes.color344056),
+                                  fontSize: 14,
+                                  color: ColorRes.color344056,
+                                  fontWeight: FontWeight.w500),
                             ),
                             SizedBox(
                               height: Get.height * 0.008,
@@ -124,7 +126,9 @@ class CompleteSignupScreen extends StatelessWidget {
                             Text(
                               StringRes.surname,
                               style: regular(
-                                  fontSize: 14, color: ColorRes.color344056),
+                                  fontSize: 14,
+                                  color: ColorRes.color344056,
+                                  fontWeight: FontWeight.w500),
                             ),
                             SizedBox(
                               height: Get.height * 0.008,
@@ -188,7 +192,9 @@ class CompleteSignupScreen extends StatelessWidget {
                             Text(
                               StringRes.where,
                               style: regular(
-                                  fontSize: 14, color: ColorRes.color344056),
+                                  fontSize: 14,
+                                  color: ColorRes.color344056,
+                                  fontWeight: FontWeight.w500),
                             ),
                             SizedBox(
                               height: Get.height * 0.012,
@@ -459,6 +465,8 @@ class CompleteSignupScreen extends StatelessWidget {
                                               fontSize: 16)),
                                     ),
                                   ),
+
+                            SizedBox(height: Get.height * 0.08),
                           ],
                         ),
                       );

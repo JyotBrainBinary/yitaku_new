@@ -71,7 +71,7 @@ class GoalScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 5),
                           SizedBox(
-                            width: Get.width * 0.35,
+                            width: Get.width * 0.45,
                             child: Text(
                               StringRes.searchDetail,
                               style: overpassRegular(
@@ -120,7 +120,7 @@ class GoalScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 5),
                           SizedBox(
-                              width: Get.width * 0.35,
+                              width: Get.width * 0.45,
                               child: Text(
                                 StringRes.sellOrRentDetail,
                                 textAlign: TextAlign.start,

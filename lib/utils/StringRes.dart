@@ -80,6 +80,10 @@ class StringRes {
   static const home = "Home";
   static const owner = "Owner";
   static const estate = "Estate Agent";
+  static const loanCalculator = "Loan calculator";
+
+  static const insurance = "Insurance";
+
   static const featuredProperties = "Featured properties";
   static const beThe1stToAcquireOurTopProperties = "Be the 1st to acquire our top properties";
   static const allProperties = "All Properties";
@@ -88,7 +92,7 @@ class StringRes {
 
 static const favorites = "Favorites";
 
-/// ------------------- profile screen ------------------
+/// ------------------- profile screen ---------------------
 
 static const profile = "Profile";
 

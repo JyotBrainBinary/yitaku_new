@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:yitaku/screen/Auth/loginpage_new/login_new.dart';
+
+import 'package:yitaku/screen/splashScreen2/splashScreen2.dart';
 
 
 class SplashController extends GetxController {
@@ -8,10 +9,10 @@ class SplashController extends GetxController {
     // TODO: implement onInit
     Future.delayed(
       Duration(
-        seconds: 2,
+        seconds: 1,
       ),
       () {
-       return Get.offAll(() => LoginPageNew());
+       return Get.to(() => SplashScreen2());
       },
     );
     super.onInit();

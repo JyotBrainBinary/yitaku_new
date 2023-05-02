@@ -77,12 +77,19 @@ class LoginPageNew extends StatelessWidget {
                         child: Stack(
                           alignment: Alignment.bottomCenter,
                           children: [
-                            Text(
-                              StringRes.forgot,
-                              style: overpassRegular(
-                                color: ColorRes.fontGrey,
-                                fontSize: 17,
-                                textdeco: TextDecoration.underline,
+                            Container(
+                              decoration: const BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(color: ColorRes.color2F3941)
+                                  )
+                              ),
+                              child: Text(
+                                StringRes.forgot,
+                                style: overpassRegular(
+                                  color: ColorRes.fontGrey,
+                                  fontSize: 17,
+                                  //textdeco: TextDecoration.underline,
+                                ),
                               ),
                             ),
                             /*Container(
@@ -107,13 +114,20 @@ class LoginPageNew extends StatelessWidget {
                           child: Stack(
                             alignment: Alignment.bottomCenter,
                             children: [
-                              Text(
-                                StringRes.doNot,
-                                //style: TextStyle(decoration: TextDecoration.underline),
-                                style: overpassRegular(
-                                  color: ColorRes.black,
-                                  fontSize: 17,
-                                  textdeco: TextDecoration.underline,
+                              Container(
+                                decoration: const BoxDecoration(
+                                    border: Border(
+                                        bottom: BorderSide(color: ColorRes.color2F3941)
+                                    )
+                                ),
+                                child: Text(
+                                  StringRes.doNot,
+                                  //style: TextStyle(decoration: TextDecoration.underline),
+                                  style: overpassRegular(
+                                    color: ColorRes.black,
+                                    fontSize: 17,
+                                    //textdeco: TextDecoration.underline,
+                                  ),
                                 ),
                               ),
                               /*Container(

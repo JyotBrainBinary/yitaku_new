@@ -193,9 +193,9 @@ class CreateaccountScreen extends StatelessWidget {
                         Row(
                           children: [
                             SizedBox(
-                              width: Get.width * 0.02,
+                              width: Get.width * 0.035,
                             ),
-                            Transform.scale(
+                          /*  Transform.scale(
                               scale: 1.1,
                               child: Checkbox(
                                 value: createAccountController.isChecked,
@@ -213,8 +213,57 @@ class CreateaccountScreen extends StatelessWidget {
                                     (states) => BorderSide(
                                         width: 1, color: ColorRes.appColor)),
                               ),
-                            ),
+                            ),*/
 
+                            (controller.isChecked == true)
+                                ? InkWell(
+                              onTap: (){
+                                if(controller.isChecked == false){
+                                  controller.isChecked = true;
+                                  controller.update(["createaccount"]);
+                                } else{
+                                  controller.isChecked = false;
+                                  controller.update(["createaccount"]);
+                                }
+                              },
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(6),
+                                  border: Border.all(color: ColorRes.color365CC0),
+                                  image: const DecorationImage(
+                                    image: AssetImage(
+                                      AssetRes.check,
+                                    ),
+                                    scale: 2.5
+                                  )
+                                ),
+                              ),
+                            )
+                                : InkWell(
+                              onTap: (){
+                                if(controller.isChecked == false){
+                                  controller.isChecked = true;
+                                  controller.update(["createaccount"]);
+                                } else{
+                                  controller.isChecked = false;
+                                  controller.update(["createaccount"]);
+                                }
+                              },
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(6),
+                                    border: Border.all(color: ColorRes.color365CC0),
+
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: Get.width * 0.03,
+                            ),
                             Flexible(
                               child: Text(
                                 StringRes.iHave,
@@ -281,13 +330,19 @@ class CreateaccountScreen extends StatelessWidget {
                         ),
                         Align(
                           alignment: Alignment.center,
-                          child: Text(
-                            StringRes.read,
-                            style: semiBold(
-                              color: ColorRes.color344056,
-                              fontSize: 16,
-                              textdeco: TextDecoration.underline,
-                              fontWeight: FontWeight.w400,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(color: ColorRes.color2F3941)
+                                )
+                            ),
+                            child: Text(
+                              StringRes.read,
+                              style: overpassRegular(
+                                color: ColorRes.fontGrey,
+                                fontSize: 17,
+                                //textdeco: TextDecoration.underline,
+                              ),
                             ),
                           ),
                         ),

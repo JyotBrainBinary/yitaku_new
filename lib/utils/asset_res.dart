@@ -36,6 +36,9 @@ class AssetRes {
   static const favorites = "${icons}favorites.png";
   static const profile = "${icons}profile.png";
 
+  static const loanCalculator = "${icons}loanCalculator.png";
+  static const insurance = "${icons}insurance.png";
+
   static const heart = "${icons}Icon.png";
   static const downArrow = "${icons}downArrow.png";
 
