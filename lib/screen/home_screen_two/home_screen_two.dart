@@ -195,10 +195,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     child: Column(
                       children: [
                         SizedBox(height: Get.height * 0.02),
+
                         Padding(
                           padding: const EdgeInsets.only(left: 16, right: 16),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(height: Get.height * 0.03),
                               Stack(
@@ -209,10 +209,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         image: const DecorationImage(
-                                            image: AssetImage(
-                                              AssetRes.homeScreenImg1,
-                                            ),
-                                            fit: BoxFit.cover,
+                                          image: AssetImage(
+                                            AssetRes.homeScreenImg1,
+                                          ),
+                                          fit: BoxFit.cover,
                                         )
                                     ),
                                   ),
@@ -220,57 +220,57 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     padding: EdgeInsets.only(top: 8, right: 10, left: 8),
                                     child: Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
-                                       Column(
-                                         crossAxisAlignment: CrossAxisAlignment.start,
-                                         children: [
-                                           Container(
-                                             height: 22,
-                                             width: 61,
-                                             decoration: BoxDecoration(
-                                               color: ColorRes.skyLight,
-                                               borderRadius:
-                                               BorderRadius.circular(16),
-                                             ),
-                                             alignment: Alignment.center,
-                                             child: Text(
-                                               StringRes.forSale,
-                                               style: semiBold(
-                                                 color: ColorRes.sky,
-                                                 fontSize: 12,
-                                                 fontWeight: FontWeight.w600,
-                                               ),
-                                             ),
-                                           ),
-                                           SizedBox(height: 5),
-                                           Container(
-                                             height: 22,
-                                             width: 87,
-                                             decoration: BoxDecoration(
-                                               color: ColorRes.yellowLight,
-                                               borderRadius:
-                                               BorderRadius.circular(16),
-                                             ),
-                                             alignment: Alignment.center,
-                                             child: Row(
-                                               mainAxisAlignment: MainAxisAlignment.center,
-                                               children: [
-                                                 Icon(Icons.star, color: ColorRes.colorB54708, size: 18),
-                                                 SizedBox(width: 3),
-                                                 Text(
-                                                   StringRes.featured,
-                                                   style: semiBold(
-                                                     color: ColorRes.colorB54708,
-                                                     fontSize: 12,
-                                                     fontWeight: FontWeight.w600,
-                                                   ),
-                                                 ),
-                                               ],
-                                             ),
-                                           ),
-                                         ],
-                                       ),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              height: 22,
+                                              width: 61,
+                                              decoration: BoxDecoration(
+                                                color: ColorRes.skyLight,
+                                                borderRadius:
+                                                BorderRadius.circular(16),
+                                              ),
+                                              alignment: Alignment.center,
+                                              child: Text(
+                                                StringRes.forSale,
+                                                style: semiBold(
+                                                  color: ColorRes.sky,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(height: 5),
+                                            Container(
+                                              height: 22,
+                                              width: 87,
+                                              decoration: BoxDecoration(
+                                                color: ColorRes.yellowLight,
+                                                borderRadius:
+                                                BorderRadius.circular(16),
+                                              ),
+                                              alignment: Alignment.center,
+                                              child: Row(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Icon(Icons.star, color: ColorRes.colorB54708, size: 18),
+                                                  SizedBox(width: 3),
+                                                  Text(
+                                                    StringRes.featured,
+                                                    style: semiBold(
+                                                      color: ColorRes.colorB54708,
+                                                      fontSize: 12,
+                                                      fontWeight: FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                         Spacer(),
                                         Image.asset(
                                           AssetRes.heart,
@@ -331,8 +331,8 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     height: 5,
                                     width: 5,
                                     decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: ColorRes.fontGrey
+                                        shape: BoxShape.circle,
+                                        color: ColorRes.fontGrey
                                     ),
                                   ),
                                   SizedBox(width: 8),
@@ -345,10 +345,21 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                 ],
                               ),
                               SizedBox(height: Get.height * 0.02),
-                              Container(
-                                height: 2,
-                                color: ColorRes.colorF2F4F7,
-                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 2,
+                          color: ColorRes.colorF2F4F7,
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16, right: 16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+
                               SizedBox(height: Get.height * 0.02),
                               Stack(
                                 children: [
@@ -462,14 +473,16 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                 ],
                               ),
                               SizedBox(height: Get.height * 0.02),
-                              Container(
-                                height: 2,
-                                color: ColorRes.colorF2F4F7,
-                              ),
-                              SizedBox(height: Get.height * 0.035),
+
                             ],
                           ),
                         ),
+
+                        Container(
+                          height: 2,
+                          color: ColorRes.colorF2F4F7,
+                        ),
+                        SizedBox(height: Get.height * 0.035),
 
                         ///---------------All Properties-----------
 
