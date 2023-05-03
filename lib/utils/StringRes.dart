@@ -8,8 +8,8 @@ class StringRes {
   static const letsGetYouStarted = "Let's get you started...";
   static const enterEmail = "Enter email...";
   static const createAccount = "Create account";
-  static const submit = "SUBMIT";
-  static const cancel = "CANCEL";
+  static const submit = "Submit";
+  static const cancel = "Cancle";
   static const enterPassword = "*****";
   static const email = "Email";
   static const password = "Password";

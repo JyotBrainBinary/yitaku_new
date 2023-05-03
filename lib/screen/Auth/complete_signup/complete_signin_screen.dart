@@ -33,7 +33,7 @@ class CompleteSignupScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: Get.height * 0.10,
+                              height: Get.height * 0.16,
                             ),
                             Align(
                               alignment: Alignment.center,
@@ -199,72 +199,7 @@ class CompleteSignupScreen extends StatelessWidget {
                             SizedBox(
                               height: Get.height * 0.012,
                             ),
-                            // SizedBox(
-                            //   height: Get.height * 0.117,
-                            //   child: DropdownButtonFormField(
-                            //     icon: Padding(
-                            //       padding: const EdgeInsets.only(right: 19.5),
-                            //       child: Icon(Icons.keyboard_arrow_down_rounded, color: ColorRes.fontGrey,),
-                            //     ),
-                            //     onChanged: (String? value) {
-                            //       completeSignupController.dropdownValue =
-                            //           value!;
-                            //       controller.update(["complete"]);
-                            //     },
-                            //     style: overpassRegular(
-                            //         color: ColorRes.fontGrey, fontSize: 16),
-                            //     decoration:  InputDecoration(
-                            //       hintText: "Select team member",
-                            //       hintStyle: overpassRegular(
-                            //           fontSize: 16, color: ColorRes.hinttext),
-                            //       border: OutlineInputBorder(
-                            //         borderSide: BorderSide(
-                            //             color: ColorRes.sky),
-                            //         borderRadius: BorderRadius.all(
-                            //             Radius.elliptical(10, 10)),
-                            //       ),
-                            //       enabled: true,
-                            //       disabledBorder: OutlineInputBorder(
-                            //         borderSide: BorderSide(
-                            //           color: ColorRes.textfieldBorder,
-                            //         ),
-                            //         borderRadius: BorderRadius.all(
-                            //             Radius.elliptical(10, 10)),
-                            //       ),
-                            //       focusedBorder: OutlineInputBorder(
-                            //         borderSide: BorderSide(
-                            //             color: ColorRes.sky),
-                            //         borderRadius: BorderRadius.all(
-                            //             Radius.elliptical(10, 10)),
-                            //       ),
-                            //       enabledBorder: OutlineInputBorder(
-                            //         borderSide: BorderSide(
-                            //             color: ColorRes.textfieldBorder,
-                            //             ),
-                            //         borderRadius: BorderRadius.all(
-                            //             Radius.elliptical(10, 10)),
-                            //       ),
-                            //       errorBorder: OutlineInputBorder(
-                            //         borderSide: BorderSide(
-                            //           color: Colors.redAccent,
-                            //           width: 0.6,
-                            //         ),
-                            //         borderRadius: BorderRadius.all(
-                            //             Radius.elliptical(10, 10)),
-                            //       ),
-                            //       contentPadding:
-                            //           EdgeInsets.only(left: 10, bottom: 9),
-                            //     ),
-                            //     items: completeSignupController.list
-                            //         .map((cityTitle) => DropdownMenuItem(
-                            //             value: cityTitle,
-                            //             child: Wrap(
-                            //                 children: [Text("$cityTitle")])))
-                            //         .toList(),
-                            //   ),
-                            // ),
 
-                            //// drop down final
                             GestureDetector(
                               onTap: () {
                                 if (completeSignupController.isDrop == false) {
@@ -466,7 +401,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                     ),
                                   ),
 
-                            SizedBox(height: Get.height * 0.08),
+                            SizedBox(height: Get.height * 0.16),
                           ],
                         ),
                       );

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/Auth/createAccount/create_account_screen.dart';
 import 'package:yitaku/screen/Auth/loginpage_new/login_new_controller.dart';
+import 'package:yitaku/screen/passwordReset/passwordResetPage.dart';
 
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -106,34 +107,29 @@ class LoginPageNew extends StatelessWidget {
                           ),
                         ),
                       ),
-                      //SizedBox(height: Get.height * 0.04),
+                      SizedBox(height: Get.height * 0.04),
                       /// --- forgot pass ---------
                       Align(
                         alignment: Alignment.center,
-                        child: Stack(
-                          alignment: Alignment.bottomCenter,
-                          children: [
-                            Container(
-                              decoration: const BoxDecoration(
-                                  border: Border(
-                                      bottom: BorderSide(color: ColorRes.color2F3941)
-                                  )
-                              ),
-                              child: Text(
-                                StringRes.forgot,
-                                style: overpassRegular(
-                                  color: ColorRes.fontGrey,
-                                  fontSize: 17,
-                                  //textdeco: TextDecoration.underline,
-                                ),
+                        child:  InkWell(
+                          onTap: (){
+                            Get.to(PasswordResetPage());
+                          },
+                          child: Container(
+                            decoration: const BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(color: ColorRes.color2F3941)
+                                )
+                            ),
+                            child: Text(
+                              StringRes.forgot,
+                              style: overpassRegular(
+                                color: ColorRes.fontGrey,
+                                fontSize: 17,
+                                //textdeco: TextDecoration.underline,
                               ),
                             ),
-                            /*Container(
-                            height: 1.5,
-                            width: 130,
-                            color: ColorRes.fontGrey,
-                          ),*/
-                          ],
+                          ),
                         ),
                       ),
                       SizedBox(height: Get.height * 0.09),
@@ -307,7 +303,7 @@ class LoginPageNew extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 color: ColorRes.appColor,
               ),
-              child: Text("Login",
+              child: Text(StringRes.login,
                   style: overpassRegular(
                       fontWeight: FontWeight.w600,
                       fontSize: 16)),

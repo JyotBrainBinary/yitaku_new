@@ -25,16 +25,15 @@ class CreateaccountScreen extends StatelessWidget {
                 id: "createaccount",
                 builder: (controller) {
                   return Padding(
-                    padding: EdgeInsets.only(
-                      // left: Get.width * 0.056, right: Get.width * 0.056
+                    padding: const EdgeInsets.only(
                       left: 16, right: 16,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: Get.height * 0.062,
-                        ),
+
+                        SizedBox(height: Get.height * 0.1),
+
                         Align(
                           alignment: Alignment.center,
                           child: Image.asset(
@@ -103,8 +102,8 @@ class CreateaccountScreen extends StatelessWidget {
                               hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
                               suffixIcon: controller.emailError == ''
-                                  ? SizedBox()
-                                  : Icon(
+                                  ? const SizedBox()
+                                  : const Icon(
                                 Icons.error_outline,
                                 color: ColorRes.errorIcon,
                               ),
@@ -169,8 +168,8 @@ class CreateaccountScreen extends StatelessWidget {
                               hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
                               suffixIcon: controller.passwordError == ''
-                                  ? SizedBox()
-                                  : Icon(
+                                  ? const SizedBox()
+                                  : const Icon(
                                 Icons.error_outline,
                                 color: ColorRes.errorIcon,
                               ),
@@ -195,25 +194,7 @@ class CreateaccountScreen extends StatelessWidget {
                             SizedBox(
                               width: Get.width * 0.035,
                             ),
-                          /*  Transform.scale(
-                              scale: 1.1,
-                              child: Checkbox(
-                                value: createAccountController.isChecked,
-                                onChanged: (value) {
-                                  createAccountController.isChecked = value!;
-                                  controller.update(['createaccount']);
-                                },
 
-                                checkColor: ColorRes.appColor,
-                                activeColor: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                side: MaterialStateBorderSide.resolveWith(
-                                    (states) => BorderSide(
-                                        width: 1, color: ColorRes.appColor)),
-                              ),
-                            ),*/
 
                             (controller.isChecked == true)
                                 ? InkWell(
@@ -346,6 +327,8 @@ class CreateaccountScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
+                        SizedBox(height: Get.height * 0.1),
                       ],
                     ),
                   );

@@ -485,7 +485,7 @@ class BlueLoginScreen extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Get.to(const PasswordResetPage());
+                            Get.to( PasswordResetPage());
                           },
                           child: Align(
                             alignment: Alignment.center,
