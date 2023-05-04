@@ -16,6 +16,13 @@ class AssetRes {
   static const homeScreenImg2 = "${images}images_estate.jpg";
   static const homeScreenImg3 = "${images}images_kitchen.jpg";
 
+  static const propertyDetail1 = "${images}propertyDetail1.png";
+  static const propertyDetail2 = "${images}propertyDetail2.png";
+
+  static const propertyDetail3 = "${images}propertyDetail3.png";
+  static const placeHolderPerson = "${images}placeHolderPerson.png";
+
+
 
   ///_____________________ icons _________________________
 
@@ -35,9 +42,16 @@ class AssetRes {
   static const searchBottom = "${icons}searchBottom.png";
   static const favorites = "${icons}favorites.png";
   static const profile = "${icons}profile.png";
+  static const hart = "${icons}hart.png";
+  static const msg = "${icons}msg.png";
+
+  static const euro = "${icons}euro.png";
 
   static const loanCalculator = "${icons}loanCalculator.png";
   static const insurance = "${icons}insurance.png";
+  static const bedroom = "${icons}bedroom.png";
+  static const bathroom = "${icons}bathroom.png";
+  static const zoomIn = "${icons}zoomIn.png";
 
   static const heart = "${icons}Icon.png";
   static const downArrow = "${icons}downArrow.png";

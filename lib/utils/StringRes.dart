@@ -102,5 +102,26 @@ static const favorites = "Favorites";
 
 static const profile = "Profile";
 
+/// property details screen
+
+static const propertyDetails = "Property Details";
+static const Apartment = "Apartment";
+static const bedrooms = "Bedrooms";
+static const bathroom = "Bathroom";
+static const withTerrace = "with Terrace";
+static const seller = "Seller";
+static const call = "Call";
+static const contactSeller = "Contact seller";
+static const thisPropertyCanBeYoursFor = "This property can be yours for:";
+  static const perMonth = "per month *";
+
+  static const loanAmount = "Loan Amount";
+  static const deposit = "Deposit";
+  static const howMuchCanIBorrow = "HOW MUCH CAN I BORROW?";
+  static const compareHomeLoanOffers = "COMPARE HOME LOAN OFFERS";
+
+  static const otherPropertiesFromThisSeller = "Other Properties from this seller";
+
+
 
 }

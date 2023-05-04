@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/screen/property_detail/property_details_screen.dart';
 
 
 import 'package:yitaku/screen/splash_screen/splash_screen.dart';

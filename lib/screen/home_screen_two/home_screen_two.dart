@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/home_controller_two.dart';
+import 'package:yitaku/screen/property_detail/property_details_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -46,34 +47,35 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                 Container(
                   color: ColorRes.color3879E8,
                   width: Get.width,
-                  height: Get.height * 0.10,
+                  height: 65,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 16, right: 16),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.menu,
+                        Image.asset(
+                          AssetRes.menu,
+                          height: 14,
                           color: ColorRes.white,
                         ),
+                        const SizedBox(width: 20),
                         Image.asset(
                           AssetRes.whiteLogo,
                           height: 19,
                         ),
-                        SizedBox(width: Get.width * 0.17),
+                         Spacer(),
                         Image.asset(
                           AssetRes.jalebi,
                           height: 24,
                         ),
-                        Icon(
-                          Icons.favorite_border,
-                          color: ColorRes.white,
-                          size: 24,
+                        const SizedBox(width: 10),
+                        Image.asset(
+                          AssetRes.hart,
+                          height: 19,
                         ),
-                        Icon(
-                          Icons.messenger_outline_outlined,
-                          color: ColorRes.white,
-                          size: 24,
+                        const SizedBox(width: 10),
+                        Image.asset(
+                          AssetRes.msg,
+                          height: 19,
                         ),
                       ],
                     ),
@@ -199,21 +201,27 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                         Padding(
                           padding: const EdgeInsets.only(left: 16, right: 16),
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(height: Get.height * 0.03),
                               Stack(
                                 children: [
-                                  Container(
-                                    height: 160,
-                                    width: Get.width,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: const DecorationImage(
-                                          image: AssetImage(
-                                            AssetRes.homeScreenImg1,
-                                          ),
-                                          fit: BoxFit.cover,
-                                        )
+                                  InkWell(
+                                    onTap: (){
+                                      Get.to(PropertyDetailsScreen()) ;
+                                    },
+                                    child: Container(
+                                      height: 160,
+                                      width: Get.width,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          image: const DecorationImage(
+                                            image: AssetImage(
+                                              AssetRes.homeScreenImg1,
+                                            ),
+                                            fit: BoxFit.cover,
+                                          )
+                                      ),
                                     ),
                                   ),
                                   Padding(
