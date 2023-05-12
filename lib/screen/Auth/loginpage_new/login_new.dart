@@ -19,7 +19,7 @@ class LoginPageNew extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: GetBuilder<LoginNewController>(
+        body:  loginNewController.isLoading.value ==true?const Center(child: CircularProgressIndicator()): GetBuilder<LoginNewController>(
             id: "newlogin",
             builder: (controller) {
               return Padding(
@@ -290,6 +290,7 @@ class LoginPageNew extends StatelessWidget {
           onTap: () {
             FocusScope.of(context).unfocus();
             controller.onTapLogin();
+
             controller.update(["newlogin"]);
           },
           child: Align(

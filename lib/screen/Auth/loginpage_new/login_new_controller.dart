@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/api_calling/login_api.dart';
 import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
@@ -12,7 +13,7 @@ class LoginNewController extends GetxController
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-
+RxBool isLoading =false.obs;
 
   String passwordError = '';
   String emailError = "";
@@ -52,7 +53,8 @@ emailTextActive =false;
 
 
     if (validation()) {
-      Get.to(() => GoalScreen());
+      loginApi();
+
     }
     update(['newlogin']);
   }
@@ -68,6 +70,12 @@ emailTextActive =false;
     }
   }
 
+  Future<void> loginApi() async {
+    isLoading.value = true;
+    await LoginApi.loginApi(emailController.text, passwordController.text);
+    isLoading.value =false;
+    update(['newlogin']);
+  }
 
 
 }

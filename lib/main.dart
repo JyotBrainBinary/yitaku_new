@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/screen/home_screen_two/home_screen_two.dart';
 import 'package:yitaku/screen/property_detail/property_details_screen.dart';
 
 
 import 'package:yitaku/screen/splash_screen/splash_screen.dart';
+import 'package:yitaku/services/pref_service.dart';
 
 
 
-void main() {
-
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await PrefService.init();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
         statusBarColor: Colors.white,

@@ -19,31 +19,36 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GetBuilder<DashboardController>(
-        id: 'bottom_bar',
-        builder: (controller) {
-       /*   if (controller.currentTab == 0) {
-            return const HomeScreenTwo();
-          } else if (controller.currentTab == 1) {
-            return SearchScreen();
-          } else if (controller.currentTab == 2) {
-            return FavoritesScreen();
-          } else {
-            return ProfileScreen();
-          }*/
+    return WillPopScope(
+      onWillPop: () {
+      return dashboardController.onWillPop(context);
+      },
+      child: Scaffold(
+        body: GetBuilder<DashboardController>(
+          id: 'bottom_bar',
+          builder: (controller) {
+         /*   if (controller.currentTab == 0) {
+              return const HomeScreenTwo();
+            } else if (controller.currentTab == 1) {
+              return SearchScreen();
+            } else if (controller.currentTab == 2) {
+              return FavoritesScreen();
+            } else {
+              return ProfileScreen();
+            }*/
 
-          if (controller.currentTab2 == 0) {
-            return const HomeScreenTwo();
-          } else if (controller.currentTab2 == 1) {
-            return LoanCalculatorScreen();
-          } else {
-            return InsuranceScreen();
-          }
-        },
+            if (controller.currentTab2 == 0) {
+              return  HomeScreenTwo();
+            } else if (controller.currentTab2 == 1) {
+              return LoanCalculatorScreen();
+            } else {
+              return InsuranceScreen();
+            }
+          },
+        ),
+        //bottomNavigationBar: bottomNavigationBar(context),
+        bottomNavigationBar: bottomNavigationBar2(context),
       ),
-      //bottomNavigationBar: bottomNavigationBar(context),
-      bottomNavigationBar: bottomNavigationBar2(context),
     );
   }
 }

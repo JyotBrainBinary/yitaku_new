@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/screen/Auth/createAccount/create_account_controller.dart';
+import 'package:yitaku/services/http_services.dart';
 
 import 'package:yitaku/utils/asset_res.dart';
 
@@ -269,6 +272,7 @@ class CreateaccountScreen extends StatelessWidget {
                           onTap: () {
                             FocusScope.of(context).unfocus();
                             controller.onTapSignUp();
+
                             controller.update(["createaccount"]);
                           },
                           child: Align(

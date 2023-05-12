@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:yitaku/screen/Auth/loginpage_new/login_new.dart';
+import 'package:yitaku/screen/dashbord/dashboard_screen.dart';
+import 'package:yitaku/screen/goal_screen/goal_screen.dart';
+import 'package:yitaku/screen/home_screen_two/home_screen_two.dart';
+import 'package:yitaku/services/pref_service.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
+import 'package:yitaku/utils/pref_keys.dart';
 
 class SplashScreen2 extends StatefulWidget {
   const SplashScreen2({Key? key}) : super(key: key);
@@ -13,7 +19,7 @@ class SplashScreen2 extends StatefulWidget {
 
 class _SplashScreen2State extends State<SplashScreen2> {
 
-
+SharedPreferences? pref;
   @override
   void initState() {
     // TODO: implement initState
@@ -24,6 +30,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
       ),
           () {
         return Get.offAll(() => LoginPageNew());
+        // return Get.offAll(() => PrefService.getBool(PrefKeys.isLogin) == true? DashboardScreen():LoginPageNew());
       },
     );
   }

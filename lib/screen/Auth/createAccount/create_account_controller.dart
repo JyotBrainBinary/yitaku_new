@@ -53,7 +53,10 @@ class CreateAccountController extends GetxController {
 
   onTapSignUp() {
     if (validation()) {
-      Get.to(() => CompleteSignupScreen());
+      Get.to(() => CompleteSignupScreen(
+        emailPass: emailController.text,
+        pass: passwordController.text,
+      ),);
     }
     update(['createaccount']);
   }
