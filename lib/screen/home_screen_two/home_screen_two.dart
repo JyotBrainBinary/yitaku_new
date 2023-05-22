@@ -209,9 +209,9 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(10),
-                                                image: const DecorationImage(
-                                                  image: AssetImage(
-                                                    AssetRes.homeScreenImg1,
+                                                image:  DecorationImage(
+                                                  image: NetworkImage(
+                                                    "${homeControllerTwo.listProperties![index].image![0].url}",
                                                   ),
                                                   fit: BoxFit.cover,
                                                 )),
@@ -234,7 +234,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                                 ),
                                                 alignment: Alignment.center,
                                                 child: Text(
-                                                  StringRes.toLet,
+                                                  "${homeControllerTwo.listProperties![index].salesLetting}",
                                                   style: semiBold(
                                                     color: ColorRes.sky,
                                                     fontSize: 12,
@@ -273,7 +273,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                         ),
                                         const SizedBox(width: 8),
                                         Text(
-                                          "Naxxar",
+                                          "${homeControllerTwo.listProperties![index].locality}",
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
                                               fontWeight: FontWeight.w600),
@@ -282,7 +282,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     ),
                                     SizedBox(height: Get.height * 0.008),
                                     Text(
-                                      "2 bedrooms, this house is perfect for a little family ",
+                                      "${homeControllerTwo.listProperties![index].propertyDescription}",
                                       style: overpassRegular(
                                           color: ColorRes.hinttext,
                                           fontSize: 14,
@@ -292,7 +292,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     Row(
                                       children: [
                                         Text(
-                                          "530 €",
+                                          "${homeControllerTwo.listProperties![index].price}",
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
                                               fontWeight: FontWeight.w600),
@@ -307,7 +307,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                         ),
                                         const SizedBox(width: 8),
                                         Text(
-                                          "2 Bedrooms",
+                                          "${homeControllerTwo.listProperties![index].numberOfBedrooms}",
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
                                               fontWeight: FontWeight.w600),

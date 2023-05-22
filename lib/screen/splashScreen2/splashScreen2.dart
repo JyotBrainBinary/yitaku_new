@@ -29,8 +29,8 @@ SharedPreferences? pref;
         seconds: 2,
       ),
           () {
-        return Get.offAll(() => LoginPageNew());
-        // return Get.offAll(() => PrefService.getBool(PrefKeys.isLogin) == true? DashboardScreen():LoginPageNew());
+        // return Get.offAll(() => LoginPageNew());
+        return Get.offAll(() => PrefService.getBool(PrefKeys.isLogin) == true? DashboardScreen():LoginPageNew());
       },
     );
   }
