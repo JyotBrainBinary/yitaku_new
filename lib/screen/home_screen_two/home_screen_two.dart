@@ -306,7 +306,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                               color: ColorRes.fontGrey),
                                         ),
                                         const SizedBox(width: 8),
-                                        Text(
+                                        homeControllerTwo.listProperties![index].numberOfBedrooms  =="null"? const Text(""):  Text(
                                           "${homeControllerTwo.listProperties![index].numberOfBedrooms}",
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
