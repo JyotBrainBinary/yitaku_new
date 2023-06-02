@@ -3,32 +3,26 @@ import 'package:get/get.dart';
 import 'package:yitaku/screen/Auth/loginpage_new/login_new.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
-class PasswordResetController extends GetxController{
-
-
-
-  bool emailTextActive =false;
-
+class PasswordResetController extends GetxController {
+  bool emailTextActive = false;
 
   TextEditingController emailController = TextEditingController();
 
-
   String emailError = "";
-
 
   emailValidation() {
     if (emailController.text.trim() == "") {
-      emailTextActive =false;
+      emailTextActive = false;
       emailError = StringRes.emailError1;
       update(['reset']);
     } else {
       if (RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
           .hasMatch(emailController.text)) {
         emailError = '';
         update(['reset']);
       } else {
-        emailTextActive =false;
+        emailTextActive = false;
         emailError = StringRes.emailError2;
         update(['reset']);
       }
@@ -36,7 +30,6 @@ class PasswordResetController extends GetxController{
   }
 
   onTapSubmit() {
-
     if (validation()) {
       Get.to(() => LoginPageNew());
       emailController.clear();
@@ -45,7 +38,6 @@ class PasswordResetController extends GetxController{
   }
 
   bool validation() {
-
     emailValidation();
 
     if (emailError == '') {
@@ -54,8 +46,4 @@ class PasswordResetController extends GetxController{
       return false;
     }
   }
-
-
-
-
 }

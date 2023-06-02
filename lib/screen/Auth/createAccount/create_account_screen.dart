@@ -26,14 +26,13 @@ class CreateaccountScreen extends StatelessWidget {
                 builder: (controller) {
                   return Padding(
                     padding: const EdgeInsets.only(
-                      left: 16, right: 16,
+                      left: 16,
+                      right: 16,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         SizedBox(height: Get.height * 0.1),
-
                         Align(
                           alignment: Alignment.center,
                           child: Image.asset(
@@ -42,12 +41,7 @@ class CreateaccountScreen extends StatelessWidget {
                             width: Get.width * 0.9,
                           ),
                         ),
-                        SizedBox(
-                          height: Get.height * 0.086,
-
-
-
-                        ),
+                        SizedBox(height: Get.height * 0.086),
                         Align(
                           alignment: Alignment.center,
                           child: Text(
@@ -79,11 +73,12 @@ class CreateaccountScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                                color: createAccountController.emailTextActive == true
-                                    ? ColorRes.stroke
-                                    : controller.emailError == ''
-                                    ? ColorRes.textfieldBorder
-                                    : ColorRes.errorIcon),
+                                color:
+                                    createAccountController.emailTextActive == true
+                                        ? ColorRes.stroke
+                                        : controller.emailError == ''
+                                            ? ColorRes.textfieldBorder
+                                            : ColorRes.errorIcon),
                           ),
                           child: TextFormField(
                             onTap: () {
@@ -97,30 +92,29 @@ class CreateaccountScreen extends StatelessWidget {
                               // contentPadding: EdgeInsets.zero,
                               border: InputBorder.none,
                               contentPadding:
-                              const EdgeInsets.only(left: 10, top: 10),
+                                  const EdgeInsets.only(left: 10, top: 10),
                               hintText: StringRes.mailHInt,
                               hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
                               suffixIcon: controller.emailError == ''
                                   ? const SizedBox()
                                   : const Icon(
-                                Icons.error_outline,
-                                color: ColorRes.errorIcon,
-                              ),
+                                      Icons.error_outline,
+                                      color: ColorRes.errorIcon,
+                                    ),
                             ),
                             onChanged: (value) {
                               controller.update(["createaccount"]);
                             },
                           ),
                         ),
-
                         (controller.emailError == '')
                             ? const SizedBox()
                             : Text(
-                          createAccountController.emailError,
-                          style:
-                          regular(fontSize: 13, color: ColorRes.error),
-                        ),
+                                createAccountController.emailError,
+                                style: regular(
+                                    fontSize: 13, color: ColorRes.error),
+                              ),
                         SizedBox(
                           height: Get.height * 0.025,
                         ),
@@ -144,8 +138,8 @@ class CreateaccountScreen extends StatelessWidget {
                                 color: controller.passTextActive == true
                                     ? ColorRes.stroke
                                     : controller.passwordError == ''
-                                    ? ColorRes.textfieldBorder
-                                    : ColorRes.errorIcon),
+                                        ? ColorRes.textfieldBorder
+                                        : ColorRes.errorIcon),
                           ),
                           child: TextFormField(
                             onTap: () {
@@ -156,23 +150,24 @@ class CreateaccountScreen extends StatelessWidget {
                             },
                             obscuringCharacter: "*",
                             obscureText: true,
-                            controller: createAccountController.passwordController,
+                            controller:
+                                createAccountController.passwordController,
                             style: overpassRegular(
                                 fontSize: 16, color: ColorRes.fontGrey),
                             decoration: InputDecoration(
                               // contentPadding: EdgeInsets.zero,
                               border: InputBorder.none,
                               contentPadding:
-                              const EdgeInsets.only(left: 10, top: 10),
+                                  const EdgeInsets.only(left: 10, top: 10),
                               hintText: "*****",
                               hintStyle: overpassRegular(
                                   fontSize: 16, color: ColorRes.hinttext),
                               suffixIcon: controller.passwordError == ''
                                   ? const SizedBox()
                                   : const Icon(
-                                Icons.error_outline,
-                                color: ColorRes.errorIcon,
-                              ),
+                                      Icons.error_outline,
+                                      color: ColorRes.errorIcon,
+                                    ),
                             ),
                             onChanged: (value) {
                               controller.update(["createaccount"]);
@@ -182,10 +177,10 @@ class CreateaccountScreen extends StatelessWidget {
                         (controller.passwordError == '')
                             ? const SizedBox()
                             : Text(
-                          createAccountController.passwordError,
-                          style:
-                          regular(fontSize: 13, color: ColorRes.error),
-                        ),
+                                createAccountController.passwordError,
+                                style: regular(
+                                    fontSize: 13, color: ColorRes.error),
+                              ),
                         SizedBox(
                           height: Get.height * 0.040,
                         ),
@@ -194,54 +189,52 @@ class CreateaccountScreen extends StatelessWidget {
                             SizedBox(
                               width: Get.width * 0.035,
                             ),
-
-
                             (controller.isChecked == true)
                                 ? InkWell(
-                              onTap: (){
-                                if(controller.isChecked == false){
-                                  controller.isChecked = true;
-                                  controller.update(["createaccount"]);
-                                } else{
-                                  controller.isChecked = false;
-                                  controller.update(["createaccount"]);
-                                }
-                              },
-                              child: Container(
-                                height: 20,
-                                width: 20,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(6),
-                                  border: Border.all(color: ColorRes.color365CC0),
-                                  image: const DecorationImage(
-                                    image: AssetImage(
-                                      AssetRes.check,
+                                    onTap: () {
+                                      if (controller.isChecked == false) {
+                                        controller.isChecked = true;
+                                        controller.update(["createaccount"]);
+                                      } else {
+                                        controller.isChecked = false;
+                                        controller.update(["createaccount"]);
+                                      }
+                                    },
+                                    child: Container(
+                                      height: 20,
+                                      width: 20,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(6),
+                                          border: Border.all(
+                                              color: ColorRes.color365CC0),
+                                          image: const DecorationImage(
+                                              image: AssetImage(
+                                                AssetRes.check,
+                                              ),
+                                              scale: 2.5)),
                                     ),
-                                    scale: 2.5
                                   )
-                                ),
-                              ),
-                            )
                                 : InkWell(
-                              onTap: (){
-                                if(controller.isChecked == false){
-                                  controller.isChecked = true;
-                                  controller.update(["createaccount"]);
-                                } else{
-                                  controller.isChecked = false;
-                                  controller.update(["createaccount"]);
-                                }
-                              },
-                              child: Container(
-                                height: 20,
-                                width: 20,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    border: Border.all(color: ColorRes.color365CC0),
-
-                                ),
-                              ),
-                            ),
+                                    onTap: () {
+                                      if (controller.isChecked == false) {
+                                        controller.isChecked = true;
+                                        controller.update(["createaccount"]);
+                                      } else {
+                                        controller.isChecked = false;
+                                        controller.update(["createaccount"]);
+                                      }
+                                    },
+                                    child: Container(
+                                      height: 20,
+                                      width: 20,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        border: Border.all(
+                                            color: ColorRes.color365CC0),
+                                      ),
+                                    ),
+                                  ),
                             SizedBox(
                               width: Get.width * 0.03,
                             ),
@@ -262,50 +255,52 @@ class CreateaccountScreen extends StatelessWidget {
                         SizedBox(
                           height: Get.height * 0.046,
                         ),
-                        createAccountController.emailController.text.isNotEmpty &&
-                            createAccountController
-                                .passwordController.text.isNotEmpty && createAccountController.isChecked == true
+                        createAccountController
+                                    .emailController.text.isNotEmpty &&
+                                createAccountController
+                                    .passwordController.text.isNotEmpty &&
+                                createAccountController.isChecked == true
                             ? GestureDetector(
-                          onTap: () {
-                            FocusScope.of(context).unfocus();
-                            controller.onTapSignUp();
-                            controller.update(["createaccount"]);
-                          },
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              height: 44,
-                              //height: Get.height * 0.063,
-                              width: Get.width * 0.32,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: ColorRes.appColor,
-                              ),
-                              child: Text(StringRes.signUp,
-                                  style: overpassRegular(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16)),
-                            ),
-                          ),
-                        )
+                                onTap: () {
+                                  FocusScope.of(context).unfocus();
+                                  controller.onTapSignUp();
+                                  controller.update(["createaccount"]);
+                                },
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    height: 44,
+                                    //height: Get.height * 0.063,
+                                    width: Get.width * 0.32,
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      color: ColorRes.appColor,
+                                    ),
+                                    child: Text(StringRes.signUp,
+                                        style: overpassRegular(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16)),
+                                  ),
+                                ),
+                              )
                             : Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            height: 44,
-                            //height: Get.height * 0.063,
-                            width: Get.width * 0.32,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: ColorRes.disableColor,
-                            ),
-                            child: Text(StringRes.signUp,
-                                style: overpassRegular(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 16)),
-                          ),
-                        ),
+                                alignment: Alignment.center,
+                                child: Container(
+                                  height: 44,
+                                  //height: Get.height * 0.063,
+                                  width: Get.width * 0.32,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: ColorRes.disableColor,
+                                  ),
+                                  child: Text(StringRes.signUp,
+                                      style: overpassRegular(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16)),
+                                ),
+                              ),
                         SizedBox(
                           height: Get.height * 0.028,
                         ),
@@ -314,9 +309,8 @@ class CreateaccountScreen extends StatelessWidget {
                           child: Container(
                             decoration: const BoxDecoration(
                                 border: Border(
-                                    bottom: BorderSide(color: ColorRes.color2F3941)
-                                )
-                            ),
+                                    bottom: BorderSide(
+                                        color: ColorRes.color2F3941))),
                             child: Text(
                               StringRes.read,
                               style: overpassRegular(
@@ -327,7 +321,6 @@ class CreateaccountScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-
                         SizedBox(height: Get.height * 0.1),
                       ],
                     ),

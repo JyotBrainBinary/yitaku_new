@@ -277,50 +277,46 @@ class LoginPageNew extends StatelessWidget {
   }
 
   Widget loginButton(controller, context) {
-    return Column(
-      children: [
-        loginNewController.emailController.text.isNotEmpty &&
-                loginNewController.passwordController.text.isNotEmpty
-            ? GestureDetector(
-                onTap: () {
-                  FocusScope.of(context).unfocus();
-                  controller.onTapLogin();
-                  controller.update(["newlogin"]);
-                },
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    height: 44,
-                    //height: Get.height * 0.063,
-                    width: Get.width * 0.32,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: ColorRes.appColor,
-                    ),
-                    child: Text(StringRes.login,
-                        style: overpassRegular(
-                            fontWeight: FontWeight.w600, fontSize: 16)),
-                  ),
-                ),
-              )
-            : Align(
+    return loginNewController.emailController.text.isNotEmpty &&
+            loginNewController.passwordController.text.isNotEmpty
+        ? GestureDetector(
+            onTap: () {
+              FocusScope.of(context).unfocus();
+              controller.onTapLogin();
+              controller.update(["newlogin"]);
+            },
+            child: Align(
+              alignment: Alignment.center,
+              child: Container(
+                height: 44,
+                //height: Get.height * 0.063,
+                width: Get.width * 0.32,
                 alignment: Alignment.center,
-                child: Container(
-                  height: 44,
-                  //height: Get.height * 0.063,
-                  width: Get.width * 0.32,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: ColorRes.disableColor,
-                  ),
-                  child: Text(StringRes.login,
-                      style: overpassRegular(
-                          fontWeight: FontWeight.w600, fontSize: 16)),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: ColorRes.appColor,
                 ),
+                child: Text(StringRes.login,
+                    style: overpassRegular(
+                        fontWeight: FontWeight.w600, fontSize: 16)),
               ),
-      ],
-    );
+            ),
+          )
+        : Align(
+            alignment: Alignment.center,
+            child: Container(
+              height: 44,
+              //height: Get.height * 0.063,
+              width: Get.width * 0.32,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: ColorRes.disableColor,
+              ),
+              child: Text(StringRes.login,
+                  style: overpassRegular(
+                      fontWeight: FontWeight.w600, fontSize: 16)),
+            ),
+          );
   }
 }

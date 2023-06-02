@@ -16,12 +16,11 @@ class HomeScreenTwo extends StatefulWidget {
 }
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
-
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+
     /// ----- status bar color -----
     /*SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
@@ -62,7 +61,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                           AssetRes.whiteLogo,
                           height: 19,
                         ),
-                         Spacer(),
+                        const Spacer(),
                         Image.asset(
                           AssetRes.jalebi,
                           height: 24,
@@ -95,7 +94,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                           fontSize: 16,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       GestureDetector(
                         onTap: () {
                           /*if (homeControllerTwo.isOpenList == false) {
@@ -116,7 +115,6 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   ),
                 ),
 
-
                 ///------ tab bar --------
                 Container(
                   decoration: BoxDecoration(
@@ -124,7 +122,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.5),
                         blurRadius: 15.0,
-                        offset: Offset(0, 8),
+                        offset: const Offset(0, 8),
                       )
                     ],
                   ),
@@ -132,10 +130,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                     children: [
                       Expanded(
                         child: InkWell(
-                          onTap: (){
-                            if(homeControllerTwo.isForSale == false){
+                          onTap: () {
+                            if (homeControllerTwo.isForSale == false) {
                               homeControllerTwo.isForSale = true;
-                            } else{
+                            } else {
                               homeControllerTwo.isForSale = false;
                             }
                             controller.update(["homeTwo"]);
@@ -143,13 +141,17 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                           child: Container(
                             alignment: Alignment.center,
                             height: 44,
-                            color: (homeControllerTwo.isForSale == true)? ColorRes.color3879E8 : ColorRes.white,
+                            color: (homeControllerTwo.isForSale == true)
+                                ? ColorRes.color3879E8
+                                : ColorRes.white,
                             child: Text(
                               "For sale",
                               style: overpassRegular(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color:  (homeControllerTwo.isForSale == false)?ColorRes.colorEAECF0: ColorRes.white),
+                                  color: (homeControllerTwo.isForSale == false)
+                                      ? ColorRes.colorEAECF0
+                                      : ColorRes.white),
                             ),
                           ),
                         ),
@@ -161,24 +163,28 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       ),
                       Expanded(
                         child: InkWell(
-                          onTap: (){
-                           if(homeControllerTwo.isRent == true){
-                             homeControllerTwo.isRent = false;
-                           }else{
-                             homeControllerTwo.isRent = true;
-                           }
+                          onTap: () {
+                            if (homeControllerTwo.isRent == true) {
+                              homeControllerTwo.isRent = false;
+                            } else {
+                              homeControllerTwo.isRent = true;
+                            }
                             controller.update(["homeTwo"]);
                           },
                           child: Container(
                             alignment: Alignment.center,
                             height: 44,
-                            color: (homeControllerTwo.isRent == true)? ColorRes.color3879E8 : ColorRes.white,
+                            color: (homeControllerTwo.isRent == true)
+                                ? ColorRes.color3879E8
+                                : ColorRes.white,
                             child: Text(
                               "To rent",
                               style: overpassRegular(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color: (homeControllerTwo.isRent == false)?ColorRes.colorEAECF0: ColorRes.white),
+                                  color: (homeControllerTwo.isRent == false)
+                                      ? ColorRes.colorEAECF0
+                                      : ColorRes.white),
                             ),
                           ),
                         ),
@@ -187,314 +193,322 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                   ),
                 ),
 
-
-
-
                 ///---------------featured properties-----------
-               Expanded(
-                  child: ( homeControllerTwo.isForSale == true )
+                Expanded(
+                  child: (homeControllerTwo.isForSale == true)
                       ? SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(height: Get.height * 0.02),
-
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, right: 16),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: Get.height * 0.03),
-                              Stack(
-                                children: [
-                                  InkWell(
-                                    onTap: (){
-                                      Get.to(PropertyDetailsScreen()) ;
-                                    },
-                                    child: Container(
-                                      height: 160,
-                                      width: Get.width,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-                                          image: const DecorationImage(
-                                            image: AssetImage(
-                                              AssetRes.homeScreenImg1,
-                                            ),
-                                            fit: BoxFit.cover,
-                                          )
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 8, right: 10, left: 8),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                              SizedBox(height: Get.height * 0.02),
+
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 16, right: 16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: Get.height * 0.03),
+                                    Stack(
                                       children: [
-                                        Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              height: 22,
-                                              width: 61,
-                                              decoration: BoxDecoration(
-                                                color: ColorRes.skyLight,
+                                        InkWell(
+                                          onTap: () {
+                                            Get.to(PropertyDetailsScreen());
+                                          },
+                                          child: Container(
+                                            height: 160,
+                                            width: Get.width,
+                                            decoration: BoxDecoration(
                                                 borderRadius:
-                                                BorderRadius.circular(16),
-                                              ),
-                                              alignment: Alignment.center,
-                                              child: Text(
-                                                StringRes.forSale,
-                                                style: semiBold(
-                                                  color: ColorRes.sky,
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(height: 5),
-                                            Container(
-                                              height: 22,
-                                              width: 87,
-                                              decoration: BoxDecoration(
-                                                color: ColorRes.yellowLight,
-                                                borderRadius:
-                                                BorderRadius.circular(16),
-                                              ),
-                                              alignment: Alignment.center,
-                                              child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                    BorderRadius.circular(10),
+                                                image: const DecorationImage(
+                                                  image: AssetImage(
+                                                    AssetRes.homeScreenImg1,
+                                                  ),
+                                                  fit: BoxFit.cover,
+                                                )),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 8, right: 10, left: 8),
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Icon(Icons.star, color: ColorRes.colorB54708, size: 18),
-                                                  SizedBox(width: 3),
-                                                  Text(
-                                                    StringRes.featured,
-                                                    style: semiBold(
-                                                      color: ColorRes.colorB54708,
-                                                      fontSize: 12,
-                                                      fontWeight: FontWeight.w600,
+                                                  Container(
+                                                    height: 22,
+                                                    width: 61,
+                                                    decoration: BoxDecoration(
+                                                      color: ColorRes.skyLight,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16),
+                                                    ),
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                      StringRes.forSale,
+                                                      style: semiBold(
+                                                        color: ColorRes.sky,
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 5),
+                                                  Container(
+                                                    height: 22,
+                                                    width: 87,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          ColorRes.yellowLight,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16),
+                                                    ),
+                                                    alignment: Alignment.center,
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        const Icon(Icons.star,
+                                                            color: ColorRes
+                                                                .colorB54708,
+                                                            size: 18),
+                                                        const SizedBox(
+                                                            width: 3),
+                                                        Text(
+                                                          StringRes.featured,
+                                                          style: semiBold(
+                                                            color: ColorRes
+                                                                .colorB54708,
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
                                                 ],
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                        Spacer(),
-                                        Image.asset(
-                                          AssetRes.heart,
-                                          height: 18,
+                                              const Spacer(),
+                                              Image.asset(
+                                                AssetRes.heart,
+                                                height: 18,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: Get.height * 0.03),
-                              Row(
-                                children: [
-                                  Text(
-                                    "Maisonette",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Container(
-                                    height: 5,
-                                    width: 5,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorRes.fontGrey
+                                    SizedBox(height: Get.height * 0.03),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "Maisonette",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 16),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Container(
+                                          height: 5,
+                                          width: 5,
+                                          decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: ColorRes.fontGrey),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Text(
+                                          "Naxxar",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    "Naxxar",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: Get.height * 0.008),
-                              Text(
-                                "2 bedrooms, this house is perfect for a little family ",
-                                style: overpassRegular(
-                                    color: ColorRes.hinttext,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                              SizedBox(height: Get.height * 0.008),
-                              Row(
-                                children: [
-                                  Text(
-                                    "530 €",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Container(
-                                    height: 5,
-                                    width: 5,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorRes.fontGrey
+                                    SizedBox(height: Get.height * 0.008),
+                                    Text(
+                                      "2 bedrooms, this house is perfect for a little family ",
+                                      style: overpassRegular(
+                                          color: ColorRes.hinttext,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w300),
                                     ),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    "2 Bedrooms",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: Get.height * 0.02),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          height: 2,
-                          color: ColorRes.colorF2F4F7,
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.only(left: 16, right: 16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-
-
-                              SizedBox(height: Get.height * 0.02),
-                              Stack(
-                                children: [
-                                  Container(
-                                    height: 160,
-                                    width: Get.width,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: const DecorationImage(
-                                          image: AssetImage(
-                                            AssetRes.homeScreenImg1,
-                                          ),
-                                          fit: BoxFit.cover,
-                                        )
+                                    SizedBox(height: Get.height * 0.008),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "530 €",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Container(
+                                          height: 5,
+                                          width: 5,
+                                          decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: ColorRes.fontGrey),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Text(
+                                          "2 Bedrooms",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 8, right: 10, left: 8),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                    SizedBox(height: Get.height * 0.02),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 2,
+                                color: ColorRes.colorF2F4F7,
+                              ),
+
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 16, right: 16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: Get.height * 0.02),
+                                    Stack(
                                       children: [
                                         Container(
-                                          height: 22,
-                                          width: 48,
+                                          height: 160,
+                                          width: Get.width,
                                           decoration: BoxDecoration(
-                                            color: ColorRes.skyLight,
-                                            borderRadius: BorderRadius.circular(16),
-                                          ),
-                                          alignment: Alignment.center,
-                                          child: Text(
-                                            StringRes.toLet,
-                                            style: semiBold(
-                                              color: ColorRes.sky,
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              image: const DecorationImage(
+                                                image: AssetImage(
+                                                  AssetRes.homeScreenImg1,
+                                                ),
+                                                fit: BoxFit.cover,
+                                              )),
                                         ),
-                                        Spacer(),
-                                        Image.asset(
-                                          AssetRes.heart,
-                                          height: 18,
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 8, right: 10, left: 8),
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                height: 22,
+                                                width: 48,
+                                                decoration: BoxDecoration(
+                                                  color: ColorRes.skyLight,
+                                                  borderRadius:
+                                                      BorderRadius.circular(16),
+                                                ),
+                                                alignment: Alignment.center,
+                                                child: Text(
+                                                  StringRes.toLet,
+                                                  style: semiBold(
+                                                    color: ColorRes.sky,
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ),
+                                              const Spacer(),
+                                              Image.asset(
+                                                AssetRes.heart,
+                                                height: 18,
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: Get.height * 0.03),
-                              Row(
-                                children: [
-                                  Text(
-                                    "Maisonette",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 16),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Container(
-                                    height: 5,
-                                    width: 5,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorRes.fontGrey
+                                    SizedBox(height: Get.height * 0.03),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "Maisonette",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 16),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Container(
+                                          height: 5,
+                                          width: 5,
+                                          decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: ColorRes.fontGrey),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Text(
+                                          "Naxxar",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    "Naxxar",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: Get.height * 0.008),
-                              Text(
-                                "2 bedrooms, this house is perfect for a little family ",
-                                style: overpassRegular(
-                                    color: ColorRes.hinttext,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                              SizedBox(height: Get.height * 0.008),
-                              Row(
-                                children: [
-                                  Text(
-                                    "530 €",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Container(
-                                    height: 5,
-                                    width: 5,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: ColorRes.fontGrey
+                                    SizedBox(height: Get.height * 0.008),
+                                    Text(
+                                      "2 bedrooms, this house is perfect for a little family ",
+                                      style: overpassRegular(
+                                          color: ColorRes.hinttext,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w300),
                                     ),
-                                  ),
-                                  SizedBox(width: 8),
-                                  Text(
-                                    "2 Bedrooms",
-                                    style: overpassRegular(
-                                        color: ColorRes.fontGrey,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ],
+                                    SizedBox(height: Get.height * 0.008),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "530 €",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Container(
+                                          height: 5,
+                                          width: 5,
+                                          decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: ColorRes.fontGrey),
+                                        ),
+                                        const SizedBox(width: 8),
+                                        Text(
+                                          "2 Bedrooms",
+                                          style: overpassRegular(
+                                              color: ColorRes.fontGrey,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: Get.height * 0.02),
+                                  ],
+                                ),
                               ),
-                              SizedBox(height: Get.height * 0.02),
 
-                            ],
-                          ),
-                        ),
+                              Container(
+                                height: 2,
+                                color: ColorRes.colorF2F4F7,
+                              ),
+                              SizedBox(height: Get.height * 0.035),
 
-                        Container(
-                          height: 2,
-                          color: ColorRes.colorF2F4F7,
-                        ),
-                        SizedBox(height: Get.height * 0.035),
+                              ///---------------All Properties-----------
 
-                        ///---------------All Properties-----------
-
-                        /*Container(
+                              /*Container(
                           height: 16,
                           width: Get.width,
                           color: ColorRes.colorF2F4F7,
@@ -606,10 +620,10 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                             ],
                           ),
                         ),*/
-                      ],
-                    ),
-                  )
-                      : SizedBox(),
+                            ],
+                          ),
+                        )
+                      : const SizedBox(),
                 ),
               ],
             );

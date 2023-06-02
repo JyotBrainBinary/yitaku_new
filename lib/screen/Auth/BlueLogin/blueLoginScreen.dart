@@ -28,7 +28,7 @@ class BlueLoginScreen extends StatelessWidget {
                 id: "bluelogintextfield",
                 builder: (controller) {
                   return Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       // left: Get.width * 0.056, right: Get.width * 0.056
                       left: 16, right: 16,
                     ),
@@ -224,7 +224,7 @@ class BlueLoginScreen extends StatelessWidget {
                                   fontSize: 16, color: ColorRes.hinttext),
                               suffixIcon:
                               blueLoginController.redBorder == true
-                                  ? Icon(
+                                  ? const Icon(
                                 Icons.error_outline,
                                 color: ColorRes.errorIcon,
                               )
@@ -338,7 +338,7 @@ class BlueLoginScreen extends StatelessWidget {
                               fontSize: 16, color: ColorRes.hinttext),
                           suffixIcon:
                           blueLoginController.redBorderPass == true
-                              ? Icon(
+                              ? const Icon(
                             Icons.error_outline,
                             color: ColorRes.errorIcon,
                           )
@@ -368,7 +368,7 @@ class BlueLoginScreen extends StatelessWidget {
                              if(blueLoginController.redBorder ==false && blueLoginController.redBorderPass ==false){
 
 
-                               Get.to(GoalScreen());
+                               Get.to(const GoalScreen());
                              }
                              else{
 
@@ -435,7 +435,7 @@ class BlueLoginScreen extends StatelessWidget {
                               controller.update(["bluelogintextfield"]);
                             }
                             else if (blueLoginController.navigatePass ==true && blueLoginController.navigateEmail==true) {
-                              Get.to(GoalScreen());
+                              Get.to(const GoalScreen());
                               controller.update(["bluelogintextfield"]);
                             }
                             else

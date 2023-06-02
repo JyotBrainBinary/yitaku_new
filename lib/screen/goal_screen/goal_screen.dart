@@ -49,7 +49,7 @@ class GoalScreen extends StatelessWidget {
                 },
                 child: Container(
                   width: Get.width,
-                  padding: EdgeInsets.only(top: 29, bottom: 25),
+                  padding: const EdgeInsets.only(top: 29, bottom: 25),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: ColorRes.stroke)),
@@ -98,7 +98,7 @@ class GoalScreen extends StatelessWidget {
                 },
                 child: Container(
                   width: Get.width,
-                  padding: EdgeInsets.only(top: 29, bottom: 25,left: 8),
+                  padding: const EdgeInsets.only(top: 29, bottom: 25,left: 8),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(color: ColorRes.stroke)),
@@ -131,7 +131,7 @@ class GoalScreen extends StatelessWidget {
                               ))
                         ],
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Image.asset(
                         AssetRes.arrow,
                         height: 20,
