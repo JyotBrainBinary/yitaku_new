@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
@@ -29,7 +28,6 @@ class LoginPageNew extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-
                       /// ----- top --------
                       SizedBox(height: Get.height * 0.09),
                       Align(
@@ -65,7 +63,6 @@ class LoginPageNew extends StatelessWidget {
 
                       SizedBox(height: Get.height * 0.046),
 
-
                       /// ---- login button ----
 
                       loginButton(controller, context),
@@ -85,9 +82,8 @@ class LoginPageNew extends StatelessWidget {
                               Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
-                                        bottom: BorderSide(color: ColorRes.color2F3941)
-                                    )
-                                ),
+                                        bottom: BorderSide(
+                                            color: ColorRes.color2F3941))),
                                 child: Text(
                                   StringRes.doNot,
                                   //style: TextStyle(decoration: TextDecoration.underline),
@@ -108,19 +104,19 @@ class LoginPageNew extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: Get.height * 0.04),
+
                       /// --- forgot pass ---------
                       Align(
                         alignment: Alignment.center,
-                        child:  InkWell(
-                          onTap: (){
+                        child: InkWell(
+                          onTap: () {
                             Get.to(PasswordResetPage());
                           },
                           child: Container(
                             decoration: const BoxDecoration(
                                 border: Border(
-                                    bottom: BorderSide(color: ColorRes.color2F3941)
-                                )
-                            ),
+                                    bottom: BorderSide(
+                                        color: ColorRes.color2F3941))),
                             child: Text(
                               StringRes.forgot,
                               style: overpassRegular(
@@ -280,53 +276,50 @@ class LoginPageNew extends StatelessWidget {
     );
   }
 
-  Widget loginButton (controller, context){
+  Widget loginButton(controller, context) {
     return Column(
       children: [
         loginNewController.emailController.text.isNotEmpty &&
-            loginNewController
-                .passwordController.text.isNotEmpty
+                loginNewController.passwordController.text.isNotEmpty
             ? GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-            controller.onTapLogin();
-            controller.update(["newlogin"]);
-          },
-          child: Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: 44,
-              //height: Get.height * 0.063,
-              width: Get.width * 0.32,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: ColorRes.appColor,
-              ),
-              child: Text(StringRes.login,
-                  style: overpassRegular(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16)),
-            ),
-          ),
-        )
+                onTap: () {
+                  FocusScope.of(context).unfocus();
+                  controller.onTapLogin();
+                  controller.update(["newlogin"]);
+                },
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    height: 44,
+                    //height: Get.height * 0.063,
+                    width: Get.width * 0.32,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: ColorRes.appColor,
+                    ),
+                    child: Text(StringRes.login,
+                        style: overpassRegular(
+                            fontWeight: FontWeight.w600, fontSize: 16)),
+                  ),
+                ),
+              )
             : Align(
-          alignment: Alignment.center,
-          child: Container(
-            height: 44,
-            //height: Get.height * 0.063,
-            width: Get.width * 0.32,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: ColorRes.disableColor,
-            ),
-            child: Text(StringRes.login,
-                style: overpassRegular(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16)),
-          ),
-        ),
+                alignment: Alignment.center,
+                child: Container(
+                  height: 44,
+                  //height: Get.height * 0.063,
+                  width: Get.width * 0.32,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: ColorRes.disableColor,
+                  ),
+                  child: Text(StringRes.login,
+                      style: overpassRegular(
+                          fontWeight: FontWeight.w600, fontSize: 16)),
+                ),
+              ),
       ],
     );
   }

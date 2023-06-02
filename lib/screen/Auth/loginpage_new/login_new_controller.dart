@@ -3,34 +3,29 @@ import 'package:get/get.dart';
 import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
-class LoginNewController extends GetxController
-{
-
-  bool emailTextActive =false;
-  bool passTextActive =false;
+class LoginNewController extends GetxController {
+  bool emailTextActive = false;
+  bool passTextActive = false;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-
-
   String passwordError = '';
   String emailError = "";
 
-
   emailValidation() {
     if (emailController.text.trim() == "") {
-emailTextActive =false;
+      emailTextActive = false;
       emailError = StringRes.emailError1;
       update(['newlogin']);
     } else {
       if (RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
           .hasMatch(emailController.text)) {
         emailError = '';
         update(['newlogin']);
       } else {
-        emailTextActive =false;
+        emailTextActive = false;
         emailError = StringRes.emailError2;
         update(['newlogin']);
       }
@@ -48,11 +43,8 @@ emailTextActive =false;
   }
 
   onTapLogin() {
-
-
-
     if (validation()) {
-      Get.to(() => GoalScreen());
+      Get.to(() => const GoalScreen());
     }
     update(['newlogin']);
   }
@@ -67,7 +59,4 @@ emailTextActive =false;
       return false;
     }
   }
-
-
-
 }
