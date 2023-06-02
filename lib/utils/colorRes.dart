@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Color;
 
 class ColorRes {
   static const black = Color(0xFF000000);
   static const white = Color(0xFFFFFFFF);
   static const appColor = Color(0XFF365CC0);
   static const stroke = Color(0xff3879E8);
-
 
   static const disableColor = Color(0xffB8D4F8);
   static const fontGrey = Color(0xff101828);
@@ -33,6 +32,4 @@ class ColorRes {
   static const color2F3941 = Color(0XFF2F3941);
   static const colorB54708 = Color(0XFFB54708);
   static const colorD0D5DD = Color(0XFFD0D5DD);
-
-
 }

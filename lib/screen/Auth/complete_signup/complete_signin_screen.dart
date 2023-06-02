@@ -16,7 +16,7 @@ class CompleteSignupScreen extends StatelessWidget {
         Get.put(CompleteSignupController());
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFFFFFF),
+        backgroundColor: const Color(0xffFFFFFF),
         body: SingleChildScrollView(
           child: Form(
             key: completeSignupController.formKey,
@@ -25,7 +25,7 @@ class CompleteSignupScreen extends StatelessWidget {
                     id: "complete",
                     builder: (controller) {
                       return Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 16,
                           right: 16,
                         ),
@@ -100,8 +100,8 @@ class CompleteSignupScreen extends StatelessWidget {
                                   hintStyle: overpassRegular(
                                       fontSize: 16, color: ColorRes.hinttext),
                                   suffixIcon: controller.nameError == ''
-                                      ? SizedBox()
-                                      : Icon(
+                                      ? const SizedBox()
+                                      : const Icon(
                                           Icons.error_outline,
                                           color: ColorRes.errorIcon,
                                         ),
@@ -167,8 +167,8 @@ class CompleteSignupScreen extends StatelessWidget {
                                   hintStyle: overpassRegular(
                                       fontSize: 16, color: ColorRes.hinttext),
                                   suffixIcon: controller.surnameError == ''
-                                      ? SizedBox()
-                                      : Icon(
+                                      ? const SizedBox()
+                                      : const Icon(
                                           Icons.error_outline,
                                           color: ColorRes.errorIcon,
                                         ),
@@ -253,7 +253,7 @@ class CompleteSignupScreen extends StatelessWidget {
                               ),
                             ),
 
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
 
                             (completeSignupController.isDrop)
                                 ? Container(
@@ -330,7 +330,7 @@ class CompleteSignupScreen extends StatelessWidget {
                                                           color: ColorRes
                                                               .fontGrey),
                                                     ),
-                                                    Spacer(),
+                                                    const Spacer(),
                                                     (completeSignupController
                                                                 .sellerTypeString ==
                                                             completeSignupController

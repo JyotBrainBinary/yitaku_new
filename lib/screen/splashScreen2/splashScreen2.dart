@@ -19,7 +19,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
     // TODO: implement initState
     super.initState();
     Future.delayed(
-      Duration(
+      const Duration(
         seconds: 2,
       ),
           () {
@@ -31,7 +31,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff3879E8),
+      backgroundColor: const Color(0xff3879E8),
       body: Center(
         child: Image.asset(
           AssetRes.whiteLogo,

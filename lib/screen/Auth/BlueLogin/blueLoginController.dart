@@ -58,7 +58,7 @@ class BlueLoginController extends GetxController {
 
   onTapLogin() {
     if (validation()) {
-      Get.offAll(() => GoalScreen());
+      Get.offAll(() => const GoalScreen());
     }
   }
 

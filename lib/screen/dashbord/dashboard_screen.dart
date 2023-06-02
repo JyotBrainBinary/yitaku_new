@@ -7,9 +7,10 @@ import 'package:yitaku/screen/insurance/insurance_screen.dart';
 import 'package:yitaku/screen/loanCalculator/loan_calculator_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
-   DashboardScreen({Key? key}) : super(key: key);
+  DashboardScreen({Key? key}) : super(key: key);
 
-   final DashboardController dashboardController = Get.put(DashboardController());
+  final DashboardController dashboardController =
+      Get.put(DashboardController());
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class DashboardScreen extends StatelessWidget {
       body: GetBuilder<DashboardController>(
         id: 'bottom_bar',
         builder: (controller) {
-       /*   if (controller.currentTab == 0) {
+          /*   if (controller.currentTab == 0) {
             return const HomeScreenTwo();
           } else if (controller.currentTab == 1) {
             return SearchScreen();
@@ -30,9 +31,9 @@ class DashboardScreen extends StatelessWidget {
           if (controller.currentTab2 == 0) {
             return const HomeScreenTwo();
           } else if (controller.currentTab2 == 1) {
-            return LoanCalculatorScreen();
+            return const LoanCalculatorScreen();
           } else {
-            return InsuranceScreen();
+            return const InsuranceScreen();
           }
         },
       ),

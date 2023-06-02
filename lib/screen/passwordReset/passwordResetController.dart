@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/screen/Auth/loginpage_new/login_new.dart';

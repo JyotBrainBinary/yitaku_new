@@ -29,7 +29,7 @@ class IntroScreen extends StatelessWidget {
                     // height: Get.height * 0.037,
                     height: Get.height * 0.06,
                   ),
-                  LogoImage(),
+                  const LogoImage(),
                   SizedBox(
                     // height: Get.height * 0.017,
                     height: Get.height * 0.02,
@@ -290,7 +290,7 @@ class IntroScreen extends StatelessWidget {
                                 controller.pageIndex--;
                                 controller.pageController.animateToPage(
                                     controller.pageIndex,
-                                    duration: Duration(microseconds: 400),
+                                    duration: const Duration(microseconds: 400),
                                     curve: Curves.easeInOut);
                                 controller.update(["intro"]);
                               },
@@ -311,7 +311,7 @@ class IntroScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                      Spacer(),
+                      const Spacer(),
                       (controller.pageIndex == 3)
                           ? GestureDetector(
                               onTap: () {
@@ -336,7 +336,7 @@ class IntroScreen extends StatelessWidget {
                                 // controller.pageController.animateToPage(controller.pageIndex, duration: Duration(microseconds: 400), curve: Curves.easeInOut);
                                 controller.pageController.animateToPage(
                                     controller.pageIndex,
-                                    duration: Duration(microseconds: 400),
+                                    duration: const Duration(microseconds: 400),
                                     curve: Curves.easeInOut);
                                 controller.update(["intro"]);
                               },
@@ -366,11 +366,11 @@ class IntroScreen extends StatelessWidget {
                   /// skip
                   Row(
                     children: [
-                      Spacer(),
+                      const Spacer(),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: controller.pageIndex == 3
-                            ? SizedBox()
+                            ? const SizedBox()
                             : GestureDetector(
                                 onTap: () {
                                   Get.to(DashboardScreen());

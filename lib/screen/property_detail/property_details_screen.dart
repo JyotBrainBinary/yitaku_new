@@ -1,4 +1,6 @@
 
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
@@ -33,7 +35,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                      onTap: (){
                        Get.back();
                      },
-                     child: Icon(Icons.arrow_back, color: ColorRes.white, size: 25,),
+                     child: const Icon(Icons.arrow_back, color: ColorRes.white, size: 25,),
                    ),
                     Text(StringRes.propertyDetails, style: overpassRegular(fontSize: 20),),
                     Image.asset(
@@ -343,7 +345,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                    boxShadow:  [
                      BoxShadow(
                          blurRadius: 5,
-                         offset: Offset(0,5),
+                         offset: const Offset(0,5),
                          color: Colors.grey.withOpacity(0.5)
                      ),
                    ],
@@ -360,7 +362,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                    boxShadow:  [
                      BoxShadow(
                          blurRadius: 5,
-                         offset: Offset(0,5),
+                         offset: const Offset(0,5),
                          color: Colors.grey.withOpacity(0.5)
                      ),
                    ],
@@ -369,7 +371,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                    mainAxisAlignment: MainAxisAlignment.center,
                    children: [
                      Image.asset(AssetRes.msg, height: 18),
-                     SizedBox(width: 20),
+                     const SizedBox(width: 20),
                      Text(StringRes.contactSeller, style: overpassRegular(color: ColorRes.white),),
                    ],
                  ),
@@ -448,13 +450,13 @@ class PropertyDetailsScreen extends StatelessWidget {
             children: List.generate(8, (index) {
               return Row(
                 children: [
-                  SizedBox(width: 25),
+                  const SizedBox(width: 25),
                    Column(
               children: [
               Container(
               height: 100,
                 width: 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                         image: AssetImage(AssetRes.propertyDetail3),
@@ -462,7 +464,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                     )
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text("Maisonette...", style: overpassRegular(color: ColorRes.hinttext, fontWeight: FontWeight.w500, fontSize: 12),)
               ],
               ),

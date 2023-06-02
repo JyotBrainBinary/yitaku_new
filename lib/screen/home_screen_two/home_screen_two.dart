@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/home_controller_two.dart';
@@ -66,12 +65,12 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                           AssetRes.jalebi,
                           height: 24,
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 12),
                         Image.asset(
                           AssetRes.hart,
                           height: 19,
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: 12),
                         Image.asset(
                           AssetRes.msg,
                           height: 19,
@@ -164,17 +163,17 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            if (homeControllerTwo.isRent == true) {
-                              homeControllerTwo.isRent = false;
+                            if (homeControllerTwo.isForSale == true) {
+                              homeControllerTwo.isForSale = false;
                             } else {
-                              homeControllerTwo.isRent = true;
+                              homeControllerTwo.isForSale = true;
                             }
                             controller.update(["homeTwo"]);
                           },
                           child: Container(
                             alignment: Alignment.center,
                             height: 44,
-                            color: (homeControllerTwo.isRent == true)
+                            color: (homeControllerTwo.isForSale == false)
                                 ? ColorRes.color3879E8
                                 : ColorRes.white,
                             child: Text(
@@ -182,7 +181,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                               style: overpassRegular(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color: (homeControllerTwo.isRent == false)
+                                  color: (homeControllerTwo.isForSale == true)
                                       ? ColorRes.colorEAECF0
                                       : ColorRes.white),
                             ),

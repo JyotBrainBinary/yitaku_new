@@ -47,7 +47,7 @@ class CompleteSignupController extends GetxController {
 
   onTapCompleteSignUp() {
     if (validation()) {
-      Get.to(() => GoalScreen());
+      Get.to(() => const GoalScreen());
     }
     update(['newlogin']);
   }

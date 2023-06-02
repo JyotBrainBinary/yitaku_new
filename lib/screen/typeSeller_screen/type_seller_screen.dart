@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -107,14 +106,14 @@ class TypeSellerScreen extends StatelessWidget {
                             Column(
                               children: [
                                 SizedBox(height: Get.height * 0.05),
-                                (typeSellerController.sellerTypeString != StringRes.selectASellerType)
+                                (typeSellerController.sellerTypeString !=
+                                        StringRes.selectASellerType)
                                     ? Column(
                                         children: [
                                           InkWell(
                                             onTap: () async {
                                               final Uri url = Uri.parse(
                                                   'https://www.google.com');
-
                                               await launchUrl(url);
                                             },
                                             child: Container(
