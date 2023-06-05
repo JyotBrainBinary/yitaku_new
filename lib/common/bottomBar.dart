@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
@@ -174,7 +176,7 @@ Widget bottomNavigationBar(BuildContext context) {
   );
 }
 
-Widget bottomNavigationBar2(BuildContext context) {
+Widget bottomNavigationBar2(BuildContext context)   {
   return Container(
     width: Get.width,
     height: 60,

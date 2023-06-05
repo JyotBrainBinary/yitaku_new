@@ -45,7 +45,6 @@ class IntroScreen extends StatelessWidget {
                     height: Get.height * 0.055,
                   ),
 
-
                   ///pageview
 
                   Expanded(
@@ -270,10 +269,9 @@ class IntroScreen extends StatelessWidget {
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(color: ColorRes.color2F3941)
-                                  )
-                                ),
+                                    border: Border(
+                                        bottom: BorderSide(
+                                            color: ColorRes.color2F3941))),
                                 child: Text(
                                   "Back",
                                   style: overpassRegular(
@@ -297,9 +295,8 @@ class IntroScreen extends StatelessWidget {
                               child: Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
-                                        bottom: BorderSide(color: ColorRes.color2F3941)
-                                    )
-                                ),
+                                        bottom: BorderSide(
+                                            color: ColorRes.color2F3941))),
                                 child: Text(
                                   "Back",
                                   style: overpassRegular(
@@ -378,9 +375,8 @@ class IntroScreen extends StatelessWidget {
                                 child: Container(
                                   decoration: const BoxDecoration(
                                       border: Border(
-                                          bottom: BorderSide(color: ColorRes.color2F3941)
-                                      )
-                                  ),
+                                          bottom: BorderSide(
+                                              color: ColorRes.color2F3941))),
                                   child: Text(
                                     StringRes.skip,
                                     style: overpassRegular(
@@ -393,14 +389,10 @@ class IntroScreen extends StatelessWidget {
                                 ),
                               ),
                       ),
-                      SizedBox(
-                        width: Get.width * 0.034,
-                      ),
+                      SizedBox(width: Get.width * 0.034),
                     ],
                   ),
-                  SizedBox(
-                    height: Get.height * 0.041,
-                  ),
+                  SizedBox(height: Get.height * 0.041),
                 ],
               );
             },

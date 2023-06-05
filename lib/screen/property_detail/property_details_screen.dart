@@ -207,8 +207,8 @@ class PropertyDetailsScreen extends StatelessWidget {
         const SizedBox(height: 5),
         Row(
           children: [
-            const Icon(Icons.location_on_sharp, size: 20, color: Colors.grey,),
-            Text("Qawra", style: overpassRegular(color: Colors.grey, ),)
+            const Icon(Icons.location_on_sharp, size: 20, color: Colors.grey),
+            Text("Qawra", style: overpassRegular(color: Colors.grey),)
           ],
         ),
         const SizedBox(height: 10),
@@ -228,10 +228,10 @@ class PropertyDetailsScreen extends StatelessWidget {
                   children: [
                     Image.asset(AssetRes.bedroom, height: 25, color: Colors.grey,),
                     const SizedBox(width: 8),
-                    Text("2", style: overpassRegular(color: ColorRes.hinttext, fontSize: 16),),
+                    Text("2", style: overpassRegular(color: ColorRes.hinttext, fontSize: 16)),
                   ],
                 ),
-                Text(StringRes.bedrooms, style: overpassRegular(color: Colors.grey, fontSize: 16),),
+                Text(StringRes.bedrooms, style: overpassRegular(color: Colors.grey, fontSize: 16)),
               ],
             ),
             Column(
@@ -379,8 +379,8 @@ class PropertyDetailsScreen extends StatelessWidget {
              ],
            ),
            const SizedBox(height: 25),
-           Text(StringRes.thisPropertyCanBeYoursFor, style: overpassRegular(color: ColorRes.hinttext),),
-           Text("€ 773.00 ${StringRes.perMonth}", style: overpassRegular(color: ColorRes.hinttext),),
+           Text(StringRes.thisPropertyCanBeYoursFor, style: overpassRegular(color: ColorRes.hinttext)),
+           Text("€ 773.00 ${StringRes.perMonth}", style: overpassRegular(color: ColorRes.hinttext)),
            const SizedBox(height: 15),
            Row(
              children: [
@@ -474,9 +474,7 @@ class PropertyDetailsScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 50),
-
       ],
     );
   }
-
 }

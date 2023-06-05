@@ -21,12 +21,12 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
     super.initState();
 
     /// ----- status bar color -----
-    /*SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-          statusBarColor: ColorRes.color3879E8,
-          statusBarIconBrightness: Brightness.dark
-      ),
-    );*/
+    // SystemChrome.setSystemUIOverlayStyle(
+    //   const SystemUiOverlayStyle(
+    //       statusBarColor: ColorRes.color3879E8,
+    //       statusBarIconBrightness: Brightness.dark
+    //   ),
+    // );
   }
 
   @override
@@ -96,13 +96,13 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                       const Spacer(),
                       GestureDetector(
                         onTap: () {
-                          /*if (homeControllerTwo.isOpenList == false) {
+                          /*  if (homeControllerTwo.isOpenList == false) {
                             homeControllerTwo.isOpenList = true;
                             controller.update(["homeTwo"]);
                           } else {
                             homeControllerTwo.isOpenList = false;
                             controller.update(["homeTwo"]);
-                          }*/
+                          } */
                         },
                         child: Image.asset(
                           AssetRes.downList,
