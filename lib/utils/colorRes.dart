@@ -7,6 +7,7 @@ class ColorRes {
   static const white = Color(0xFFFFFFFF);
   static const appColor = Color(0XFF365CC0);
   static const stroke = Color(0xff3879E8);
+  static const buttonColor = Color(0xFF4285F4);
 
   static const disableColor = Color(0xffB8D4F8);
   static const fontGrey = Color(0xff101828);

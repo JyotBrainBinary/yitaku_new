@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/screen/Auth/login_signup/login_signup_screen.dart';
 import 'package:yitaku/screen/Auth/loginpage_new/login_new.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -25,7 +26,7 @@ class _SplashScreen2State extends State<SplashScreen2> {
         seconds: 2,
       ),
           () {
-        return Get.offAll(() => LoginPageNew());
+        return Get.offAll(() =>  LoginSignupScreen());
       },
     );
   }
