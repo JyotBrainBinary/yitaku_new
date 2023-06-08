@@ -6,8 +6,9 @@ import 'package:yitaku/utils/colorRes.dart';
 class BlueBotton extends StatelessWidget {
   final double height;
   final String buttonText;
+  final dynamic onPressed;
 
-  const BlueBotton({super.key, required this.height, required this.buttonText});
+  const BlueBotton({super.key, required this.height, required this.buttonText, this.onPressed});
 
   @override
   Widget build(BuildContext context) {

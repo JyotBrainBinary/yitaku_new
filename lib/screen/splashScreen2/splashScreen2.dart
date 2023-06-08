@@ -7,6 +7,8 @@ import 'package:yitaku/screen/Auth/loginpage_new/login_new.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
+import '../Auth/BlueLogin/blueLoginScreen.dart';
+
 class SplashScreen2 extends StatefulWidget {
   const SplashScreen2({Key? key}) : super(key: key);
 
@@ -15,8 +17,6 @@ class SplashScreen2 extends StatefulWidget {
 }
 
 class _SplashScreen2State extends State<SplashScreen2> {
-
-
   @override
   void initState() {
     // TODO: implement initState
@@ -25,8 +25,8 @@ class _SplashScreen2State extends State<SplashScreen2> {
       const Duration(
         seconds: 2,
       ),
-          () {
-        return Get.offAll(() =>  LoginSignupScreen());
+      () {
+        return Get.offAll(() => const BlueLoginScreen());
       },
     );
   }
