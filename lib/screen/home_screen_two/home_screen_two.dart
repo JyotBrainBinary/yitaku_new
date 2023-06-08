@@ -210,8 +210,8 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                                 borderRadius:
                                                     BorderRadius.circular(10),
                                                 image:  DecorationImage(
-                                                  image: NetworkImage(
-                                                    "${homeControllerTwo.listProperties![index].image![0].url}",
+                                                  image: AssetImage(
+                                                    "assets/images/place_hold.jpg",
                                                   ),
                                                   fit: BoxFit.cover,
                                                 )),
@@ -234,7 +234,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                                 ),
                                                 alignment: Alignment.center,
                                                 child: Text(
-                                                  "${homeControllerTwo.listProperties![index].salesLetting}",
+                                                  "To rent",
                                                   style: semiBold(
                                                     color: ColorRes.sky,
                                                     fontSize: 12,
@@ -255,9 +255,9 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     SizedBox(height: Get.height * 0.03),
                                     Row(
                                       children: [
-                                        Text(
+                                        homeControllerTwo.listProperties![index].propertyDescription  =="null"? const Text(""):  Text(
                                           "${homeControllerTwo.listProperties![index].propertyType}",
-                                          // "${homeControllerTwo.propertiesModel.propertyType}",
+
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
                                               fontWeight: FontWeight.w600,
@@ -272,8 +272,8 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                               color: ColorRes.fontGrey),
                                         ),
                                         const SizedBox(width: 8),
-                                        Text(
-                                          "${homeControllerTwo.listProperties![index].locality}",
+                                        homeControllerTwo.listProperties![index].propertyDescription  =="null"? const Text(""):  Text(
+                                          "${homeControllerTwo.listProperties![index].propertyLocation}",
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
                                               fontWeight: FontWeight.w600),
@@ -281,7 +281,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                       ],
                                     ),
                                     SizedBox(height: Get.height * 0.008),
-                                    Text(
+                                    homeControllerTwo.listProperties![index].propertyDescription  =="null"? const Text(""):  Text(
                                       "${homeControllerTwo.listProperties![index].propertyDescription}",
                                       style: overpassRegular(
                                           color: ColorRes.hinttext,
@@ -291,7 +291,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                     SizedBox(height: Get.height * 0.008),
                                     Row(
                                       children: [
-                                        Text(
+                                        homeControllerTwo.listProperties![index].propertyDescription  =="null"? const Text(""): Text(
                                           "${homeControllerTwo.listProperties![index].price}",
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
@@ -306,8 +306,8 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                               color: ColorRes.fontGrey),
                                         ),
                                         const SizedBox(width: 8),
-                                        homeControllerTwo.listProperties![index].numberOfBedrooms  =="null"? const Text(""):  Text(
-                                          "${homeControllerTwo.listProperties![index].numberOfBedrooms}",
+                                        homeControllerTwo.listProperties![index].noOfBedrooms  == "null" ? const Text(""):  Text(
+                                          "${homeControllerTwo.listProperties![index].noOfBedrooms}",
                                           style: overpassRegular(
                                               color: ColorRes.fontGrey,
                                               fontWeight: FontWeight.w600),
@@ -325,6 +325,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                               ),
                               itemCount:
                                   homeControllerTwo.listProperties!.length,
+
                             )
                           // : const SizedBox(),
                     ),
