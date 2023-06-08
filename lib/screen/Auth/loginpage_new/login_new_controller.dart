@@ -1,37 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yitaku/api_calling/login_api.dart';
 import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
-class LoginNewController extends GetxController
-{
-
-  bool emailTextActive =false;
-  bool passTextActive =false;
+class LoginNewController extends GetxController {
+  bool emailTextActive = false;
+  bool passTextActive = false;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-RxBool isLoading =false.obs;
-
   String passwordError = '';
   String emailError = "";
 
-
   emailValidation() {
     if (emailController.text.trim() == "") {
-emailTextActive =false;
+      emailTextActive = false;
       emailError = StringRes.emailError1;
       update(['newlogin']);
     } else {
       if (RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
           .hasMatch(emailController.text)) {
         emailError = '';
         update(['newlogin']);
       } else {
-        emailTextActive =false;
+        emailTextActive = false;
         emailError = StringRes.emailError2;
         update(['newlogin']);
       }
@@ -49,12 +43,8 @@ emailTextActive =false;
   }
 
   onTapLogin() {
-
-
-
     if (validation()) {
-      loginApi();
-
+      Get.to(() => const GoalScreen());
     }
     update(['newlogin']);
   }
@@ -69,13 +59,4 @@ emailTextActive =false;
       return false;
     }
   }
-
-  Future<void> loginApi() async {
-    isLoading.value = true;
-    await LoginApi.loginApi(emailController.text, passwordController.text);
-    isLoading.value =false;
-    update(['newlogin']);
-  }
-
-
 }

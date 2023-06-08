@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:yitaku/api_calling/sing_up_api.dart';
 import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
@@ -11,7 +10,7 @@ class CompleteSignupController extends GetxController {
 
 
 
-  List<String> list = <String>['Owner', 'Estate Agent', 'Sensar', 'Developer'];// Owner, Estate Agent, Sensar, Developer
+  List<String> list = <String>['One', 'Two', 'Three', 'Four'];
 
   bool isDrop = false;
   bool nameTextActive = false;
@@ -25,7 +24,7 @@ class CompleteSignupController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController surnameController = TextEditingController();
 
-bool isLoading = false;
+
 
   nameValidation() {
     if (nameController.text.isNotEmpty) {
@@ -46,10 +45,9 @@ bool isLoading = false;
     update(['complete']);
   }
 
-  onTapCompleteSignUp({String? email,String? pass}) {
+  onTapCompleteSignUp() {
     if (validation()) {
-     signUpAPi(email: email,pass: pass);
-
+      Get.to(() => const GoalScreen());
     }
     update(['newlogin']);
   }
@@ -63,12 +61,4 @@ bool isLoading = false;
       return false;
     }
   }
-
-  Future<void> signUpAPi({String? email,String? pass}) async {
-    isLoading= true;
-   await SignUpApi.signUpApi(email, pass, nameController.text, surnameController.text, sellerTypeString, "retail");
-   isLoading =false;
-  }
-
-
 }

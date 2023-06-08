@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/logo.dart';
@@ -30,7 +29,7 @@ class IntroScreen extends StatelessWidget {
                     // height: Get.height * 0.037,
                     height: Get.height * 0.06,
                   ),
-                  LogoImage(),
+                  const LogoImage(),
                   SizedBox(
                     // height: Get.height * 0.017,
                     height: Get.height * 0.02,
@@ -45,7 +44,6 @@ class IntroScreen extends StatelessWidget {
                   SizedBox(
                     height: Get.height * 0.055,
                   ),
-
 
                   ///pageview
 
@@ -271,10 +269,9 @@ class IntroScreen extends StatelessWidget {
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(color: ColorRes.color2F3941)
-                                  )
-                                ),
+                                    border: Border(
+                                        bottom: BorderSide(
+                                            color: ColorRes.color2F3941))),
                                 child: Text(
                                   "Back",
                                   style: overpassRegular(
@@ -291,16 +288,15 @@ class IntroScreen extends StatelessWidget {
                                 controller.pageIndex--;
                                 controller.pageController.animateToPage(
                                     controller.pageIndex,
-                                    duration: Duration(microseconds: 400),
+                                    duration: const Duration(microseconds: 400),
                                     curve: Curves.easeInOut);
                                 controller.update(["intro"]);
                               },
                               child: Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
-                                        bottom: BorderSide(color: ColorRes.color2F3941)
-                                    )
-                                ),
+                                        bottom: BorderSide(
+                                            color: ColorRes.color2F3941))),
                                 child: Text(
                                   "Back",
                                   style: overpassRegular(
@@ -312,7 +308,7 @@ class IntroScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                      Spacer(),
+                      const Spacer(),
                       (controller.pageIndex == 3)
                           ? GestureDetector(
                               onTap: () {
@@ -337,7 +333,7 @@ class IntroScreen extends StatelessWidget {
                                 // controller.pageController.animateToPage(controller.pageIndex, duration: Duration(microseconds: 400), curve: Curves.easeInOut);
                                 controller.pageController.animateToPage(
                                     controller.pageIndex,
-                                    duration: Duration(microseconds: 400),
+                                    duration: const Duration(microseconds: 400),
                                     curve: Curves.easeInOut);
                                 controller.update(["intro"]);
                               },
@@ -367,11 +363,11 @@ class IntroScreen extends StatelessWidget {
                   /// skip
                   Row(
                     children: [
-                      Spacer(),
+                      const Spacer(),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: controller.pageIndex == 3
-                            ? SizedBox()
+                            ? const SizedBox()
                             : GestureDetector(
                                 onTap: () {
                                   Get.to(DashboardScreen());
@@ -379,9 +375,8 @@ class IntroScreen extends StatelessWidget {
                                 child: Container(
                                   decoration: const BoxDecoration(
                                       border: Border(
-                                          bottom: BorderSide(color: ColorRes.color2F3941)
-                                      )
-                                  ),
+                                          bottom: BorderSide(
+                                              color: ColorRes.color2F3941))),
                                   child: Text(
                                     StringRes.skip,
                                     style: overpassRegular(
@@ -394,14 +389,10 @@ class IntroScreen extends StatelessWidget {
                                 ),
                               ),
                       ),
-                      SizedBox(
-                        width: Get.width * 0.034,
-                      ),
+                      SizedBox(width: Get.width * 0.034),
                     ],
                   ),
-                  SizedBox(
-                    height: Get.height * 0.041,
-                  ),
+                  SizedBox(height: Get.height * 0.041),
                 ],
               );
             },

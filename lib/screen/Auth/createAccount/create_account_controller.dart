@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/screen/Auth/complete_signup/complete_signin_screen.dart';
-
-import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
 class CreateAccountController extends GetxController {
   bool isChecked = false;
-
 
   bool emailTextActive = false;
   bool passTextActive = false;
@@ -20,15 +17,14 @@ class CreateAccountController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  emailValidation()
-  {
+  emailValidation() {
     if (emailController.text.trim() == "") {
       emailTextActive = false;
       emailError = StringRes.emailError1;
       update(['createaccount']);
     } else {
       if (RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
           .hasMatch(emailController.text)) {
         emailError = '';
         update(['createaccount']);
@@ -38,7 +34,6 @@ class CreateAccountController extends GetxController {
         update(['createaccount']);
       }
     }
-
   }
 
   passwordValidation() {
@@ -53,10 +48,7 @@ class CreateAccountController extends GetxController {
 
   onTapSignUp() {
     if (validation()) {
-      Get.to(() => CompleteSignupScreen(
-        emailPass: emailController.text,
-        pass: passwordController.text,
-      ),);
+      Get.to(() => const CompleteSignupScreen());
     }
     update(['createaccount']);
   }

@@ -1,27 +1,23 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/Auth/complete_signup/complete_signup_controller.dart';
-import 'package:yitaku/services/http_services.dart';
 
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class CompleteSignupScreen extends StatelessWidget {
-  const CompleteSignupScreen({Key? key, required this.emailPass, required this.pass}) : super(key: key);
-final String emailPass;
-final String pass;
+  const CompleteSignupScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CompleteSignupController completeSignupController =
         Get.put(CompleteSignupController());
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffFFFFFF),
-        body: completeSignupController.isLoading ==true ?const Center(child: CircularProgressIndicator()):SingleChildScrollView(
+        backgroundColor: const Color(0xffFFFFFF),
+        body: SingleChildScrollView(
           child: Form(
             key: completeSignupController.formKey,
             child: SafeArea(
@@ -29,7 +25,7 @@ final String pass;
                     id: "complete",
                     builder: (controller) {
                       return Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 16,
                           right: 16,
                         ),
@@ -104,8 +100,8 @@ final String pass;
                                   hintStyle: overpassRegular(
                                       fontSize: 16, color: ColorRes.hinttext),
                                   suffixIcon: controller.nameError == ''
-                                      ? SizedBox()
-                                      : Icon(
+                                      ? const SizedBox()
+                                      : const Icon(
                                           Icons.error_outline,
                                           color: ColorRes.errorIcon,
                                         ),
@@ -171,8 +167,8 @@ final String pass;
                                   hintStyle: overpassRegular(
                                       fontSize: 16, color: ColorRes.hinttext),
                                   suffixIcon: controller.surnameError == ''
-                                      ? SizedBox()
-                                      : Icon(
+                                      ? const SizedBox()
+                                      : const Icon(
                                           Icons.error_outline,
                                           color: ColorRes.errorIcon,
                                         ),
@@ -257,7 +253,7 @@ final String pass;
                               ),
                             ),
 
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
 
                             (completeSignupController.isDrop)
                                 ? Container(
@@ -334,7 +330,7 @@ final String pass;
                                                           color: ColorRes
                                                               .fontGrey),
                                                     ),
-                                                    Spacer(),
+                                                    const Spacer(),
                                                     (completeSignupController
                                                                 .sellerTypeString ==
                                                             completeSignupController
@@ -365,11 +361,7 @@ final String pass;
                                 ? GestureDetector(
                                     onTap: () {
                                       FocusScope.of(context).unfocus();
-
-                                      controller.onTapCompleteSignUp(email: emailPass,pass:  pass);
-
-
-
+                                      controller.onTapCompleteSignUp();
                                       controller.update(["complete"]);
                                     },
                                     child: Align(

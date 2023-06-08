@@ -8,11 +8,11 @@ class SplashController extends GetxController {
   void onInit() {
     // TODO: implement onInit
     Future.delayed(
-      Duration(
+      const Duration(
         seconds: 1,
       ),
       () {
-       return Get.to(() => SplashScreen2());
+       return Get.to(() => const SplashScreen2());
       },
     );
     super.onInit();

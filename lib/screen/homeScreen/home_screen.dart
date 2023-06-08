@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: Get.width,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                         image: AssetImage(
                                           AssetRes.homeScreenImg1,
                                         ),
@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
 
                               Padding(
-                                padding:  EdgeInsets.only(top:  8,right: 8,left: 8),
+                                padding:  const EdgeInsets.only(top:  8,right: 8,left: 8),
                                 child: Row(
                                   children: [
 
@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                       ),),
                                     ),
-                             Spacer(),
+                             const Spacer(),
                              Image.asset(AssetRes.heart,height: 15,width: 17,),
                                   ],
                                 ),
@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: ColorRes.fontGrey,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(width: 15),
+                              const SizedBox(width: 15),
                               Text(
                                 "2 Bedrooms",
                                 style: overpassRegular(
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: Get.width,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                         image: AssetImage(
                                           AssetRes.homeScreenImg3,
                                         ),
@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
 
                               Padding(
-                                padding:  EdgeInsets.only(top:  8,right: 8,left: 8),
+                                padding:  const EdgeInsets.only(top:  8,right: 8,left: 8),
                                 child: Row(
                                   children: [
 
@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                       ),),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     Image.asset(AssetRes.heart,height: 15,width: 17,),
                                   ],
                                 ),
@@ -221,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: ColorRes.fontGrey,
                                     fontWeight: FontWeight.w600,fontSize: 14),
                               ),
-                              SizedBox(width: 15),
+                              const SizedBox(width: 15),
                               Text(
                                 "2 Bedrooms",
                                 style: overpassRegular(
@@ -271,7 +271,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: Get.width,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
+                                    image: const DecorationImage(
                                         image: AssetImage(
                                           AssetRes.homeScreenImg2,
                                         ),
@@ -279,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
 
                               Padding(
-                                padding:  EdgeInsets.only(top:  8,right: 8,left: 8),
+                                padding:  const EdgeInsets.only(top:  8,right: 8,left: 8),
                                 child: Row(
                                   children: [
 
@@ -298,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                       ),),
                                     ),
-                                    Spacer(),
+                                    const Spacer(),
                                     Image.asset(AssetRes.heart,height: 15,width: 17,),
                                   ],
                                 ),
@@ -327,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: ColorRes.fontGrey,
                                     fontWeight: FontWeight.w500),
                               ),
-                              SizedBox(width: 15),
+                              const SizedBox(width: 15),
                               Text(
                                 "2 Bedrooms",
                                 style: overpassRegular(
