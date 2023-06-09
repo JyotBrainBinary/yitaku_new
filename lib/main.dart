@@ -4,7 +4,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:yitaku/screen/profile/profile_screen.dart';
 import 'package:yitaku/screen/splash_screen/splash_screen.dart';
 
 void main() {

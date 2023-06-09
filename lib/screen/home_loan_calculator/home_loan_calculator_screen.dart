@@ -16,7 +16,11 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        leading: InkWell(
+          onTap: () {
+            Get.back();
+          },
+            child: const Icon(Icons.arrow_back)),
         backgroundColor: ColorRes.buttonColor,
         title: const Text(StringRes.homeLoanCalculator),
         centerTitle: true,
@@ -29,14 +33,20 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(height: Get.height * 0.04),
-                Text("Hey First Name,",
-                    style: overpassRegular(
-                        fontSize: 20,
-                        color: const Color(0xFF0059C1),
-                        fontWeight: FontWeight.bold)),
-                Text("Here are your home loan calculation results",
-                    style: overpassRegular(
-                        color: ColorRes.color757575, fontSize: 16)),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Text("Hey First Name,",
+                      style: overpassRegular(
+                          fontSize: 20,
+                          color: const Color(0xFF0059C1),
+                          fontWeight: FontWeight.bold)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Text("Here are your home loan calculation results",
+                      style: overpassRegular(
+                          color: ColorRes.color757575, fontSize: 16)),
+                ),
                 SizedBox(height: Get.height * 0.03),
                 ListView.separated(
                   padding:
@@ -45,17 +55,21 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   separatorBuilder: (context, index) =>
                       const SizedBox(height: 15),
-                  itemCount: 6,
+                  itemCount: homeLoanCalculatorController.imageData.length,
                   itemBuilder: (context, index) => Container(
                     padding: const EdgeInsets.all(12),
                     height: Get.height * 0.42,
                     width: Get.width,
-                    decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.shade200,
-                          blurRadius: 5,
-                          spreadRadius: 2)
-                    ]),
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(5)),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 8,
+                              spreadRadius: 0.5)
+                        ]),
                     child: Column(
                       children: [
                         Row(
@@ -77,12 +91,12 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                               ],
                             ),
                             Image.asset(
-                              AssetRes.favorites,
-                              scale: 1.5,
-                            )
+                              homeLoanCalculatorController.imageData[index],
+                              scale: index == 1 ? 3 : 2.5,
+                            ),
                           ],
                         ),
-                        SizedBox(height: Get.height * 0.03),
+                        SizedBox(height: Get.height * 0.04),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -99,7 +113,7 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: Get.height * 0.03),
+                        SizedBox(height: Get.height * 0.04),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -119,6 +133,8 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                         const Spacer(),
                         ElevatedButton(
                             style: const ButtonStyle(
+                                padding: MaterialStatePropertyAll(
+                                    EdgeInsets.symmetric(horizontal: 35)),
                                 backgroundColor: MaterialStatePropertyAll(
                                     Color(0xFF4285F4))),
                             onPressed: () {},
@@ -142,39 +158,51 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold))),
                 SizedBox(height: Get.height * 0.02),
                 GridView.builder(
-                    itemBuilder: (context, index) => Container(
-                          height: 150,
-                          width: 150,
-                          color: Colors.grey.shade300,
-                          padding: const EdgeInsets.all(8),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                    itemCount: 4,
+                    itemBuilder: (context, index) => Obx(
+                          () => InkWell(
+                            onTap: () {
+                              homeLoanCalculatorController.selectedIndex.value =
+                                  index;
+                            },
+                            child: Container(
+                              height: Get.height * 2,
+                              width: 150,
+                              color: homeLoanCalculatorController
+                                          .selectedIndex.value ==
+                                      index
+                                  ? Colors.grey.shade400
+                                  : Colors.grey.shade300,
+                              padding: const EdgeInsets.all(8),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text("Name"),
-                                  Image.asset(AssetRes.heart, scale: 2.2),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text("Name"),
+                                      Image.asset(AssetRes.heart, scale: 2.2),
+                                    ],
+                                  ),
+                                  SizedBox(height: Get.height * 0.02),
+                                  Center(child: Image.asset(AssetRes.home)),
+                                  const Spacer(),
+                                  Text("Name,Localities",
+                                      style: overpassRegular(
+                                          color: const Color(0xFF424242),
+                                          fontWeight: FontWeight.bold)),
+                                  Text(
+                                    "0 - Name",
+                                    style: overpassRegular(
+                                        fontWeight: FontWeight.w500,
+                                        color: const Color(0xFF424242)),
+                                  )
                                 ],
                               ),
-                              SizedBox(height: Get.height * 0.02),
-                              Center(child: Image.asset(AssetRes.home)),
-                              const Spacer(),
-                              Text("Name,Localities",
-                                  style: overpassRegular(
-                                      color: const Color(0xFF424242),
-                                      fontWeight: FontWeight.bold)),
-                              Text(
-                                "0 - Name",
-                                style: overpassRegular(
-                                    fontWeight: FontWeight.w500,
-                                    color: const Color(0xFF424242)),
-                              )
-                            ],
+                            ),
                           ),
                         ),
-                    itemCount: 4,
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate:

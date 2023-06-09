@@ -34,52 +34,110 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
     final HomeControllerTwo homeControllerTwo = Get.put(HomeControllerTwo());
     return SafeArea(
       child: Scaffold(
+        drawer: Drawer(
+          width: 300,
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.only(top: 35),
+                height: 120,
+                width: Get.width,
+                color: const Color(0xFF4285F4),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(width: Get.width * 0.01),
+                    Container(
+                      height: 50,
+                      width: 50,
+                      decoration: const BoxDecoration(
+                          color: Colors.white30, shape: BoxShape.circle),
+                      child: Icon(Icons.person,
+                          color: Colors.grey.shade400, size: 50),
+                    ),
+                    Text("First Name Last Name",
+                        style: overpassRegular(
+                            fontWeight: FontWeight.bold, fontSize: 18)),
+                    const Icon(Icons.close, color: Color(0xFF424242)),
+                    SizedBox(width: Get.width * 0.01),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  children: [
+                    SizedBox(height: Get.height * 0.03),
+                    homeControllerTwo.commonRow(AssetRes.profile, "Profile"),
+                    SizedBox(height: Get.height * 0.02),
+                    homeControllerTwo.commonRow(AssetRes.profile, "Log In"),
+                    SizedBox(height: Get.height * 0.02),
+                    homeControllerTwo.commonRow(
+                        AssetRes.my_property_icon, "My Property Alert"),
+                    SizedBox(height: Get.height * 0.04),
+                    homeControllerTwo.commonRow(
+                        AssetRes.list_a_property, "List A Property"),
+                    SizedBox(height: Get.height * 0.02),
+                    const Divider(
+                      height: 0.5,
+                      color: Colors.black,
+                    ),
+                    SizedBox(height: Get.height * 0.03),
+                    homeControllerTwo.commonRow(
+                        AssetRes.t_and_c, "Terms & Condition"),
+                    SizedBox(height: Get.height * 0.02),
+                    homeControllerTwo.commonRow(
+                        AssetRes.send_feedback, "Send Feedback"),
+
+                    SizedBox(height: Get.height * 0.05),
+                    homeControllerTwo.commonRow(
+                        AssetRes.support, "Support"),
+                    SizedBox(height: Get.height * 0.02),
+                    homeControllerTwo.commonRow(
+                        AssetRes.rate_the_app, "Rate the Apps"),
+                    SizedBox(height: Get.height * 0.02),
+                    homeControllerTwo.commonRow(
+                        AssetRes.log_out, "Log Out"),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          toolbarHeight: 65,
+          backgroundColor: ColorRes.color3879E8,
+          title: Image.asset(
+            AssetRes.whiteLogo,
+            height: 19,
+          ),
+          actions: [
+            Row(
+              children: [
+                Image.asset(
+                  AssetRes.jalebi,
+                  height: 24,
+                ),
+                const SizedBox(width: 12),
+                Image.asset(
+                  AssetRes.hart,
+                  height: 19,
+                ),
+                const SizedBox(width: 12),
+                Image.asset(
+                  AssetRes.msg,
+                  height: 19,
+                ),
+                const SizedBox(width: 20),
+              ],
+            ),
+          ],
+        ),
         body: GetBuilder<HomeControllerTwo>(
           id: "homeTwo",
           builder: (controller) {
             return Column(
               children: [
-                // SizedBox(height: Get.height * 0.10),
-
-                ///---------------appbar----------------
-                Container(
-                  color: ColorRes.color3879E8,
-                  width: Get.width,
-                  height: 65,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          AssetRes.menu,
-                          height: 14,
-                          color: ColorRes.white,
-                        ),
-                        const SizedBox(width: 20),
-                        Image.asset(
-                          AssetRes.whiteLogo,
-                          height: 19,
-                        ),
-                        const Spacer(),
-                        Image.asset(
-                          AssetRes.jalebi,
-                          height: 24,
-                        ),
-                        const SizedBox(width: 12),
-                        Image.asset(
-                          AssetRes.hart,
-                          height: 19,
-                        ),
-                        const SizedBox(width: 12),
-                        Image.asset(
-                          AssetRes.msg,
-                          height: 19,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-
                 ///---------Filter (3)----------
                 Padding(
                   padding: const EdgeInsets.all(16),

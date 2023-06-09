@@ -5,6 +5,11 @@ class AssetRes {
   ///_____________________ images _________________________
 
   static const yikatuLogo = "${images}Logoyitakulogo 1.png";
+  static const apsbank = "${images}apsbank.png";
+  static const bankofvalletta = "${images}bankofvalletta.png";
+  static const bnfbank = "${images}bnfbank.png";
+  static const hsbc = "${images}hsbc.png";
+  static const medirect = "${images}medirect.png";
   static const calculator = "${images}calculator_ss.png";
   static const whiteLogo = "${images}whiteLogo.png";
   static const user = "${images}user.png";
@@ -30,6 +35,14 @@ class AssetRes {
 
   static const searchHome = "${icons}searchHome.png";
   static const downList = "${icons}downList.png";
+  static const list_a_property = "${icons}list_a_property.png";
+  static const log_out = "${icons}log_out.png";
+  static const my_property_icon = "${icons}my_property_icon.png";
+  static const person_icon = "${icons}person_icon.png";
+  static const rate_the_app = "${icons}rate_the_app.png";
+  static const send_feedback = "${icons}send_feedback.png";
+  static const support = "${icons}support.png";
+  static const t_and_c = "${icons}t_&_c.png";
   static const jalebi = "${icons}image 5 (1).png";
   static const sellOrRent = "${icons}sellOrRent.png";
   static const arrow = "${icons}arrow.png";

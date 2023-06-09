@@ -17,15 +17,15 @@ class LoanCalculatorScreen extends StatefulWidget {
 
 class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
   LoanCalculatorController loanCalculatorController =
-      Get.put(LoanCalculatorController());
+  Get.put(LoanCalculatorController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        leading: const Icon(Icons.arrow_back),
         backgroundColor: ColorRes.buttonColor,
-        title: Text(StringRes.homeLoanCalculator),
+        title: const Text(StringRes.homeLoanCalculator),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -97,26 +97,27 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
                               ),
                             ),
                             items: loanCalculatorController.items
-                                .map((item) => DropdownMenuItem<String>(
-                                      value: item,
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 10),
-                                        child: Text(
-                                          item,
-                                          style: const TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.grey,
-                                          ),
-                                        ),
+                                .map((item) =>
+                                DropdownMenuItem<String>(
+                                  value: item,
+                                  child: Padding(
+                                    padding:
+                                    const EdgeInsets.only(left: 10),
+                                    child: Text(
+                                      item,
+                                      style: overpassRegular(
+                                          color: ColorRes.fontGrey,
+                                          fontWeight: FontWeight.w500
                                       ),
-                                    ))
+                                    ),
+                                  ),
+                                ))
                                 .toList(),
                             value: loanCalculatorController.selectedValue,
                             onChanged: (value) {
                               setState(() {
                                 loanCalculatorController.selectedValue =
-                                    value as String;
+                                value as String;
                               });
                             },
                             menuItemStyleData: const MenuItemStyleData(
@@ -181,26 +182,27 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
                                 ),
                               ),
                               items: loanCalculatorController.items
-                                  .map((item) => DropdownMenuItem<String>(
-                                        value: item,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10),
-                                          child: Text(
-                                            item,
-                                            style: const TextStyle(
-                                              fontSize: 14,
-                                              color: Colors.grey,
-                                            ),
-                                          ),
+                                  .map((item) =>
+                                  DropdownMenuItem<String>(
+                                    value: item,
+                                    child: Padding(
+                                      padding:
+                                      const EdgeInsets.only(left: 10),
+                                      child: Text(
+                                        item,
+                                        style: overpassRegular(
+                                            color: ColorRes.fontGrey,
+                                            fontWeight: FontWeight.w500
                                         ),
-                                      ))
+                                      ),
+                                    ),
+                                  ))
                                   .toList(),
                               value: loanCalculatorController.selectedValue2,
                               onChanged: (value) {
                                 setState(() {
                                   loanCalculatorController.selectedValue2 =
-                                      value as String;
+                                  value as String;
                                 });
                               },
                               menuItemStyleData: const MenuItemStyleData(
@@ -249,7 +251,7 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
                     child: ElevatedButton(
                         style: const ButtonStyle(
                             backgroundColor:
-                                MaterialStatePropertyAll(Color(0xFF4285F4))),
+                            MaterialStatePropertyAll(Color(0xFF4285F4))),
                         onPressed: () {
                           Get.to(() => HomeLoanCalculatorScreen());
                         },
