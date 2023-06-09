@@ -31,7 +31,7 @@ class DashboardScreen extends StatelessWidget {
           if (controller.currentTab2 == 0) {
             return const HomeScreenTwo();
           } else if (controller.currentTab2 == 1) {
-            return const LoanCalculatorScreen();
+            return  LoanCalculatorScreen();
           } else {
             return const InsuranceScreen();
           }
