@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterController.dart';
 import 'package:yitaku/utils/colorRes.dart';
-import 'package:yitaku/utils/font_res.dart';
 
-import '../../../utils/asset_res.dart';
 
 class FilterScreen extends StatelessWidget {
   FilterScreen({Key? key}) : super(key: key);
