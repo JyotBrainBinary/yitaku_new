@@ -50,7 +50,7 @@ class EditProfileController extends GetxController {
       image = File(pickedFile.path);
       imagePath = pickedFile.path;
       print(imagePath);
-      update();
+      update(["image"]);
     } else {
       print('No image selected.');
     }

@@ -6,6 +6,8 @@ class AssetRes {
 
   static const yikatuLogo = "${images}Logoyitakulogo 1.png";
   static const apsbank = "${images}apsbank.png";
+  static const bulb = "${images}bulb.png";
+  static const banglow = "${images}banglow.png";
   static const bankofvalletta = "${images}bankofvalletta.png";
   static const bnfbank = "${images}bnfbank.png";
   static const hsbc = "${images}hsbc.png";

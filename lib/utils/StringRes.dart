@@ -127,6 +127,28 @@ class StringRes {
 
   static const profile = "Profile";
 
+  /// --------------------More details -----------------------
+  static const monthlyRepayment = "Monthly Repayment";
+  static const interestRate = "Interest Rate";
+  static const aprc = "APRC";
+  static const discoverMore = "Discover More";
+  static const loanPeriod = "Loan Period";
+  static const years = "Years";
+  static const disclaimer = "Disclaimer: The information provided here is intended for illustrative.purposes only and is merely an indication of the banks offers.Accuracy is not guaranteed and the default figures shown arehypothetical and may not be applicable to your individual situation.This also means that you may qualify for a different monthlyrepayment amount. Please also note that the quoted monthlyrepayments do not constitute an offer or a binding obligation on thepart of any Bank to provide a home loan. Any application for creditfacilities would be subject to a full forma credit analysis, in line with‘each Bank lending criteria and YITAKU accepts no responsibility forerrors due to changes in rates or offers which have occurred or may";
+  static const depositAmount = "Deposit Amount";
+  static const interestOverLoanPeriod = "Interest over loan period";
+  static const YouCanUsually  = "You can usually negotiate a better home loan\noffer by directly contacting the Bank ";
+  static const totalRepaymentAmountOverLoanPeriod = "Total repayment amount over\nloan period";
+  // static const villaAttard = "Villa, Attard";
+  // static const agricultureLand = "Agriculture Land, Ghasri.....";
+  static const villaSanPawl = "Villa, San Pawl tat-Targa";
+  static const hsbcHomeLoanDetails = "HSBC Home Loan Details";
+  static const propertiesWithYourBudget = "Properties within your budget";
+  // static const townHouse = "Town House, Haz-Zebbug";
+  // static const terracedHouseSwieqi = "Terraced House, Swieqi";
+  // static const terracedHouseAttard = "Terraced House, Attard";
+  // static const penthouse = "Villa, Attard";
+
   /// property details screen
 
   static const propertyDetails = "Property Details";

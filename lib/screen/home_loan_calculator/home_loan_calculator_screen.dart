@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_loan_calculator/home_loan_calculator_controller.dart';
+import 'package:yitaku/screen/more_details/more_details_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -17,9 +18,9 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
-          onTap: () {
-            Get.back();
-          },
+            onTap: () {
+              Get.back();
+            },
             child: const Icon(Icons.arrow_back)),
         backgroundColor: ColorRes.buttonColor,
         title: const Text(StringRes.homeLoanCalculator),
@@ -139,7 +140,19 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                                     EdgeInsets.symmetric(horizontal: 35)),
                                 backgroundColor: MaterialStatePropertyAll(
                                     Color(0xFF4285F4))),
-                            onPressed: () {},
+                            onPressed: () {
+                              if (index == 0) {
+                                Get.to(() => MoreDetailsScreen());
+                              } else if (index == 1) {
+                                Get.to(() => MoreDetailsScreen());
+                              } else if (index == 2) {
+                                Get.to(() => MoreDetailsScreen());
+                              } else if (index == 3) {
+                                Get.to(() => MoreDetailsScreen());
+                              } else if (index == 4) {
+                                Get.to(() => MoreDetailsScreen());
+                              }
+                            },
                             child: const Text("MORE DETAILS")),
                       ],
                     ),

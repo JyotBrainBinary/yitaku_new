@@ -6,6 +6,7 @@ import 'package:yitaku/common/widget/blue_botton.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/edit_profile/edit_profile_controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
+import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -72,23 +73,39 @@ class EditProfileScreen extends StatelessWidget {
                 Text(StringRes.profilePicture,
                     style: overpassRegular(color: const Color(0xFF757575))),
                 SizedBox(height: Get.height * 0.015),
-                Container(
-                  alignment: Alignment.center,
-                  height: Get.height * 0.3,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.cover, image: FileImage(editProfileController.image!),
-                    ),
-                    border: Border.all(color: Colors.grey.shade400),
-                    borderRadius: const BorderRadius.all(Radius.circular(5)),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      selectPicture();
-                    },
-                    child: const Text(StringRes.choosePhoto),
-                  ),
+                GetBuilder<EditProfileController>(
+                  id: "image",
+                  builder:(controller) =>  editProfileController.image == null
+                      ? Container(
+                          alignment: Alignment.center,
+                          height: Get.height * 0.3,
+                          width: Get.width,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade400),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5)),
+                          ),
+                          child: InkWell(
+                              onTap: () {
+                                selectPicture();
+                                editProfileController.update(["image"]);
+                              },
+                              child: const Text(StringRes.choosePhoto)),
+                        )
+                      : Container(
+                          alignment: Alignment.center,
+                          height: Get.height * 0.3,
+                          width: Get.width,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: FileImage(editProfileController.image!),
+                            ),
+                            border: Border.all(color: Colors.grey.shade400),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5)),
+                          ),
+                        ),
                 ),
                 SizedBox(height: Get.height * 0.03),
                 BlueBotton(
@@ -107,5 +124,6 @@ class EditProfileScreen extends StatelessWidget {
 
   selectPicture() async {
     editProfileController.getImage();
+    editProfileController.update(["image"]);
   }
 }

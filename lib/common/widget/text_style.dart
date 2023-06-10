@@ -28,6 +28,7 @@ TextStyle overpassRegular({Color? color,
   double? letterSpacing,
   TextDecoration? textdeco,
   double? height,
+  TextOverflow? overflow,
 
   FontWeight? fontWeight}) {
   return TextStyle(
@@ -38,7 +39,7 @@ TextStyle overpassRegular({Color? color,
     letterSpacing: letterSpacing ?? 0,
     decoration: textdeco ?? TextDecoration.none,
     height: height,
-
+    overflow: overflow,
   );
 }
 
