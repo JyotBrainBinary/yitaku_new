@@ -6,11 +6,11 @@ import '../../model/properties_model.dart';
 class HomeControllerTwo extends GetxController {
   List<PropertiesModel>? listProperties = [];
 
-  @override
+/*  @override
   void onInit() {
     propertiesApi();
     super.onInit();
-  }
+  }*/
 
   bool isOpenList = false;
 

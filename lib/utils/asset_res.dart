@@ -22,6 +22,8 @@ class AssetRes {
   static const propertyDetail3 = "${images}propertyDetail3.png";
   static const placeHolderPerson = "${images}placeHolderPerson.png";
 
+  static const insuranceee = "${images}insuranse.png";
+
 
 
   ///_____________________ icons _________________________
