@@ -4,6 +4,7 @@ import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterController.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterScreen.dart';
 import 'package:yitaku/screen/home_screen_two/home_controller_two.dart';
+import 'package:yitaku/screen/home_screen_two/screen/propertiesScreen/properties%20for%20you.dart';
 import 'package:yitaku/screen/property_detail/property_details_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -46,9 +47,14 @@ class HomeScreenTwo extends StatelessWidget {
                           height: 19,
                         ),
                         const Spacer(),
-                        Image.asset(
-                          AssetRes.jalebi,
-                          height: 24,
+                        GestureDetector(
+                          onTap: () {
+                              Get.to(()=>PropertiesScreen());
+                          },
+                          child: Image.asset(
+                            AssetRes.jalebi,
+                            height: 24,
+                          ),
                         ),
                         const SizedBox(width: 12),
                         Image.asset(

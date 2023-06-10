@@ -122,6 +122,22 @@ static const thisPropertyCanBeYoursFor = "This property can be yours for:";
 
   static const otherPropertiesFromThisSeller = "Other Properties from this seller";
 
+  ///--------------------------------- property screen --------------------------------------------
 
-
+  static const propertyAppBarTitle = "Set up Property Alerts";
+  static const heyHello = "Hey Hello,";
+  static const bUY = "BUY";
+  static const rENT = "RENT";
+  static const kEEPMEUPDATEd = "KEEP ME UPDATEd";
+  static const minimumAndMaximum = "Select a minimum and maximum amount";
+  static const whatIs = "What is your budget?";
+  static const selectAMinimum = "Select a minimum and maximum number of bedrooms";
+  static const howMany = "How many bedrooms would you like";
+  static const select = "Select location/s...";
+  static const selectLocalities = "Select up to 3 localities";
+  static const whichLocally =  "In which locally would you like to reside?";
+  static const selectUp = "Select up to 3 options";
+  static const whatkind = "What kind of property are you looking for?";
+  static const WouldYou  = "Would you like to Buy or Rent a property?";
+  static const  LetssetupyourpropertyAlerts =  "Let's set up your property alerts.";
 }
