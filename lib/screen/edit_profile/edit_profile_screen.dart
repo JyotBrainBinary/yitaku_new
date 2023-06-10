@@ -77,10 +77,18 @@ class EditProfileScreen extends StatelessWidget {
                   height: Get.height * 0.3,
                   width: Get.width,
                   decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover, image: FileImage(editProfileController.image!),
+                    ),
                     border: Border.all(color: Colors.grey.shade400),
                     borderRadius: const BorderRadius.all(Radius.circular(5)),
                   ),
-                  child: const Text(StringRes.choosePhoto),
+                  child: InkWell(
+                    onTap: () {
+                      selectPicture();
+                    },
+                    child: const Text(StringRes.choosePhoto),
+                  ),
                 ),
                 SizedBox(height: Get.height * 0.03),
                 BlueBotton(
@@ -95,5 +103,9 @@ class EditProfileScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  selectPicture() async {
+    editProfileController.getImage();
   }
 }

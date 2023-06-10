@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
@@ -32,5 +35,24 @@ class EditProfileController extends GetxController {
         ),
       ),
     );
+  }
+
+  static EditProfileController get to => Get.find<EditProfileController>();
+
+  File? image;
+  String? imagePath;
+  final _picker = ImagePicker();
+
+  Future<void> getImage() async {
+    final pickedFile = await _picker.getImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      image = File(pickedFile.path);
+      imagePath = pickedFile.path;
+      print(imagePath);
+      update();
+    } else {
+      print('No image selected.');
+    }
   }
 }

@@ -92,7 +92,9 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                             ),
                             Image.asset(
                               homeLoanCalculatorController.imageData[index],
-                              scale: index == 1 ? 3 : 2.5,
+                              height: Get.height * 0.08,
+                              width: Get.width * 0.26,
+                              // scale: index == 1 ? 3 : 2.5,
                             ),
                           ],
                         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/home_controller_two.dart';
+import 'package:yitaku/screen/profile/profile_screen.dart';
 import 'package:yitaku/screen/property_detail/property_details_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -15,95 +16,14 @@ class HomeScreenTwo extends StatefulWidget {
 }
 
 class _HomeScreenTwoState extends State<HomeScreenTwo> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    /// ----- status bar color -----
-    // SystemChrome.setSystemUIOverlayStyle(
-    //   const SystemUiOverlayStyle(
-    //       statusBarColor: ColorRes.color3879E8,
-    //       statusBarIconBrightness: Brightness.dark
-    //   ),
-    // );
-  }
+  final HomeControllerTwo homeControllerTwo = Get.put(HomeControllerTwo());
 
   @override
   Widget build(BuildContext context) {
-    final HomeControllerTwo homeControllerTwo = Get.put(HomeControllerTwo());
     return SafeArea(
       child: Scaffold(
-        drawer: Drawer(
-          width: 300,
-          child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(top: 35),
-                height: 120,
-                width: Get.width,
-                color: const Color(0xFF4285F4),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(width: Get.width * 0.01),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: const BoxDecoration(
-                          color: Colors.white30, shape: BoxShape.circle),
-                      child: Icon(Icons.person,
-                          color: Colors.grey.shade400, size: 50),
-                    ),
-                    Text("First Name Last Name",
-                        style: overpassRegular(
-                            fontWeight: FontWeight.bold, fontSize: 18)),
-                    const Icon(Icons.close, color: Color(0xFF424242)),
-                    SizedBox(width: Get.width * 0.01),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  children: [
-                    SizedBox(height: Get.height * 0.03),
-                    homeControllerTwo.commonRow(AssetRes.profile, "Profile"),
-                    SizedBox(height: Get.height * 0.02),
-                    homeControllerTwo.commonRow(AssetRes.profile, "Log In"),
-                    SizedBox(height: Get.height * 0.02),
-                    homeControllerTwo.commonRow(
-                        AssetRes.my_property_icon, "My Property Alert"),
-                    SizedBox(height: Get.height * 0.04),
-                    homeControllerTwo.commonRow(
-                        AssetRes.list_a_property, "List A Property"),
-                    SizedBox(height: Get.height * 0.02),
-                    const Divider(
-                      height: 0.5,
-                      color: Colors.black,
-                    ),
-                    SizedBox(height: Get.height * 0.03),
-                    homeControllerTwo.commonRow(
-                        AssetRes.t_and_c, "Terms & Condition"),
-                    SizedBox(height: Get.height * 0.02),
-                    homeControllerTwo.commonRow(
-                        AssetRes.send_feedback, "Send Feedback"),
-
-                    SizedBox(height: Get.height * 0.05),
-                    homeControllerTwo.commonRow(
-                        AssetRes.support, "Support"),
-                    SizedBox(height: Get.height * 0.02),
-                    homeControllerTwo.commonRow(
-                        AssetRes.rate_the_app, "Rate the Apps"),
-                    SizedBox(height: Get.height * 0.02),
-                    homeControllerTwo.commonRow(
-                        AssetRes.log_out, "Log Out"),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        // drawer --------------------------------------------
+        drawer: homeControllerTwo.drawerOpen(),
         appBar: AppBar(
           toolbarHeight: 65,
           backgroundColor: ColorRes.color3879E8,
@@ -152,6 +72,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                         ),
                       ),
                       const Spacer(),
+                      //filter icon------------------------------------
                       GestureDetector(
                         onTap: () {
                           /*  if (homeControllerTwo.isOpenList == false) {
@@ -556,15 +477,12 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                   ],
                                 ),
                               ),
-
                               Container(
                                 height: 2,
                                 color: ColorRes.colorF2F4F7,
                               ),
                               SizedBox(height: Get.height * 0.035),
-
                               ///---------------All Properties-----------
-
                               /*Container(
                           height: 16,
                           width: Get.width,
@@ -673,8 +591,7 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: Get.height * 0.05),
-                            ],
+                              SizedBox(height: Get.height * 0.05)],
                           ),
                         ),*/
                             ],
