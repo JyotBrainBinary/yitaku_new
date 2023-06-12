@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/profile/profile_screen.dart';
+import 'package:yitaku/screen/term_and_condition/terms_and_condition_screen.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
@@ -13,16 +14,17 @@ class HomeControllerTwo extends GetxController {
   commonRow(image, title) {
     return Row(
       children: [
-        Image.asset(image,height: 22,width: 22,color: const Color(0xFF666666)),
+        Image.asset(image,
+            height: 22, width: 22, color: const Color(0xFF666666)),
         SizedBox(width: Get.width * 0.06),
-        Text(title, style: overpassRegular(fontSize: 18, color: ColorRes.color757575)),
+        Text(title,
+            style: overpassRegular(fontSize: 18, color: ColorRes.color757575)),
       ],
     );
   }
 
-
   // Drawer ===========================================
-  drawerOpen () {
+  drawerOpen() {
     return Drawer(
       width: 280,
       child: SingleChildScrollView(
@@ -52,8 +54,7 @@ class HomeControllerTwo extends GetxController {
                       onTap: () {
                         Get.back();
                       },
-                      child: const Icon(Icons.close,
-                          color: Color(0xFF424242))),
+                      child: const Icon(Icons.close, color: Color(0xFF424242))),
                   SizedBox(width: Get.width * 0.01),
                 ],
               ),
@@ -67,17 +68,17 @@ class HomeControllerTwo extends GetxController {
                     onTap: () {
                       Get.to(() => ProfileScreen());
                     },
-                    child: commonRow(
-                        AssetRes.profile, "Profile"),
+                    child: commonRow(AssetRes.profile, "Profile"),
                   ),
                   SizedBox(height: Get.height * 0.03),
-                  commonRow(AssetRes.profile, "Log In"),
+                  InkWell(
+                    onTap: () {},
+                    child: commonRow(AssetRes.profile, "Log In"),
+                  ),
                   SizedBox(height: Get.height * 0.03),
-                  commonRow(
-                      AssetRes.my_property_icon, "My Property Alert"),
+                  commonRow(AssetRes.my_property_icon, "My Property Alert"),
                   SizedBox(height: Get.height * 0.05),
-                  commonRow(
-                      AssetRes.list_a_property, "List A Property"),
+                  commonRow(AssetRes.list_a_property, "List A Property"),
                   SizedBox(height: Get.height * 0.03),
                 ],
               ),
@@ -91,16 +92,18 @@ class HomeControllerTwo extends GetxController {
               child: Column(
                 children: [
                   SizedBox(height: Get.height * 0.03),
-                  commonRow(
-                      AssetRes.t_and_c, "Terms & Condition"),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => const TermAndConditionScreen());
+                    },
+                    child: commonRow(AssetRes.t_and_c, "Terms & Condition"),
+                  ),
                   SizedBox(height: Get.height * 0.03),
-                  commonRow(
-                      AssetRes.send_feedback, "Send Feedback"),
+                  commonRow(AssetRes.send_feedback, "Send Feedback"),
                   SizedBox(height: Get.height * 0.08),
                   commonRow(AssetRes.support, "Support"),
                   SizedBox(height: Get.height * 0.03),
-                  commonRow(
-                      AssetRes.rate_the_app, "Rate the Apps"),
+                  commonRow(AssetRes.rate_the_app, "Rate the Apps"),
                   SizedBox(height: Get.height * 0.03),
                   commonRow(AssetRes.log_out, "Log Out"),
                   SizedBox(height: Get.height * 0.03),
@@ -113,4 +116,22 @@ class HomeControllerTwo extends GetxController {
     );
   }
 
+  accountRequiredDialog() {
+    return Get.dialog(
+      const Dialog(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Icon(Icons.close),
+              ],
+            ),
+            
+          ],
+        ),
+      ),
+    );
+  }
 }

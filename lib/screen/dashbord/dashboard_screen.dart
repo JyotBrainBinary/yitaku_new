@@ -33,7 +33,7 @@ class DashboardScreen extends StatelessWidget {
           } else if (controller.currentTab2 == 1) {
             return  LoanCalculatorScreen();
           } else {
-            return const InsuranceScreen();
+            return InsuranceScreen();
           }
         },
       ),

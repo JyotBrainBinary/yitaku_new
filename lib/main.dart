@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -9,7 +6,8 @@ import 'package:yitaku/screen/splash_screen/splash_screen.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-        statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark),
+        statusBarColor: Color(0xFF4285F4),
+        statusBarIconBrightness: Brightness.light),
   );
   runApp(const MyApp());
 }

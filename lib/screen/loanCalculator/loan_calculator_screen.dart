@@ -23,7 +23,7 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        automaticallyImplyLeading: false,
         backgroundColor: ColorRes.buttonColor,
         title: const Text(StringRes.homeLoanCalculator),
         centerTitle: true,

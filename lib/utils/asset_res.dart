@@ -5,6 +5,7 @@ class AssetRes {
   ///_____________________ images _________________________
 
   static const yikatuLogo = "${images}Logoyitakulogo 1.png";
+  static const insuranceee = "${images}insuranse.png";
   static const apsbank = "${images}apsbank.png";
   static const bulb = "${images}bulb.png";
   static const banglow = "${images}banglow.png";

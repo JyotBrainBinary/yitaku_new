@@ -1,8 +1,16 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/utils/colorRes.dart';
 
 class ProfileController extends GetxController {
+  RxList<String> item = ["Detail 1", "Detail 2", "Detail 3"].obs;
+  String selectItem = "Select...";
+  RxBool isDrop = false.obs;
+  TextEditingController specifyController = TextEditingController();
+  TextEditingController tellUsMoreController = TextEditingController();
+
   logOutButton({onPressed}) {
     return GestureDetector(
       child: Container(
