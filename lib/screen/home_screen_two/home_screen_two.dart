@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/favorites/favorites_screen.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterController.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterScreen.dart';
 import 'package:yitaku/screen/home_screen_two/home_controller_two.dart';
@@ -57,9 +58,14 @@ class HomeScreenTwo extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 12),
-                        Image.asset(
-                          AssetRes.hart,
-                          height: 19,
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(()=>FavoritesScreen());
+                          },
+                          child: Image.asset(
+                            AssetRes.hart,
+                            height: 19,
+                          ),
                         ),
                         const SizedBox(width: 12),
                         Image.asset(

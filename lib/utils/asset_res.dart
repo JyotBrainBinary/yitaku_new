@@ -24,6 +24,10 @@ class AssetRes {
 
   static const insuranceee = "${images}insuranse.png";
 
+  static const apsBank = "${images}aps-bank-logo-vector.png";
+  static const hsbcBank = "${images}HSBC_bank.jpg";
+  static const medirectBank = "${images}MeDirect-Logo.jpg";
+
 
 
   ///_____________________ icons _________________________

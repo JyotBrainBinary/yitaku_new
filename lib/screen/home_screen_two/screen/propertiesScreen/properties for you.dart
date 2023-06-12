@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:yitaku/screen/home_screen_two/screen/propertyAlertScreen/property_alert_screen.dart';
+import 'package:yitaku/screen/home_screen_two/screen/SetUpPropertyAlertScreen/property_alert_screen.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class PropertiesScreen extends StatelessWidget {
@@ -20,7 +20,7 @@ class PropertiesScreen extends StatelessWidget {
           Center(
             child: GestureDetector(
               onTap: () {
-                Get.to(()=>PropertyAlertScreen());
+                Get.to(()=>SetUpPropertyAlertScreen());
               },
               child: Container(
                 height: 40,

@@ -5,6 +5,7 @@ import 'package:yitaku/common/widget/bottomnavigationBar.dart';
 
 import 'package:yitaku/screen/dashbord/dashboard_controller.dart';
 import 'package:yitaku/screen/favorites/favorites_screen.dart';
+import 'package:yitaku/screen/homeLoanOffers/compareHomeLoanOffres/compare_homeLoan_offres.dart';
 import 'package:yitaku/screen/homeScreen/home_screen.dart';
 import 'package:yitaku/screen/home_screen_two/home_screen_two.dart';
 import 'package:yitaku/screen/insurance/insurance_screen.dart';
@@ -40,7 +41,7 @@ class DashboardScreen extends StatelessWidget {
             if (controller.currentTab2 == 0) {
               return  HomeScreenTwo();
             } else if (controller.currentTab2 == 1) {
-              return LoanCalculatorScreen();
+              return CompareHomeLoanOffresController();
             } else {
               return InsuranceScreen();
             }

@@ -140,4 +140,27 @@ static const thisPropertyCanBeYoursFor = "This property can be yours for:";
   static const whatkind = "What kind of property are you looking for?";
   static const WouldYou  = "Would you like to Buy or Rent a property?";
   static const  LetssetupyourpropertyAlerts =  "Let's set up your property alerts.";
+
+  static const  homeLoan =  "Disclaimer: The information provided here is intended for illustrative purposes only and is merely an indication of the banks offers. Accuracy is not guaranteed and the default figures shown are hypothetical and may not be applicable to your individual situation. This also means that you may qualify for a different monthly repayment amount. Please also note that the quoted monthly repayments do not constitute an offer or a binding obligation on the part of any Bank to provide a home loan. Any application for credit facilities would be subject to a full formal credit analysis, in line with each Bank lending criteria and YITAKU accepts no responsibility for errors due to changes in rates or offers which have occurred or may occur. ";
+  static const proTip  = "You can usually negotiate a better home loan offer by directly contacting the Bank ";
+  static const discover  = "Discover More";
+  static const hSBCDetails  = "Disclaimer: The information provided here is intended for illustrative purposes only and is merely an indication of the banks offers. Accuracy is not guaranteed and the default figures shown are hypothetical and may not be applicable to your individual situation. This also means that you may qualify for a different monthly repayment amount. Please also note that the quoted monthly repayments do not constitute an offer or a binding obligation on the part of any Bank to provide a home loan. Any application for credit facilities would be subject to a full formal credit analysis, in line with each Bank lending criteria and YITAKU accepts no responsibility for errors due to changes in rates or offers which have occurred or may occur. ";
+
+  static const propertyAlerts = "Hey First Name,";
+  static const setProperty = "Here are the property alerts you have set.";
+  static const lookingProperty = "You are looking for a property...";
+  static const toBuy = "To buy";
+  static const propertyLooking = "The type of property you are looking for is...";
+  static const farmhouse = "Farmhouse - Penthouse - Villa";
+  static const localities = "In the number of bedrooms...";
+  static const siggiewi = "Mellieha - Swieqi - Siggiewi";
+  static const bedroomss = "With this number of bedrooms...";
+  static const budget = "And your budget is between...";
+  static const edit = "EDIT";
+  static const update = "UPDATE PROPERTY ALERTS";
+  static const delete = "DELETE PROPERTY ALERTS";
+
+  static const firstName = "Hey First Name,";
+  static const favouritesProperty = "Here are all the properties you have favourited";
+
 }
