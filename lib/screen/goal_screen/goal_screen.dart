@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/goal_screen/goal_controller.dart';
+import 'package:yitaku/screen/home_screen_two/home_screen_two.dart';
 import 'package:yitaku/screen/intro_screen/intro_screen.dart';
 import 'package:yitaku/screen/typeSeller_screen/type_seller_screen.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -45,7 +46,9 @@ class GoalScreen extends StatelessWidget {
               ///last
               InkWell(
                 onTap: () {
-                  Get.to(() => IntroScreen());
+
+                  Get.to(() => HomeScreenTwo());
+
                 },
                 child: Container(
                   width: Get.width,

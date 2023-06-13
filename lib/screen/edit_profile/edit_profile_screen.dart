@@ -61,7 +61,7 @@ class EditProfileScreen extends StatelessWidget {
                     style: overpassRegular(color: const Color(0xFF757575))),
                 SizedBox(height: Get.height * 0.015),
                 editProfileController.commonTextFilled(
-                    editProfileController.nameController, StringRes.enterName),
+                      editProfileController.nameController, StringRes.enterName),
                 SizedBox(height: Get.height * 0.03),
                 Text(StringRes.surname,
                     style: overpassRegular(color: const Color(0xFF757575))),

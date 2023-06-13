@@ -1,23 +1,27 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/Auth/complete_signup/complete_signup_controller.dart';
+import 'package:yitaku/services/http_services.dart';
 
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class CompleteSignupScreen extends StatelessWidget {
-  const CompleteSignupScreen({Key? key}) : super(key: key);
-
+  const CompleteSignupScreen({Key? key, required this.emailPass, required this.pass}) : super(key: key);
+final String emailPass;
+final String pass;
   @override
   Widget build(BuildContext context) {
     CompleteSignupController completeSignupController =
         Get.put(CompleteSignupController());
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xffFFFFFF),
-        body: SingleChildScrollView(
+        backgroundColor: Color(0xffFFFFFF),
+        body: completeSignupController.isLoading ==true ?const Center(child: CircularProgressIndicator()):SingleChildScrollView(
           child: Form(
             key: completeSignupController.formKey,
             child: SafeArea(
@@ -361,7 +365,11 @@ class CompleteSignupScreen extends StatelessWidget {
                                 ? GestureDetector(
                                     onTap: () {
                                       FocusScope.of(context).unfocus();
-                                      controller.onTapCompleteSignUp();
+
+                                      controller.onTapCompleteSignUp(email: emailPass,pass:  pass);
+
+
+
                                       controller.update(["complete"]);
                                     },
                                     child: Align(

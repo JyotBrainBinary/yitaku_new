@@ -115,8 +115,7 @@ class StringRes {
   static const insurance = "Insurance";
 
   static const featuredProperties = "Featured properties";
-  static const beThe1stToAcquireOurTopProperties =
-      "Be the 1st to acquire our top properties";
+  static const beThe1stToAcquireOurTopProperties = "Be the 1st to acquire our top properties";
   static const allProperties = "All Properties";
   static const allPropertiesWithinYourBudget = "All Properties within your budget";
 
@@ -285,6 +284,78 @@ i. are otherwise inappropriate having regard to the purpose of our Website or Ap
   static const howMuchCanIBorrow = "HOW MUCH CAN I BORROW?";
   static const compareHomeLoanOffers = "COMPARE HOME LOAN OFFERS";
 
-  static const otherPropertiesFromThisSeller =
-      "Other Properties from this seller";
+  static const otherPropertiesFromThisSeller = "Other Properties from this seller";
+
+  ///--------------------------------- property screen --------------------------------------------
+
+  static const propertyAppBarTitle = "Set up Property Alerts";
+  static const heyHello = "Hey Hello,";
+  static const bUY = "BUY";
+  static const rENT = "RENT";
+  static const kEEPMEUPDATEd = "KEEP ME UPDATED";
+  static const minimumAndMaximum = "Select a minimum and maximum amount";
+  static const whatIs = "What is your budget?";
+  static const selectAMinimum = "Select a minimum and maximum number of bedrooms";
+  static const howMany = "How many bedrooms would you like";
+  static const select = "Select location/s...";
+  static const selectLocalities = "Select up to 3 localities";
+  static const whichLocally =  "In which locally would you like to reside?";
+  static const selectUp = "Select up to 3 options";
+  static const whatkind = "What kind of property are you looking for?";
+  static const WouldYou  = "Would you like to Buy or Rent a property?";
+  static const  LetssetupyourpropertyAlerts =  "Let's set up your property alerts.";
+
+  static const  homeLoan =  "Disclaimer: The information provided here is intended for illustrative purposes only and is merely an indication of the banks offers. Accuracy is not guaranteed and the default figures shown are hypothetical and may not be applicable to your individual situation. This also means that you may qualify for a different monthly repayment amount. Please also note that the quoted monthly repayments do not constitute an offer or a binding obligation on the part of any Bank to provide a home loan. Any application for credit facilities would be subject to a full formal credit analysis, in line with each Bank lending criteria and YITAKU accepts no responsibility for errors due to changes in rates or offers which have occurred or may occur. ";
+  static const proTip  = "You can usually negotiate a better home loan offer by directly contacting the Bank ";
+  static const discover  = "Discover More";
+  static const hSBCDetails  = "Disclaimer: The information provided here is intended for illustrative purposes only and is merely an indication of the banks offers. Accuracy is not guaranteed and the default figures shown are hypothetical and may not be applicable to your individual situation. This also means that you may qualify for a different monthly repayment amount. Please also note that the quoted monthly repayments do not constitute an offer or a binding obligation on the part of any Bank to provide a home loan. Any application for credit facilities would be subject to a full formal credit analysis, in line with each Bank lending criteria and YITAKU accepts no responsibility for errors due to changes in rates or offers which have occurred or may occur. ";
+
+  static const propertyAlerts = "Hey First Name,";
+  static const setProperty = "Here are the property alerts you have set.";
+  static const lookingProperty = "You are looking for a property...";
+  static const toBuy = "To buy";
+  static const propertyLooking = "The type of property you are looking for is...";
+  static const farmhouse = "Farmhouse - Penthouse - Villa";
+  static const localities = "In the number of bedrooms...";
+  static const siggiewi = "Mellieha - Swieqi - Siggiewi";
+  static const bedroomss = "With this number of bedrooms...";
+  static const budget = "And your budget is between...";
+  static const edit = "EDIT";
+  static const update = "UPDATE PROPERTY ALERTS";
+  static const delete = "DELETE PROPERTY ALERTS";
+
+  static const firstName = "Hey First Name,";
+  static const favouritesProperty = "Here are all the properties you have favourited";
+
+  ///--------------------------- edit_profile screen---------------------------------------------------------------------------------------------
+
+  static const enterPasswordT = "Enter password...";
+  static const mobileNumber = "Mobile Number";
+  static const enterMobileNumber = "Enter mobile number...";
+  static const enterName = "Enter name...";
+  static const enterSurname = "Enter surname...";
+  static const profilePicture = "Profile Picture";
+  static const choosePhoto = "Choose Photo";
+
+  ///----------------------------------------Home loan calculate screen-----------------------------------------------------------------------------------------------
+
+  static const homeLoanCalculator = "Home Loan Calculator";
+  static const MonthlyRepayment = "Monthly Repayment";
+  static const MaxPropertyPrice = "Max. Property Price";
+  static const MaxLoanAmount = "Max. Loan Amount";
+  static const MinDeposit = "Min. Deposit";
+  static const LoanDuration = "Loan Duration";
+  static const homeLoanCalculatordes1 = "Calculation is based on the basis that (i) the property being purchased will serve as your primary residence and (ii) you have no outstanding home loans upon the signing of deed.";
+  static const homeLoanCalculatordes2 = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
+  static const homeLoanCalculatordes3 = "Disclaimer: The information provided here is intended for illustrative purposes only and is merely an indication of the banks offers. Accuracy is not guaranteed and the default figures shown are hypothetical and may not be applicable to your individual situation. This also means that you may qualify for a different monthly repayment amount. Please also note that the quoted monthly repayments do not constitute an offer or a binding obligation on the part of any Bank to provide a home loan. Any application for credit facilities would be subject to a full formal credit analysis, in line with each Bank lending criteria and YITAKU accepts no responsibility for errors due to changes in rates or offers which have occurred or may occur. ";
+
+  ///------------------------------------loan calculatoe screen --------------------------------------------------------------------------------------
+
+  static const loanTitle = "Calculate and Compare home loan offers from five banks in Malta";
+  static const loanSubTitle = "Enter your details to get an indication of the loan that will be granted to you";
+  static const loanDesOne = "Calculation is based on the basis that (i) the property being purchased will serve as your primary residence and (ii) you have no outstanding home loans upon the signing of deed.";
+  static const loanDesTwo = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
+  static const firstNameLastName = "First Name Last Name";
+  static const updateProfile = "UPDATE PROFILE";
+  static const deleteProfile = "Delete Profile";
 }

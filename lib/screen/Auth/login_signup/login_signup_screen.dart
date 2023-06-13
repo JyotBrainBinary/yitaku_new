@@ -31,7 +31,7 @@ class LoginSignupScreen extends StatelessWidget {
               ),
               SizedBox(height: Get.height * 0.2),
               BlueBotton(height: Get.height * 0.060, buttonText: "SIGN UP",onPressed: () {
-                Get.to(const CompleteSignupScreen());
+
               }, color: Colors.white),
               SizedBox(height: Get.height * 0.03),
               TextButton(

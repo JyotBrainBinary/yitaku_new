@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
@@ -18,7 +19,7 @@ class LoginPageNew extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: GetBuilder<LoginNewController>(
+        body:  loginNewController.isLoading.value ==true?const Center(child: CircularProgressIndicator()): GetBuilder<LoginNewController>(
             id: "newlogin",
             builder: (controller) {
               return Padding(
@@ -28,6 +29,7 @@ class LoginPageNew extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+
                       /// ----- top --------
                       SizedBox(height: Get.height * 0.09),
                       Align(
@@ -63,6 +65,7 @@ class LoginPageNew extends StatelessWidget {
 
                       SizedBox(height: Get.height * 0.046),
 
+
                       /// ---- login button ----
 
                       loginButton(controller, context),
@@ -82,8 +85,9 @@ class LoginPageNew extends StatelessWidget {
                               Container(
                                 decoration: const BoxDecoration(
                                     border: Border(
-                                        bottom: BorderSide(
-                                            color: ColorRes.color2F3941))),
+                                        bottom: BorderSide(color: ColorRes.color2F3941)
+                                    )
+                                ),
                                 child: Text(
                                   StringRes.doNot,
                                   //style: TextStyle(decoration: TextDecoration.underline),
@@ -104,19 +108,19 @@ class LoginPageNew extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: Get.height * 0.04),
-
                       /// --- forgot pass ---------
                       Align(
                         alignment: Alignment.center,
-                        child: InkWell(
-                          onTap: () {
+                        child:  InkWell(
+                          onTap: (){
                             Get.to(PasswordResetPage());
                           },
                           child: Container(
                             decoration: const BoxDecoration(
                                 border: Border(
-                                    bottom: BorderSide(
-                                        color: ColorRes.color2F3941))),
+                                    bottom: BorderSide(color: ColorRes.color2F3941)
+                                )
+                            ),
                             child: Text(
                               StringRes.forgot,
                               style: overpassRegular(
@@ -276,33 +280,20 @@ class LoginPageNew extends StatelessWidget {
     );
   }
 
-  Widget loginButton(controller, context) {
-    return loginNewController.emailController.text.isNotEmpty &&
-            loginNewController.passwordController.text.isNotEmpty
-        ? GestureDetector(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-              controller.onTapLogin();
-              controller.update(["newlogin"]);
-            },
-            child: Align(
-              alignment: Alignment.center,
-              child: Container(
-                height: 44,
-                //height: Get.height * 0.063,
-                width: Get.width * 0.32,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: ColorRes.appColor,
-                ),
-                child: Text(StringRes.login,
-                    style: overpassRegular(
-                        fontWeight: FontWeight.w600, fontSize: 16)),
-              ),
-            ),
-          )
-        : Align(
+  Widget loginButton (controller, context){
+    return Column(
+      children: [
+        loginNewController.emailController.text.isNotEmpty &&
+            loginNewController
+                .passwordController.text.isNotEmpty
+            ? GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            controller.onTapLogin();
+
+            controller.update(["newlogin"]);
+          },
+          child: Align(
             alignment: Alignment.center,
             child: Container(
               height: 44,
@@ -311,12 +302,33 @@ class LoginPageNew extends StatelessWidget {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                color: ColorRes.disableColor,
+                color: ColorRes.appColor,
               ),
               child: Text(StringRes.login,
                   style: overpassRegular(
-                      fontWeight: FontWeight.w600, fontSize: 16)),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16)),
             ),
-          );
+          ),
+        )
+            : Align(
+          alignment: Alignment.center,
+          child: Container(
+            height: 44,
+            //height: Get.height * 0.063,
+            width: Get.width * 0.32,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color: ColorRes.disableColor,
+            ),
+            child: Text(StringRes.login,
+                style: overpassRegular(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16)),
+          ),
+        ),
+      ],
+    );
   }
 }

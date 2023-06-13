@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/screen/Auth/createAccount/create_account_controller.dart';
+import 'package:yitaku/services/http_services.dart';
 
 import 'package:yitaku/utils/asset_res.dart';
 
@@ -26,8 +27,7 @@ class CreateaccountScreen extends StatelessWidget {
                 builder: (controller) {
                   return Padding(
                     padding: const EdgeInsets.only(
-                      left: 16,
-                      right: 16,
+                      left: 16, right: 16,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,12 +73,11 @@ class CreateaccountScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                                color:
-                                    createAccountController.emailTextActive == true
-                                        ? ColorRes.stroke
-                                        : controller.emailError == ''
-                                            ? ColorRes.textfieldBorder
-                                            : ColorRes.errorIcon),
+                                color: createAccountController.emailTextActive == true
+                                    ? ColorRes.stroke
+                                    : controller.emailError == ''
+                                    ? ColorRes.textfieldBorder
+                                    : ColorRes.errorIcon),
                           ),
                           child: TextFormField(
                             onTap: () {
@@ -285,22 +284,22 @@ class CreateaccountScreen extends StatelessWidget {
                                 ),
                               )
                             : Align(
-                                alignment: Alignment.center,
-                                child: Container(
-                                  height: 44,
-                                  //height: Get.height * 0.063,
-                                  width: Get.width * 0.32,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    color: ColorRes.disableColor,
-                                  ),
-                                  child: Text(StringRes.signUp,
-                                      style: overpassRegular(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 16)),
-                                ),
-                              ),
+                          alignment: Alignment.center,
+                          child: Container(
+                            height: 44,
+                            //height: Get.height * 0.063,
+                            width: Get.width * 0.32,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: ColorRes.disableColor,
+                            ),
+                            child: Text(StringRes.signUp,
+                                style: overpassRegular(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16)),
+                          ),
+                        ),
                         SizedBox(
                           height: Get.height * 0.028,
                         ),
@@ -309,8 +308,9 @@ class CreateaccountScreen extends StatelessWidget {
                           child: Container(
                             decoration: const BoxDecoration(
                                 border: Border(
-                                    bottom: BorderSide(
-                                        color: ColorRes.color2F3941))),
+                                    bottom: BorderSide(color: ColorRes.color2F3941)
+                                )
+                            ),
                             child: Text(
                               StringRes.read,
                               style: overpassRegular(
@@ -321,6 +321,7 @@ class CreateaccountScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
                         SizedBox(height: Get.height * 0.1),
                       ],
                     ),

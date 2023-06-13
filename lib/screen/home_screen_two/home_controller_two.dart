@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/api_calling/properties_api.dart';
+import 'package:yitaku/screen/Auth/createAccount/create_account_screen.dart';
+import 'package:yitaku/screen/Auth/login_signup/login_signup_screen.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/Auth/login_signup/login_signup_screen.dart';
 import 'package:yitaku/screen/profile/profile_screen.dart';
@@ -8,12 +11,40 @@ import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
+import '../../common/widget/text_style.dart';
+import '../../model/properties_model.dart';
+
 import '../Auth/createAccount/create_account_screen.dart';
 
 class HomeControllerTwo extends GetxController {
+  List<PropertiesModel>? listProperties = [];
+
+  @override
+  void onInit() {
+    propertiesApi();
+    super.onInit();
+  }
+
   bool isOpenList = false;
 
   bool isForSale = true;
+  bool isRent = false;
+  bool isLoading =false;
+
+  PropertiesModel propertiesModel = PropertiesModel(
+  );
+
+  Future<void> propertiesApi() async {
+    isLoading= true;
+    update(["homeTwo"]);
+    // propertiesModel =  await PropertiesApi.propertiesApi();
+     await PropertiesApi.propertiesApi();
+   /* listProperties = propertiesModel as List<PropertiesModel>?;*/
+
+       isLoading= false;
+    update(["homeTwo"]);
+  }
+
 
   commonRow(image, title) {
     return Row(
