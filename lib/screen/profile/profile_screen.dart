@@ -381,10 +381,9 @@ class ProfileScreen extends StatelessWidget {
                                                                     backgroundColor:
                                                                         const MaterialStatePropertyAll(ColorRes
                                                                             .buttonColor)),
-                                                                onPressed:
-                                                                    () {
+                                                                onPressed: () {
                                                                   Get.back();
-                                                                    },
+                                                                },
                                                                 child: const Text(
                                                                     "DELETE PROFILE")),
                                                           ],

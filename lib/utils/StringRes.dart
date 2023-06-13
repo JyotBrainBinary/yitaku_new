@@ -1,8 +1,33 @@
+// ignore_for_file: constant_identifier_names, file_names
+
 class StringRes {
   ///-------------------------------------- authentication --------------------------------------------
   static const signUp = "Sign up";
+  static const homeLoanCalculator = "Home Loan Calculator";
+  static const homeLoanCalculatordes1 = "Calculation is based on the basis that (i) the property being purchased will serve as your primary residence and (ii) you have no outstanding home loans upon the signing of deed.";
+  static const homeLoanCalculatordes2 = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
+  static const homeLoanCalculatordes3 = "Disclaimer: The information provided here is intended for illustrative purposes only and is merely an indication of the banks offers. Accuracy is not guaranteed and the default figures shown are hypothetical and may not be applicable to your individual situation. This also means that you may qualify for a different monthly repayment amount. Please also note that the quoted monthly repayments do not constitute an offer or a binding obligation on the part of any Bank to provide a home loan. Any application for credit facilities would be subject to a full formal credit analysis, in line with each Bank lending criteria and YITAKU accepts no responsibility for errors due to changes in rates or offers which have occurred or may occur. ";
+  static const MaxPropertyPrice = "Max. Property Price";
+  static const MinDeposit = "Min. Deposit";
+  static const LoanDuration = "Loan Duration";
+  static const MaxLoanAmount = "Max. Loan Amount";
+  static const MonthlyRepayment = "Monthly Repayment";
+  static const loanTitle = "Calculate and Compare home loan offers from five banks in Malta";
+  static const loanSubTitle = "Enter your details to get an indication of the loan that will be granted to you";
+  static const loanDesOne = "Calculation is based on the basis that (i) the property being purchased will serve as your primary residence and (ii) you have no outstanding home loans upon the signing of deed.";
+    static const loanDesTwo = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
+  static const choosePhoto = "Choose Photo";
+  static const enterPasswordT = "Enter password...";
+  static const enterMobileNumber = "Enter mobile number...";
+  static const mobileNumber = "Mobile Number";
+  static const enterName = "Enter name...";
+  static const enterSurname = "Enter surname...";
+  static const updateProfile = "UPDATE PROFILE";
+  static const deleteProfile = "Delete Profile";
+  static const firstNameLastName = "First Name Last Name";
   static const mailHInt = "olivia@google.com";
   static const login = "Login";
+  static const profilePicture = "Profile Picture";
   static const exploreWithoutSignUp = "Explore without signup";
   static const signUpAndCreateAccount = "Sign up & Create Account";
   static const letsGetYouStarted = "Let's get you started...";
@@ -52,6 +77,7 @@ class StringRes {
       "Compare home loan offers from all of Malta’s leading home loan providers.";
   static const getA =
       "Get a clear picture of how much every property for sale, will cost you on a monthly basis.";
+
   ///--------------------------------------one last step --------------------------------------------
 
   /// -------------------------- Tell us about your goals ------------------------
@@ -74,14 +100,12 @@ class StringRes {
   static const selectASellerType = "Select a seller type";
   static const selectTeamMember = "Select team member";
 
-
   /// ------------------ home Screen -------------
 
   static const home = "Home";
   static const owner = "Owner";
   static const forSale = "For sale";
   static const toLet = "To let";
-
 
   static const featured = "Featured";
 
@@ -93,15 +117,18 @@ class StringRes {
   static const featuredProperties = "Featured properties";
   static const beThe1stToAcquireOurTopProperties = "Be the 1st to acquire our top properties";
   static const allProperties = "All Properties";
+  static const allPropertiesWithinYourBudget = "All Properties within your budget";
 
   /// ------------------- favorites screen ------------------
 
-static const favorites = "Favorites";
+  static const favorites = "Favorites";
 
-/// ------------------- profile screen ---------------------
+  /// ------------------- profile screen ---------------------
 
-static const profile = "Profile";
+  static const profile = "Profile";
 
+  /// ------------------- All Property With In Your budget Screen ------------------
+  static const propertyWithinYourBudget = "Properties within your budget";
 
   ///----------------------------- Term And Condition Screen -------------------------------
   static const termAndCondition = "Term And Condition";
@@ -241,15 +268,15 @@ i. are otherwise inappropriate having regard to the purpose of our Website or Ap
 
   /// property details screen
 
-static const propertyDetails = "Property Details";
-static const Apartment = "Apartment";
-static const bedrooms = "Bedrooms";
-static const bathroom = "Bathroom";
-static const withTerrace = "with Terrace";
-static const seller = "Seller";
-static const call = "Call";
-static const contactSeller = "Contact seller";
-static const thisPropertyCanBeYoursFor = "This property can be yours for:";
+  static const propertyDetails = "Property Details";
+  static const Apartment = "Apartment";
+  static const bedrooms = "Bedrooms";
+  static const bathroom = "Bathroom";
+  static const withTerrace = "with Terrace";
+  static const seller = "Seller";
+  static const call = "Call";
+  static const contactSeller = "Contact seller";
+  static const thisPropertyCanBeYoursFor = "This property can be yours for:";
   static const perMonth = "per month *";
 
   static const loanAmount = "Loan Amount";
