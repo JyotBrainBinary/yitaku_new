@@ -22,61 +22,57 @@ class HomeScreenTwo extends StatelessWidget {
     final HomeControllerTwo homeControllerTwo = Get.put(HomeControllerTwo());
     return SafeArea(
       child: Scaffold(
+        drawer: homeControllerTwo.drawerOpen(),
+        appBar: AppBar(
+          toolbarHeight: 65,
+          backgroundColor: ColorRes.color3879E8,
+          title: Image.asset(
+            AssetRes.whiteLogo,
+            height: 19,
+          ),
+          actions: [
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Get.to(()=>PropertiesScreen());
+                  },
+                  child: Image.asset(
+                    AssetRes.jalebi,
+                    height: 24,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(()=>FavoritesScreen());
+                  },
+                  child: Image.asset(
+                    AssetRes.hart,
+                    height: 19,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                InkWell(
+                  onTap: () {
+                    homeControllerTwo.accountRequiredDialog();
+                  },
+                  child: Image.asset(
+                    AssetRes.msg,
+                    height: 19,
+                  ),
+                ),
+                const SizedBox(width: 20),
+              ],
+            ),
+          ],
+        ),
         body: GetBuilder<HomeControllerTwo>(
           id: "homeTwo",
           builder: (controller) {
             return  Column(
               children: [
                 // SizedBox(height: Get.height * 0.10),
-
-                ///---------------appbar----------------
-                Container(
-                  color: ColorRes.color3879E8,
-                  width: Get.width,
-                  height: 65,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          AssetRes.menu,
-                          height: 14,
-                          color: ColorRes.white,
-                        ),
-                        const SizedBox(width: 20),
-                        Image.asset(
-                          AssetRes.whiteLogo,
-                          height: 19,
-                        ),
-                        const Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                              Get.to(()=>PropertiesScreen());
-                          },
-                          child: Image.asset(
-                            AssetRes.jalebi,
-                            height: 24,
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        GestureDetector(
-                          onTap: () {
-                            Get.to(()=>FavoritesScreen());
-                          },
-                          child: Image.asset(
-                            AssetRes.hart,
-                            height: 19,
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Image.asset(
-                          AssetRes.msg,
-                          height: 19,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
 
                 ///---------Filter (3)----------
                 Padding(

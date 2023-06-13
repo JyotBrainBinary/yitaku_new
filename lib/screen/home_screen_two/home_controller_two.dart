@@ -1,6 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/api_calling/properties_api.dart';
+import 'package:yitaku/screen/Auth/createAccount/create_account_screen.dart';
+import 'package:yitaku/screen/Auth/login_signup/login_signup_screen.dart';
+import 'package:yitaku/screen/profile/profile_screen.dart';
+import 'package:yitaku/screen/term_and_condition/terms_and_condition_screen.dart';
+import 'package:yitaku/utils/asset_res.dart';
+import 'package:yitaku/utils/colorRes.dart';
 
+import '../../common/widget/text_style.dart';
 import '../../model/properties_model.dart';
 
 class HomeControllerTwo extends GetxController {
@@ -31,6 +39,20 @@ class HomeControllerTwo extends GetxController {
        isLoading= false;
     update(["homeTwo"]);
   }
+
+
+  commonRow(image, title) {
+    return Row(
+      children: [
+        Image.asset(image,
+            height: 22, width: 22, color: const Color(0xFF666666)),
+        SizedBox(width: Get.width * 0.06),
+        Text(title,
+            style: overpassRegular(fontSize: 18, color: ColorRes.color757575)),
+      ],
+    );
+  }
+
   // Drawer ===========================================
   drawerOpen() {
     return Drawer(
@@ -126,20 +148,63 @@ class HomeControllerTwo extends GetxController {
 
   accountRequiredDialog() {
     return Get.dialog(
-      const Dialog(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Icon(Icons.close),
-              ],
-            ),
-
-          ],
+      Dialog(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: Get.height * 0.02),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: const Icon(Icons.close, color: Colors.black87)),
+                ],
+              ),
+              SizedBox(height: Get.height * 0.035),
+              Text("Account Required",
+                  style: overpassRegular(
+                      color: ColorRes.buttonColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16)),
+              SizedBox(height: Get.height * 0.04),
+              Text("Log in to use this feature.",
+                  style: overpassRegular(
+                      color: ColorRes.color757575,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16)),
+              SizedBox(height: Get.height * 0.06),
+              ElevatedButton(
+                  style: ButtonStyle(
+                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25))),
+                      fixedSize:
+                      MaterialStatePropertyAll(Size(Get.width * 0.6, 30)),
+                      backgroundColor:
+                      const MaterialStatePropertyAll(ColorRes.buttonColor)),
+                  onPressed: () {
+                    Get.to(() => CreateaccountScreen());
+                  },
+                  child: const Text("CREATE FREE ACCOUNT")),
+              SizedBox(height: Get.height * 0.04),
+              InkWell(
+                onTap: () => Get.to(() => LoginSignupScreen()),
+                child: Text("Already have an account? Log in",
+                    style: overpassRegular(
+                        color: ColorRes.color757575,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold)),
+              ),
+              SizedBox(height: Get.height * 0.06),
+            ],
+          ),
         ),
       ),
     );
   }
+
 }

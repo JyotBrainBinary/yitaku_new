@@ -8,7 +8,6 @@ class FavoritesController extends GetxController{
         context: context,
         builder: (context) {
           return AlertDialog(
-
               actions: [
                 SizedBox(
                   height: 200,

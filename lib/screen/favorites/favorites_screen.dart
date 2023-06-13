@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/chatScreen/chatScreen.dart';
 import 'package:yitaku/screen/favorites/favorites_controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -53,7 +54,7 @@ class FavoritesScreen extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                           // Get.to(PropertyDetailsScreen());
+                           Get.to(ChatScreen());
                           },
                           child: Container(
                             height: 160,
