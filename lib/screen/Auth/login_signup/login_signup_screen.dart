@@ -38,7 +38,7 @@ class LoginSignupScreen extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     "LOG IN",
-                    style: overpassSemiBold(color: const Color(0xFF757575),fontSize: 16)),
+                    style: overpassRegular(color: const Color(0xFF757575),fontSize: 16)),
                   ),
               SizedBox(height: Get.height * 0.03),
 

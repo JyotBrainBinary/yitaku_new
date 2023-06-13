@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/Auth/login_signup/login_signup_screen.dart';
 import 'package:yitaku/screen/profile/profile_screen.dart';
 import 'package:yitaku/screen/term_and_condition/terms_and_condition_screen.dart';
+import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
+
+import '../Auth/createAccount/create_account_screen.dart';
 
 class HomeControllerTwo extends GetxController {
   bool isOpenList = false;
@@ -118,20 +122,140 @@ class HomeControllerTwo extends GetxController {
 
   accountRequiredDialog() {
     return Get.dialog(
-      const Dialog(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Icon(Icons.close),
-              ],
-            ),
-            
-          ],
+      Dialog(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: Get.height * 0.02),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: const Icon(Icons.close, color: Colors.black87)),
+                ],
+              ),
+              SizedBox(height: Get.height * 0.035),
+              Text("Account Required",
+                  style: overpassRegular(
+                      color: ColorRes.buttonColor,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16)),
+              SizedBox(height: Get.height * 0.04),
+              Text("Log in to use this feature.",
+                  style: overpassRegular(
+                      color: ColorRes.color757575,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16)),
+              SizedBox(height: Get.height * 0.06),
+              ElevatedButton(
+                  style: ButtonStyle(
+                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25))),
+                      fixedSize:
+                          MaterialStatePropertyAll(Size(Get.width * 0.6, 30)),
+                      backgroundColor:
+                          const MaterialStatePropertyAll(ColorRes.buttonColor)),
+                  onPressed: () {
+                    Get.to(() => CreateaccountScreen());
+                  },
+                  child: const Text("CREATE FREE ACCOUNT")),
+              SizedBox(height: Get.height * 0.04),
+              InkWell(
+                onTap: () => Get.to(() => LoginSignupScreen()),
+                child: Text("Already have an account? Log in",
+                    style: overpassRegular(
+                        color: ColorRes.color757575,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold)),
+              ),
+              SizedBox(height: Get.height * 0.06),
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  showDialogFeeding(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10))),
+            insetPadding: const EdgeInsets.symmetric(horizontal: 30),
+            contentPadding: EdgeInsets.zero,
+            content: SizedBox(
+              height: 280,
+              width: 300,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10, right: 10),
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: const SizedBox(
+                            height: 23,
+                            width: 23,
+                            child: Icon(Icons.close),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 1,
+                    width: Get.width * 0.706,
+                    color: ColorRes.color757575.withOpacity(0.10),
+                  ),
+                  const SizedBox(height: 15),
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: Get.width * 0.706,
+                      decoration: BoxDecoration(
+                          color: ColorRes.buttonColor,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(child: Text(StringRes.loanAmount)),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: Get.width * 0.706,
+                      decoration: BoxDecoration(
+                          color: ColorRes.black,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(child: Text(StringRes.monthlyRepayment)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
   }
 }

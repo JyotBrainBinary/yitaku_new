@@ -15,7 +15,6 @@ class HomeLoanCalculatorController extends GetxController {
     AssetRes.bnfbank,
   ];
 
-
   textWidget(title, subTitle) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

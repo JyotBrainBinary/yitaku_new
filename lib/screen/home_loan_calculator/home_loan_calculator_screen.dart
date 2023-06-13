@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/all_property_within_budget/all_property_within_budget_screen.dart';
 import 'package:yitaku/screen/home_loan_calculator/home_loan_calculator_controller.dart';
 import 'package:yitaku/screen/more_details/more_details_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
@@ -179,6 +180,7 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                             onTap: () {
                               homeLoanCalculatorController.selectedIndex.value =
                                   index;
+                              Get.to(() => AllPropertyWithinBudgetScreen());
                             },
                             child: Container(
                               height: Get.height * 2,
@@ -186,8 +188,8 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                               color: homeLoanCalculatorController
                                           .selectedIndex.value ==
                                       index
-                                  ? Colors.grey.shade400
-                                  : Colors.grey.shade300,
+                                  ? Colors.grey.shade300
+                                  : Colors.grey.shade200,
                               padding: const EdgeInsets.all(8),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

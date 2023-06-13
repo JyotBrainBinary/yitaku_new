@@ -15,7 +15,7 @@ class StringRes {
   static const loanTitle = "Calculate and Compare home loan offers from five banks in Malta";
   static const loanSubTitle = "Enter your details to get an indication of the loan that will be granted to you";
   static const loanDesOne = "Calculation is based on the basis that (i) the property being purchased will serve as your primary residence and (ii) you have no outstanding home loans upon the signing of deed.";
-  static const loanDesTwo = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
+    static const loanDesTwo = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
   static const choosePhoto = "Choose Photo";
   static const enterPasswordT = "Enter password...";
   static const enterMobileNumber = "Enter mobile number...";
@@ -118,6 +118,7 @@ class StringRes {
   static const beThe1stToAcquireOurTopProperties =
       "Be the 1st to acquire our top properties";
   static const allProperties = "All Properties";
+  static const allPropertiesWithinYourBudget = "All Properties within your budget";
 
   /// ------------------- favorites screen ------------------
 
@@ -127,6 +128,8 @@ class StringRes {
 
   static const profile = "Profile";
 
+  /// ------------------- All Property With In Your budget Screen ------------------
+  static const propertyWithinYourBudget = "Properties within your budget";
 
   ///----------------------------- Term And Condition Screen -------------------------------
   static const termAndCondition = "Term And Condition";

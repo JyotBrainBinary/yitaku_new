@@ -48,7 +48,7 @@ class MoreDetailsScreen extends StatelessWidget {
                         Get.to(() => PropertyDetailsScreen());
                       },
                       child: Container(
-                        height: Get.height * 0.27,
+                        height: Get.width * 0.44,
                         width: Get.width * 0.44,
                         decoration: const BoxDecoration(shape: BoxShape.circle),
                         child: ClipOval(
