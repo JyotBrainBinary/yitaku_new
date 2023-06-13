@@ -1,11 +1,13 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
+
+import 'package:flutter/material.dart' show Color;
 
 class ColorRes {
   static const black = Color(0xFF000000);
   static const white = Color(0xFFFFFFFF);
   static const appColor = Color(0XFF365CC0);
   static const stroke = Color(0xff3879E8);
-
+  static const buttonColor = Color(0xFF4285F4);
 
   static const disableColor = Color(0xffB8D4F8);
   static const fontGrey = Color(0xff101828);
@@ -23,6 +25,7 @@ class ColorRes {
 
   static const color858585 = Color(0XFF858585);
   static const color767676 = Color(0XFF767676);
+  static const color757575 = Color(0XFF757575);
   static const color192E81 = Color(0XFF192E81);
   static const colorF2F4F7 = Color(0XFFF2F4F7);
   static const colorEAECF0 = Color(0XFFEAECF0);
@@ -33,6 +36,4 @@ class ColorRes {
   static const color2F3941 = Color(0XFF2F3941);
   static const colorB54708 = Color(0XFFB54708);
   static const colorD0D5DD = Color(0XFFD0D5DD);
-
-
 }

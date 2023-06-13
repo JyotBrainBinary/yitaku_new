@@ -39,11 +39,14 @@ dependencies:
   shared_preferences: ^2.1.0
   email_validator: ^2.1.17
   url_launcher: ^6.1.10
+  image_picker: ^0.8.8
+
   http: ^0.13.6
   # ------- ui ------
   carousel_slider: ^4.2.1
   step_progress_indicator: ^1.0.2
   readmore: ^2.2.0
+  dropdown_button2: ^2.1.3
   syncfusion_flutter_sliders: ^21.2.9
 
 dev_dependencies:
@@ -92,6 +95,9 @@ flutter:
     - family: Overpass-VariableFont
       fonts:
         - asset: assets/fonts/Overpass-VariableFont_wght.ttf
+    - family: Orbitron-SemiBold
+      fonts:
+        - asset: assets/fonts/Orbitron-SemiBold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

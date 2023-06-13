@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -46,7 +45,6 @@ class TypeSellerScreen extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                               color: ColorRes.fontGrey),
                         ),
-
                         SizedBox(height: Get.height * 0.05),
 
                         ///dropdown
@@ -66,10 +64,11 @@ class TypeSellerScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                  color: typeSellerController.sellerTypeString !=
-                                      StringRes.selectASellerType
-                                      ? ColorRes.stroke
-                                      : ColorRes.textfieldBorder),
+                                  color:
+                                      typeSellerController.sellerTypeString !=
+                                              StringRes.selectASellerType
+                                          ? ColorRes.stroke
+                                          : ColorRes.textfieldBorder),
                             ),
                             child: Row(
                               children: [
@@ -100,232 +99,244 @@ class TypeSellerScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 5),
-
+                        const SizedBox(height: 5),
                         Stack(
                           children: [
-
                             /// 2 container
                             Column(
                               children: [
-
                                 SizedBox(height: Get.height * 0.05),
-
                                 (typeSellerController.sellerTypeString !=
-                                    StringRes.selectASellerType)
+                                        StringRes.selectASellerType)
                                     ? Column(
-                                  children: [
-                                    InkWell(
-                                      onTap: () async {
-
-                                        final Uri _url = Uri.parse('https://www.google.com');
-
-                                        await launchUrl(_url);
-
-                                      },
-                                      child: Container(
-                                        width: Get.width,
-                                        padding: const EdgeInsets.only(
-                                            left: 20,
-                                            right: 20,
-                                            top: 25,
-                                            bottom: 25),
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                            BorderRadius.circular(10),
-                                            border: Border.all(
-                                                color: ColorRes.stroke)),
-                                        child: Row(
-                                          children: [
-                                            Image.asset(AssetRes.plusRound,
-                                                height: 40),
-                                            const SizedBox(width: 20),
-                                            Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  StringRes.listPropertyNow,
-                                                  style: regular(
-                                                    color: ColorRes.color192E81,
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.w500,
+                                        children: [
+                                          InkWell(
+                                            onTap: () async {
+                                              final Uri url = Uri.parse(
+                                                  'https://www.google.com');
+                                              await launchUrl(url);
+                                            },
+                                            child: Container(
+                                              width: Get.width,
+                                              padding: const EdgeInsets.only(
+                                                  left: 20,
+                                                  right: 20,
+                                                  top: 25,
+                                                  bottom: 25),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  border: Border.all(
+                                                      color: ColorRes.stroke)),
+                                              child: Row(
+                                                children: [
+                                                  Image.asset(
+                                                      AssetRes.plusRound,
+                                                      height: 40),
+                                                  const SizedBox(width: 20),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        StringRes
+                                                            .listPropertyNow,
+                                                        style: regular(
+                                                          color: ColorRes
+                                                              .color192E81,
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                      ),
+                                                      const SizedBox(height: 5),
+                                                      SizedBox(
+                                                          width:
+                                                              Get.width * 0.45,
+                                                          child: Text(
+                                                            StringRes
+                                                                .listPropertyNowDetail,
+                                                            style: overpassRegular(
+                                                                color: ColorRes
+                                                                    .color365CC0,
+                                                                fontSize: 14),
+                                                          ))
+                                                    ],
                                                   ),
-                                                ),
-                                                const SizedBox(height: 5),
-                                                SizedBox(
-                                                    width: Get.width * 0.45,
-                                                    child: Text(
-                                                      StringRes
-                                                          .listPropertyNowDetail,
-                                                      style: overpassRegular(
-                                                          color:
-                                                          ColorRes.color365CC0,
-                                                          fontSize: 14),
-                                                    ))
-                                              ],
-                                            ),
-                                            const Spacer(),
-                                            Image.asset(
-                                              AssetRes.arrow,
-                                              height: 20,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    const SizedBox(height: 20),
-                                    InkWell(
-                                      onTap: () {
-                                        Get.to(() => DashboardScreen());
-                                      },
-                                      child: Container(
-                                        width: Get.width,
-                                        padding: const EdgeInsets.only(
-                                            left: 20,
-                                            right: 20,
-                                            top: 25,
-                                            bottom: 25),
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(10),
-                                            border: Border.all(
-                                                color: ColorRes.stroke)),
-                                        child: Row(
-                                          children: [
-                                            Image.asset(AssetRes.search,
-                                                height: 40),
-                                            const SizedBox(width: 20),
-                                            Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  StringRes.browseListings,
-                                                  style: regular(
-                                                    color: ColorRes.color192E81,
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.w500,
+                                                  const Spacer(),
+                                                  Image.asset(
+                                                    AssetRes.arrow,
+                                                    height: 20,
                                                   ),
-                                                ),
-                                                const SizedBox(height: 5),
-                                                SizedBox(
-                                                    width: Get.width * 0.49,
-                                                    child: Text(
-                                                      StringRes
-                                                          .browseListingsDetail,
-                                                      style: overpassRegular(
-                                                          color: ColorRes.color365CC0,
-                                                          fontSize: 14),
-                                                    ))
-                                              ],
+                                                ],
+                                              ),
                                             ),
-                                            const Spacer(),
-                                            Image.asset(
-                                              AssetRes.arrow,
-                                              height: 20,
+                                          ),
+                                          const SizedBox(height: 20),
+                                          InkWell(
+                                            onTap: () {
+                                              Get.to(() => DashboardScreen());
+                                            },
+                                            child: Container(
+                                              width: Get.width,
+                                              padding: const EdgeInsets.only(
+                                                  left: 20,
+                                                  right: 20,
+                                                  top: 25,
+                                                  bottom: 25),
+                                              decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  border: Border.all(
+                                                      color: ColorRes.stroke)),
+                                              child: Row(
+                                                children: [
+                                                  Image.asset(AssetRes.search,
+                                                      height: 40),
+                                                  const SizedBox(width: 20),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      Text(
+                                                        StringRes
+                                                            .browseListings,
+                                                        style: regular(
+                                                          color: ColorRes
+                                                              .color192E81,
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                      ),
+                                                      const SizedBox(height: 5),
+                                                      SizedBox(
+                                                          width:
+                                                              Get.width * 0.49,
+                                                          child: Text(
+                                                            StringRes
+                                                                .browseListingsDetail,
+                                                            style: overpassRegular(
+                                                                color: ColorRes
+                                                                    .color365CC0,
+                                                                fontSize: 14),
+                                                          ))
+                                                    ],
+                                                  ),
+                                                  const Spacer(),
+                                                  Image.asset(
+                                                    AssetRes.arrow,
+                                                    height: 20,
+                                                  ),
+                                                ],
+                                              ),
                                             ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                                    : SizedBox(),
+                                          ),
+                                        ],
+                                      )
+                                    : const SizedBox(),
                               ],
                             ),
 
-                         ///dropdown
+                            ///dropdown
                             (typeSellerController.isDrop)
                                 ? Container(
-                              width: Get.width,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                //border: Border.all(color: ColorRes.colorF2F4F7, width: 1.5),
-                                color: ColorRes.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: ColorRes.textfieldBorder
-                                        .withOpacity(0.5),
-                                    blurRadius: 10,
-                                    spreadRadius: 0.5,
-                                    offset: const Offset(0, 6),
-                                  ),
-                                ],
-                              ),
-                              child: Column(
-                                children: List.generate(
-                                  typeSellerController.sellerType.length,
-                                      (index) => Column(
-                                    children: [
-                                      InkWell(
-                                        onTap: () {
-                                          typeSellerController
-                                              .sellerTypeString =
-                                          typeSellerController
-                                              .sellerType[index];
-                                          typeSellerController.isDrop = false;
-                                          typeSellerController
-                                              .update(["drop"]);
-                                        },
-                                        child: Container(
-                                          height: 44,
-                                          decoration: BoxDecoration(
-                                            color: (typeSellerController
-                                                .sellerTypeString ==
+                                    width: Get.width,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      //border: Border.all(color: ColorRes.colorF2F4F7, width: 1.5),
+                                      color: ColorRes.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: ColorRes.textfieldBorder
+                                              .withOpacity(0.5),
+                                          blurRadius: 10,
+                                          spreadRadius: 0.5,
+                                          offset: const Offset(0, 6),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      children: List.generate(
+                                        typeSellerController.sellerType.length,
+                                        (index) => Column(
+                                          children: [
+                                            InkWell(
+                                              onTap: () {
                                                 typeSellerController
-                                                    .sellerType[index])
-                                                ? ColorRes.colorF2F4F7
-                                                : Colors.transparent,
-                                            borderRadius: (index == 0)
-                                                ? const BorderRadius.only(
-                                                topRight:
-                                                Radius.circular(10),
-                                                topLeft:
-                                                Radius.circular(10))
-                                                : (index == 3)
-                                                ? const BorderRadius.only(
-                                                bottomRight:
-                                                Radius.circular(
-                                                    10),
-                                                bottomLeft:
-                                                Radius.circular(
-                                                    10))
-                                                : BorderRadius.circular(
-                                                0),
-                                          ),
-                                          padding: const EdgeInsets.only(
-                                              left: 15, right: 15),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                            children: [
-                                              Text(
+                                                        .sellerTypeString =
+                                                    typeSellerController
+                                                        .sellerType[index];
+                                                typeSellerController.isDrop =
+                                                    false;
                                                 typeSellerController
-                                                    .sellerType[index],
-                                                style: regular(
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                    FontWeight.w500,
-                                                    color: ColorRes.fontGrey),
+                                                    .update(["drop"]);
+                                              },
+                                              child: Container(
+                                                height: 44,
+                                                decoration: BoxDecoration(
+                                                  color: (typeSellerController
+                                                              .sellerTypeString ==
+                                                          typeSellerController
+                                                                  .sellerType[
+                                                              index])
+                                                      ? ColorRes.colorF2F4F7
+                                                      : Colors.transparent,
+                                                  borderRadius: (index == 0)
+                                                      ? const BorderRadius.only(
+                                                          topRight: Radius
+                                                              .circular(10),
+                                                          topLeft: Radius
+                                                              .circular(10))
+                                                      : (index == 3)
+                                                          ? const BorderRadius
+                                                                  .only(
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          10),
+                                                              bottomLeft: Radius
+                                                                  .circular(10))
+                                                          : BorderRadius
+                                                              .circular(0),
+                                                ),
+                                                padding: const EdgeInsets.only(
+                                                    left: 15, right: 15),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      typeSellerController
+                                                          .sellerType[index],
+                                                      style: regular(
+                                                          fontSize: 16,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: ColorRes
+                                                              .fontGrey),
+                                                    ),
+                                                    const Spacer(),
+                                                    (typeSellerController
+                                                                .sellerTypeString ==
+                                                            typeSellerController
+                                                                    .sellerType[
+                                                                index])
+                                                        ? Image.asset(
+                                                            AssetRes.check,
+                                                            height: 10)
+                                                        : const SizedBox(),
+                                                  ],
+                                                ),
                                               ),
-                                              Spacer(),
-                                              (typeSellerController
-                                                  .sellerTypeString ==
-                                                  typeSellerController
-                                                      .sellerType[index])
-                                                  ? Image.asset(
-                                                  AssetRes.check,
-                                                  height: 10)
-                                                  : const SizedBox(),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            )
+                                    ),
+                                  )
                                 : const SizedBox(),
                           ],
                         ),

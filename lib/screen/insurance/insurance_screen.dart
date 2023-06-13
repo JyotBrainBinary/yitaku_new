@@ -1,11 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:yitaku/common/widget/text_style.dart';
-import 'package:yitaku/screen/home_screen_two/home_screen_two.dart';
-import 'package:yitaku/screen/insurance/insurance_controller.dart';
-import 'package:yitaku/utils/asset_res.dart';
-import 'package:yitaku/utils/colorRes.dart';
 
 class InsuranceScreen extends StatelessWidget {
    InsuranceScreen({Key? key}) : super(key: key);

@@ -29,7 +29,7 @@ final String pass;
                     id: "complete",
                     builder: (controller) {
                       return Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                           left: 16,
                           right: 16,
                         ),
@@ -104,8 +104,8 @@ final String pass;
                                   hintStyle: overpassRegular(
                                       fontSize: 16, color: ColorRes.hinttext),
                                   suffixIcon: controller.nameError == ''
-                                      ? SizedBox()
-                                      : Icon(
+                                      ? const SizedBox()
+                                      : const Icon(
                                           Icons.error_outline,
                                           color: ColorRes.errorIcon,
                                         ),
@@ -171,8 +171,8 @@ final String pass;
                                   hintStyle: overpassRegular(
                                       fontSize: 16, color: ColorRes.hinttext),
                                   suffixIcon: controller.surnameError == ''
-                                      ? SizedBox()
-                                      : Icon(
+                                      ? const SizedBox()
+                                      : const Icon(
                                           Icons.error_outline,
                                           color: ColorRes.errorIcon,
                                         ),
@@ -257,7 +257,7 @@ final String pass;
                               ),
                             ),
 
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
 
                             (completeSignupController.isDrop)
                                 ? Container(
@@ -334,7 +334,7 @@ final String pass;
                                                           color: ColorRes
                                                               .fontGrey),
                                                     ),
-                                                    Spacer(),
+                                                    const Spacer(),
                                                     (completeSignupController
                                                                 .sellerTypeString ==
                                                             completeSignupController

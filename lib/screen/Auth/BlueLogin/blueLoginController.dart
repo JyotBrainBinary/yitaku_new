@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
+
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:yitaku/screen/goal_screen/goal_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 
@@ -58,7 +60,7 @@ class BlueLoginController extends GetxController {
 
   onTapLogin() {
     if (validation()) {
-      Get.offAll(() => GoalScreen());
+      Get.offAll(() => const GoalScreen());
     }
   }
 
