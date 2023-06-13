@@ -18,6 +18,7 @@ class FavoritesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: ColorRes.color3879E8,
         title: Text("Favourites"),
       ),
       body:Padding(

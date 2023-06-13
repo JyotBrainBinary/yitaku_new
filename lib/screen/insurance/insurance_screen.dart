@@ -17,7 +17,11 @@ class InsuranceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(centerTitle: true,title: Text("Insurance")),
+        appBar: AppBar(
+          backgroundColor: ColorRes.color3879E8,
+            centerTitle: true,
+            title: Text("Insurance"),
+        ),
         body: SingleChildScrollView(
           child: GetBuilder<InsuranceController>(
             id: "insurance",

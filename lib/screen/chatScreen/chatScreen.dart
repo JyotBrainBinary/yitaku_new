@@ -15,6 +15,7 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: ColorRes.color3879E8,
         title: const Text("My Chats",),
       ),
       body: Padding(

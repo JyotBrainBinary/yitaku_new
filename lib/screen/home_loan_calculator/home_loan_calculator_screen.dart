@@ -17,12 +17,12 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorRes.color3879E8,
         leading: InkWell(
             onTap: () {
               Get.back();
             },
             child: const Icon(Icons.arrow_back)),
-        backgroundColor: ColorRes.buttonColor,
         title: const Text(StringRes.homeLoanCalculator),
         centerTitle: true,
       ),

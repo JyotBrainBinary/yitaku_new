@@ -13,6 +13,7 @@ class PropertyAlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorRes.color3879E8,
         title: Text("My Property Alerts"),
       ),
       body: Padding(

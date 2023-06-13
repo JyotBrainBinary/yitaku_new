@@ -17,6 +17,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorRes.color3879E8,
         centerTitle: true,
         title: const Text(StringRes.propertyAppBarTitle),
       ),

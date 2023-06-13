@@ -16,7 +16,7 @@ class MoreDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: const Color(0xFF4285F4)),
+      appBar: AppBar(backgroundColor: ColorRes.color3879E8),
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(

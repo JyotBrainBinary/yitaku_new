@@ -7,6 +7,7 @@ import 'package:yitaku/screen/property_detail/property_details_screen.dart';
 
 import 'package:yitaku/screen/splash_screen/splash_screen.dart';
 import 'package:yitaku/services/pref_service.dart';
+import 'package:yitaku/utils/colorRes.dart';
 
 
 
@@ -15,8 +16,9 @@ Future<void> main() async {
   await PrefService.init();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-        statusBarColor: Colors.white,
-        statusBarIconBrightness: Brightness.dark
+        statusBarColor: ColorRes.color3879E8,
+        statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.dark,
     ),
   );
   runApp(const MyApp());

@@ -24,7 +24,7 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: ColorRes.buttonColor,
+        backgroundColor: ColorRes.color3879E8,
         title: const Text(StringRes.homeLoanCalculator),
         centerTitle: true,
       ),

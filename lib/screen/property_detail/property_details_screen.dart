@@ -21,7 +21,7 @@ class PropertyDetailsScreen extends StatelessWidget {
         toolbarHeight: 55,
         centerTitle: true,
         elevation: 0,
-        backgroundColor: ColorRes.buttonColor,
+        backgroundColor: ColorRes.color3879E8,
         title: Text(
           StringRes.propertyDetails,
           style: overpassRegular(fontSize: 20),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:yitaku/screen/chatScreen/chatroomsNameScreen/chatRoomsName_Controller.dart';
+import 'package:yitaku/utils/colorRes.dart';
 
 class ChatRoomsNameScreen extends StatelessWidget {
    ChatRoomsNameScreen({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: ColorRes.color3879E8,
         title: Text("Chatroom name"),
       ),
       body:Stack(

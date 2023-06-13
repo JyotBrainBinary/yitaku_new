@@ -14,6 +14,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: ColorRes.color3879E8,
         title: Text("Edit Property Alerts"),
       ),
       body: Padding(
