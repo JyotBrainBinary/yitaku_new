@@ -167,7 +167,7 @@ class HomeControllerTwo extends GetxController {
                       onTap: () {
                         Get.back();
                       },
-                      child: const Icon(Icons.close, color: Colors.black87)),
+                      child: const Icon(Icons.close, color: Colors.black54,size: 20)),
                 ],
               ),
               SizedBox(height: Get.height * 0.035),

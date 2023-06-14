@@ -96,7 +96,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             },
                             child: Container(
                               height: 32,
-                              width: Get.width - 59,
+                              width: Get.width - 61,
                               decoration: BoxDecoration(
                                   border:
                                       Border.all(color: ColorRes.color757575),
@@ -201,7 +201,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             },
                             child: Container(
                               height: 32,
-                              width: Get.width - 59,
+                              width: Get.width - 61,
                               decoration: BoxDecoration(
                                   border:
                                       Border.all(color: ColorRes.color757575),
@@ -303,7 +303,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             },
                             child: Container(
                               height: 32,
-                              width: Get.width - 59,
+                              width: Get.width - 61,
                               decoration: BoxDecoration(
                                   border:
                                       Border.all(color: ColorRes.color757575),
@@ -405,7 +405,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             },
                             child: Container(
                               height: 32,
-                              width: Get.width - 59,
+                              width: Get.width - 61,
                               decoration: BoxDecoration(
                                   border:
                                       Border.all(color: ColorRes.color757575),
@@ -488,7 +488,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
 // ===================================================search button=========================================================
                     Container(
                       width: Get.width,
-                      margin:  EdgeInsets.only(left: Get.width * 0.11),
+                      margin:  EdgeInsets.only(left: Get.width * 0.11,right: 1),
                       child: ElevatedButton(
                         onPressed: () {},
                         style: const ButtonStyle(
@@ -509,7 +509,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
               ),
               GridView.builder(
                   itemCount: 4,
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   itemBuilder: (context, index) => Obx(
                         () => InkWell(
                       onTap: () {
@@ -534,13 +534,19 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                               mainAxisAlignment:
                               MainAxisAlignment.spaceBetween,
                               children: [
-                                const Text("Name"),
-                                Image.asset(AssetRes.heart,
-                                    scale: 2.2),
+                                const Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Name"),
+                                    Text("Type of Seller"),
+                                  ],
+                                ),
+                                Image.asset(AssetRes.heart_icon,
+                                    scale: 2.5),
                               ],
                             ),
                             SizedBox(height: Get.height * 0.02),
-                            Center(child: Image.asset(AssetRes.home)),
+                            Center(child: Image.asset(AssetRes.home,color: Colors.grey,)),
                             const Spacer(),
                             Text("Name,Localities",
                                 style: overpassRegular(

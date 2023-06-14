@@ -135,6 +135,13 @@ class TermAndConditionScreen extends StatelessWidget {
                 Text("15. CONTACT US",style: overpassRegular(color: ColorRes.color757575,fontSize: 11,fontWeight: FontWeight.bold)),
                 SizedBox(height: Get.height * 0.025),
                 Text(StringRes.t_and_c_15,style: overpassRegular(color: ColorRes.color757575,fontSize: 11)),
+                SizedBox(height: Get.height * 0.05),
+                Center(
+                  child: ElevatedButton( style: ButtonStyle(fixedSize: MaterialStatePropertyAll(Size(Get.width * 0.45, 38)),backgroundColor: MaterialStatePropertyAll(ColorRes.buttonColor)), onPressed: () {
+                    Get.back();
+                  }, child: const Text("Ok")),
+                ),
+                SizedBox(height: Get.height * 0.05),
               ],
             ),
           ),

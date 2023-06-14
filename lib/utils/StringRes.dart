@@ -131,8 +131,8 @@ class StringRes {
   static const propertyWithinYourBudget = "Properties within your budget";
 
   ///----------------------------- Term And Condition Screen -------------------------------
-  static const termAndCondition = "Term And Condition";
-  static const termAndConditionForUser = "Term & Condition For Users";
+  static const termAndCondition = "Terms And Conditions";
+  static const termAndConditionForUser = "Terms & Conditions For Users";
   static const t_and_c_1_1 = '''1.1  In these terms and conditions for users (“Terms of Use”) the terms “we", "our", "us" or "Company" means Yitaku Ltd and its subsidiaries, employees, officers, agents, affiliates or assigned parties.''';
   static const t_and_c_1_2 = '''1.2  "Website" or "App" refers to Yitaku.com and to the Yitaku mobile application.''';
   static const t_and_c_1_3 = '''1.3  By accessing and using this Website or App, you are agreeing to be bound by the company’s Terms of Use and        the Privacy Policy (together the “Terms”), all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these Terms, your sole option is to  immediately cease your use of this Website or App. The materials contained in this Website and App are protected    by applicable copyright and trademark law.''';
