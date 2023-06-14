@@ -43,6 +43,7 @@ class AssetRes {
   ///_____________________ icons _________________________
 
   static const searchHome = "${icons}searchHome.png";
+  static const heart_icon = "${icons}heart-50.png";
   static const downList = "${icons}downList.png";
   static const list_a_property = "${icons}list_a_property.png";
   static const log_out = "${icons}log_out.png";

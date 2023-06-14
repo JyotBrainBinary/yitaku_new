@@ -33,7 +33,6 @@ class FilteringResultScreen extends StatelessWidget {
                         },
                         child: Container(
                           height: Get.height * 2,
-                          width: 150,
                           color:
                               filteringResultController.selectedIndex.value ==
                                       index
@@ -45,10 +44,17 @@ class FilteringResultScreen extends StatelessWidget {
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text("Name"),
-                                  Image.asset(AssetRes.heart, scale: 2.2),
+                                  const Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Name"),
+                                      Text("Type of Seller"),
+                                    ],
+                                  ),
+                                  Image.asset(AssetRes.heart_icon,
+                                      scale: 2.5),
                                 ],
                               ),
                               SizedBox(height: Get.height * 0.02),

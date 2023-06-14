@@ -47,7 +47,7 @@ class GoalScreen extends StatelessWidget {
               InkWell(
                 onTap: () {
 
-                  Get.to(() => HomeScreenTwo());
+                  // Get.to(() => HomeScreenTwo());
 
                 },
                 child: Container(

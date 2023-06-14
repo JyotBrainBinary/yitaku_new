@@ -207,9 +207,9 @@ class ProfileScreen extends StatelessWidget {
                                                                       Text(
                                                                         profileController
                                                                             .selectItem,
-                                                                        style: const TextStyle(
-                                                                            color:
-                                                                                Colors.grey),
+                                                                        style:  TextStyle(
+                                                                            color: profileController.selectItem == "Select..." ? Colors.black:
+                                                                                ColorRes.color757575),
                                                                       ),
                                                                       const Spacer(),
                                                                       (profileController
