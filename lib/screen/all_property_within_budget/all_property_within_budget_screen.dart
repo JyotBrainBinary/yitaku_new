@@ -66,7 +66,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: Get.height *0.04),
+              SizedBox(height: Get.height * 0.04),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
@@ -175,7 +175,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             )
                           : const SizedBox(),
                     ),
-                    SizedBox(height: Get.height *0.025),
+                    SizedBox(height: Get.height * 0.025),
 // =+=+=+=+=+=========================================DropDown 2========================================================
                     Row(
                       children: [
@@ -280,7 +280,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             )
                           : const SizedBox(),
                     ),
-                    SizedBox(height: Get.height *0.025),
+                    SizedBox(height: Get.height * 0.025),
 // =+=+=+=+=+=========================================DropDown 3========================================================
                     Row(
                       children: [
@@ -382,7 +382,7 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             )
                           : const SizedBox(),
                     ),
-                    SizedBox(height: Get.height *0.025),
+                    SizedBox(height: Get.height * 0.025),
 // =+=+=+=+=+=========================================DropDown 4========================================================
                     Row(
                       children: [
@@ -484,11 +484,11 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                             )
                           : const SizedBox(),
                     ),
-                    SizedBox(height: Get.height *0.04),
+                    SizedBox(height: Get.height * 0.04),
 // ===================================================search button=========================================================
                     Container(
                       width: Get.width,
-                      margin:  EdgeInsets.only(left: Get.width * 0.11,right: 1),
+                      margin: EdgeInsets.only(left: Get.width * 0.11, right: 1),
                       child: ElevatedButton(
                         onPressed: () {},
                         style: const ButtonStyle(
@@ -498,12 +498,13 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(25))))),
-                        child: const Text("SEARCH"),
+                        child: Text("SEARCH", style: overpassSemiBold()),
                       ),
                     ),
-                    SizedBox(height: Get.height *0.06),
-                    Text(StringRes.allPropertiesWithinYourBudget,style: overpassRegular(color: ColorRes.color757575)),
-                    SizedBox(height: Get.height *0.03),
+                    SizedBox(height: Get.height * 0.06),
+                    Text(StringRes.allPropertiesWithinYourBudget,
+                        style: overpassRegular(color: ColorRes.color757575)),
+                    SizedBox(height: Get.height * 0.03),
                   ],
                 ),
               ),
@@ -512,66 +513,69 @@ class AllPropertyWithinBudgetScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   itemBuilder: (context, index) => Obx(
                         () => InkWell(
-                      onTap: () {
-                        allPropertyWithinBudgetController
-                            .selectedIndex.value = index;
-                        Get.to(() => AllPropertyWithinBudgetScreen());
-                      },
-                      child: Container(
-                        height: Get.height * 2,
-                        width: 150,
-                        color: allPropertyWithinBudgetController
-                            .selectedIndex.value ==
-                            index
-                            ? Colors.grey.shade300
-                            : Colors.grey.shade200,
-                        padding: const EdgeInsets.all(8),
-                        child: Column(
-                          crossAxisAlignment:
-                          CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment:
-                              MainAxisAlignment.spaceBetween,
+                          onTap: () {
+                            allPropertyWithinBudgetController
+                                .selectedIndex.value = index;
+                            Get.to(() => AllPropertyWithinBudgetScreen());
+                          },
+                          child: Container(
+                            height: Get.height * 2,
+                            width: 150,
+                            color: allPropertyWithinBudgetController
+                                        .selectedIndex.value ==
+                                    index
+                                ? Colors.grey.shade300
+                                : Colors.grey.shade200,
+                            padding: const EdgeInsets.all(8),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text("Name"),
-                                    Text("Type of Seller"),
+                                    const Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Name"),
+                                        Text("Type of Seller"),
+                                      ],
+                                    ),
+                                    Image.asset(AssetRes.heart_icon,
+                                        scale: 2.5),
                                   ],
                                 ),
-                                Image.asset(AssetRes.heart_icon,
-                                    scale: 2.5),
+                                SizedBox(height: Get.height * 0.02),
+                                Center(
+                                    child: Image.asset(
+                                  AssetRes.home,
+                                  color: Colors.grey,
+                                )),
+                                const Spacer(),
+                                Text("Name,Localities",
+                                    style: overpassRegular(
+                                        color: const Color(0xFF424242),
+                                        fontWeight: FontWeight.bold)),
+                                Text(
+                                  "0 - Name",
+                                  style: overpassRegular(
+                                      fontWeight: FontWeight.w500,
+                                      color: const Color(0xFF424242)),
+                                )
                               ],
                             ),
-                            SizedBox(height: Get.height * 0.02),
-                            Center(child: Image.asset(AssetRes.home,color: Colors.grey,)),
-                            const Spacer(),
-                            Text("Name,Localities",
-                                style: overpassRegular(
-                                    color: const Color(0xFF424242),
-                                    fontWeight: FontWeight.bold)),
-                            Text(
-                              "0 - Name",
-                              style: overpassRegular(
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color(0xFF424242)),
-                            )
-                          ],
+                          ),
                         ),
                       ),
-                    ),
-                  ),
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   )),
-              SizedBox(height: Get.height *0.03),
+              SizedBox(height: Get.height * 0.03),
             ],
           ),
         ),

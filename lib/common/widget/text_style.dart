@@ -4,7 +4,7 @@ import 'package:yitaku/utils/colorRes.dart';
 import '../../utils/font_res.dart';
 
 
-TextStyle overpassSemiBold({Color? color,
+TextStyle orbitronSemiBold({Color? color,
   double? fontSize,
   double? letterSpacing,
   TextDecoration? textdeco,
@@ -36,6 +36,68 @@ TextStyle overpassRegular({Color? color,
     fontWeight: fontWeight ?? FontWeight.w400,
     fontSize: fontSize ?? 14,
     fontFamily: FontRes.overpassRegular,
+    letterSpacing: letterSpacing ?? 0,
+    decoration: textdeco ?? TextDecoration.none,
+    height: height,
+    overflow: overflow,
+  );
+}
+
+
+TextStyle overpassMedium({Color? color,
+  double? fontSize,
+  double? letterSpacing,
+  TextDecoration? textdeco,
+  double? height,
+  TextOverflow? overflow,
+
+  FontWeight? fontWeight}) {
+  return TextStyle(
+    color: color ?? ColorRes.white,
+    fontWeight: fontWeight ?? FontWeight.w400,
+    fontSize: fontSize ?? 14,
+    fontFamily: FontRes.overpassMedium,
+    letterSpacing: letterSpacing ?? 0,
+    decoration: textdeco ?? TextDecoration.none,
+    height: height,
+    overflow: overflow,
+  );
+}
+
+
+TextStyle overpassSemiBold({Color? color,
+  double? fontSize,
+  double? letterSpacing,
+  TextDecoration? textdeco,
+  double? height,
+  TextOverflow? overflow,
+
+  FontWeight? fontWeight}) {
+  return TextStyle(
+    color: color ?? ColorRes.white,
+    fontWeight: fontWeight ?? FontWeight.w400,
+    fontSize: fontSize ?? 14,
+    fontFamily: FontRes.overpassSemiBold,
+    letterSpacing: letterSpacing ?? 0,
+    decoration: textdeco ?? TextDecoration.none,
+    height: height,
+    overflow: overflow,
+  );
+}
+
+TextStyle overpassExtraBold({Color? color,
+  double? fontSize,
+  double? letterSpacing,
+  TextDecoration? textdeco,
+  double? height,
+  TextOverflow? overflow,
+
+  FontWeight? fontWeight}) {
+  return TextStyle(
+    color: color ?? ColorRes.white,
+    fontWeight: fontWeight ?? FontWeight.w400,
+    fontSize: fontSize ?? 14,
+    fontFamily: FontRes.overpassExtraBold,
     letterSpacing: letterSpacing ?? 0,
     decoration: textdeco ?? TextDecoration.none,
     height: height,

@@ -89,31 +89,40 @@ class MoreDetailsScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 18)),
                   SizedBox(height: Get.height * 0.03),
-                  Text(StringRes.monthlyRepayment,
-                      style: overpassRegular(
-                          color: ColorRes.color757575,
-                          fontWeight: FontWeight.w500)),
-                  moreDetailsController.commonContainer(),
-                  SizedBox(height: Get.height * 0.025),
-                  Text(StringRes.interestRate,
-                      style: overpassRegular(
-                          color: ColorRes.color757575,
-                          fontWeight: FontWeight.w500)),
-                  moreDetailsController.commonContainer(),
-                  SizedBox(height: Get.height * 0.025),
-                  Text(StringRes.aprc,
-                      style: overpassRegular(
-                          color: ColorRes.color757575,
-                          fontWeight: FontWeight.w500)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(StringRes.monthlyRepayment, style: overpassMedium(color: ColorRes.color757575)),
+                      Text("Repayment for Calculation", style: overpassExtraBold(color: ColorRes.color757575),maxLines: 2),
+                    ],
+                  ),
                   moreDetailsController.commonContainer(),
                   SizedBox(height: Get.height * 0.025),
                   Row(
                     children: [
-                      Text(StringRes.loanPeriod,
-                          style: overpassRegular(
-                              color: ColorRes.color757575,
-                              fontWeight: FontWeight.w500)),
-                      SizedBox(width: Get.width * 0.3),
+                      SizedBox( width: Get.width * 0.5,child: Text(StringRes.interestRate, style: overpassMedium(color: ColorRes.color757575))),
+                      Text("Interest Rate", style: overpassExtraBold(color: ColorRes.color757575)),
+                    ],
+                  ),
+                  moreDetailsController.commonContainer(),
+                  SizedBox(height: Get.height * 0.025),
+                  Row(
+                    children: [
+                      SizedBox(width: Get.width * 0.5,child: Text(StringRes.aprc, style: overpassMedium(color: ColorRes.color757575))),
+                      Text("0", style: overpassExtraBold(color: ColorRes.color757575)),
+                    ],
+                  ),
+                  moreDetailsController.commonContainer(),
+                  SizedBox(height: Get.height * 0.025),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: Get.width * 0.5,
+                        child: Text(StringRes.loanPeriod,
+                            style: overpassRegular(
+                                color: ColorRes.color757575,
+                                fontWeight: FontWeight.w500)),
+                      ),
                       Text(StringRes.years,
                           style: overpassRegular(
                               color: ColorRes.color757575,
@@ -122,22 +131,28 @@ class MoreDetailsScreen extends StatelessWidget {
                   ),
                   moreDetailsController.commonContainer(),
                   SizedBox(height: Get.height * 0.025),
-                  Text(StringRes.depositAmount,
-                      style: overpassRegular(
-                          color: ColorRes.color757575,
-                          fontWeight: FontWeight.w500)),
+                  Row(
+                    children: [
+                      SizedBox(width: Get.width * 0.5,child: Text(StringRes.depositAmount, style: overpassMedium(color: ColorRes.color757575))),
+                      Text("Deposit Amount", style: overpassExtraBold(color: ColorRes.color757575)),
+                    ],
+                  ),
                   moreDetailsController.commonContainer(),
                   SizedBox(height: Get.height * 0.025),
-                  Text(StringRes.loanAmount,
-                      style: overpassRegular(
-                          color: ColorRes.color757575,
-                          fontWeight: FontWeight.w500)),
+                  Row(
+                    children: [
+                      SizedBox(width: Get.width * 0.5,child: Text(StringRes.loanAmount, style: overpassMedium(color: ColorRes.color757575))),
+                      Text("Loan Amount", style: overpassExtraBold(color: ColorRes.color757575)),
+                    ],
+                  ),
                   moreDetailsController.commonContainer(),
                   SizedBox(height: Get.height * 0.025),
-                  Text(StringRes.totalRepaymentAmountOverLoanPeriod,
-                      style: overpassRegular(
-                          color: ColorRes.color757575,
-                          fontWeight: FontWeight.w500)),
+                  Row(
+                    children: [
+                      SizedBox(width: Get.width * 0.5,child: Text(StringRes.totalRepaymentAmountOverLoanPeriod, style: overpassMedium(color: ColorRes.color757575))),
+                      Text("0", style: overpassExtraBold(color: ColorRes.color757575)),
+                    ],
+                  ),
                   SizedBox(height: Get.height * 0.07),
                 ],
               ),
@@ -148,7 +163,7 @@ class MoreDetailsScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: Get.width * 0.06),
               child: Text(StringRes.disclaimer,
                   textAlign: TextAlign.center,
-                  style: overpassRegular(
+                  style: overpassMedium(
                       fontSize: 12, color: const Color(0xFF757575))),
             ),
             SizedBox(height: Get.height * 0.05),

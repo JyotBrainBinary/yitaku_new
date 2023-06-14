@@ -45,10 +45,9 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
                     const SizedBox(height: 15),
                     Text(
                       StringRes.loanTitle,
-                      style: overpassRegular(
+                      style: overpassSemiBold(
                           color: const Color(0xFF4285F4),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600),
+                          fontSize: 16,fontWeight: FontWeight.w600),
                     ),
                     Image.asset(AssetRes.calculator,
                         height: 200, color: const Color(0xFF4285F4)),
@@ -57,7 +56,7 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
                       style: overpassRegular(
                           color: const Color(0xFF757575),
                           fontSize: 14,
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w500),
                     ),
                     SizedBox(height: Get.height * 0.04),
                     Row(
@@ -265,12 +264,12 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
                     SizedBox(height: Get.height * 0.04),
                     Text(StringRes.loanDesOne,
                         textAlign: TextAlign.center,
-                        style: overpassRegular(
+                        style: overpassSemiBold(
                             color: const Color(0xFF757575), fontSize: 10)),
                     SizedBox(height: Get.height * 0.05),
                     Text(StringRes.loanDesTwo,
                         textAlign: TextAlign.center,
-                        style: overpassRegular(
+                        style: overpassSemiBold(
                             color: const Color(0xFF757575), fontSize: 10)),
                     const SizedBox(height: 15),
                   ],

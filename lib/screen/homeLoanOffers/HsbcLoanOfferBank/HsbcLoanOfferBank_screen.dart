@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
+import 'package:yitaku/utils/colorRes.dart';
 
 class HsbcLoanOffreBankScreen extends StatelessWidget {
   final String title;
@@ -126,7 +127,7 @@ class HsbcLoanOffreBankScreen extends StatelessWidget {
                     child: Text(
                         StringRes.proTip,
                         textAlign: TextAlign.center,
-                        style: overpassRegular(
+                        style: overpassMedium(
                             color: const Color(0xFF424242), height: 1)),
                   ),
                   SizedBox(height: Get.height * 0.03),
@@ -146,7 +147,7 @@ class HsbcLoanOffreBankScreen extends StatelessWidget {
               Text(
                 StringRes.hSBCDetails,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey,fontSize: 13),
+                style: overpassMedium(color: ColorRes.color757575,fontSize: 12),
               ),
               SizedBox(height: Get.height * 0.05),
             ],

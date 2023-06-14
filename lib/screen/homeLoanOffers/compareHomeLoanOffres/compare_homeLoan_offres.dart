@@ -24,11 +24,11 @@ class CompareHomeLoanOffresController extends StatelessWidget {
               SizedBox(height: 20,),
               SizedBox(
                 width: Get.width * 0.80,
-                child: Text("With YITAKU's home loan comparison tool it's easy to choose the best offer that suits your needs.",textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.bold),),
+                child: Text("With YITAKU's home loan comparison tool it's easy to choose the best offer that suits your needs.",textAlign: TextAlign.center,style: overpassMedium(color: ColorRes.color757575,fontSize: 16)),
               ),
               SizedBox(height: 20,),
               Container(
-                height: 150,
+                height: 120,
                 width: 200,
                 decoration: const BoxDecoration(
                     image: DecorationImage(image: AssetImage(AssetRes.insuranceee))
@@ -39,19 +39,18 @@ class CompareHomeLoanOffresController extends StatelessWidget {
                 width: Get.width * 0.80,
                 child: Text("YITAKU's home loan comparison tool works in 2 ways",
                   textAlign: TextAlign.center,
-                  style: overpassRegular(
+                  style: overpassExtraBold(
                   color:  ColorRes.color3879E8,
-                  fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),),
               ),
               SizedBox(height: 15,),
-              Text("No.1",style: TextStyle(color: Colors.grey,fontSize: 20),),
+              Text("No.1",style: TextStyle(color: ColorRes.color757575,fontSize: 20),),
               SizedBox(height: 10,),
               SizedBox(
                 width: Get.width * 0.85,
                 child: Text("Calculate how much you are likely to borrow from a bank based on your income",
-                  textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.bold),),
+                  textAlign: TextAlign.center,style: overpassMedium(fontSize: 16,color: ColorRes.color757575)),
               ),
               SizedBox(height: 10,),
               Icon(Icons.arrow_downward_sharp,size: 40,color: Colors.grey,),
@@ -63,20 +62,20 @@ class CompareHomeLoanOffresController extends StatelessWidget {
                 child: Center(child: Text("HOW MUCH CAN I BORROW?",style: TextStyle(color: Colors.white),),),
               ),
               SizedBox(height: 20,),
-              Text("No.2",style: TextStyle(color: Colors.grey,fontSize: 20),),
+              Text("No.2",style: TextStyle(color: ColorRes.color757575,fontSize: 20),),
               SizedBox(height: 10,),
               SizedBox(
                 width: Get.width * 0.85,
                 child: Text("Calculate how loan offres based on a particular property ... it's easy",
-                  textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15,),),
+                  textAlign: TextAlign.center,style: overpassMedium(color: ColorRes.color757575,fontSize: 16)  ),
               ),
               SizedBox(height: 10,),
-              Text("Step 1: Find a property that you like",style: TextStyle(color: Colors.grey,fontSize: 15),),
+              Text("Step 1: Find a property that you like",style: overpassMedium(color: ColorRes.color757575,fontSize: 16)),
               SizedBox(height: 10,),
               SizedBox(
                 width: Get.width * 0.82,
                 child: Text("Step 2: Click 'Compare home loan offres' on the property derails screen and we'll work our magic!",
-                  textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15),),
+                  textAlign: TextAlign.center,style:overpassMedium(color: ColorRes.color757575,fontSize: 16)),
               ),
               SizedBox(height: 10,),
               Icon(Icons.arrow_downward_sharp,size: 40,color: Colors.grey,),
