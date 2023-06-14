@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:yitaku/screen/chatScreen/chatroomsNameScreen/chatRoomsName_Controller.dart';
+import 'package:yitaku/screen/chatScreen/chatroomsNameScreen/chat_attachments.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class ChatRoomsNameScreen extends StatelessWidget {
@@ -15,28 +16,28 @@ class ChatRoomsNameScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: ColorRes.color3879E8,
-        title: Text("Chatroom name"),
+        title: const Text("Chatroom name"),
       ),
       body:Stack(
     children: <Widget>[
       Padding(
-        padding:  EdgeInsets.only(left: 15,right: 15),
+        padding:  const EdgeInsets.only(left: 15,right: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 width: Get.width,
                 child: Column(
                   crossAxisAlignment:CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     Container(
                       height: 100,
                       width: Get.width * 0.60,
                       decoration: BoxDecoration(
                           borderRadius:
                           BorderRadius.circular(8),
-                          image:  DecorationImage(
+                          image:  const DecorationImage(
                             image: AssetImage(
                               "assets/images/place_hold.jpg",
                             ),
@@ -46,42 +47,42 @@ class ChatRoomsNameScreen extends StatelessWidget {
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
-                      padding: EdgeInsets.only(left: 15,top: 15),
+                      padding: const EdgeInsets.only(left: 15,top: 15),
                       decoration: BoxDecoration(
                         color: Colors.blue,
                           borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Text("Message Text",),
+                      child: const Text("Message Text",),
                     ),
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
-                      padding: EdgeInsets.only(left: 15,top: 15),
+                      padding: const EdgeInsets.only(left: 15,top: 15),
                       decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.30),
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Text("Filename",),
+                      child: const Text("Filename",),
                     ),
-                    Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
+                    const Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
 
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
-              Container(
+              const SizedBox(height: 10,),
+              SizedBox(
                 width: Get.width,
                 child: Column(
                   crossAxisAlignment:CrossAxisAlignment.end,
                   children: [
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     Container(
                       height: 100,
                       width: Get.width * 0.60,
                       decoration: BoxDecoration(
                           borderRadius:
                           BorderRadius.circular(8),
-                          image:  DecorationImage(
+                          image:  const DecorationImage(
                             image: AssetImage(
                               "assets/images/place_hold.jpg",
                             ),
@@ -91,56 +92,56 @@ class ChatRoomsNameScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Icon(Icons.delete_forever),
-                        SizedBox(width: 10,),
+                        const Icon(Icons.delete_forever),
+                        const SizedBox(width: 10,),
                         Container(
                           height: 50,
                           width: Get.width * 0.70,
-                          padding: EdgeInsets.only(left: 15,top: 15),
+                          padding: const EdgeInsets.only(left: 15,top: 15),
                           decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          child: Text("Message Text",),
+                          child: const Text("Message Text",),
                         ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Icon(Icons.delete_forever),
-                        SizedBox(width: 10,),
+                        const Icon(Icons.delete_forever),
+                        const SizedBox(width: 10,),
                         Container(
                           height: 50,
                           width: Get.width * 0.70,
-                          padding: EdgeInsets.only(left: 15,top: 15),
+                          padding: const EdgeInsets.only(left: 15,top: 15),
                           decoration: BoxDecoration(
                             color: Colors.grey.withOpacity(0.30),
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          child: Text("Filename",),
+                          child: const Text("Filename",),
                         ),
                       ],
                     ),
-                    Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
+                    const Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
 
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
-              Container(
+              const SizedBox(height: 10,),
+              SizedBox(
                 width: Get.width,
                 child: Column(
                   crossAxisAlignment:CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 5,),
+                    const SizedBox(height: 5,),
                     Container(
                       height: 100,
                       width: Get.width * 0.60,
                       decoration: BoxDecoration(
                           borderRadius:
                           BorderRadius.circular(8),
-                          image:  DecorationImage(
+                          image:  const DecorationImage(
                             image: AssetImage(
                               "assets/images/place_hold.jpg",
                             ),
@@ -150,24 +151,24 @@ class ChatRoomsNameScreen extends StatelessWidget {
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
-                      padding: EdgeInsets.only(left: 15,top: 15),
+                      padding: const EdgeInsets.only(left: 15,top: 15),
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Text("Message Text",),
+                      child: const Text("Message Text",),
                     ),
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
-                      padding: EdgeInsets.only(left: 15,top: 15),
+                      padding: const EdgeInsets.only(left: 15,top: 15),
                       decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.30),
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Text("Filename",),
+                      child: const Text("Filename",),
                     ),
-                    Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
+                    const Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
 
                   ],
                 ),
@@ -179,14 +180,16 @@ class ChatRoomsNameScreen extends StatelessWidget {
     Align(
       alignment: Alignment.bottomLeft,
       child: Container(
-        padding: EdgeInsets.only(left: 10,bottom: 10,top: 10),
+        padding: const EdgeInsets.only(left: 10,bottom: 10,top: 10),
         height: 60,
         width: double.infinity,
         color: Colors.white,
         child: Row(
           children: <Widget>[
             GestureDetector(
-              onTap: (){},
+              onTap: (){
+                Get.to(() => ChatAttachmentScreen());
+              },
               child: Container(
                 height: 30,
                 width: 30,
@@ -194,10 +197,10 @@ class ChatRoomsNameScreen extends StatelessWidget {
                   color: Colors.lightBlue,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: Icon(Icons.add, color: Colors.white, size: 20, ),
+                child: const Icon(Icons.add, color: Colors.white, size: 20, ),
               ),
             ),
-            SizedBox(width: 15,),
+            const SizedBox(width: 15,),
             GestureDetector(
               onTap: (){
                 FocusScope.of(context).unfocus();
@@ -206,22 +209,22 @@ class ChatRoomsNameScreen extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return Padding(
-                        padding: EdgeInsets.only(left: 20,right: 20),
+                        padding: const EdgeInsets.only(left: 20,right: 20),
                         child: Column(
                           children: [
-                            SizedBox(height: 50,),
+                            const SizedBox(height: 50,),
                             Container(
                               height: 200,
                               width: Get.width,
-                              decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(8))),
-                              child: Center(child: Text("Choose Photo"),),
+                              decoration: const BoxDecoration(color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(8))),
+                              child: const Center(child: Text("Choose Photo"),),
                             ),
-                            SizedBox(height: 25,),
+                            const SizedBox(height: 25,),
                             Container(
                               height: 50,
                               width: Get.width,
-                              decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(20))),
-                              child: Center(child: Text("Send",style: TextStyle(color: Colors.white),),),
+                              decoration: const BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(20))),
+                              child: const Center(child: Text("Send",style: TextStyle(color: Colors.white),),),
                             ),
                           ],
                         ),
@@ -235,18 +238,18 @@ class ChatRoomsNameScreen extends StatelessWidget {
                   color: Colors.lightBlue,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: Icon(Icons.add_a_photo_outlined, color: Colors.white, size: 20, ),
+                child: const Icon(Icons.add_a_photo_outlined, color: Colors.white, size: 20, ),
               ),
             ),
-            SizedBox(width: 15,),
+            const SizedBox(width: 15,),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(width: 1,color: Colors.black),
-                  borderRadius: BorderRadius.all(Radius.circular(20))
+                  borderRadius: const BorderRadius.all(Radius.circular(20))
                 ),
-               child:Padding(
-                 padding: const EdgeInsets.only(left: 10),
+               child:const Padding(
+                 padding: EdgeInsets.only(left: 10),
                  child: TextField(
                     decoration: InputDecoration(
                         hintText: "Write message...",
@@ -257,10 +260,10 @@ class ChatRoomsNameScreen extends StatelessWidget {
                ),
               )
             ),
-            SizedBox(width: 5,),
+            const SizedBox(width: 5,),
             IconButton(
                 onPressed:  () {},
-                icon: Icon(Icons.send,color: Colors.grey,size: 20,),
+                icon: const Icon(Icons.send,color: Colors.grey,size: 20,),
             ),
           ],
         ),
