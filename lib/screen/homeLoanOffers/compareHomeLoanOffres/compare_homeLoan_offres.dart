@@ -59,7 +59,7 @@ class CompareHomeLoanOffresController extends StatelessWidget {
               Container(
                 height: 40,
                 width: Get.width * 0.80,
-                decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(50))),
+                decoration: BoxDecoration(color: Color(0xFF365CC0),borderRadius: BorderRadius.all(Radius.circular(50))),
                 child: Center(child: Text("HOW MUCH CAN I BORROW?",style: TextStyle(color: Colors.white),),),
               ),
               SizedBox(height: 20,),
@@ -88,11 +88,11 @@ class CompareHomeLoanOffresController extends StatelessWidget {
                 child: Container(
                   height: 40,
                   width: Get.width * 0.80,
-                  decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(50))),
+                  decoration: BoxDecoration(color: Color(0xFF365CC0),borderRadius: BorderRadius.all(Radius.circular(50))),
                   child: Center(child: Text("FIND A PROPERTY",style: TextStyle(color: Colors.white),),),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 20,),
             ],
           ),
         ),

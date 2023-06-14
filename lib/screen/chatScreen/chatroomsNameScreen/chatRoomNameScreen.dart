@@ -238,18 +238,18 @@ class ChatRoomsNameScreen extends StatelessWidget {
                   color: Colors.lightBlue,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: const Icon(Icons.add_a_photo_outlined, color: Colors.white, size: 20, ),
+                child: Icon(Icons.add_a_photo_outlined, color: Colors.white, size: 20, ),
               ),
             ),
-            const SizedBox(width: 15,),
+            SizedBox(width: 15,),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(width: 1,color: Colors.black),
-                  borderRadius: const BorderRadius.all(Radius.circular(20))
+                  borderRadius: BorderRadius.all(Radius.circular(20))
                 ),
-               child:const Padding(
-                 padding: EdgeInsets.only(left: 10),
+               child:Padding(
+                 padding: const EdgeInsets.only(left: 10),
                  child: TextField(
                     decoration: InputDecoration(
                         hintText: "Write message...",
@@ -260,10 +260,10 @@ class ChatRoomsNameScreen extends StatelessWidget {
                ),
               )
             ),
-            const SizedBox(width: 5,),
+            SizedBox(width: 5,),
             IconButton(
                 onPressed:  () {},
-                icon: const Icon(Icons.send,color: Colors.grey,size: 20,),
+                icon: Icon(Icons.send,color: Colors.grey,size: 20,),
             ),
           ],
         ),

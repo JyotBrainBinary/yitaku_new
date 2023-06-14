@@ -405,47 +405,38 @@ class FilterScreen extends StatelessWidget {
                         height: 10,
                       ),
                       Row(
-                        children: [
-                          const Text(
-                            "c50",
-                            style: TextStyle(color: Colors.grey, fontSize: 13),
-                          ),
-                          SizedBox(
-                            width: Get.width * 0.61,
-                            child: SliderTheme(
-                              data: SliderTheme.of(context).copyWith(
-                                thumbColor: Colors.white,
-                                inactiveTickMarkColor:
-                                    Colors.grey.withOpacity(0.10),
-                                thumbShape: const RoundSliderThumbShape(
-                                    enabledThumbRadius: 12.0),
-                                valueIndicatorShape:
-                                    const PaddleSliderValueIndicatorShape(),
-                                valueIndicatorTextStyle: const TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              child: Slider(
-                                inactiveColor: Colors.grey.withOpacity(0.10),
-                                label:
-                                    filterController.range.round().toString(),
-                                min: 0.0,
-                                max: 2000000.0,
-                                value: filterController.range.toDouble(),
-                                divisions: 2000000,
-                                onChanged: (value) {
-                                  filterController.range = value.toInt();
-                                  filterController.update(["check"]);
-                                },
-                              ),
+                    children: [
+                      const Text("€50",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                      SizedBox(
+                        width: Get.width * 0.61,
+                        child: SliderTheme(
+                          data: SliderTheme.of(context).copyWith(
+                              thumbColor: Colors.white,
+                            inactiveTickMarkColor: Colors.grey.withOpacity(0.10),
+                              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12.0),
+                            valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
+                            valueIndicatorTextStyle: const TextStyle(
+                              color: Colors.white,
                             ),
                           ),
-                          const Text(
-                            "c200000000 +",
-                            style: TextStyle(color: Colors.grey, fontSize: 13),
+                          child: Slider(
+                            inactiveColor: Colors.grey.withOpacity(0.10),
+                            label: filterController.range.round().toString(),
+                            min: 0.0,
+                            max: 2000000.0,
+                            value: filterController.range.toDouble(),
+                            divisions: 2000000,
+
+                            onChanged: (value) {
+                              filterController.range = value.toInt();
+                              filterController.update(["check"]);
+                            },
                           ),
-                        ],
+                        ),
                       ),
+                      const Text("€200000000 +",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                    ],
+                  ),
                       /*Row(
                         children: [
                           Text(
