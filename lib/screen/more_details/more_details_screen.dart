@@ -8,7 +8,9 @@ import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class MoreDetailsScreen extends StatelessWidget {
-  MoreDetailsScreen({super.key});
+ final String title;
+ final String subTitle;
+  MoreDetailsScreen({super.key, required this.title, required this.subTitle});
 
   MoreDetailsController moreDetailsController =
       Get.put(MoreDetailsController());
@@ -16,7 +18,8 @@ class MoreDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: ColorRes.color3879E8),
+      appBar: AppBar(backgroundColor: ColorRes.color3879E8,
+      title: Text(title,style: const TextStyle(overflow: TextOverflow.ellipsis))),
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
@@ -80,7 +83,7 @@ class MoreDetailsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: Get.height * 0.035),
-                  Text(StringRes.hsbcHomeLoanDetails,
+                  Text(subTitle,
                       style: overpassRegular(
                           color: ColorRes.color757575,
                           fontWeight: FontWeight.bold,

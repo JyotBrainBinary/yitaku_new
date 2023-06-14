@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/more_details/more_details_controller.dart';
 import 'package:yitaku/screen/property_detail/property_details_controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';

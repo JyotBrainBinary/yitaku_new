@@ -57,7 +57,7 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   separatorBuilder: (context, index) =>
                       const SizedBox(height: 15),
-                  itemCount: homeLoanCalculatorController.imageData.length,
+                  itemCount: homeLoanCalculatorController.data["image"].length,
                   itemBuilder: (context, index) => Container(
                     padding: const EdgeInsets.all(12),
                     height: Get.height * 0.42,
@@ -93,7 +93,7 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                               ],
                             ),
                             Image.asset(
-                              homeLoanCalculatorController.imageData[index],
+                              homeLoanCalculatorController.data["image"][index],
                               height: Get.height * 0.08,
                               width: Get.width * 0.26,
                               // scale: index == 1 ? 3 : 2.5,
@@ -142,17 +142,11 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                                 backgroundColor: MaterialStatePropertyAll(
                                     Color(0xFF4285F4))),
                             onPressed: () {
-                              if (index == 0) {
-                                Get.to(() => MoreDetailsScreen());
-                              } else if (index == 1) {
-                                Get.to(() => MoreDetailsScreen());
-                              } else if (index == 2) {
-                                Get.to(() => MoreDetailsScreen());
-                              } else if (index == 3) {
-                                Get.to(() => MoreDetailsScreen());
-                              } else if (index == 4) {
-                                Get.to(() => MoreDetailsScreen());
-                              }
+                              Get.to(() => MoreDetailsScreen(
+                                  title: homeLoanCalculatorController
+                                      .data["loanOffer"][index],
+                                  subTitle: homeLoanCalculatorController
+                                      .data["loanDetails"][index]));
                             },
                             child: const Text("MORE DETAILS")),
                       ],
