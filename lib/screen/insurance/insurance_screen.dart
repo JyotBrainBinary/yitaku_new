@@ -4,6 +4,7 @@ import 'package:get/get_instance/get_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/homeLoanOffers/compareHomeLoanOffres/compare_homeLoan_offres.dart';
 import 'package:yitaku/screen/insurance/insurance_controller.dart';
 import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -217,11 +218,16 @@ class InsuranceScreen extends StatelessWidget {
                         ),
                       ) : const SizedBox(),
                       SizedBox(height: 30,),
-                      Container(
-                        height: 40,
-                        width: Get.width,
-                        decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(50))),
-                        child: Center(child: Text("Send FeedBack",style: TextStyle(color: Colors.white),),),
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(()=>CompareHomeLoanOffresController());
+                        },
+                        child: Container(
+                          height: 40,
+                          width: Get.width,
+                          decoration: BoxDecoration(color:Color(0xFF365CC0),borderRadius: BorderRadius.all(Radius.circular(50))),
+                          child: Center(child: Text("Send FeedBack",style: TextStyle(color: Colors.white),),),
+                        ),
                       ),
                       SizedBox(height: 10,)
                     ],

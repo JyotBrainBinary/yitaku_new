@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/chatScreen/chatScreen.dart';
 import 'package:yitaku/screen/favorites/favorites_screen.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterController.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterScreen.dart';
@@ -56,7 +57,8 @@ class HomeScreenTwo extends StatelessWidget {
                 const SizedBox(width: 12),
                 InkWell(
                   onTap: () {
-                    homeControllerTwo.accountRequiredDialog();
+                   // homeControllerTwo.accountRequiredDialog();
+                    Get.to(()=>ChatScreen());
                   },
                   child: Image.asset(
                     AssetRes.msg,

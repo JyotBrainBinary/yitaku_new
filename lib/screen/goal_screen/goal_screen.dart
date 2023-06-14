@@ -52,7 +52,7 @@ class GoalScreen extends StatelessWidget {
                   filterController.addNameLocation();
                   filterController.findUser = filterController.name;
                   filterController.update(["check"]);
-                  Get.to(() => HomeScreenTwo());
+                  // Get.to(() => HomeScreenTwo());
                 },
                 child: Container(
                   width: Get.width,

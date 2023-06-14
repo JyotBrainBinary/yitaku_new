@@ -8,15 +8,22 @@ class EditPropertyAlertController extends GetxController{
   int range = 10;
   int range2 = 10;
   bool isDrop = false;
+  bool rent = false;
   String addName = "";
   List findUser = [];
   String selectLocation = "Select location/s";
   List locationCheck = List.generate(11, (index) => false);
+  List looking = List.generate(15, (index) => false);
   TextEditingController searchController = TextEditingController();
 
   void onInit(){
     addNameLocation();
     findUser = name;
+  }
+
+  checkBox(bool checkBoxValue){
+    rent = checkBoxValue;
+    update(['property']);
   }
 
   void runFilterSearch(String enteredKeyword) {

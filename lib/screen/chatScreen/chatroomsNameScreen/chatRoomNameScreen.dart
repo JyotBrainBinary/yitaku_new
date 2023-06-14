@@ -257,9 +257,10 @@ class ChatRoomsNameScreen extends StatelessWidget {
                ),
               )
             ),
-            SizedBox(width: 5,),
             IconButton(
-                onPressed:  () {},
+                onPressed:  () {
+                  controller.showAgeDialog(context);
+                },
                 icon: Icon(Icons.send,color: Colors.grey,size: 20,),
             ),
           ],

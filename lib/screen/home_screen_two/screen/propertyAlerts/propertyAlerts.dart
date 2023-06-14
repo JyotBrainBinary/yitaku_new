@@ -121,7 +121,7 @@ class PropertyAlertScreen extends StatelessWidget {
                 child: Container(
                   height: 40,
                   width: Get.width * 0.60,
-                  decoration: const BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(8))),
+                  decoration: const BoxDecoration(color: Color(0xFF365CC0),borderRadius: BorderRadius.all(Radius.circular(8))),
                   child:  Center(
                     child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

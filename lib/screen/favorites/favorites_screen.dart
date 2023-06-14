@@ -55,7 +55,7 @@ class FavoritesScreen extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                           Get.to(ChatScreen());
+                          //   Get.to(ChatScreen());
                           },
                           child: Container(
                             height: 160,

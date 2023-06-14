@@ -61,27 +61,37 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                 const SizedBox(height: 15,),
                 Row(
                   children: [
-                    Container(
-                      height: 35,
-                      width: Get.width * 0.30,
-                      decoration: BoxDecoration(
-                          color: Colors.grey.withOpacity(0.70),
-                          borderRadius: const BorderRadius.all(Radius.circular(8))
-                      ),
-                      child:  Center(
-                        child: Text(StringRes.bUY,style:bold(color: Colors.white)),
+                    GestureDetector(
+                      onTap: () {
+                        propertyController.checkBox(false);
+                      },
+                      child: Container(
+                        height: 35,
+                        width: Get.width * 0.30,
+                        decoration: BoxDecoration(
+                            color: propertyController.rent == false ? ColorRes.color3879E8 : Colors.grey.withOpacity(0.70),
+                            borderRadius: const BorderRadius.all(Radius.circular(8))
+                        ),
+                        child:  Center(
+                          child: Text(StringRes.bUY,style:bold(color:Colors.white)),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 10,),
-                    Container(
-                      height: 35,
-                      width: Get.width * 0.30,
-                      decoration: BoxDecoration(
-                          color: Colors.grey.withOpacity(0.70),
-                          borderRadius: const BorderRadius.all(Radius.circular(8))
-                      ),
-                      child:  Center(
-                        child: Text(StringRes.rENT,style:bold(color: Colors.white)),
+                    GestureDetector(
+                      onTap: () {
+                        propertyController.checkBox(true);
+                      },
+                      child: Container(
+                        height: 35,
+                        width: Get.width * 0.30,
+                        decoration: BoxDecoration(
+                            color:  propertyController.rent == false ? Colors.grey.withOpacity(0.70) : ColorRes.color3879E8,
+                            borderRadius: const BorderRadius.all(Radius.circular(8))
+                        ),
+                        child:  Center(
+                          child: Text(StringRes.rENT,style:bold(color: Colors.white)),
+                        ),
                       ),
                     ),
                   ],
@@ -111,18 +121,16 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                         (index) {
                       return GestureDetector(
                         onTap: () {
-                          //propertyController.onTapColor2(index);
+                          // propertyController.onTapColor2(index);
+                          propertyController.propertyCheck[index] = !propertyController.propertyCheck[index];
+                          propertyController.update(["property"]);
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 19,vertical: 10),
                           margin: const EdgeInsets.only(right: 10, bottom: 10),
                           decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.70),
+                            color: propertyController.propertyCheck[index] ? ColorRes.color3879E8 :  Colors.grey.withOpacity(0.70),
                             borderRadius: const BorderRadius.all(Radius.circular(8)),
-                            /*color:
-                              propertyController.clickTapColor2 == index
-                                  ? ColorRes.color3879E8
-                                  : Colors.transparent,*/
                           ),
                           child: Text(
                             propertyController.propertyName[index],
@@ -428,7 +436,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                     child: Container(
                       height: 40,
                       width: Get.width * 0.60,
-                      decoration: const BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(8))),
+                      decoration: const BoxDecoration(color: Color(0xFF365CC0),borderRadius: BorderRadius.all(Radius.circular(8))),
                       child: const Center(child: Text(StringRes.kEEPMEUPDATEd,style: TextStyle(color: Colors.white),),),
                     ),
                   ),

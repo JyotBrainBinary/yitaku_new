@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/dashbord/dashboard_screen.dart';
 import 'package:yitaku/screen/home_screen_two/screen/EditPropertyAlerts/editPeopertyAlertScreen_Controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -58,27 +59,37 @@ class EditPropertyAlertScreen extends StatelessWidget {
                   const SizedBox(height: 15,),
                   Row(
                     children: [
-                      Container(
-                        height: 35,
-                        width: Get.width * 0.30,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.70),
-                            borderRadius: const BorderRadius.all(Radius.circular(8))
-                        ),
-                        child:  Center(
-                          child: Text(StringRes.bUY,style:bold(color: Colors.white)),
+                      GestureDetector(
+                        onTap: () {
+                          controller.checkBox(false);
+                        },
+                        child: Container(
+                          height: 35,
+                          width: Get.width * 0.30,
+                          decoration: BoxDecoration(
+                              color: controller.rent == false ?  ColorRes.color3879E8 : Colors.grey.withOpacity(0.70),
+                              borderRadius: const BorderRadius.all(Radius.circular(8))
+                          ),
+                          child:  Center(
+                            child: Text(StringRes.bUY,style:bold(color: Colors.white)),
+                          ),
                         ),
                       ),
                       const SizedBox(width: 10,),
-                      Container(
-                        height: 35,
-                        width: Get.width * 0.30,
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.70),
-                            borderRadius: const BorderRadius.all(Radius.circular(8))
-                        ),
-                        child:  Center(
-                          child: Text(StringRes.bUY,style:bold(color: Colors.white)),
+                      GestureDetector(
+                        onTap: () {
+                          controller.checkBox(true);
+                        },
+                        child: Container(
+                          height: 35,
+                          width: Get.width * 0.30,
+                          decoration: BoxDecoration(
+                              color: controller.rent == false ? Colors.grey.withOpacity(0.70) : ColorRes.color3879E8,
+                              borderRadius: const BorderRadius.all(Radius.circular(8))
+                          ),
+                          child:  Center(
+                            child: Text(StringRes.bUY,style:bold(color: Colors.white)),
+                          ),
                         ),
                       ),
                     ],
@@ -108,13 +119,14 @@ class EditPropertyAlertScreen extends StatelessWidget {
                           (index) {
                         return GestureDetector(
                           onTap: () {
-                            //propertyController.onTapColor2(index);
+                            controller.looking[index] = !controller.looking[index];
+                            controller.update(['property']);
                           },
                           child: Container(
                             padding: const EdgeInsets.symmetric(horizontal: 19,vertical: 10),
                             margin: const EdgeInsets.only(right: 10, bottom: 10),
                             decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.70),
+                              color: controller.looking[index] ? ColorRes.color3879E8 : Colors.grey.withOpacity(0.70),
                               borderRadius: const BorderRadius.all(Radius.circular(8)),
                               /*color:
                                       propertyController.clickTapColor2 == index
@@ -420,7 +432,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                       child: Container(
                         height: 40,
                         width: Get.width * 0.60,
-                        decoration: const BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(8))),
+                        decoration: const BoxDecoration(color: Color(0xFF365CC0),borderRadius: BorderRadius.all(Radius.circular(8))),
                         child: const Center(child: Text(StringRes.update,style: TextStyle(color: Colors.white),),),
                       ),
                     ),
@@ -428,7 +440,9 @@ class EditPropertyAlertScreen extends StatelessWidget {
                    SizedBox(height: 20,),
                   Center(
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.offAll(()=>DashboardScreen());
+                      },
                       child: Container(
                         height: 40,
                         width: Get.width * 0.60,

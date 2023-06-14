@@ -249,18 +249,19 @@ class _LoanCalculatorScreenState extends State<LoanCalculatorScreen> {
                       ),
                     ),
                     SizedBox(height: Get.height * 0.05),
-                    SizedBox(
-                        height: 35,
-                        width: Get.width * 0.6,
-                        child: ElevatedButton(
-                            style: const ButtonStyle(
-                                backgroundColor: MaterialStatePropertyAll(Color(0xFF4285F4))),
-                            onPressed: () {
-                              /*loanCalculatorController.calculate = true;
-                              loanCalculatorController.update(["loan"]);*/
-                              Get.to(() => HomeLoanCalculatorScreen());
-                            },
-                            child: const Text("CALCULATE"))),
+                    GestureDetector(
+                      onTap: () {
+                        /*loanCalculatorController.calculate = true;
+                                loanCalculatorController.update(["loan"]);*/
+                        Get.to(() => HomeLoanCalculatorScreen());
+                      },
+                      child: SizedBox(
+                          height: 35,
+                          width: Get.width * 0.6,
+                          child: Container(
+                             decoration:  BoxDecoration(color: Color(0xFF365CC0),borderRadius: BorderRadius.all(Radius.circular(8))),
+                              child:  Center(child: Text("CALCULATE",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)))),
+                    ),
                     SizedBox(height: Get.height * 0.04),
                     Text(StringRes.loanDesOne,
                         textAlign: TextAlign.center,
