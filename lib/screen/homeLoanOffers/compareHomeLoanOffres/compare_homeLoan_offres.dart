@@ -28,7 +28,7 @@ class CompareHomeLoanOffresController extends StatelessWidget {
               ),
               SizedBox(height: 20,),
               Container(
-                height: 120,
+                height: 150,
                 width: 200,
                 decoration: const BoxDecoration(
                     image: DecorationImage(image: AssetImage(AssetRes.insuranceee))
