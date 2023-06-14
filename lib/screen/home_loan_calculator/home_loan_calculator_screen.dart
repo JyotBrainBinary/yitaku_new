@@ -193,7 +193,7 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       const Text("Name"),
-                                      Image.asset(AssetRes.heart, scale: 2.2),
+                                      Image.asset(AssetRes.heart_icon, scale: 2.2),
                                     ],
                                   ),
                                   SizedBox(height: Get.height * 0.02),

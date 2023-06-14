@@ -42,6 +42,7 @@ class ChatAttachmentScreen extends StatelessWidget {
                           Text("Send", style: TextStyle(color: Colors.white)),
                     )),
               ),
+              SizedBox(height: Get.height * 0.02),
             ],
           ),
         ),
