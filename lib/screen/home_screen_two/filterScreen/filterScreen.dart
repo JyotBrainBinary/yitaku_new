@@ -6,7 +6,6 @@ import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/filterScreen/filterController.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
-
 class FilterScreen extends StatelessWidget {
   FilterScreen({Key? key}) : super(key: key);
 
@@ -32,7 +31,7 @@ class FilterScreen extends StatelessWidget {
                         child: Text(
                           "Types of property",
                           style: overpassRegular(
-                            color:  ColorRes.color3879E8,
+                            color: ColorRes.color3879E8,
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
@@ -60,13 +59,12 @@ class FilterScreen extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   "Residential",
-                                  style:
-                                  overpassRegular(
-                                    fontWeight:FontWeight.w500,
+                                  style: overpassRegular(
+                                      fontWeight: FontWeight.w500,
                                       color: filterController.property == false
                                           ? const Color(0xFF64748B)
                                           : Colors.white),
-                                  ),
+                                ),
                               ),
                             ),
                           ),
@@ -86,14 +84,13 @@ class FilterScreen extends StatelessWidget {
                                       ? Border.all(color: Colors.transparent)
                                       : Border.all(color: Colors.black)),
                               child: Center(
-                                child: Text(
-                                  "Commercial",
-                                  style: overpassRegular(
-                                      fontWeight:FontWeight.w500,
-                                      color: filterController.property == false
-                                          ? Colors.white
-                                          : const Color(0xFF64748B))
-                                ),
+                                child: Text("Commercial",
+                                    style: overpassRegular(
+                                        fontWeight: FontWeight.w500,
+                                        color:
+                                            filterController.property == false
+                                                ? Colors.white
+                                                : const Color(0xFF64748B))),
                               ),
                             ),
                           ),
@@ -102,55 +99,75 @@ class FilterScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                  filterController.property == true ? Container(
-                        height: 40,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: filterController.residentialName.length,
-                          itemBuilder: (context, index) {
-                              return  Container(
-                                margin: const EdgeInsets.only(right: 4, bottom: 10),
-                                padding: const EdgeInsets.symmetric(horizontal: 10),
-                                height: 35,
-                               // width: (index == 0) ? 140 : (index == 1) ? 100 : (index == 2) ? 120 : (index == 3) ? 100 : (index == 4) ? 100 : 0,
-                                decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    border: Border.all(width: 0.2, color: Colors.grey)),
-                                child: Center(
-                                    child: Text(
+                      filterController.property == true
+                          ? Container(
+                              height: 40,
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount:
+                                    filterController.residentialName.length,
+                                itemBuilder: (context, index) {
+                                  return Container(
+                                    margin: const EdgeInsets.only(
+                                        right: 4, bottom: 10),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    height: 35,
+                                    // width: (index == 0) ? 140 : (index == 1) ? 100 : (index == 2) ? 120 : (index == 3) ? 100 : (index == 4) ? 100 : 0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            width: 0.2, color: Colors.grey)),
+                                    child: Center(
+                                        child: Text(
                                       filterController.residentialName[index],
-                                      style:  overpassRegular(
-                                        fontWeight:FontWeight.w500,
-                                        color:filterController.residentialName == index ? ColorRes.white : const Color(0xFF64748B),
+                                      style: overpassRegular(
+                                        fontWeight: FontWeight.w500,
+                                        color:
+                                            filterController.residentialName ==
+                                                    index
+                                                ? ColorRes.white
+                                                : const Color(0xFF64748B),
                                       ),
                                     )),
-                              );
-                        },),
-                      ) : Container(
-                    height: 40,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: filterController.residentialName.length,
-                      itemBuilder: (context, index) {
-                        return  Container(
-                          margin: const EdgeInsets.only(right: 4, bottom: 10),
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          height: 35,
-                          // width: (index == 0) ? 140 : (index == 1) ? 100 : (index == 2) ? 120 : (index == 3) ? 100 : (index == 4) ? 100 : 0,
-                          decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              border: Border.all(width: 0.2, color: Colors.grey)),
-                          child: Center(
-                              child: Text(
-                                filterController.residentialName[index],
-                                style:  overpassRegular(
-                                  fontWeight:FontWeight.w500,
-                                  color:filterController.residentialName == index ? ColorRes.white : const Color(0xFF64748B),
-                                ),
-                              )),
-                        );
-                      },),
-                  ),
+                                  );
+                                },
+                              ),
+                            )
+                          : Container(
+                              height: 40,
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemCount:
+                                    filterController.residentialName.length,
+                                itemBuilder: (context, index) {
+                                  return Container(
+                                    margin: const EdgeInsets.only(
+                                        right: 4, bottom: 10),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    height: 35,
+                                    // width: (index == 0) ? 140 : (index == 1) ? 100 : (index == 2) ? 120 : (index == 3) ? 100 : (index == 4) ? 100 : 0,
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        border: Border.all(
+                                            width: 0.2, color: Colors.grey)),
+                                    child: Center(
+                                        child: Text(
+                                      filterController.residentialName[index],
+                                      style: overpassRegular(
+                                        fontWeight: FontWeight.w500,
+                                        color:
+                                            filterController.residentialName ==
+                                                    index
+                                                ? ColorRes.white
+                                                : const Color(0xFF64748B),
+                                      ),
+                                    )),
+                                  );
+                                },
+                              ),
+                            ),
                       const SizedBox(
                         height: 10,
                       ),
@@ -159,7 +176,7 @@ class FilterScreen extends StatelessWidget {
                         child: Text(
                           "Location",
                           style: overpassRegular(
-                            color:  ColorRes.color3879E8,
+                            color: ColorRes.color3879E8,
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
@@ -182,24 +199,26 @@ class FilterScreen extends StatelessWidget {
                           width: Get.width,
                           padding: const EdgeInsets.only(left: 15, right: 15),
                           decoration: BoxDecoration(
-                              border: Border.all(width: 0.5, color: Colors.grey),
-                            borderRadius: const BorderRadius.all(Radius.circular(8))
-                          ),
+                              border:
+                                  Border.all(width: 0.5, color: Colors.grey),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(8))),
                           child: Row(
                             children: [
                               SizedBox(
-                                width: Get.width - 50-38,
-                                child: filterController.addName.isEmpty ?
-                                Text(
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                   "Select location/s...",
-                                  style: TextStyle(color: Colors.grey),
-                                ) : Text(
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  filterController.addName,
-                                ),
+                                width: Get.width - 50 - 38,
+                                child: filterController.addName.isEmpty
+                                    ? Text(
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        "Select location/s...",
+                                        style: TextStyle(color: Colors.grey),
+                                      )
+                                    : Text(
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        filterController.addName,
+                                      ),
                               ),
                               const Spacer(),
                               (controller.isDrop)
@@ -264,16 +283,30 @@ class FilterScreen extends StatelessWidget {
                                         return GestureDetector(
                                           onTap: () {
                                             if (index == 0) {
-                                              if (filterController.locationCheck[index]) {
-                                                filterController.locationCheck = List.generate(11, (index) => false);
-                                                filterController.selectLocation = 'Select location/s...';
+                                              if (filterController
+                                                  .locationCheck[index]) {
+                                                filterController.locationCheck =
+                                                    List.generate(
+                                                        11, (index) => false);
+                                                filterController
+                                                        .selectLocation =
+                                                    'Select location/s...';
                                               } else {
-                                                filterController.locationCheck = List.generate(11, (index) => true);
-                                                filterController.selectLocation = 'All localities are selected';
+                                                filterController.locationCheck =
+                                                    List.generate(
+                                                        11, (index) => true);
+                                                filterController
+                                                        .selectLocation =
+                                                    'All localities are selected';
                                               }
                                             } else {
-                                              filterController.locationCheck[index] = !filterController.locationCheck[index];
-                                              filterController.selectLocation = filterController.findUser[index];
+                                              filterController
+                                                      .locationCheck[index] =
+                                                  !filterController
+                                                      .locationCheck[index];
+                                              filterController.selectLocation =
+                                                  filterController
+                                                      .findUser[index];
                                             }
                                             filterController.addNameLocation();
                                             filterController.update(["check"]);
@@ -288,22 +321,49 @@ class FilterScreen extends StatelessWidget {
                                                   height: 15,
                                                   width: 15,
                                                   child: Checkbox(
-                                                      value: filterController.locationCheck[index],
+                                                      value: filterController
+                                                          .locationCheck[index],
                                                       onChanged: (bool? value) {
                                                         if (index == 0) {
-                                                          if (filterController.locationCheck[index]) {
-                                                            filterController.locationCheck = List.generate(11, (index) => false);
-                                                            filterController.selectLocation = 'Select location/s...';
+                                                          if (filterController
+                                                                  .locationCheck[
+                                                              index]) {
+                                                            filterController
+                                                                    .locationCheck =
+                                                                List.generate(
+                                                                    11,
+                                                                    (index) =>
+                                                                        false);
+                                                            filterController
+                                                                    .selectLocation =
+                                                                'Select location/s...';
                                                           } else {
-                                                            filterController.locationCheck = List.generate(11, (index) => true);
-                                                            filterController.selectLocation = 'All localities are selected';
+                                                            filterController
+                                                                    .locationCheck =
+                                                                List.generate(
+                                                                    11,
+                                                                    (index) =>
+                                                                        true);
+                                                            filterController
+                                                                    .selectLocation =
+                                                                'All localities are selected';
                                                           }
                                                         } else {
-                                                          filterController.locationCheck[index] = !filterController.locationCheck[index];
-                                                          filterController.selectLocation = filterController.findUser[index];
+                                                          filterController
+                                                                  .locationCheck[
+                                                              index] = !filterController
+                                                                  .locationCheck[
+                                                              index];
+                                                          filterController
+                                                                  .selectLocation =
+                                                              filterController
+                                                                      .findUser[
+                                                                  index];
                                                         }
-                                                        filterController.addNameLocation();
-                                                        filterController.update(["check"]);
+                                                        filterController
+                                                            .addNameLocation();
+                                                        filterController
+                                                            .update(["check"]);
                                                       }),
                                                 ),
                                                 const SizedBox(
@@ -336,7 +396,7 @@ class FilterScreen extends StatelessWidget {
                       Text(
                         "Select price range",
                         style: overpassRegular(
-                          color:  ColorRes.color3879E8,
+                          color: ColorRes.color3879E8,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
@@ -411,7 +471,7 @@ class FilterScreen extends StatelessWidget {
                       Text(
                         "Number of bedrooms",
                         style: overpassRegular(
-                          color:  ColorRes.color3879E8,
+                          color: ColorRes.color3879E8,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
@@ -444,10 +504,13 @@ class FilterScreen extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 filterController.bedrooms[index],
-                                    style: medium(
-                                      fontWeight:FontWeight.w500,
-                                      color:filterController.clickTapColor1 == index ? ColorRes.white : const Color(0xFF64748B),
-                                    ),
+                                style: medium(
+                                  fontWeight: FontWeight.w500,
+                                  color:
+                                      filterController.clickTapColor1 == index
+                                          ? ColorRes.white
+                                          : const Color(0xFF64748B),
+                                ),
                               )),
                             ),
                           );
@@ -459,7 +522,7 @@ class FilterScreen extends StatelessWidget {
                       Text(
                         "Type of Seller",
                         style: overpassRegular(
-                          color:  ColorRes.color3879E8,
+                          color: ColorRes.color3879E8,
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         ),
@@ -477,7 +540,8 @@ class FilterScreen extends StatelessWidget {
                               filterController.onTapColor2(index);
                             },
                             child: Container(
-                              margin: const EdgeInsets.only(right: 4, bottom: 10),
+                              margin:
+                                  const EdgeInsets.only(right: 4, bottom: 10),
                               height: 35,
                               width: (index == 0)
                                   ? 60
@@ -500,10 +564,13 @@ class FilterScreen extends StatelessWidget {
                               child: Center(
                                   child: Text(
                                 filterController.seller[index],
-                                    style: overpassRegular(
-                                      fontWeight:FontWeight.w500,
-                                      color:filterController.clickTapColor2 == index ? ColorRes.white : const Color(0xFF64748B),
-                                    ),
+                                style: overpassRegular(
+                                  fontWeight: FontWeight.w500,
+                                  color:
+                                      filterController.clickTapColor2 == index
+                                          ? ColorRes.white
+                                          : const Color(0xFF64748B),
+                                ),
                               )),
                             ),
                           );

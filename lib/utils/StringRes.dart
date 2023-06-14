@@ -327,5 +327,35 @@ i. are otherwise inappropriate having regard to the purpose of our Website or Ap
   static const firstName = "Hey First Name,";
   static const favouritesProperty = "Here are all the properties you have favourited";
 
+  ///--------------------------- edit_profile screen---------------------------------------------------------------------------------------------
 
+  static const enterPasswordT = "Enter password...";
+  static const mobileNumber = "Mobile Number";
+  static const enterMobileNumber = "Enter mobile number...";
+  static const enterName = "Enter name...";
+  static const enterSurname = "Enter surname...";
+  static const profilePicture = "Profile Picture";
+  static const choosePhoto = "Choose Photo";
+
+  ///----------------------------------------Home loan calculate screen-----------------------------------------------------------------------------------------------
+
+  static const homeLoanCalculator = "Home Loan Calculator";
+  static const MonthlyRepayment = "Monthly Repayment";
+  static const MaxPropertyPrice = "Max. Property Price";
+  static const MaxLoanAmount = "Max. Loan Amount";
+  static const MinDeposit = "Min. Deposit";
+  static const LoanDuration = "Loan Duration";
+  static const homeLoanCalculatordes1 = "Calculation is based on the basis that (i) the property being purchased will serve as your primary residence and (ii) you have no outstanding home loans upon the signing of deed.";
+  static const homeLoanCalculatordes2 = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
+  static const homeLoanCalculatordes3 = "Disclaimer: The information provided here is intended for illustrative purposes only and is merely an indication of the banks offers. Accuracy is not guaranteed and the default figures shown are hypothetical and may not be applicable to your individual situation. This also means that you may qualify for a different monthly repayment amount. Please also note that the quoted monthly repayments do not constitute an offer or a binding obligation on the part of any Bank to provide a home loan. Any application for credit facilities would be subject to a full formal credit analysis, in line with each Bank lending criteria and YITAKU accepts no responsibility for errors due to changes in rates or offers which have occurred or may occur. ";
+
+  ///------------------------------------loan calculatoe screen --------------------------------------------------------------------------------------
+
+  static const loanTitle = "Calculate and Compare home loan offers from five banks in Malta";
+  static const loanSubTitle = "Enter your details to get an indication of the loan that will be granted to you";
+  static const loanDesOne = "Calculation is based on the basis that (i) the property being purchased will serve as your primary residence and (ii) you have no outstanding home loans upon the signing of deed.";
+  static const loanDesTwo = "Disclaimer: This home loan calculator is not an offer or solicitation of a loan but merely an indication of your borrowing power. Please contact a bank to schedule an appointment with a home loan advisor for further assistance with your home loan application.";
+  static const firstNameLastName = "First Name Last Name";
+  static const updateProfile = "UPDATE PROFILE";
+  static const deleteProfile = "Delete Profile";
 }

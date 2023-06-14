@@ -102,8 +102,8 @@ class HomeScreenTwo extends StatelessWidget {
                             filterController.range = 10;
                             filterController.clickTapColor1 = 0;
                             filterController.clickTapColor2 = 0;
-                            filterController.update(["check"]);
-                          }, icon: Icon(Icons.refresh,color: Colors.blue,)),
+                            homeControllerTwo.update(["check"]);
+                          }, icon: Icon(Icons.refresh,color: ColorRes.buttonColor,)),
                           Text(
                             "Reset Filters",
                             style: overpassRegular(
@@ -136,7 +136,7 @@ class HomeScreenTwo extends StatelessWidget {
                         child: Image.asset(
                           AssetRes.downList,
                           height: 12,
-                          color:  ColorRes.color3879E8,
+                          color: ColorRes.buttonColor,
                         ),
                       ),
                     ],

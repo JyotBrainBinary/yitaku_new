@@ -79,8 +79,8 @@ class FavoritesScreen extends StatelessWidget {
                             CrossAxisAlignment.start,
                             children: [
                               Container(
-                                height: 22,
-                                width: 48,
+                                height: 20,
+                                width: 70,
                                 decoration: BoxDecoration(
                                   color: ColorRes.skyLight,
                                   borderRadius:
@@ -103,7 +103,7 @@ class FavoritesScreen extends StatelessWidget {
                                 },
                                 child: SizedBox(
                                   height: 18,
-                                    child: Icon(Icons.delete_forever,)),
+                                    child: Icon(Icons.delete_forever,color: index == 0 ? Colors.black:Colors.grey )),
                               ),
                             ],
                           ),

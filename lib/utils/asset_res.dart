@@ -68,6 +68,7 @@ class AssetRes {
   static const searchBottom = "${icons}searchBottom.png";
   static const favorites = "${icons}favorites.png";
   static const profile = "${icons}profile.png";
+  static const profile_Pic = "${icons}profile_pic.png";
   static const hart = "${icons}hart.png";
   static const msg = "${icons}msg.png";
 

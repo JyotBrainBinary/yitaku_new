@@ -7,13 +7,29 @@ import 'package:yitaku/utils/colorRes.dart';
 class HomeLoanCalculatorController extends GetxController {
   RxInt selectedIndex = 0.obs;
 
-  List imageData = [
-    AssetRes.hsbc,
-    AssetRes.bankofvalletta,
-    AssetRes.apsbank,
-    AssetRes.medirect,
-    AssetRes.bnfbank,
-  ];
+  Map data = {
+    "image": [
+      AssetRes.hsbc,
+      AssetRes.bankofvalletta,
+      AssetRes.apsbank,
+      AssetRes.medirect,
+      AssetRes.bnfbank,
+    ],
+    "loanOffer": [
+      "HSBC Loan Offer bank",
+      "BOV Home Loan Offer bank",
+      "APS Home Loan Offer bank",
+      "MeDirect Home Loan Offer bank",
+      "NBF Home Loan Offer bank"
+    ],
+    "loanDetails": [
+      "HSBC Home Loan Details",
+      "BOV Home Loan Details",
+      "APS Home Loan Details",
+      "MeDirect Home Loan Details",
+      "NBF Home Loan Details"
+    ],
+  };
 
   textWidget(title, subTitle) {
     return Column(
