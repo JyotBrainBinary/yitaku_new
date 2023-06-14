@@ -194,13 +194,13 @@ class ChatRoomsNameScreen extends StatelessWidget {
                 height: 30,
                 width: 30,
                 decoration: BoxDecoration(
-                  color: Colors.lightBlue,
+                  color: Colors.transparent,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: const Icon(Icons.add, color: Colors.white, size: 20, ),
+                child: const Icon(Icons.attach_file, color: Colors.blue, size: 25, ),
               ),
             ),
-            const SizedBox(width: 15,),
+            const SizedBox(width: 5,),
             GestureDetector(
               onTap: (){
                 FocusScope.of(context).unfocus();
@@ -235,10 +235,10 @@ class ChatRoomsNameScreen extends StatelessWidget {
                 height: 30,
                 width: 30,
                 decoration: BoxDecoration(
-                  color: Colors.lightBlue,
+                  color: Colors.transparent,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: Icon(Icons.add_a_photo_outlined, color: Colors.white, size: 20, ),
+                child: Icon(Icons.add_a_photo_outlined, color: Colors.lightBlue, size: 25, ),
               ),
             ),
             SizedBox(width: 15,),
@@ -260,7 +260,6 @@ class ChatRoomsNameScreen extends StatelessWidget {
                ),
               )
             ),
-            SizedBox(width: 5,),
             IconButton(
                 onPressed:  () {
                   controller.showAgeDialog(context);

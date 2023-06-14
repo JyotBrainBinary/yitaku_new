@@ -146,7 +146,7 @@ class HsbcLoanOffreBankScreen extends StatelessWidget {
               Text(
                 StringRes.hSBCDetails,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey,fontSize: 15),
+                style: TextStyle(color: Colors.grey,fontSize: 13),
               ),
               SizedBox(height: Get.height * 0.05),
             ],

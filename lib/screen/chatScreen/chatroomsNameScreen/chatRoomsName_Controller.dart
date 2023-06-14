@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:yitaku/utils/asset_res.dart';
 
 import '../../../utils/colorRes.dart';
 
@@ -27,7 +28,7 @@ class ChatRoomNameController extends GetxController{
               child: Column(
                 children: [
                   SizedBox(height: 20,),
-                  Text("Enter your Age",style: TextStyle(fontSize: 17),),
+                  Text("Enter your Age",style: TextStyle(fontSize: 17,color: Colors.black),),
                   SizedBox(height: 20,),
                   GestureDetector(
                     onTap: () {
@@ -43,21 +44,20 @@ class ChatRoomNameController extends GetxController{
                       width: Get.width,
                       decoration: BoxDecoration(
                         border: Border.all(width: 0.7,color: Colors.grey),
-                        borderRadius: const BorderRadius.all(Radius.circular(8)),
+                        borderRadius: const BorderRadius.all(Radius.circular(5)),
                       ),
                       child: Row(
                         children: [
                           const SizedBox(width: 10,),
                           Text(ageName),
                           const Spacer(),
-                          drop  ? const Icon(
-                            Icons.keyboard_arrow_up_rounded,
-                            color: ColorRes.fontGrey,
-                          )  : const Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: ColorRes.fontGrey,
+                          drop ? SizedBox(
+                            child: Image.asset(AssetRes.frame1,height: 13,width: 13,),
+                          )
+                              :  SizedBox(
+                            child: Image.asset(AssetRes.frame,height: 13,width: 13,),
                           ),
-                          const SizedBox(width: 10,),
+                           SizedBox(width: 10,),
                         ],
                       ),
                     ),
@@ -101,7 +101,7 @@ class ChatRoomNameController extends GetxController{
                       width: 130,
                       decoration: BoxDecoration(
                         color: Colors.blue,
-                        borderRadius: const BorderRadius.all(Radius.circular(8)),
+                        borderRadius: const BorderRadius.all(Radius.circular(5)),
                       ),
                       child: Center(child: Text("NEXT",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),)),
                     ),
@@ -145,7 +145,7 @@ class ChatRoomNameController extends GetxController{
                     width: 130,
                     decoration: BoxDecoration(
                       color: Colors.blue,
-                      borderRadius: const BorderRadius.all(Radius.circular(8)),
+                      borderRadius: const BorderRadius.all(Radius.circular(5)),
                     ),
                     child: Center(child: Text("OK",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),)),
                   ),

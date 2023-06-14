@@ -39,7 +39,7 @@ class ChatAttachmentScreen extends StatelessWidget {
                     ),
                     child: const Center(
                       child:
-                          Text("Send", style: TextStyle(color: Colors.white)),
+                          Text("Send", style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
                     )),
               ),
               SizedBox(height: Get.height * 0.02),

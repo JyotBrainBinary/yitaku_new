@@ -24,7 +24,7 @@ class CompareHomeLoanOffresController extends StatelessWidget {
               SizedBox(height: 20,),
               SizedBox(
                 width: Get.width * 0.80,
-                child: Text("With YITAKU's home loan comparison tool it's easy to choose the best offer that suits your needs.",textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15),),
+                child: Text("With YITAKU's home loan comparison tool it's easy to choose the best offer that suits your needs.",textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.bold),),
               ),
               SizedBox(height: 20,),
               Container(
@@ -51,7 +51,7 @@ class CompareHomeLoanOffresController extends StatelessWidget {
               SizedBox(
                 width: Get.width * 0.85,
                 child: Text("Calculate how much you are likely to borrow from a bank based on your income",
-                  textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15),),
+                  textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15,fontWeight: FontWeight.bold),),
               ),
               SizedBox(height: 10,),
               Icon(Icons.arrow_downward_sharp,size: 40,color: Colors.grey,),
@@ -68,7 +68,7 @@ class CompareHomeLoanOffresController extends StatelessWidget {
               SizedBox(
                 width: Get.width * 0.85,
                 child: Text("Calculate how loan offres based on a particular property ... it's easy",
-                  textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15),),
+                  textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15,),),
               ),
               SizedBox(height: 10,),
               Text("Step 1: Find a property that you like",style: TextStyle(color: Colors.grey,fontSize: 15),),
