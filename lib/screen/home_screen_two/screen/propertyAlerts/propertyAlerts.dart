@@ -14,6 +14,7 @@ class PropertyAlertScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorRes.color3879E8,
+        centerTitle: true,
         title: Text("My Property Alerts"),
       ),
       body: Padding(
@@ -26,7 +27,7 @@ class PropertyAlertScreen extends StatelessWidget {
                 StringRes.propertyAlerts,
                 style: bold(
                   color: Color(0xFF4285f4),
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
             ),
             Text(
@@ -41,7 +42,7 @@ class PropertyAlertScreen extends StatelessWidget {
                 StringRes.lookingProperty,
               style: medium(
                 color: Color(0xFF4285f4),
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
             Text(
@@ -56,7 +57,7 @@ class PropertyAlertScreen extends StatelessWidget {
                 StringRes.propertyLooking,
               style: medium(
                 color: Color(0xFF4285f4),
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
             Text(
@@ -71,7 +72,7 @@ class PropertyAlertScreen extends StatelessWidget {
                 StringRes.localities,
               style: medium(
                 color: Color(0xFF4285f4),
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
             Text(
@@ -86,7 +87,7 @@ class PropertyAlertScreen extends StatelessWidget {
                 StringRes.bedroomss,
               style: medium(
                 color: Color(0xFF4285f4),
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
             Text(
@@ -101,11 +102,11 @@ class PropertyAlertScreen extends StatelessWidget {
                 StringRes.budget,
               style: medium(
                 color: Color(0xFF4285f4),
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
             Text(
-              "250,000 - 450,000",
+              "€250,000 - €450,000",
               style: medium(
                 color: Color(0xFF757575),
                 fontSize: 16,

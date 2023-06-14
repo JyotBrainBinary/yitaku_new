@@ -3,14 +3,14 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 
 class PropertyController extends GetxController{
 
-  List propertyName = ["AGRICULTURAL LAND","AIRSPACE","APARTMENT","COMMERCIAL","FARMHOUSE","GARAGE","OFFICE","HOUSE OF CHARACTER","MAISONETTE","PALAZZO","PENTHOUSE","PLOT OF LAND","VILLA","TEEEACED HOUSE","TOWNHOUSE"];
+  List propertyName = ["AGRICULTURAL LAND","AIRSPACE","APARTMENT","COMMERCIAL","FARMHOUSE","GARAGE","OFFICE","HOUSE OF CHARACTER","MAISONETTE","PALAZZO","PENTHOUSE","PLOT OF LAND","VILLA","TERRACED HOUSE","TOWNHOUSE"];
   List name = ["Select all","Attard","Bahar ic-Caghaq","Bahrija","Balzan","Binnija","Birkirkara","Blata-Bajda","Bugibba","cdfdf","dsdsd"];
   int range = 10;
   int range2 = 10;
   bool isDrop = false;
   String addName = "";
   List findUser = [];
-  String selectLocation = "Select location/s";
+  String selectLocation = "Select localities...";
   List locationCheck = List.generate(11, (index) => false);
   TextEditingController searchController = TextEditingController();
 

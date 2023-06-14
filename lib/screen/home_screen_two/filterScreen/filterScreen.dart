@@ -346,7 +346,7 @@ class FilterScreen extends StatelessWidget {
                       ),
                       Row(
                     children: [
-                      const Text("c50",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                      const Text("€50",style: TextStyle(color: Colors.grey,fontSize: 13),),
                       SizedBox(
                         width: Get.width * 0.61,
                         child: SliderTheme(
@@ -374,7 +374,7 @@ class FilterScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Text("c200000000 +",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                      const Text("€200000000 +",style: TextStyle(color: Colors.grey,fontSize: 13),),
                     ],
                   ),
                       /*Row(

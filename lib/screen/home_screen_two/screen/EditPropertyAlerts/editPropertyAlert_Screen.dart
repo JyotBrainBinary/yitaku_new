@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/screen/EditPropertyAlerts/editPeopertyAlertScreen_Controller.dart';
 import 'package:yitaku/utils/StringRes.dart';
+import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 class EditPropertyAlertScreen extends StatelessWidget {
@@ -14,6 +15,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle:  true,
         backgroundColor: ColorRes.color3879E8,
         title: Text("Edit Property Alerts"),
       ),
@@ -63,8 +65,8 @@ class EditPropertyAlertScreen extends StatelessWidget {
                             color: Colors.grey.withOpacity(0.70),
                             borderRadius: const BorderRadius.all(Radius.circular(8))
                         ),
-                        child: const Center(
-                          child: Text(StringRes.bUY,style: TextStyle(color: Colors.white),),
+                        child:  Center(
+                          child: Text(StringRes.bUY,style:bold(color: Colors.white)),
                         ),
                       ),
                       const SizedBox(width: 10,),
@@ -75,8 +77,8 @@ class EditPropertyAlertScreen extends StatelessWidget {
                             color: Colors.grey.withOpacity(0.70),
                             borderRadius: const BorderRadius.all(Radius.circular(8))
                         ),
-                        child: const Center(
-                          child: Text(StringRes.bUY,style: TextStyle(color: Colors.white),),
+                        child:  Center(
+                          child: Text(StringRes.bUY,style:bold(color: Colors.white)),
                         ),
                       ),
                     ],
@@ -121,11 +123,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                             ),
                             child: Text(
                               controller.propertyName[index],
-                              style: overpassRegular(
-                                fontWeight:FontWeight.w500,
-                                color: Colors.white,
-                                // color:propertyController.clickTapColor2 == index ? ColorRes.white : const Color(0xFF64748B),
-                              ),
+                                style:bold(color: Colors.white)
                             ),
                           ),
                         );
@@ -162,7 +160,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                     },
                     child: Container(
                       height: 35,
-                      width: Get.width,
+                      width: Get.width * 0.80,
                       padding: const EdgeInsets.only(left: 15, right: 15),
                       decoration: BoxDecoration(
                           border: Border.all(width: 0.5, color: Colors.grey),
@@ -171,7 +169,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           SizedBox(
-                            width: Get.width - 50 - 38 - 8,
+                            width:Get.width * 0.80 - 55,
                             child: controller.addName.isEmpty ?
                             const Text(
                               maxLines: 1,
@@ -186,13 +184,11 @@ class EditPropertyAlertScreen extends StatelessWidget {
                           ),
                           const Spacer(),
                           (controller.isDrop)
-                              ? const Icon(
-                            Icons.keyboard_arrow_up_rounded,
-                            color: ColorRes.fontGrey,
+                              ?  SizedBox(
+                            child: Image.asset(AssetRes.frame1,height: 13,width: 13,),
                           )
-                              : const Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: ColorRes.fontGrey,
+                              :  SizedBox(
+                            child: Image.asset(AssetRes.frame,height: 13,width: 13,),
                           )
                         ],
                       ),
@@ -202,7 +198,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                   (controller.isDrop)
                       ? Container(
                     height: 280,
-                    width: Get.width,
+                    width:Get.width * 0.80,
                     decoration: BoxDecoration(
                       border:
                       Border.all(width: 0.5, color: Colors.grey),
@@ -386,7 +382,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                   const SizedBox(height: 15,),
                   Row(
                     children: [
-                      const Text("c50",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                      const Text("€50",style: TextStyle(color: Colors.grey,fontSize: 13),),
                       SizedBox(
                         width: Get.width * 0.56,
                         child: SliderTheme(
@@ -414,7 +410,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Text("c200000000 +",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                      const Text("€2,000,000+",style: TextStyle(color: Colors.grey,fontSize: 13),),
                     ],
                   ),
                   const SizedBox(height: 40,),
@@ -441,6 +437,7 @@ class EditPropertyAlertScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 20,),
                 ],
               );
             }

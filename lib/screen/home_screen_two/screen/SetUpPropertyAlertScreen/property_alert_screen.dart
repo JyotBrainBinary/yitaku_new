@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:yitaku/common/widget/text_style.dart';
 import 'package:yitaku/screen/home_screen_two/screen/SetUpPropertyAlertScreen/propertyController.dart';
 import 'package:yitaku/screen/home_screen_two/screen/propertyAlerts/propertyAlerts.dart';
+import 'package:yitaku/utils/asset_res.dart';
 import 'package:yitaku/utils/colorRes.dart';
 
 import '../../../../utils/StringRes.dart';
@@ -67,8 +68,8 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.70),
                           borderRadius: const BorderRadius.all(Radius.circular(8))
                       ),
-                      child: const Center(
-                        child: Text(StringRes.bUY,style: TextStyle(color: Colors.white),),
+                      child:  Center(
+                        child: Text(StringRes.bUY,style:bold(color: Colors.white)),
                       ),
                     ),
                     const SizedBox(width: 10,),
@@ -79,8 +80,8 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.70),
                           borderRadius: const BorderRadius.all(Radius.circular(8))
                       ),
-                      child: const Center(
-                        child: Text(StringRes.bUY,style: TextStyle(color: Colors.white),),
+                      child:  Center(
+                        child: Text(StringRes.rENT,style:bold(color: Colors.white)),
                       ),
                     ),
                   ],
@@ -98,9 +99,9 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                 Text(
                   StringRes.selectUp,
                   style: overpassRegular(
-                    color:   const Color(0xFF64748B),
+                    color: Color(0xFF64748B).withOpacity(0.60),
                     fontWeight: FontWeight.w400,
-                    fontSize: 14,
+                    fontSize: 13,
                   ),
                 ),
                 const SizedBox(height: 10,),
@@ -125,8 +126,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                           ),
                           child: Text(
                             propertyController.propertyName[index],
-                            style: overpassRegular(
-                              fontWeight:FontWeight.w500,
+                            style: bold(
                               color: Colors.white,
                               // color:propertyController.clickTapColor2 == index ? ColorRes.white : const Color(0xFF64748B),
                             ),
@@ -166,7 +166,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                   },
                   child: Container(
                     height: 35,
-                    width: Get.width,
+                    width: Get.width * 0.80,
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     decoration: BoxDecoration(
                         border: Border.all(width: 0.5, color: Colors.grey),
@@ -175,7 +175,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         SizedBox(
-                          width: Get.width - 50 - 38 - 8,
+                          width:Get.width * 0.80 - 55,
                           child: propertyController.addName.isEmpty ?
                           const Text(
                             maxLines: 1,
@@ -190,13 +190,11 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                         ),
                         const Spacer(),
                         (propertyController.isDrop)
-                            ? const Icon(
-                          Icons.keyboard_arrow_up_rounded,
-                          color: ColorRes.fontGrey,
+                            ?  SizedBox(
+                          child: Image.asset(AssetRes.frame1,height: 13,width: 13,),
                         )
-                            : const Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: ColorRes.fontGrey,
+                            :  SizedBox(
+                          child: Image.asset(AssetRes.frame,height: 13,width: 13,),
                         )
                       ],
                     ),
@@ -206,7 +204,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                 (propertyController.isDrop)
                     ? Container(
                   height: 280,
-                  width: Get.width,
+                  width:Get.width * 0.80,
                   decoration: BoxDecoration(
                     border:
                     Border.all(width: 0.5, color: Colors.grey),
@@ -253,7 +251,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                                         if (index == 0) {
                                           if (propertyController.locationCheck[index]) {
                                             propertyController.locationCheck = List.generate(11, (index) => false);
-                                            propertyController.selectLocation = 'Select location/s...';
+                                            propertyController.selectLocation = 'Select localities...';
                                           } else {
                                             propertyController.locationCheck = List.generate(11, (index) => true);
                                             propertyController.selectLocation = 'All localities are selected';
@@ -280,7 +278,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                                                     if (index == 0) {
                                                       if (propertyController.locationCheck[index]) {
                                                         propertyController.locationCheck = List.generate(11, (index) => false);
-                                                        propertyController.selectLocation = 'Select location/s...';
+                                                        propertyController.selectLocation = 'Select localities...';
                                                       } else {
                                                         propertyController.locationCheck = List.generate(11, (index) => true);
                                                         propertyController.selectLocation = 'All localities are selected';
@@ -390,7 +388,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                 const SizedBox(height: 15,),
                 Row(
                   children: [
-                    const Text("c50",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                    const Text("500",style: TextStyle(color: Colors.grey,fontSize: 13),),
                     SizedBox(
                       width: Get.width * 0.56,
                       child: SliderTheme(
@@ -418,7 +416,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text("c200000000 +",style: TextStyle(color: Colors.grey,fontSize: 13),),
+                    const Text("200000000 +",style: TextStyle(color: Colors.grey,fontSize: 13),),
                   ],
                 ),
                 const SizedBox(height: 40,),

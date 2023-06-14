@@ -37,6 +37,8 @@ class AssetRes {
   static const apsBank = "${images}aps-bank-logo-vector.png";
   static const hsbcBank = "${images}HSBC_bank.jpg";
   static const medirectBank = "${images}MeDirect-Logo.jpg";
+  static const frame = "${images}Frame.png";
+  static const frame1 = "${images}Frame-1.png";
 
 
 

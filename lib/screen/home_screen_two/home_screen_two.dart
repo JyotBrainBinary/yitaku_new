@@ -15,14 +15,15 @@ import 'package:yitaku/utils/colorRes.dart';
 class HomeScreenTwo extends StatelessWidget {
    HomeScreenTwo({Key? key}) : super(key: key);
 
-   FilterController filterController = Get.put(FilterController());
+  FilterController filterController = Get.put(FilterController());
+    HomeControllerTwo homeControllerTwo = Get.put(HomeControllerTwo());
 
   @override
   Widget build(BuildContext context) {
-    final HomeControllerTwo homeControllerTwo = Get.put(HomeControllerTwo());
+
     return SafeArea(
       child: Scaffold(
-        drawer: homeControllerTwo.drawerOpen(),
+       drawer: homeControllerTwo.drawerOpen(),
         appBar: AppBar(
           toolbarHeight: 65,
           backgroundColor: ColorRes.color3879E8,
@@ -80,11 +81,11 @@ class HomeScreenTwo extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "Filter",
+                        "Filters",
                         style: overpassRegular(
                           color:  ColorRes.color3879E8,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                       ),
                       const Spacer(),
@@ -97,11 +98,11 @@ class HomeScreenTwo extends StatelessWidget {
                           IconButton(onPressed: () {
                             filterController.property = true;
                             filterController.selectLocation = "Select location/s";
-                            filterController.locationCheck = List.generate(11, (index) => false);
+                           filterController.locationCheck = List.generate(11, (index) => false);
                             filterController.range = 10;
                             filterController.clickTapColor1 = 0;
                             filterController.clickTapColor2 = 0;
-                            homeControllerTwo.update(["homeTwo"]);
+                            filterController.update(["check"]);
                           }, icon: Icon(Icons.refresh,color: Colors.blue,)),
                           Text(
                             "Reset Filters",
@@ -116,13 +117,13 @@ class HomeScreenTwo extends StatelessWidget {
                       const Spacer(),
                       GestureDetector(
                         onTap: () {
-                           /* if (homeControllerTwo.isOpenList == false) {
+                            if (homeControllerTwo.isOpenList == false) {
                             homeControllerTwo.isOpenList = true;
                             controller.update(["homeTwo"]);
                           } else {
                             homeControllerTwo.isOpenList = false;
                             controller.update(["homeTwo"]);
-                          }*/
+                          }
                          // Get.to(()=>FilterScreen());
                           if(filterController.filter == false){
                             filterController.filter = true;
@@ -135,7 +136,7 @@ class HomeScreenTwo extends StatelessWidget {
                         child: Image.asset(
                           AssetRes.downList,
                           height: 12,
-                          color: ColorRes.blue,
+                          color:  ColorRes.color3879E8,
                         ),
                       ),
                     ],
@@ -224,6 +225,7 @@ class HomeScreenTwo extends StatelessWidget {
                 filterController.filter == false ?   Expanded(
                      child: (homeControllerTwo.isForSale == true)
                          ?  ListView.builder(
+                       itemCount: homeControllerTwo.listProperties?.length ?? 0,
                        itemBuilder: (context, index) => Padding(
                          padding:
                          const EdgeInsets.only(left: 16, right: 16),
@@ -357,8 +359,6 @@ class HomeScreenTwo extends StatelessWidget {
                            ],
                          ),
                        ),
-                       itemCount:
-                       homeControllerTwo.listProperties!.length,
 
                      )
                          : const SizedBox(),

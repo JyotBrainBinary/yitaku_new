@@ -21,10 +21,7 @@ class FilterController extends GetxController{
   List locationCheck = List.generate(11, (index) => false);
   String addName = "";
 
-  void onInit(){
-    addNameLocation();
-    findUser = name;
-  }
+
 
   checkBox(bool checkBoxValue){
     property = checkBoxValue;
@@ -62,7 +59,7 @@ class FilterController extends GetxController{
   void addNameLocation(){
     addName = "";
     for(int i=0; i<locationCheck.length; i++){
-        if( [i] == true){
+        if(locationCheck[i] == true){
           if(addName.isEmpty){
             addName = addName + findUser[i];
           }else{
@@ -77,6 +74,7 @@ class FilterController extends GetxController{
       addName = "All localities are selected";
     }
     print(addName);
+    update(["check"]);
   }
 
 }

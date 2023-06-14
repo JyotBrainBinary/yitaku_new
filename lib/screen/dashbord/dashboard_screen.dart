@@ -14,6 +14,8 @@ import 'package:yitaku/screen/loanCalculator/loan_calculator_screen.dart';
 import 'package:yitaku/screen/profile/profile_screen.dart';
 import 'package:yitaku/screen/search/search_screen.dart';
 
+import '../home_screen_two/filterScreen/filterController.dart';
+
 class DashboardScreen extends StatelessWidget {
    DashboardScreen({Key? key}) : super(key: key);
 
@@ -40,6 +42,10 @@ class DashboardScreen extends StatelessWidget {
             }*/
 
             if (controller.currentTab2 == 0) {
+              FilterController filterController = Get.put(FilterController());
+              filterController.findUser = filterController.name;
+              filterController.addNameLocation();
+              filterController.update(["check"]);
               return  HomeScreenTwo();
             } else if (controller.currentTab2 == 1) {
               return LoanCalculatorScreen();
