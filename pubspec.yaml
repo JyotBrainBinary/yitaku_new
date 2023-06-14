@@ -96,9 +96,18 @@ flutter:
     - family: Overpass-VariableFont
       fonts:
         - asset: assets/fonts/Overpass-VariableFont_wght.ttf
+    - family: Overpass-Medium
+      fonts:
+        - asset: assets/fonts/Overpass-Medium.ttf
+    - family: Overpass-SemiBold
+      fonts:
+        - asset: assets/fonts/Overpass-SemiBold.ttf
     - family: Orbitron-SemiBold
       fonts:
         - asset: assets/fonts/Orbitron-SemiBold.ttf
+    - family: Overpass-ExtraBold
+      fonts:
+        - asset: assets/fonts/Overpass-ExtraBold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

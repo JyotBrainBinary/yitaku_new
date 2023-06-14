@@ -37,14 +37,12 @@ class HomeLoanCalculatorController extends GetxController {
       children: [
         Text(title,
             textAlign: TextAlign.start,
-            style: overpassRegular(
+            style: overpassMedium(
                 color: ColorRes.color757575,
-                fontWeight: FontWeight.w500,
                 fontSize: 15)),
         Text(subTitle,
-            style: overpassRegular(
+            style: overpassExtraBold(
                 color: ColorRes.color757575,
-                fontWeight: FontWeight.bold,
                 fontSize: 15)),
       ],
     );

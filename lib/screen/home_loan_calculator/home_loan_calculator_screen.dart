@@ -35,21 +35,21 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(height: Get.height * 0.04),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: Text("Hey First Name,",
-                      style: overpassRegular(
-                          fontSize: 20,
-                          color: const Color(0xFF0059C1),
-                          fontWeight: FontWeight.bold)),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: Text("Here are your home loan calculation results",
-                      style: overpassRegular(
-                          color: ColorRes.color757575, fontSize: 16)),
-                ),
-                SizedBox(height: Get.height * 0.03),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 8),
+                //   child: Text("Hey First Name,",
+                //       style: overpassRegular(
+                //           fontSize: 20,
+                //           color: const Color(0xFF0059C1),
+                //           fontWeight: FontWeight.bold)),
+                // ),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 8),
+                //   child: Text("Here are your home loan calculation results",
+                //       style: overpassRegular(
+                //           color: ColorRes.color757575, fontSize: 16)),
+                // ),
+                // SizedBox(height: Get.height * 0.03),
                 ListView.separated(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 7, vertical: 10),
@@ -69,8 +69,8 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                               color: Colors.grey.shade400,
-                              blurRadius: 8,
-                              spreadRadius: 0.5)
+                              blurRadius: 5,
+                              spreadRadius: 0.2)
                         ]),
                     child: Column(
                       children: [
@@ -81,14 +81,14 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(StringRes.MonthlyRepayment,
-                                    style: overpassRegular(
+                                    style: overpassMedium(
                                         color: ColorRes.color757575,
-                                        fontWeight: FontWeight.w500,
+                                        // fontWeight: FontWeight.w500,
                                         fontSize: 15)),
                                 Text("€850",
-                                    style: overpassRegular(
+                                    style: overpassExtraBold(
                                         color: ColorRes.color757575,
-                                        fontWeight: FontWeight.bold,
+                                        // fontWeight: FontWeight.bold,
                                         fontSize: 15)),
                               ],
                             ),
@@ -160,12 +160,11 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                             color: ColorRes.color757575,
                             decoration: TextDecoration.underline))),
                 SizedBox(height: Get.height * 0.04),
-                const Center(
+                 Center(
                     child: Text("Here are some properties within your budget",
-                        style: TextStyle(
+                        style: overpassExtraBold(
                             color: Color(0xFF4285F4),
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold))),
+                            fontSize: 16))),
                 SizedBox(height: Get.height * 0.02),
                 GridView.builder(
                     itemCount: 4,
@@ -237,21 +236,21 @@ class HomeLoanCalculatorScreen extends StatelessWidget {
                       Text(
                         StringRes.homeLoanCalculatordes1,
                         textAlign: TextAlign.center,
-                        style: overpassRegular(
+                        style: overpassSemiBold(
                             color: ColorRes.color757575, fontSize: 10),
                       ),
                       SizedBox(height: Get.height * 0.035),
                       Text(
                         StringRes.homeLoanCalculatordes2,
                         textAlign: TextAlign.center,
-                        style: overpassRegular(
+                        style: overpassSemiBold(
                             color: ColorRes.color757575, fontSize: 10),
                       ),
                       SizedBox(height: Get.height * 0.035),
                       Text(
                         StringRes.homeLoanCalculatordes3,
                         textAlign: TextAlign.center,
-                        style: overpassRegular(
+                        style: overpassSemiBold(
                             color: ColorRes.color757575, fontSize: 10),
                       ),
                       SizedBox(height: Get.height * 0.035),

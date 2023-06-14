@@ -27,9 +27,9 @@ class PropertyDetailsController extends GetxController {
           children: [
             Text(
               StringRes.Apartment,
-              style: overpassRegular(
+              style: overpassSemiBold(
                   color: ColorRes.hinttext,
-                  fontWeight: FontWeight.w500,
+                  // fontWeight: FontWeight.w500,
                   fontSize: 16),
             ),
             Container(
@@ -168,7 +168,7 @@ class PropertyDetailsController extends GetxController {
         const SizedBox(height: 15),
         ReadMoreText(
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu finibus ante. Cras mattis urna accumsan iaculis vestibulum. Praesent et orci ac leo ultrices mollis. Ut condimentum.',
-          style: overpassRegular(color: Colors.grey),
+          style: overpassMedium(color: ColorRes.color757575),
           trimLines: 3,
           trimMode: TrimMode.Line,
           trimCollapsedText: 'Read more',
@@ -317,11 +317,11 @@ class PropertyDetailsController extends GetxController {
               const SizedBox(height: 30),
               Text(
                 "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
-                style: overpassRegular(fontSize: 8, color: Colors.grey),
+                style: overpassMedium(fontSize: 8, color: ColorRes.color757575),
               ),
               Text(
                 "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
-                style: overpassRegular(fontSize: 8, color: Colors.grey),
+                style: overpassMedium(fontSize: 8, color: ColorRes.color757575),
               ),
               const SizedBox(height: 30),
               Align(

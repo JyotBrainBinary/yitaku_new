@@ -44,16 +44,15 @@ class InsuranceScreen extends StatelessWidget {
                       const SizedBox(height: 20,),
                       SizedBox(
                           width: Get.width * 0.85,
-                          child: Text("  We're working hard to give you the best possible experience for all your insurance needs...",textAlign: TextAlign.center,style: TextStyle(color: Colors.grey,fontSize: 15),)),
+                          child: Text("  We're working hard to give you the best possible experience for all your insurance needs...",textAlign: TextAlign.center,style: overpassRegular(color: ColorRes.color757575,fontSize: 16),)),
                       SizedBox(height: 30,),
                       SizedBox(
                           width: Get.width * 0.85,
                           child: Text(
                             "In the mean time,please give us your feedback on a few matters",
                             textAlign: TextAlign.center,
-                            style: overpassRegular(
+                            style: overpassExtraBold(
                             color:  ColorRes.color3879E8,
-                            fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),),
                       ),
@@ -68,7 +67,7 @@ class InsuranceScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("What kind of insurance policy would you be intersted in?",style: TextStyle(color: Colors.grey,fontSize: 12.8),),
+                      const Text("What kind of insurance policy would you be intersted in?",style: TextStyle(color: ColorRes.color757575,fontSize: 16)),
                       SizedBox(height: 10,),
                       GestureDetector(
                         onTap: () {
@@ -142,8 +141,8 @@ class InsuranceScreen extends StatelessWidget {
                           }),
                         ),
                       ) : const SizedBox(),
-                      SizedBox(height: 10,),
-                      Text("How would you like Yitaku to assist you in buying an insurance policy?",style: TextStyle(color: Colors.grey,fontSize: 12.8),),
+                      SizedBox(height: 12),
+                      Text("How would you like Yitaku to assist you in buying an insurance policy?",style: TextStyle(color: ColorRes.color757575,fontSize: 16)),
                       SizedBox(height: 10,),
                       GestureDetector(
                         onTap: () {
