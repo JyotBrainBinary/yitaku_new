@@ -80,11 +80,11 @@ class HomeScreenTwo extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "Filter",
+                        "Filters",
                         style: overpassRegular(
                           color:  ColorRes.color3879E8,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                       ),
                       const Spacer(),
@@ -102,7 +102,7 @@ class HomeScreenTwo extends StatelessWidget {
                             filterController.clickTapColor1 = 0;
                             filterController.clickTapColor2 = 0;
                             homeControllerTwo.update(["homeTwo"]);
-                          }, icon: Icon(Icons.refresh,color: Colors.blue,)),
+                          }, icon: Icon(Icons.refresh,color: ColorRes.buttonColor,)),
                           Text(
                             "Reset Filters",
                             style: overpassRegular(
@@ -135,7 +135,7 @@ class HomeScreenTwo extends StatelessWidget {
                         child: Image.asset(
                           AssetRes.downList,
                           height: 12,
-                          color: ColorRes.blue,
+                          color: ColorRes.buttonColor,
                         ),
                       ),
                     ],
