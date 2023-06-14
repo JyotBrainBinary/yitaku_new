@@ -173,7 +173,7 @@ class SetUpPropertyAlertScreen extends StatelessWidget {
                     propertyController.update(["property"]);
                   },
                   child: Container(
-                    height: 35,
+                    height: 44,
                     width: Get.width * 0.80,
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     decoration: BoxDecoration(

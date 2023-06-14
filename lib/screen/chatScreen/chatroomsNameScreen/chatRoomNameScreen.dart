@@ -1,6 +1,10 @@
+import 'package:file_manager/controller/file_manager_controller.dart';
+import 'package:file_manager/file_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:yitaku/fileManager.dart';
 import 'package:yitaku/screen/chatScreen/chatroomsNameScreen/chatRoomsName_Controller.dart';
 import 'package:yitaku/screen/chatScreen/chatroomsNameScreen/chat_attachments.dart';
 import 'package:yitaku/utils/colorRes.dart';
@@ -44,6 +48,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                           )),
                     ),
+                    SizedBox(height: 5,),
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
@@ -54,6 +59,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                       ),
                       child: const Text("Message Text",),
                     ),
+                    SizedBox(height: 5,),
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
@@ -64,6 +70,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                       ),
                       child: const Text("Filename",),
                     ),
+                    SizedBox(height: 10,),
                     const Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
 
                   ],
@@ -89,6 +96,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                           )),
                     ),
+                    SizedBox(height: 5,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -106,6 +114,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(height: 5,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -123,6 +132,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(height: 10,),
                     const Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
 
                   ],
@@ -148,6 +158,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                             fit: BoxFit.cover,
                           )),
                     ),
+                    SizedBox(height: 5,),
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
@@ -158,6 +169,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                       ),
                       child: const Text("Message Text",),
                     ),
+                    SizedBox(height: 5,),
                     Container(
                       height: 50,
                       width: Get.width * 0.70,
@@ -168,6 +180,7 @@ class ChatRoomsNameScreen extends StatelessWidget {
                       ),
                       child: const Text("Filename",),
                     ),
+                    SizedBox(height: 10,),
                     const Text("First Name - Created Date",style: TextStyle(color: Colors.grey),),
 
                   ],
@@ -187,8 +200,10 @@ class ChatRoomsNameScreen extends StatelessWidget {
         child: Row(
           children: <Widget>[
             GestureDetector(
-              onTap: (){
-                Get.to(() => ChatAttachmentScreen());
+              onTap: () async {
+                //await FileManager.requestFilesAccessPermission();
+                //Get.to(() =>HomePage());
+
               },
               child: Container(
                 height: 30,
@@ -202,8 +217,8 @@ class ChatRoomsNameScreen extends StatelessWidget {
             ),
             const SizedBox(width: 5,),
             GestureDetector(
-              onTap: (){
-                FocusScope.of(context).unfocus();
+              onTap: () async {
+               /* FocusScope.of(context).unfocus();
                 showModalBottomSheet(
                   backgroundColor: Colors.black,
                     context: context,
@@ -229,7 +244,13 @@ class ChatRoomsNameScreen extends StatelessWidget {
                           ],
                         ),
                       );
-                    });
+                    });*/
+                String imagePath = "";
+                final ImagePicker picker = ImagePicker();
+                final XFile? image = await picker.pickImage(source: ImageSource.camera);
+                if(image != null){
+                  imagePath = image.path.toString();
+                }
               },
               child: Container(
                 height: 30,

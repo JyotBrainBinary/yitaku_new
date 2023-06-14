@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 import 'package:yitaku/common/widget/text_style.dart';
+import 'package:yitaku/screen/chatScreen/chatroomsNameScreen/chatRoomNameScreen.dart';
 import 'package:yitaku/screen/loanCalculator/loan_calculator_screen.dart';
 import 'package:yitaku/utils/StringRes.dart';
 import 'package:yitaku/utils/asset_res.dart';
@@ -245,30 +246,35 @@ class PropertyDetailsController extends GetxController {
                       style: overpassRegular(color: ColorRes.white),
                     ),
                   ),
-                  Container(
-                    height: 40,
-                    width: Get.width * 0.53,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: ColorRes.color3879E8,
-                      boxShadow: [
-                        BoxShadow(
-                            blurRadius: 5,
-                            offset: const Offset(0, 5),
-                            color: Colors.grey.withOpacity(0.5)),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(AssetRes.msg, height: 18),
-                        const SizedBox(width: 20),
-                        Text(
-                          StringRes.contactSeller,
-                          style: overpassRegular(color: ColorRes.white),
-                        ),
-                      ],
+                  GestureDetector(
+                    onTap: () {
+                        Get.to(()=>ChatRoomsNameScreen());
+                    },
+                    child: Container(
+                      height: 40,
+                      width: Get.width * 0.53,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: ColorRes.color3879E8,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 5,
+                              offset: const Offset(0, 5),
+                              color: Colors.grey.withOpacity(0.5)),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(AssetRes.msg, height: 18),
+                          const SizedBox(width: 20),
+                          Text(
+                            StringRes.contactSeller,
+                            style: overpassRegular(color: ColorRes.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

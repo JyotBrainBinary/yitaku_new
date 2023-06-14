@@ -79,8 +79,9 @@ class HomeScreenTwo extends StatelessWidget {
 
                 ///---------Filter (3)----------
                 Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.only(top: 16,right: 16,left: 16),
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         "Filters",
@@ -91,21 +92,19 @@ class HomeScreenTwo extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      const Spacer(),
-                      const Spacer(),
-                      const Spacer(),
-                      const Spacer(),
-                      Column(
+                      filterController.filter == true ?  Column(
                         children: [
-                          IconButton(onPressed: () {
-                            filterController.property = true;
-                            filterController.selectLocation = "Select location/s";
-                           filterController.locationCheck = List.generate(11, (index) => false);
-                            filterController.range = 10;
-                            filterController.clickTapColor1 = 0;
-                            filterController.clickTapColor2 = 0;
-                            homeControllerTwo.update(["check"]);
-                          }, icon: Icon(Icons.refresh,color: ColorRes.buttonColor,)),
+                           GestureDetector(
+                            onTap: (){
+                                filterController.property = true;
+                                filterController.selectLocation = "Select location/s";
+                                filterController.locationCheck = List.generate(11, (index) => false);
+                                filterController.range = 10;
+                                filterController.clickTapColor1 = 0;
+                                filterController.clickTapColor2 = 0;
+                                homeControllerTwo.update(["homeTwo"]);
+                                },
+                          child: Icon(Icons.refresh,color: ColorRes.buttonColor,)),
                           Text(
                             "Reset Filters",
                             style: overpassRegular(
@@ -115,8 +114,8 @@ class HomeScreenTwo extends StatelessWidget {
                             ),
                           )
                         ],
-                      ),
-                      const Spacer(),
+                      ) : SizedBox(),
+                      SizedBox(width: 10,),
                       GestureDetector(
                         onTap: () {
                             if (homeControllerTwo.isOpenList == false) {
@@ -147,12 +146,13 @@ class HomeScreenTwo extends StatelessWidget {
 
                    ///------ tab bar --------
                    filterController.filter == false ?  Container(
+                     margin: EdgeInsets.only(top: 16),
                      decoration: BoxDecoration(
                        boxShadow: [
                          BoxShadow(
                            color: Colors.grey.withOpacity(0.5),
-                           blurRadius: 15.0,
-                           offset: const Offset(0, 8),
+                           blurRadius: 10.0,
+                           offset: const Offset(0, 4),
                          )
                        ],
                      ),
@@ -357,7 +357,7 @@ class HomeScreenTwo extends StatelessWidget {
                                height: 2,
                                color: ColorRes.colorF2F4F7,
                              ),
-                             SizedBox(height: Get.height * 0.035),
+                             // SizedBox(height: Get.height * 0.035),
                            ],
                          ),
                        ),
